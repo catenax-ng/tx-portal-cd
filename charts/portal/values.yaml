@@ -109,6 +109,14 @@ backend:
     secret:
       name: "secret-services"
       appsettings: ""
+  provisioningmigrations:
+    name: "provisioning-migrations"
+    image:
+      name: "ghcr.io/catenax-ng/product-portal-backend_provisioning-migrations"
+      tag: "int-v0.6.0"
+    secret:
+      name: "secret-portal-migrations"
+      appsettings: ""
 
 postgresql:
   enabled: true
