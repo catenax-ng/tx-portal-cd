@@ -49,7 +49,7 @@ backend:
     name: "registration-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_registration-service"
-      tag: "int-v0.6.0"
+      tag: "9e5bd9712f0094bed435ca2b05c940421041c338"
     secret:
       name: "secret-registration"
       appsettings: ""
@@ -57,7 +57,7 @@ backend:
     name: "administration-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_administration-service"
-      tag: "int-v0.6.0"
+      tag: "a6d47944c79090742b8c139910b530bfbe7a1941"
     secret:
       name: "secret-administration"
       appsettings: ""
@@ -65,7 +65,7 @@ backend:
     name: "provisioning-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-service"
-      tag: "int-v0.6.0"
+      tag: "f3d8d7fec5f6f6f889bf775de3053a2334e67b8f"
     secret:
       name: "secret-provisioning"
       appsettings: ""
@@ -73,7 +73,7 @@ backend:
     name: "marketplace-app-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_marketplace-app-service"
-      tag: "int-v0.6.0"
+      tag: "a6d47944c79090742b8c139910b530bfbe7a1941"
     secret:
       name: "secret-appmarketplace"
       appsettings: ""
@@ -81,7 +81,7 @@ backend:
     name: "portal-migrations"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_portal-migrations"
-      tag: "int-v0.6.0"
+      tag: "f60772a532f6482be38401c5ac29ebaf3e484d05"
     secret:
       name: "secret-portal-migrations"
       appsettings: ""
@@ -89,7 +89,7 @@ backend:
     name: "portal-maintenance"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_maintenance-service"
-      tag: "int-v0.6.0"
+      tag: "c2a4ef4918d58f1246b7739fbf4b2fac8e025f89"
     secret:
       name: "secret-portal-maintenance"
       appsettings: ""
@@ -97,7 +97,7 @@ backend:
     name: "notification-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_notification-service"
-      tag: "int-v0.6.0"
+      tag: "9e5bd9712f0094bed435ca2b05c940421041c338"
     secret:
       name: "secret-notification"
       appsettings: ""
@@ -105,7 +105,7 @@ backend:
     name: "services-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_services-service"
-      tag: "int-v0.6.0"
+      tag: "7c248b4ae899e520244658dca7beb0f45b732dd6"
     secret:
       name: "secret-services"
       appsettings: ""
@@ -113,7 +113,7 @@ backend:
     name: "provisioning-migrations"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-migrations"
-      tag: "int-v0.6.0"
+      tag: "6c02ae2f233bd099fd765633ee45561a79e766b5"
     secret:
       name: "secret-portal-migrations"
       appsettings: ""
