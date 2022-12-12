@@ -161,3 +161,8 @@ postgresql:
     password: ""
     replicationPassword: ""
     initUserDbSql: ""
+
+pgadmin4:
+  enabled: false
+  ingress:
+    enabled: false
