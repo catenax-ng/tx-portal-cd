@@ -115,7 +115,7 @@ backend:
       name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-migrations"
       tag: "6c02ae2f233bd099fd765633ee45561a79e766b5"
     secret:
-      name: "secret-portal-migrations"
+      name: "secret-provisioning-migrations"
       appsettings: ""
 
 postgresql:
