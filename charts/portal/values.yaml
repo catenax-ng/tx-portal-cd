@@ -89,7 +89,7 @@ backend:
     name: "portal-maintenance"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_maintenance-service"
-      tag: "984734b11fc18eae645f7d60c24dd14ed1bc159b"
+      tag: "583db7600c3dcbc1050173a66b57f428829d875c"
     secret:
       name: "secret-portal-maintenance"
       appsettings: ""
@@ -113,7 +113,7 @@ backend:
     name: "provisioning-migrations"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-migrations"
-      tag: "v0.10.0"
+      tag: "583db7600c3dcbc1050173a66b57f428829d875c"
     secret:
       name: "secret-provisioning-migrations"
       appsettings: ""
