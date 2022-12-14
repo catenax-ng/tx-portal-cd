@@ -10,8 +10,8 @@ on:
     #   # sqls
     #   - 'import/**'
 
-    branches:
-      - enabler/CPLP-1915-integrate-provisioning-migrations
+    # branches:
+    #   - 'main'
 
     tags:
       - 'v*'
