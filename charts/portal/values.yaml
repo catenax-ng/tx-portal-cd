@@ -81,7 +81,7 @@ backend:
     name: "portal-migrations"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_portal-migrations"
-      tag: "29f44441c79866c6920017003c9e2bea82514a17"
+      tag: "ecbc1760055c8fa98a0312920e9c6c92ecd61cf7"
     secret:
       name: "secret-portal-migrations"
       appsettings: ""
@@ -113,7 +113,7 @@ backend:
     name: "provisioning-migrations"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-migrations"
-      tag: "29f44441c79866c6920017003c9e2bea82514a17"
+      tag: "ecbc1760055c8fa98a0312920e9c6c92ecd61cf7"
     secret:
       name: "secret-provisioning-migrations"
       appsettings: ""
