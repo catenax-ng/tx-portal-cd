@@ -89,7 +89,7 @@ backend:
     name: "portal-maintenance"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_maintenance-service"
-      tag: "583db7600c3dcbc1050173a66b57f428829d875c"
+      tag: "256400e7f28a978c9497acf15551c608c8a54bd9"
     secret:
       name: "secret-portal-maintenance"
       appsettings: ""
