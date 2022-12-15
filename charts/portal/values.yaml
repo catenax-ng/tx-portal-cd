@@ -81,7 +81,7 @@ backend:
     name: "portal-migrations"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_portal-migrations"
-      tag: "256400e7f28a978c9497acf15551c608c8a54bd9"
+      tag: "4e1dd676ad6f7965dba12138fa345b4cd8bd259e"
     secret:
       name: "secret-portal-migrations"
       appsettings: ""
