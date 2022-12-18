@@ -105,7 +105,7 @@ backend:
     name: "services-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_services-service"
-      tag: "5ef1c081a507d0ecb94792adc19de20e9eae612d"
+      tag: "v0.10.0"
     secret:
       name: "secret-services"
       appsettings: ""
