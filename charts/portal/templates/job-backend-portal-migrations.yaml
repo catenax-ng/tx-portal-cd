@@ -23,9 +23,8 @@ metadata:
   name: {{ .Values.backend.portalmigrations.name }}
   annotations:
     "batch.kubernetes.io/job-tracking": "true"
-    "helm.sh/hook": post-install
+    "helm.sh/hook": post-install,post-upgrade
     "helm.sh/hook-weight": "-5"
-    "helm.sh/hook-delete-policy": hook-succeeded
 spec:
   template:
     metadata:
