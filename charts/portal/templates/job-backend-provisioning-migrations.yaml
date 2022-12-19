@@ -23,6 +23,8 @@ metadata:
   name: {{ .Values.backend.provisioningmigrations.name }}
   annotations:
     batch.kubernetes.io/job-tracking: "true"
+    "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook-weight": "-5"
 spec:
   template:
     metadata:
