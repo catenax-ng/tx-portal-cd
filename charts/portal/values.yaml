@@ -125,6 +125,7 @@ backend:
 
 postgresql:
   enabled: true
+  fullnameOverride: "portal-backend-postgresql"
   auth:
     existingSecret: "secret-postgres-init"
   architecture: "replication"
