@@ -137,7 +137,7 @@ backend:
     image:
       portalmigrationstag: 59d305d1ce92e8fb617f6a28c1b3cd4963eb9e34
     secret:
-      appsettings: "<path:portal/data/dev/cplp-1042/portal-migrations#appsettings.json>"
+      appsettings: "<path:portal/data/dev/portal-migrations#appsettings.json>"
 
   portalmaintenance:
     image:
@@ -161,7 +161,7 @@ backend:
     image:
       provisioningmigrationstag: 59d305d1ce92e8fb617f6a28c1b3cd4963eb9e34
     secret:
-      appsettings: "<path:portal/data/dev/cplp-1042/provisioning-migrations#appsettings.json>"
+      appsettings: "<path:portal/data/dev/provisioning-migrations#appsettings.json>"
 
 postgresql:
   secret:
