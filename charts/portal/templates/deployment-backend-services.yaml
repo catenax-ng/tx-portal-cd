@@ -35,7 +35,7 @@ spec:
       - name: {{ .Values.backend.services.name }}
         securityContext:
           {{- toYaml .Values.securityContext | nindent 12 }}
-        image: "{{ .Values.backend.services.image.name }}:{{ .Values.backend.services.image.tag | default .Chart.AppVersion }}"
+        image: "{{ .Values.backend.services.image.name }}:{{ .Values.backend.services.image.servicesservicetag | default .Chart.AppVersion }}"
         imagePullPolicy: "Always"
         ports:
         - containerPort: {{ .Values.portContainer }}

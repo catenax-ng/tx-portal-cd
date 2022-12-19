@@ -17,25 +17,23 @@
 # SPDX-License-Identifier: Apache-2.0
 ###############################################################
 
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Application
 metadata:
-  name: {{ .Values.frontend.portal.name }}
+  name: portal
 spec:
-  replicas: {{ .Values.replicaCount }}
-  selector:
-    matchLabels:
-      app: {{ .Values.frontend.portal.name }}
-  template:
-    metadata:
-      labels:
-        app: {{ .Values.frontend.portal.name }}
-    spec:
-      containers:
-      - name: {{ .Values.frontend.portal.name }}
-        securityContext:
-          {{- toYaml .Values.securityContext | nindent 12 }}
-        image: {{ .Values.frontend.portal.image.name }}:{{ .Values.frontend.portal.image.portaltag | default .Chart.AppVersion }}
-        imagePullPolicy: "Always"
-        ports:
-        - containerPort: {{ .Values.portContainer }}
+  destination:
+    namespace: product-portal
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: charts/portal
+    repoURL: 'https://github.com/catenax-ng/tx-portal-cd.git'
+    targetRevision: HEAD
+    plugin:
+      name: argocd-vault-plugin-helm-args
+      env:
+        - name: AVP_SECRET
+          value: vault-secret
+        - name: helm_args
+          value: '-f values.yaml -f values-beta.yaml'
+  project: project-portal

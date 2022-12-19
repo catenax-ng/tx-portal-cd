@@ -34,12 +34,17 @@ frontend:
     name: "portal"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-frontend"
-      tag: "0.6.0"
+      portaltag: 0.10.0
   registration:
     name: "registration"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-frontend-registration"
-      tag: "0.6.0"
+      registrationtag: 0.10.0
+  assets:
+    name: "assets"
+    image:
+      name: "ghcr.io/catenax-ng/product-portal-common-assets"
+      assetstag: 0.8.0
 
 backend:
   ingress:
@@ -48,66 +53,74 @@ backend:
   registration:
     name: "registration-service"
     image:
-      name: "ghcr.io/catenax-ng/product-portal-backend_registration-service"
-      tag: "int-v0.6.0"
+      name: "ghcr.io/catenax-ng/tx-portal-backend_registration-service"
+      registrationservicetag: v0.10.0
     secret:
       name: "secret-registration"
       appsettings: ""
   administration:
     name: "administration-service"
     image:
-      name: "ghcr.io/catenax-ng/product-portal-backend_administration-service"
-      tag: "int-v0.6.0"
+      name: "ghcr.io/catenax-ng/tx-portal-backend_administration-service"
+      administrationservicetag: v0.10.0
     secret:
       name: "secret-administration"
       appsettings: ""
   provisioning:
     name: "provisioning-service"
     image:
-      name: "ghcr.io/catenax-ng/product-portal-backend_provisioning-service"
-      tag: "int-v0.6.0"
+      name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-service"
+      provisioningservicetag: v0.10.0
     secret:
       name: "secret-provisioning"
       appsettings: ""
   appmarketplace:
     name: "marketplace-app-service"
     image:
-      name: "ghcr.io/catenax-ng/product-portal-backend_marketplace-app-service"
-      tag: "int-v0.6.0"
+      name: "ghcr.io/catenax-ng/tx-portal-backend_marketplace-app-service"
+      appmarketplaceservicetag: v0.10.0
     secret:
       name: "secret-appmarketplace"
       appsettings: ""
   portalmigrations:
     name: "portal-migrations"
     image:
-      name: "ghcr.io/catenax-ng/product-portal-backend_portal-migrations"
-      tag: "int-v0.6.0"
+      name: "ghcr.io/catenax-ng/tx-portal-backend_portal-migrations"
+      portalmigrationstag: v0.10.0
     secret:
       name: "secret-portal-migrations"
       appsettings: ""
   portalmaintenance:
     name: "portal-maintenance"
     image:
-      name: "ghcr.io/catenax-ng/product-portal-backend_maintenance-service"
-      tag: "int-v0.6.0"
+      name: "ghcr.io/catenax-ng/tx-portal-backend_maintenance-service"
+      portalmaintenancetag: v0.10.0
     secret:
       name: "secret-portal-maintenance"
       appsettings: ""
   notification:
     name: "notification-service"
     image:
-      name: "ghcr.io/catenax-ng/product-portal-backend_notification-service"
-      tag: "int-v0.6.0"
+      name: "ghcr.io/catenax-ng/tx-portal-backend_notification-service"
+      notificationservicetag: v0.10.0
     secret:
       name: "secret-notification"
       appsettings: ""
   services:
     name: "services-service"
     image:
-      name: "ghcr.io/catenax-ng/product-portal-backend_services-service"
-      tag: "int-v0.6.0"
+      name: "ghcr.io/catenax-ng/tx-portal-backend_services-service"
+      servicesservicetag: v0.10.0
     secret:
       name: "secret-services"
+      appsettings: ""
+  provisioningmigrations:
+    name: "provisioning-migrations"
+    image:
+      name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-migrations"
+      provisioningmigrationstag: v0.10.0
+    secret:
+      name: "secret-provisioning-migrations"
       appsettings: ""
 
 postgresql:
@@ -133,7 +146,7 @@ postgresql:
           secretName: "secret-postgres-init-db-user"
     initContainers:
       - name: "initdb"
-        image: "ghcr.io/catenax-ng/product-portal-cd_initdb:v0.6.0"
+        image: "ghcr.io/catenax-ng/tx-portal-backend_initdb:latest"
         imagePullPolicy: "Always"
         command:
           - sh
@@ -153,3 +166,8 @@ postgresql:
     password: ""
     replicationPassword: ""
     initUserDbSql: ""
+
+pgadmin4:
+  enabled: false
+  ingress:
+    enabled: false

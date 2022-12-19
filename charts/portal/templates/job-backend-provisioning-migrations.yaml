@@ -17,25 +17,33 @@
 # SPDX-License-Identifier: Apache-2.0
 ###############################################################
 
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: batch/v1
+kind: Job
 metadata:
-  name: {{ .Values.frontend.portal.name }}
+  name: {{ .Values.backend.provisioningmigrations.name }}
+  annotations:
+    batch.kubernetes.io/job-tracking: "true"
+    "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook-weight": "-5"
 spec:
-  replicas: {{ .Values.replicaCount }}
-  selector:
-    matchLabels:
-      app: {{ .Values.frontend.portal.name }}
   template:
     metadata:
-      labels:
-        app: {{ .Values.frontend.portal.name }}
+      name: {{ .Values.backend.provisioningmigrations.name }}
     spec:
+      restartPolicy: Never
       containers:
-      - name: {{ .Values.frontend.portal.name }}
+      - name: {{ .Values.backend.provisioningmigrations.name }}
         securityContext:
           {{- toYaml .Values.securityContext | nindent 12 }}
-        image: {{ .Values.frontend.portal.image.name }}:{{ .Values.frontend.portal.image.portaltag | default .Chart.AppVersion }}
+        image: "{{ .Values.backend.provisioningmigrations.image.name }}:{{ .Values.backend.provisioningmigrations.image.provisioningmigrationstag | default .Chart.AppVersion }}"
         imagePullPolicy: "Always"
         ports:
         - containerPort: {{ .Values.portContainer }}
+        volumeMounts:
+        - name: secrets
+          mountPath: /migrations/secrets
+          readOnly: true
+      volumes:
+      - name: secrets
+        secret:
+          secretName: {{ .Values.backend.provisioningmigrations.secret.name }}

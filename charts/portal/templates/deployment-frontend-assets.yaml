@@ -20,22 +20,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.frontend.portal.name }}
+  name: {{ .Values.frontend.assets.name }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ .Values.frontend.portal.name }}
+      app: {{ .Values.frontend.assets.name }}
   template:
     metadata:
       labels:
-        app: {{ .Values.frontend.portal.name }}
+        app: {{ .Values.frontend.assets.name }}
     spec:
       containers:
-      - name: {{ .Values.frontend.portal.name }}
+      - name: {{ .Values.frontend.assets.name }}
         securityContext:
           {{- toYaml .Values.securityContext | nindent 12 }}
-        image: {{ .Values.frontend.portal.image.name }}:{{ .Values.frontend.portal.image.portaltag | default .Chart.AppVersion }}
+        image: {{ .Values.frontend.assets.image.name }}:{{ .Values.frontend.assets.image.assetstag | default .Chart.AppVersion }}
         imagePullPolicy: "Always"
         ports:
         - containerPort: {{ .Values.portContainer }}

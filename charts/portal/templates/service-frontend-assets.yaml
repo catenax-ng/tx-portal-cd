@@ -17,25 +17,14 @@
 # SPDX-License-Identifier: Apache-2.0
 ###############################################################
 
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service
 metadata:
-  name: {{ .Values.frontend.portal.name }}
+  name: {{ .Values.frontend.assets.name }}
 spec:
-  replicas: {{ .Values.replicaCount }}
+  type: ClusterIP
+  ports:
+  - port: {{ .Values.portService }}
+    targetPort: {{ .Values.portContainer }}
   selector:
-    matchLabels:
-      app: {{ .Values.frontend.portal.name }}
-  template:
-    metadata:
-      labels:
-        app: {{ .Values.frontend.portal.name }}
-    spec:
-      containers:
-      - name: {{ .Values.frontend.portal.name }}
-        securityContext:
-          {{- toYaml .Values.securityContext | nindent 12 }}
-        image: {{ .Values.frontend.portal.image.name }}:{{ .Values.frontend.portal.image.portaltag | default .Chart.AppVersion }}
-        imagePullPolicy: "Always"
-        ports:
-        - containerPort: {{ .Values.portContainer }}
+    app: {{ .Values.frontend.assets.name }}

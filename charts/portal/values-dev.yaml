@@ -26,13 +26,13 @@ frontend:
       nginx.ingress.kubernetes.io/rewrite-target: "/$1"
       nginx.ingress.kubernetes.io/use-regex: "true"
       nginx.ingress.kubernetes.io/enable-cors: "true"
-      nginx.ingress.kubernetes.io/cors-allow-origin: "https://portal.dummy"
+      nginx.ingress.kubernetes.io/cors-allow-origin: "http://localhost:3000, https://*.dev.demo.catena-x.net"
     tls: 
       - secretName: "tls-secret"
         hosts:
-          - "portal.dummy"
+          - "portal.dev.demo.catena-x.net"
     hosts:
-      - host: "portal.dummy"
+      - host: "portal.dev.demo.catena-x.net"
         paths:
           - path: "/(.*)"
             pathType: "Prefix"
@@ -44,6 +44,23 @@ frontend:
             backend:
               service: "registration"
               port: 8080
+          - path: "/((assets|swagger)/.*)"
+            pathType: "Prefix"
+            backend:
+              service: "assets"
+              port: 8080
+
+  portal:
+    image:
+      portaltag: dev_f13b81de25dfde8d329c4146b960432086f53705
+
+  assets:
+    image:
+      assetstag: main_a95c017deb30edc26efb394be300b37b183b96df
+
+  registration:
+    image:
+      registrationtag: dev_99653ec3104e5af56479e6935aab842182fcc10b
 
 backend:
   ingress:
@@ -53,13 +70,13 @@ backend:
       nginx.ingress.kubernetes.io/use-regex: "true"
       nginx.ingress.kubernetes.io/enable-cors: "true"
       nginx.ingress.kubernetes.io/proxy-body-size: "8m"
-      nginx.ingress.kubernetes.io/cors-allow-origin: "https://portal.dummy"
+      nginx.ingress.kubernetes.io/cors-allow-origin: "http://localhost:3000, https://*.dev.demo.catena-x.net"
     tls: 
       - secretName: "tls-secret"
         hosts:
-          - "portal-backend.dummy"
+          - "portal-backend.dev.demo.catena-x.net"
     hosts:
-      - host: "portal-backend.dummy"
+      - host: "portal-backend.dev.demo.catena-x.net"
         paths:
           - path: "/api/registration"
             pathType: "Prefix"
@@ -93,39 +110,82 @@ backend:
               port: 8080
 
   registration:
+    image:
+      registrationservicetag: 61777bb0b94404f08a7cfd3a591d1f812d5141cd
     secret:
-      appsettings: "<path:portal/data/dummy/registration#appsettings.json>"
+      appsettings: "<path:portal/data/dev/registration#appsettings.json>"
 
   administration:
+    image:
+      administrationservicetag: 61777bb0b94404f08a7cfd3a591d1f812d5141cd
     secret:
-      appsettings: "<path:portal/data/dummy/administration#appsettings.json>"
+      appsettings: "<path:portal/data/dev/administration#appsettings.json>"
 
   provisioning:
+    image:
+      provisioningservicetag: 29f44441c79866c6920017003c9e2bea82514a17
     secret:
-      appsettings: "<path:portal/data/dummy/provisioning#appsettings.json>"
+      appsettings: "<path:portal/data/dev/provisioning#appsettings.json>"
 
   appmarketplace:
+    image:
+      appmarketplaceservicetag: 61777bb0b94404f08a7cfd3a591d1f812d5141cd
     secret:
-      appsettings: "<path:portal/data/dummy/appmarketplace#appsettings.json>"
+      appsettings: "<path:portal/data/dev/appmarketplace#appsettings.json>"
 
   portalmigrations:
+    image:
+      portalmigrationstag: 59d305d1ce92e8fb617f6a28c1b3cd4963eb9e34
     secret:
-      appsettings: "<path:portal/data/dummy/portal-migrations#appsettings.json>"
+      appsettings: "<path:portal/data/dev/portal-migrations#appsettings.json>"
 
   portalmaintenance:
+    image:
+      portalmaintenancetag: 984734b11fc18eae645f7d60c24dd14ed1bc159b
     secret:
-      appsettings: "<path:portal/data/dummy/portal-maintenance#appsettings.json>"
+      appsettings: "<path:portal/data/dev/portal-maintenance#appsettings.json>"
 
   notification:
+    image:
+      notificationservicetag: 5ef1c081a507d0ecb94792adc19de20e9eae612d
     secret:
-      appsettings: "<path:portal/data/dummy/notification#appsettings.json>"
+      appsettings: "<path:portal/data/dev/notification#appsettings.json>"
 
   services:
+    image:
+      servicesservicetag: 5ef1c081a507d0ecb94792adc19de20e9eae612d
     secret:
-      appsettings: "<path:portal/data/dummy/services#appsettings.json>"
+      appsettings: "<path:portal/data/dev/services#appsettings.json>"
+
+  provisioningmigrations:
+    image:
+      provisioningmigrationstag: 59d305d1ce92e8fb617f6a28c1b3cd4963eb9e34
+    secret:
+      appsettings: "<path:portal/data/dev/provisioning-migrations#appsettings.json>"
 
 postgresql:
   secret:
-    password: "<path:portal/data/dummy/postgres#postgres-password>"
-    replicationPassword: "<path:portal/data/dummy/postgres#replication-password>"
-    initUserDbSql: "<path:portal/data/dummy/postgres-db-user#01-init-user-db.sql>"
+    password: "<path:portal/data/dev/postgres#postgres-password>"
+    replicationPassword: "<path:portal/data/dev/postgres#replication-password>"
+    initUserDbSql: "<path:portal/data/dev/postgres-db-user#01-init-user-db.sql>"
+
+pgadmin4:
+  enabled: true
+  secret:
+    password: "<path:portal/data/dev/pgadmin4#password>"
+  env:
+    email: portal@catena-x.net
+  existingSecret: secret-pgadmin4
+  ingress:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: nginx
+    hosts:
+      - host: portal-pgadmin4.dev.demo.catena-x.net
+        paths:
+        - path: /
+          pathType: Prefix
+    tls:
+      - hosts:
+        - portal-pgadmin4.dev.demo.catena-x.net
+        secretName: tls-secret

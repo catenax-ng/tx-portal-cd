@@ -22,7 +22,9 @@ kind: Job
 metadata:
   name: {{ .Values.backend.portalmigrations.name }}
   annotations:
-    batch.kubernetes.io/job-tracking: "true"
+    "batch.kubernetes.io/job-tracking": "true"
+    "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook-weight": "-5"
 spec:
   template:
     metadata:
@@ -33,7 +35,7 @@ spec:
       - name: {{ .Values.backend.portalmigrations.name }}
         securityContext:
           {{- toYaml .Values.securityContext | nindent 12 }}
-        image: "{{ .Values.backend.portalmigrations.image.name }}:{{ .Values.backend.portalmigrations.image.tag | default .Chart.AppVersion }}"
+        image: "{{ .Values.backend.portalmigrations.image.name }}:{{ .Values.backend.portalmigrations.image.portalmigrationstag | default .Chart.AppVersion }}"
         imagePullPolicy: "Always"
         ports:
         - containerPort: {{ .Values.portContainer }}

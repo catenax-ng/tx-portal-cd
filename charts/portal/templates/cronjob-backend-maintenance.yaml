@@ -32,7 +32,7 @@ spec:
           - name: {{ .Values.backend.portalmaintenance.name }}
             securityContext:
               {{- toYaml .Values.securityContext | nindent 16 }}
-            image: "{{ .Values.backend.portalmaintenance.image.name }}:{{ .Values.backend.portalmaintenance.image.tag | default .Chart.AppVersion }}"
+            image: "{{ .Values.backend.portalmaintenance.image.name }}:{{ .Values.backend.portalmaintenance.image.portalmaintenancetag | default .Chart.AppVersion }}"
             imagePullPolicy: "Always"
             ports:
             - containerPort: {{ .Values.portContainer }}

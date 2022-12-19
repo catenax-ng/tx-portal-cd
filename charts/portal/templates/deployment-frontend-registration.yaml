@@ -35,7 +35,7 @@ spec:
       - name: {{ .Values.frontend.registration.name }}
         securityContext:
           {{- toYaml .Values.securityContext | nindent 12 }}
-        image: {{ .Values.frontend.registration.image.name }}:{{ .Values.frontend.registration.image.tag | default .Chart.AppVersion }}
+        image: {{ .Values.frontend.registration.image.name }}:{{ .Values.frontend.registration.image.registrationtag | default .Chart.AppVersion }}
         imagePullPolicy: "Always"
         ports:
         - containerPort: {{ .Values.portContainer }}
