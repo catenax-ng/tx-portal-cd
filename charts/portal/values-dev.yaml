@@ -159,7 +159,7 @@ backend:
 
   provisioningmigrations:
     image:
-      provisioningmigrationstag: 1e2a2d6d02ef5ee22a9179b93154231abcedc98a
+      provisioningmigrationstag: a2b9277b48d403c69db9ec728043236bdfc92081
     secret:
       appsettings: "<path:portal/data/dev/provisioning-migrations#appsettings.json>"
 
