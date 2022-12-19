@@ -40,6 +40,11 @@ frontend:
     image:
       name: "ghcr.io/catenax-ng/tx-portal-frontend-registration"
       tag: "0.6.0"
+  assets:
+    name: "assets"
+    image:
+      name: "ghcr.io/catenax-ng/product-portal-common-assets"
+      assetstag: 0.8.0
 
 backend:
   ingress:

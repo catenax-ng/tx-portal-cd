@@ -44,6 +44,11 @@ frontend:
             backend:
               service: "registration"
               port: 8080
+          - path: "/((assets|swagger)/.*)"
+            pathType: "Prefix"
+            backend:
+              service: "assets"
+              port: 8080
 
 backend:
   ingress:
