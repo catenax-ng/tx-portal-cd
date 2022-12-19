@@ -44,7 +44,7 @@ frontend:
     name: "assets"
     image:
       name: "ghcr.io/catenax-ng/product-portal-common-assets"
-      assetstag: 0.8.0
+      tag: "0.8.0"
 
 backend:
   ingress:
