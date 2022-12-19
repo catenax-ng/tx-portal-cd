@@ -35,7 +35,7 @@ spec:
       - name: {{ .Values.frontend.assets.name }}
         securityContext:
           {{- toYaml .Values.securityContext | nindent 12 }}
-        image: {{ .Values.frontend.assets.image.name }}:{{ .Values.frontend.assets.image.tag | default .Chart.AppVersion }}
+        image: {{ .Values.frontend.assets.image.name }}:{{ .Values.frontend.assets.image.assetstag | default .Chart.AppVersion }}
         imagePullPolicy: "Always"
         ports:
         - containerPort: {{ .Values.portContainer }}
