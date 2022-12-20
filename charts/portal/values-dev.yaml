@@ -52,7 +52,7 @@ frontend:
 
   portal:
     image:
-      portaltag: dev_f060231ffc7efba56f2247e52df72d3d2b0d6c56
+      portaltag: dev_bd4994027ba20b3b39fbdb273ec6b4780d511dc5
 
   assets:
     image:
