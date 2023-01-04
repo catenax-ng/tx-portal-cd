@@ -123,7 +123,7 @@ backend:
 
   provisioning:
     image:
-      provisioningservicetag: a2b9277b48d403c69db9ec728043236bdfc92081
+      provisioningservicetag: b310fda28d882c6155590dda62192e03d7895ae3
     secret:
       appsettings: "<path:portal/data/dev/provisioning#appsettings.json>"
 
