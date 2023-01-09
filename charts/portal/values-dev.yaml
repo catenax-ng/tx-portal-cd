@@ -117,7 +117,7 @@ backend:
 
   administration:
     image:
-      administrationservicetag: a18e439ec09fd5e74b071e097b985f54f249989c
+      administrationservicetag: 2ad8f4972911922177c824c6f7338d53f38f477f
     secret:
       appsettings: "<path:portal/data/dev/administration#appsettings.json>"
 
