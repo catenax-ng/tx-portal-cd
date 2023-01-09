@@ -111,7 +111,7 @@ backend:
 
   registration:
     image:
-      registrationservicetag: a18e439ec09fd5e74b071e097b985f54f249989c
+      registrationservicetag: da889e5a7389e65c8e2922e07b9809f989902ff5
     secret:
       appsettings: "<path:portal/data/dev/registration#appsettings.json>"
 
