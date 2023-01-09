@@ -147,7 +147,7 @@ backend:
 
   notification:
     image:
-      notificationservicetag: a18e439ec09fd5e74b071e097b985f54f249989c
+      notificationservicetag: 3e295cdcc2c738cd927ef96c20ff1851c266742b
     secret:
       appsettings: "<path:portal/data/dev/notification#appsettings.json>"
 
