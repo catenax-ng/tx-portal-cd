@@ -135,7 +135,7 @@ backend:
 
   portalmigrations:
     image:
-      portalmigrationstag: da889e5a7389e65c8e2922e07b9809f989902ff5
+      portalmigrationstag: 3e295cdcc2c738cd927ef96c20ff1851c266742b
     secret:
       appsettings: "<path:portal/data/dev/portal-migrations#appsettings.json>"
 
