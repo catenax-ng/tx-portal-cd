@@ -43,7 +43,7 @@ frontend:
   assets:
     name: "assets"
     image:
-      name: "ghcr.io/catenax-ng/product-portal-common-assets"
+      name: "ghcr.io/catenax-ng/tx-portal-assets"
       assetstag: 0.8.0
 
 backend:
