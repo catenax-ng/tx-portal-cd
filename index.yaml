@@ -21,6 +21,25 @@ entries:
     - https://github.com/catenax-ng/tx-portal-cd/releases/download/portal-1.0.0-RC1/portal-1.0.0-RC1.tgz
     version: 1.0.0-RC1
   - apiVersion: v2
+    appVersion: 1.0.0-RC1
+    created: "2023-01-11T12:32:19.077159443Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.9.13
+    - condition: pgadmin4.enabled
+      name: pgadmin4
+      repository: https://helm.runix.net
+      version: 1.11.x
+    description: Helm chart for Catena-X Portal
+    digest: e0e9caa7afdb5c8bf35916d2a5a86dae0bb2495943328eba7cf453202975034a
+    name: portal
+    type: application
+    urls:
+    - https://github.com/catenax-ng/tx-portal-cd/releases/download/portal-1.0.0-RC1/portal-1.0.0-RC1.tgz
+    version: 1.0.0-RC1
+  - apiVersion: v2
     appVersion: 0.6.0
     created: "2022-12-12T17:16:17.384633284Z"
     dependencies:
@@ -35,4 +54,4 @@ entries:
     urls:
     - https://github.com/catenax-ng/tx-portal-cd/releases/download/portal-0.6.0/portal-0.6.0.tgz
     version: 0.6.0
-generated: "2022-12-20T11:57:15.665625794Z"
+generated: "2023-01-11T12:32:19.077175644Z"
