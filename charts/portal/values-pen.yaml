@@ -52,15 +52,15 @@ frontend:
 
   portal:
     image:
-      portaltag: v1.0.0-RC1
+      portaltag: 1.0.0-RC1
 
   assets:
     image:
-      assetstag: v1.0.0-RC1
+      assetstag: 1.0.0-RC1
 
   registration:
     image:
-      registrationtag: v1.0.0-RC1
+      registrationtag: 1.0.0-RC1
 
 backend:
   ingress:
