@@ -111,55 +111,55 @@ backend:
 
   registration:
     image:
-      registrationservicetag: 8e3ce47e3db967376fdb5366b659adae5cc9b11a
+      registrationservicetag: v1.0.0-RC1
     secret:
       appsettings: "<path:portal/data/int/registration#appsettings.json>"
 
   administration:
     image:
-      administrationservicetag: 8e3ce47e3db967376fdb5366b659adae5cc9b11a
+      administrationservicetag: v1.0.0-RC1
     secret:
       appsettings: "<path:portal/data/int/administration#appsettings.json>"
 
   provisioning:
     image:
-      provisioningservicetag: de201d6e87e08a96167416d7db55deb454be4bfb
+      provisioningservicetag: v1.0.0-RC1
     secret:
       appsettings: "<path:portal/data/int/provisioning#appsettings.json>"
 
   appmarketplace:
     image:
-      appmarketplaceservicetag: 8e3ce47e3db967376fdb5366b659adae5cc9b11a
+      appmarketplaceservicetag: v1.0.0-RC1
     secret:
       appsettings: "<path:portal/data/int/appmarketplace#appsettings.json>"
 
   portalmigrations:
     image:
-      portalmigrationstag: b8c3e8e1798188d20f31aa478dbd17c22f134d91
+      portalmigrationstag: v1.0.0-RC1
     secret:
       appsettings: "<path:portal/data/int/portal-migrations#appsettings.json>"
 
   portalmaintenance:
     image:
-      portalmaintenancetag: a87acde230916fbebc5b8b7afab10fcdad8ad0a4
+      portalmaintenancetag: v1.0.0-RC1
     secret:
       appsettings: "<path:portal/data/int/portal-maintenance#appsettings.json>"
 
   notification:
     image:
-      notificationservicetag: 8e3ce47e3db967376fdb5366b659adae5cc9b11a
+      notificationservicetag: v1.0.0-RC1
     secret:
       appsettings: "<path:portal/data/int/notification#appsettings.json>"
 
   services:
     image:
-      servicesservicetag: 8e3ce47e3db967376fdb5366b659adae5cc9b11a
+      servicesservicetag: v1.0.0-RC1
     secret:
       appsettings: "<path:portal/data/int/services#appsettings.json>"
 
   provisioningmigrations:
     image:
-      provisioningmigrationstag: de201d6e87e08a96167416d7db55deb454be4bfb
+      provisioningmigrationstag: v1.0.0-RC1
     secret:
       appsettings: "<path:portal/data/int/provisioning-migrations#appsettings.json>"
 
