@@ -115,7 +115,7 @@ backend:
       name: "ghcr.io/catenax-ng/product-portal-backend_checklist-worker"
       tag: "int-v0.6.0"
     secret:
-      name: "secret-portal-checklist"
+      name: "secret-checklist-worker"
       appsettings: ""
 
 postgresql:
