@@ -31,6 +31,8 @@ env:
   ADMINISTRATION_IMAGE_FULL_NEW: 'administrationservicetag: ${{ inputs.new-image }}'
   PORTALMAINTENANCE_IMAGE_BEGINN: 'portalmaintenancetag: '
   PORTALMAINTENANCE_IMAGE_FULL_NEW: 'portalmaintenancetag: ${{ inputs.new-image }}'
+  CHECKLIST_IMAGE_BEGINN: 'checklistworkertag: '
+  CHECKLIST_IMAGE_FULL_NEW: 'checklistworkertag: ${{ inputs.new-image }}'
   APPMARKETPLACE_IMAGE_BEGINN: 'appmarketplaceservicetag: '
   APPMARKETPLACE_IMAGE_FULL_NEW: 'appmarketplaceservicetag: ${{ inputs.new-image }}'
   NOTIFICATION_IMAGE_BEGINN: 'notificationservicetag: '
@@ -59,6 +61,7 @@ jobs:
       - name: Modify image tag in values-int.yaml
         run: |
           sed -i 's/${{ env.ADMINISTRATION_IMAGE_BEGINN }}.*/${{ env.ADMINISTRATION_IMAGE_FULL_NEW }}/' charts/portal/values-int.yaml
+          sed -i 's/${{ env.CHECKLIST_IMAGE_BEGINN }}.*/${{ env.CHECKLIST_IMAGE_FULL_NEW }}/' charts/portal/values-int.yaml
           sed -i 's/${{ env.PORTALMAINTENANCE_IMAGE_BEGINN }}.*/${{ env.PORTALMAINTENANCE_IMAGE_FULL_NEW }}/' charts/portal/values-int.yaml
           sed -i 's/${{ env.APPMARKETPLACE_IMAGE_BEGINN }}.*/${{ env.APPMARKETPLACE_IMAGE_FULL_NEW }}/' charts/portal/values-int.yaml
           sed -i 's/${{ env.NOTIFICATION_IMAGE_BEGINN }}.*/${{ env.NOTIFICATION_IMAGE_FULL_NEW }}/' charts/portal/values-int.yaml

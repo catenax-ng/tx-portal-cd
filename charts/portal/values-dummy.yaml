@@ -124,6 +124,10 @@ backend:
     secret:
       appsettings: "<path:portal/data/dummy/services#appsettings.json>"
 
+  checklistworker:
+    secret:
+      appsettings: "<path:portal/data/dummy/checklist-worker#appsettings.json>"
+
 postgresql:
   secret:
     password: "<path:portal/data/dummy/postgres#postgres-password>"
