@@ -162,6 +162,12 @@ backend:
       provisioningmigrationstag: v1.0.0-RC1
     secret:
       appsettings: "<path:portal/data/pre-prod/provisioning-migrations#appsettings.json>"
+  
+  checklistworker:
+    image:
+      checklistworkertag: v1.0.0-RC1
+    secret:
+      appsettings: "<path:portal/data/pre-prod/checklist-worker#appsettings.json>"
 
 postgresql:
   secret:

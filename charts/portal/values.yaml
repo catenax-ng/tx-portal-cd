@@ -122,6 +122,14 @@ backend:
     secret:
       name: "secret-provisioning-migrations"
       appsettings: ""
+  checklistworker:
+    name: "checklist-worker"
+    image:
+      name: "ghcr.io/catenax-ng/product-portal-backend_checklist-worker"
+      checklistworkertag: "int-v0.6.0"
+    secret:
+      name: "secret-checklist-worker"
+      appsettings: ""
 
 postgresql:
   enabled: true
