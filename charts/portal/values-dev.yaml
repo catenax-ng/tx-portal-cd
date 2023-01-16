@@ -153,7 +153,7 @@ backend:
 
   services:
     image:
-      servicesservicetag: 0cf87dc50c0aa85555cfb2886705abe3a99712a2
+      servicesservicetag: 34c0f29e326c400f2d8787b50116c593b9d02633
     secret:
       appsettings: "<path:portal/data/dev/services#appsettings.json>"
 
