@@ -52,7 +52,7 @@ frontend:
 
   portal:
     image:
-      portaltag: 1.0.0-RC1
+      portaltag: 1.0.0-RC2
 
   assets:
     image:
@@ -111,55 +111,55 @@ backend:
 
   registration:
     image:
-      registrationservicetag: v1.0.0-RC1
+      registrationservicetag: v1.0.0-RC2
     secret:
       appsettings: "<path:portal/data/pre-prod/registration#appsettings.json>"
 
   administration:
     image:
-      administrationservicetag: v1.0.0-RC1
+      administrationservicetag: v1.0.0-RC2
     secret:
       appsettings: "<path:portal/data/pre-prod/administration#appsettings.json>"
 
   provisioning:
     image:
-      provisioningservicetag: v1.0.0-RC1
+      provisioningservicetag: v1.0.0-RC2
     secret:
       appsettings: "<path:portal/data/pre-prod/provisioning#appsettings.json>"
 
   appmarketplace:
     image:
-      appmarketplaceservicetag: v1.0.0-RC1
+      appmarketplaceservicetag: v1.0.0-RC2
     secret:
       appsettings: "<path:portal/data/pre-prod/appmarketplace#appsettings.json>"
 
   portalmigrations:
     image:
-      portalmigrationstag: v1.0.0-RC1
+      portalmigrationstag: v1.0.0-RC2
     secret:
       appsettings: "<path:portal/data/pre-prod/portal-migrations#appsettings.json>"
 
   portalmaintenance:
     image:
-      portalmaintenancetag: v1.0.0-RC1
+      portalmaintenancetag: v1.0.0-RC2
     secret:
       appsettings: "<path:portal/data/pre-prod/portal-maintenance#appsettings.json>"
 
   notification:
     image:
-      notificationservicetag: v1.0.0-RC1
+      notificationservicetag: v1.0.0-RC2
     secret:
       appsettings: "<path:portal/data/pre-prod/notification#appsettings.json>"
 
   services:
     image:
-      servicesservicetag: v1.0.0-RC1
+      servicesservicetag: v1.0.0-RC2
     secret:
       appsettings: "<path:portal/data/pre-prod/services#appsettings.json>"
 
   provisioningmigrations:
     image:
-      provisioningmigrationstag: v1.0.0-RC1
+      provisioningmigrationstag: v1.0.0-RC2
     secret:
       appsettings: "<path:portal/data/pre-prod/provisioning-migrations#appsettings.json>"
 
