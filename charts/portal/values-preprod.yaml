@@ -61,6 +61,10 @@ frontend:
   registration:
     image:
       registrationtag: 1.0.0-RC1
+    env:
+      PORTAL_FRONTEND_URL: "https://portal.pre-prod.demo.catena-x.net"
+      PORTAL_BACKEND_URL: "https://portal-backend.pre-prod.demo.catena-x.net"
+      CENTRALIDP_URL: "https://centralidp.pre-prod.demo.catena-x.net/auth"
 
 backend:
   ingress:
