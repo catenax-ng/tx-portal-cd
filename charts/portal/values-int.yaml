@@ -62,6 +62,13 @@ frontend:
     image:
       registrationtag: 1.0.0-RC1
 
+  env:
+    PORTAL_FRONTEND_URL: "https://portal.int.demo.catena-x.net"
+    PORTAL_BACKEND_URL: "https://portal-backend.int.demo.catena-x.net"
+    CENTRALIDP_URL: "https://centralidp.int.demo.catena-x.net/auth"
+    BPDM_API_URL: "https://partners-pool.int.demo.catena-x.net/api"
+    SEMANTICS_URL: "https://semantics.int.demo.catena-x.net"
+
 backend:
   ingress:
     enabled: true

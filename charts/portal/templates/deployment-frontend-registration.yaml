@@ -37,5 +37,12 @@ spec:
           {{- toYaml .Values.securityContext | nindent 12 }}
         image: {{ .Values.frontend.registration.image.name }}:{{ .Values.frontend.registration.image.registrationtag | default .Chart.AppVersion }}
         imagePullPolicy: "Always"
+        env:
+          - name: PORTAL_FRONTEND_URL
+            value: "{{ .Values.frontend.env.PORTAL_FRONTEND_URL }}"
+          - name: PORTAL_BACKEND_URL
+            value: "{{ .Values.frontend.env.PORTAL_BACKEND_URL }}"
+          - name: CENTRALIDP_URL
+            value: "{{ .Values.frontend.env.CENTRALIDP_URL }}"
         ports:
         - containerPort: {{ .Values.portContainer }}
