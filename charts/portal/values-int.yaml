@@ -163,7 +163,7 @@ backend:
     secret:
       appsettings: "<path:portal/data/int/provisioning-migrations#appsettings.json>"
 
-  checklist:
+  checklistworker:
     image:
       checklistworkertag: v1.0.0-RC1
     secret:

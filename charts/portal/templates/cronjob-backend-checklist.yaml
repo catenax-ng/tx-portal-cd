@@ -20,7 +20,7 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: { { .Values.backend.checklistworker.name } }
+  name: {{ .Values.backend.checklistworker.name }}
 spec:
   schedule: "0 * * * *"
   jobTemplate:
@@ -30,21 +30,21 @@ spec:
           restartPolicy: OnFailure
           concurrencyPolicy: Forbid
           containers:
-            - name: { { .Values.backend.checklistworker.name } }
-              securityContext:
-                { { - toYaml .Values.securityContext | nindent 16 } }
-              image: "{{ .Values.backend.checklistworker.image.name }}:{{ .Values.backend.checklistworker.image.checklistworkertag | default .Chart.AppVersion }}"
-              imagePullPolicy: "Always"
-              ports:
-                - containerPort: { { .Values.portContainer } }
-              env:
-                - name: "DOTNET_ENVIRONMENT"
-                  value: "Kubernetes"
-              volumeMounts:
-                - name: secrets
-                  mountPath: /app/secrets
-                  readOnly: true
-          volumes:
+          - name: {{ .Values.backend.checklistworker.name }}
+            securityContext:
+              {{- toYaml .Values.securityContext | nindent 16 }}
+            image: "{{ .Values.backend.checklistworker.image.name }}:{{ .Values.backend.checklistworker.image.checklistworkertag | default .Chart.AppVersion }}"
+            imagePullPolicy: "Always"
+            ports:
+            - containerPort: {{ .Values.portContainer }}
+            env:
+            - name: "DOTNET_ENVIRONMENT"
+              value: "Kubernetes"
+            volumeMounts:
             - name: secrets
-              secret:
-                secretName: { { .Values.backend.checklistworker.secret.name } }
+              mountPath: /app/secrets
+              readOnly: true
+          volumes:
+          - name: secrets
+            secret:
+              secretName: {{ .Values.backend.checklistworker.secret.name }}
