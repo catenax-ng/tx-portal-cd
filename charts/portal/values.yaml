@@ -125,7 +125,7 @@ backend:
   checklistworker:
     name: "checklist-worker"
     image:
-      name: "ghcr.io/catenax-ng/product-portal-backend_checklist-worker"
+      name: "ghcr.io/catenax-ng/tx-portal-backend_checklist-worker"
       checklistworkertag: v1.0.0-RC1
     secret:
       name: "secret-checklist-worker"
