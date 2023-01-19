@@ -34,7 +34,7 @@ frontend:
     name: "portal"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-frontend"
-      portaltag: 1.0.0-RC2
+      portaltag: 1.0.0-RC3
   registration:
     name: "registration"
     image:
@@ -60,7 +60,7 @@ backend:
     name: "registration-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_registration-service"
-      registrationservicetag: v1.0.0-RC2
+      registrationservicetag: v1.0.0-RC3
     secret:
       name: "secret-registration"
       appsettings: ""
@@ -68,7 +68,7 @@ backend:
     name: "administration-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_administration-service"
-      administrationservicetag: v1.0.0-RC2
+      administrationservicetag: v1.0.0-RC3
     secret:
       name: "secret-administration"
       appsettings: ""
@@ -76,7 +76,7 @@ backend:
     name: "provisioning-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-service"
-      provisioningservicetag: v1.0.0-RC2
+      provisioningservicetag: v1.0.0-RC3
     secret:
       name: "secret-provisioning"
       appsettings: ""
@@ -84,7 +84,7 @@ backend:
     name: "marketplace-app-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_marketplace-app-service"
-      appmarketplaceservicetag: v1.0.0-RC2
+      appmarketplaceservicetag: v1.0.0-RC3
     secret:
       name: "secret-appmarketplace"
       appsettings: ""
@@ -92,7 +92,7 @@ backend:
     name: "portal-migrations"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_portal-migrations"
-      portalmigrationstag: v1.0.0-RC2
+      portalmigrationstag: v1.0.0-RC3
     secret:
       name: "secret-portal-migrations"
       appsettings: ""
@@ -100,7 +100,7 @@ backend:
     name: "portal-maintenance"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_maintenance-service"
-      portalmaintenancetag: v1.0.0-RC2
+      portalmaintenancetag: v1.0.0-RC3
     secret:
       name: "secret-portal-maintenance"
       appsettings: ""
@@ -108,7 +108,7 @@ backend:
     name: "notification-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_notification-service"
-      notificationservicetag: v1.0.0-RC2
+      notificationservicetag: v1.0.0-RC3
     secret:
       name: "secret-notification"
       appsettings: ""
@@ -116,7 +116,7 @@ backend:
     name: "services-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_services-service"
-      servicesservicetag: v1.0.0-RC2
+      servicesservicetag: v1.0.0-RC3
     secret:
       name: "secret-services"
       appsettings: ""
@@ -124,7 +124,7 @@ backend:
     name: "provisioning-migrations"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-migrations"
-      provisioningmigrationstag: v1.0.0-RC2
+      provisioningmigrationstag: v1.0.0-RC3
     secret:
       name: "secret-provisioning-migrations"
       appsettings: ""
@@ -152,7 +152,7 @@ postgresql:
           secretName: "secret-postgres-init-db-user"
     initContainers:
       - name: "initdb"
-        image: "ghcr.io/catenax-ng/tx-portal-backend_initdb:v1.0.0-RC2"
+        image: "ghcr.io/catenax-ng/tx-portal-backend_initdb:v1.0.0-RC3"
         imagePullPolicy: "Always"
         command:
           - sh
