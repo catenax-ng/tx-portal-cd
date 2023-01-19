@@ -61,10 +61,13 @@ frontend:
   registration:
     image:
       registrationtag: main_d51a09ce7b8002abd2844dc82871916062c0b86f
-    env:
-      PORTAL_FRONTEND_URL: "https://portal.dev.demo.catena-x.net"
-      PORTAL_BACKEND_URL: "https://portal-backend.dev.demo.catena-x.net"
-      CENTRALIDP_URL: "https://centralidp.dev.demo.catena-x.net/auth"
+
+  env:
+    PORTAL_FRONTEND_URL: "https://portal.dev.demo.catena-x.net"
+    PORTAL_BACKEND_URL: "https://portal-backend.dev.demo.catena-x.net"
+    CENTRALIDP_URL: "https://centralidp.dev.demo.catena-x.net/auth"
+    BPDM_API_URL: "https://partners-pool.dev.demo.catena-x.net/api"
+    SEMANTICS_URL: "https://semantics.dev.demo.catena-x.net"
 
 backend:
   ingress:

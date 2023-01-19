@@ -39,10 +39,10 @@ spec:
         imagePullPolicy: "Always"
         env:
           - name: PORTAL_FRONTEND_URL
-            value: "{{ .Values.frontend.registration.env.PORTAL_FRONTEND_URL }}"
+            value: "{{ .Values.frontend.env.PORTAL_FRONTEND_URL }}"
           - name: PORTAL_BACKEND_URL
-            value: "{{ .Values.frontend.registration.env.PORTAL_BACKEND_URL }}"
+            value: "{{ .Values.frontend.env.PORTAL_BACKEND_URL }}"
           - name: CENTRALIDP_URL
-            value: "{{ .Values.frontend.registration.env.CENTRALIDP_URL }}"
+            value: "{{ .Values.frontend.env.CENTRALIDP_URL }}"
         ports:
         - containerPort: {{ .Values.portContainer }}

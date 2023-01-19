@@ -37,5 +37,16 @@ spec:
           {{- toYaml .Values.securityContext | nindent 12 }}
         image: {{ .Values.frontend.portal.image.name }}:{{ .Values.frontend.portal.image.portaltag | default .Chart.AppVersion }}
         imagePullPolicy: "Always"
+        env:
+          - name: PORTAL_FRONTEND_URL
+            value: "{{ .Values.frontend.env.PORTAL_FRONTEND_URL }}"
+          - name: PORTAL_BACKEND_URL
+            value: "{{ .Values.frontend.env.PORTAL_BACKEND_URL }}"
+          - name: CENTRALIDP_URL
+            value: "{{ .Values.frontend.env.CENTRALIDP_URL }}"
+          - name: BPDM_API_URL
+            value: "{{ .Values.frontend.env.BPDM_API_URL }}"
+          - name: SEMANTICS_URL
+            value: "{{ .Values.frontend.env.SEMANTICS_URL }}"
         ports:
         - containerPort: {{ .Values.portContainer }}

@@ -40,15 +40,17 @@ frontend:
     image:
       name: "ghcr.io/catenax-ng/tx-portal-frontend-registration"
       registrationtag: 1.0.0-RC1
-    env:
-      PORTAL_FRONTEND_URL: "https://portal.dummy"
-      PORTAL_BACKEND_URL: "https://portal-backend.dummy"
-      CENTRALIDP_URL: "https://centralidp.dummy/auth"
   assets:
     name: "assets"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-assets"
       assetstag: 1.0.0-RC1
+  env:
+    PORTAL_FRONTEND_URL: "https://portal.dummy"
+    PORTAL_BACKEND_URL: "https://portal-backend.dummy"
+    CENTRALIDP_URL: "https://centralidp.dummy/auth"
+    BPDM_API_URL: "https://partners-pool.dummy"
+    SEMANTICS_URL: "https://semantics.dummy"
 
 backend:
   ingress:
