@@ -172,7 +172,7 @@ backend:
 
   checklistworker:
     image:
-      checklistworkertag: de201d6e87e08a96167416d7db55deb454be4bfb
+      checklistworkertag: eaccc706ab13644e21f3156f82bd45dd70283135
     secret:
       appsettings: "<path:portal/data/dev/checklist-worker#appsettings.json>"
 
