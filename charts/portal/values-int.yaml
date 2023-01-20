@@ -170,6 +170,12 @@ backend:
     secret:
       appsettings: "<path:portal/data/int/provisioning-migrations#appsettings.json>"
 
+  checklistworker:
+    image:
+      checklistworkertag: v1.0.0-RC1
+    secret:
+      appsettings: "<path:portal/data/int/checklist-worker#appsettings.json>"
+
 postgresql:
   secret:
     password: "<path:portal/data/int/postgres#postgres-password>"
