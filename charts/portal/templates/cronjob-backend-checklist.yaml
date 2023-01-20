@@ -48,4 +48,3 @@ spec:
           - name: secrets
             secret:
               secretName: {{ .Values.backend.checklistworker.secret.name }}
-              
