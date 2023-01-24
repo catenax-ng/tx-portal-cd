@@ -148,7 +148,7 @@ backend:
 
   portalmaintenance:
     image:
-      portalmaintenancetag: 686ef1401012f9ca522a322af6ab5c6bb998c1b7
+      portalmaintenancetag: b35dd4c2d95e692ae8aca6c15150c02d90615887
     secret:
       appsettings: "<path:portal/data/dev/portal-maintenance#appsettings.json>"
 
