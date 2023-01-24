@@ -46,7 +46,7 @@ frontend:
       name: "ghcr.io/catenax-ng/tx-portal-assets"
       assetstag: 1.0.0-RC1
   env:
-    PORTAL_FRONTEND_URL: "https://portal.dummy"
+    PORTAL_ASSETS_URL: "https://portal.dummy/assets"
     PORTAL_BACKEND_URL: "https://portal-backend.dummy"
     CENTRALIDP_URL: "https://centralidp.dummy/auth"
     BPDM_API_URL: "https://partners-pool.dummy"
