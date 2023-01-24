@@ -60,7 +60,7 @@ frontend:
 
   registration:
     image:
-      registrationtag: 1.0.0-RC1
+      registrationtag: 1.0.0-RC2
 
   env:
     PORTAL_ASSETS_URL: "https://portal.int.demo.catena-x.net/assets"
