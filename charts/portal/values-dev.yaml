@@ -136,7 +136,7 @@ backend:
 
   appmarketplace:
     image:
-      appmarketplaceservicetag: b35dd4c2d95e692ae8aca6c15150c02d90615887
+      appmarketplaceservicetag: 2761a9ef05f5ba798a7f1e1f04b0ad0feb635d62
     secret:
       appsettings: "<path:portal/data/dev/appmarketplace#appsettings.json>"
 
