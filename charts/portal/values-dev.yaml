@@ -181,7 +181,7 @@ backend:
       scope: "openid"
       grantType: "client_credentials"
       clientId: "<path:portal/data/dev/checklist-worker#bpdm-client-id>"
-      clientSecret: "<path:portal/data/dev/checklist-workerbpdm-client-secret>"
+      clientSecret: "<path:portal/data/dev/checklist-worker#bpdm-client-secret>"
       username: "<path:portal/data/dev/checklist-worker#bpdm-username>"
       password: "<path:portal/data/dev/checklist-worker#bpdm-password>"
     custodian:
@@ -191,7 +191,7 @@ backend:
       grantType: "client_credentials"
       clientId: "<path:portal/data/dev/checklist-worker#custodian-client-id>"
       clientSecret: "<path:portal/data/dev/checklist-worker#custodian-client-secret>"
-      username: "<path:portal/data/dev/checklist-workern#custodian-username>"
+      username: "<path:portal/data/dev/checklist-worker#custodian-username>"
       password: "<path:portal/data/dev/checklist-worker#custodian-password>"
 
 postgresql:
