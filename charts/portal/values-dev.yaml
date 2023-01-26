@@ -180,19 +180,19 @@ backend:
       tokenAddress: "https://centralidp.dev.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
       scope: "openid"
       grantType: "client_credentials"
-      clientId: "<path:portal/data/dev/checklist-worker/bpdm#bpdm-client-id>"
-      clientSecret: "<path:portal/data/dev/checklist-worker/bpdm#bpdm-client-secret>"
-      username: "<path:portal/data/dev/checklist-worker/bpdm#bpdm-username>"
-      password: "<path:portal/data/dev/checklist-worker/bpdm#bpdm-password>"
+      clientId: "<path:portal/data/dev/checklist-worker#bpdm-client-id>"
+      clientSecret: "<path:portal/data/dev/checklist-workerbpdm-client-secret>"
+      username: "<path:portal/data/dev/checklist-worker#bpdm-username>"
+      password: "<path:portal/data/dev/checklist-worker#bpdm-password>"
     custodian:
       baseAddress: "https://managed-identity-wallets.dev.demo.catena-x.net"
       tokenAddress: "https://centralidp.dev.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
       scope: "openid"
       grantType: "client_credentials"
-      clientId: "<path:portal/data/dev/checklist-worker/custodian#custodian-client-id>"
-      clientSecret: "<path:portal/data/dev/checklist-worker/custodian#custodian-client-secret>"
-      username: "<path:portal/data/dev/checklist-worker/custodian#custodian-username>"
-      password: "<path:portal/data/dev/checklist-worker/custodian#custodian-password>"
+      clientId: "<path:portal/data/dev/checklist-worker#custodian-client-id>"
+      clientSecret: "<path:portal/data/dev/checklist-worker#custodian-client-secret>"
+      username: "<path:portal/data/dev/checklist-workern#custodian-username>"
+      password: "<path:portal/data/dev/checklist-worker#custodian-password>"
 
 postgresql:
   secret:
