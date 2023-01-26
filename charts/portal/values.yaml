@@ -139,6 +139,7 @@ backend:
     secret:
       name: "secret-checklist-worker"
       appsettings: ""
+      env: "secret-checklist-worker-env"
     logging:
       microsoftEntityFrameworkCoreDatabaseCommand: "Information"
       checklistLibrary: "Debug"
