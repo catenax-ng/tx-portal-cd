@@ -56,6 +56,9 @@ backend:
   ingress:
     enabled: false
     name: "portal-backend"
+  dbConnection:
+    sslMode: "Disable"
+    port: "5432"
   registration:
     name: "registration-service"
     image:
@@ -136,12 +139,43 @@ backend:
     secret:
       name: "secret-checklist-worker"
       appsettings: ""
+    logging:
+      microsoftEntityFrameworkCoreDatabaseCommand: "Information"
+      checklistLibrary: "Debug"
+      bpdmLibrary: "Debug"
+      custodianLibrary: "Debug"
+    bpdm:
+      baseAddress: "https://portal-gate.dummy"
+      tokenAddress: "https://centralidp.dummy/auth/realms/CX-Central/protocol/openid-connect/token"
+      scope: "openid"
+      grantType: "client_credentials"
+      clientId: ""
+      clientSecret: ""
+      username: ""
+      password: ""
+    custodian:
+      baseAddress: "https://managed-identity-wallets.dummy"
+      tokenAddress: "https://centralidp.dummy/auth/realms/CX-Central/protocol/openid-connect/token"
+      scope: "openid"
+      grantType: "client_credentials"
+      clientId: ""
+      clientSecret: ""
+      username: ""
+      password: ""
+  logging:
+    default: "Information"
+    microsoft: "Warning"
+    microsoftHostingLifetime: "Information"
 
 postgresql:
   enabled: true
   fullnameOverride: "portal-backend-postgresql"
   auth:
+    database: "postgres"
     existingSecret: "secret-postgres-init"
+    # custom usernames for cx portal
+    usernamePortal: "portal"
+    usernameProvisioning: "provisioning"
   architecture: "replication"
   audit:
     pgAuditLog: "write, ddl"
@@ -177,9 +211,11 @@ postgresql:
         - name: "initdb-secrets"
           mountPath: "/secrets"
   secret:
+    initUserDbSql: ""
     password: ""
     replicationPassword: ""
-    initUserDbSql: ""
+    portalPassword: ""
+    provisioningPassword: ""
 
 pgadmin4:
   enabled: false
