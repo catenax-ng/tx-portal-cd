@@ -204,6 +204,7 @@ postgresql:
 
 pgadmin4:
   enabled: true
+  fullnameOverride: "portal-backend-cplp-1617-postgresql"
   secret:
     password: "<path:portal/data/dev/pgadmin4#password>"
   env:
