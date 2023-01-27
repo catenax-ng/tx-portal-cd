@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: configmap-postgres-init-db-user
   namespace: {{ .Release.Namespace }}
-stringdata:
+data:
   01-init-user-db.sql: |
     CREATE USER {{ .Values.postgresql.auth.portalUser }} WITH PASSWORD '{{ .Values.postgresql.secret.portalPassword }}';
     CREATE USER {{ .Values.postgresql.auth.provisioningUser }} WITH PASSWORD '{{ .Values.postgresql.secret.provisioningPassword }}';
