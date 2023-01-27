@@ -73,7 +73,7 @@ spec:
             - name: "Checklist__Custodian__Username"
               value: "{{ .Values.backend.checklistworker.custodian.username }}"
             - name: "ConnectionStrings__PortalDB"
-              value: "Server={{ .Values.postgresql.fullnameOverride }}-primary;Database={{ .Values.postgresql.auth.database }};Port={{ .Values.backend.dbConnection.port }};User Id={{ .Values.postgresql.auth.usernamePortal }};Password={{ .Values.postgresql.secret.portalPassword }};Ssl Mode={{ .Values.backend.dbConnection.sslMode }};"
+              value: "Server={{ .Values.postgresql.fullnameOverride }}-primary;Database={{ .Values.postgresql.auth.database }};Port={{ .Values.backend.dbConnection.port }};User Id={{ .Values.postgresql.auth.portalUser }};Password={{ .Values.postgresql.secret.portalPassword }};Ssl Mode={{ .Values.backend.dbConnection.sslMode }};"
             - name: "Logging__LogLevel__Default"
               value: "{{ .Values.backend.logging.default }}"
             - name: "Logging__LogLevel__Microsoft"

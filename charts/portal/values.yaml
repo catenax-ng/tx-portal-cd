@@ -175,8 +175,8 @@ postgresql:
     database: "postgres"
     existingSecret: "secret-postgres-init"
     # custom usernames for cx portal
-    usernamePortal: "portal"
-    usernameProvisioning: "provisioning"
+    portalUser: "portal"
+    provisioningUser: "provisioning"
   architecture: "replication"
   audit:
     pgAuditLog: "write, ddl"
