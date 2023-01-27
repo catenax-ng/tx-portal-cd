@@ -183,17 +183,14 @@ postgresql:
     pgAuditLog: "write, ddl"
     logLinePrefix: "%m %u %d "
   primary:
+    initdb:
+      scriptsConfigMap: "configmap-postgres-init-db-user"
     extraVolumeMounts:
       - name: "initdb"
         mountPath: "/docker-entrypoint-initdb.d"
-      - name: "initdb-secrets"
-        mountPath: "/secrets"
     extraVolumes:
       - name: "initdb"
         emptyDir: {}
-      - name: "initdb-secrets"
-        secret:
-          secretName: "secret-postgres-init-db-user"
     initContainers:
       - name: "initdb"
         image: "ghcr.io/catenax-ng/tx-portal-backend_initdb:v1.0.0-RC4"
@@ -203,17 +200,12 @@ postgresql:
         args:
           - -c
           - |
-            echo "Copying initdb secret sqls..."
-            cp /secrets/* /docker-entrypoint-initdb.d
             echo "Copying initdb sqls..."
             cp -R /import/* /docker-entrypoint-initdb.d
         volumeMounts:
         - name: "initdb"
           mountPath: "/docker-entrypoint-initdb.d"
-        - name: "initdb-secrets"
-          mountPath: "/secrets"
   secret:
-    initUserDbSql: ""
     password: ""
     replicationPassword: ""
     portalPassword: ""
