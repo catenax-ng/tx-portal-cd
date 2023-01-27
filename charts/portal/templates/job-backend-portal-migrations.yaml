@@ -37,6 +37,11 @@ spec:
           {{- toYaml .Values.securityContext | nindent 12 }}
         image: "{{ .Values.backend.portalmigrations.image.name }}:{{ .Values.backend.portalmigrations.image.portalmigrationstag | default .Chart.AppVersion }}"
         imagePullPolicy: "Always"
+        env:
+          - name: "CONNECTIONSTRINGS__PORTALDB"
+            value: "Server={{ .Values.postgresql.fullnameOverride }}-primary;Database={{ .Values.postgresql.auth.database }};Port={{ .Values.backend.dbConnection.port }};User Id={{ .Values.postgresql.auth.portalUser }};Password={{ .Values.postgresql.secret.portalPassword }};Ssl Mode={{ .Values.backend.dbConnection.sslMode }};"
+          - name: "SEEDING__TESTDATAENVIRONMENTS__0"
+            value: "{{ .Values.backend.portalmigrations.seeding.testDataEnvironments }}"
         ports:
         - containerPort: {{ .Values.portContainer }}
         volumeMounts:

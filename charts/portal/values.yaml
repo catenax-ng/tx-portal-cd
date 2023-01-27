@@ -99,6 +99,8 @@ backend:
     secret:
       name: "secret-portal-migrations"
       appsettings: ""
+    seeding:
+      testDataEnvironments: ""
   portalmaintenance:
     name: "portal-maintenance"
     image:
