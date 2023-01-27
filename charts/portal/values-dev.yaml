@@ -145,6 +145,8 @@ backend:
       portalmigrationstag: a82045740b75f9d07ba7b81492a18af48180b108
     secret:
       appsettings: "<path:portal/data/dev/portal-migrations#appsettings.json>"
+    seeding:
+      testDataEnvironments: "consortia"
 
   portalmaintenance:
     image:
