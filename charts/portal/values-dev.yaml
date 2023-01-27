@@ -195,6 +195,7 @@ backend:
       password: "<path:portal/data/dev/checklist-worker#custodian-password>"
 
 postgresql:
+  fullnameOverride: "portal-backend-cplp-1617-postgresql"
   secret:
     initUserDbSql: "<path:portal/data/dev/postgres-db-user#01-init-user-db.sql>"
     password: "<path:portal/data/dev/postgres#postgres-password>"
@@ -204,7 +205,6 @@ postgresql:
 
 pgadmin4:
   enabled: true
-  fullnameOverride: "portal-backend-cplp-1617-postgresql"
   secret:
     password: "<path:portal/data/dev/pgadmin4#password>"
   env:
