@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.postgresql.primary.initdb.scriptsConfigMap }}
+  namespace: {{ .Release.Namespace }}
+data:
+  01-init-db.sql: |
+    CREATE USER {{ .Values.postgresql.auth.portalUser }} WITH PASSWORD '{{ .Values.postgresql.secret.portalPassword }}';
+    CREATE USER {{ .Values.postgresql.auth.provisioningUser }} WITH PASSWORD '{{ .Values.postgresql.secret.provisioningPassword }}';
+    CREATE SCHEMA portal;
+    ALTER SCHEMA portal OWNER TO {{ .Values.postgresql.auth.portalUser }};
+    CREATE SCHEMA provisioning;
+    ALTER SCHEMA provisioning OWNER TO {{ .Values.postgresql.auth.provisioningUser }};
+    CREATE TABLE public.__efmigrations_history_portal (
+        migration_id character varying(150) NOT NULL,
+        product_version character varying(32) NOT NULL
+    );
+    ALTER TABLE public.__efmigrations_history_portal OWNER TO {{ .Values.postgresql.auth.portalUser }};
+    CREATE TABLE public.__efmigrations_history_provisioning (
+        migration_id character varying(150) NOT NULL,
+        product_version character varying(32) NOT NULL
+    );
+    ALTER TABLE public.__efmigrations_history_provisioning OWNER TO {{ .Values.postgresql.auth.provisioningUser }};

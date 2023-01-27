@@ -184,27 +184,7 @@ postgresql:
     logLinePrefix: "%m %u %d "
   primary:
     initdb:
-      scriptsConfigMap: "configmap-postgres-init-db-user"
-    extraVolumeMounts:
-      - name: "initdb"
-        mountPath: "/docker-entrypoint-initdb.d"
-    extraVolumes:
-      - name: "initdb"
-        emptyDir: {}
-    initContainers:
-      - name: "initdb"
-        image: "ghcr.io/catenax-ng/tx-portal-backend_initdb:v1.0.0-RC4"
-        imagePullPolicy: "Always"
-        command:
-          - sh
-        args:
-          - -c
-          - |
-            echo "Copying initdb sqls..."
-            cp -R /import/* /docker-entrypoint-initdb.d
-        volumeMounts:
-        - name: "initdb"
-          mountPath: "/docker-entrypoint-initdb.d"
+      scriptsConfigMap: "configmap-postgres-init"
   secret:
     password: ""
     replicationPassword: ""
