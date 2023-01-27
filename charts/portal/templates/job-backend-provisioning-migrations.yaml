@@ -38,7 +38,7 @@ spec:
         image: "{{ .Values.backend.provisioningmigrations.image.name }}:{{ .Values.backend.provisioningmigrations.image.provisioningmigrationstag | default .Chart.AppVersion }}"
         imagePullPolicy: "Always"
         env:
-          - name: "ConnectionStrings__ProvisioningDb"
+          - name: "CONNECTIONSTRINGS__PROVISIONINGDB"
             value: "Server={{ .Values.postgresql.fullnameOverride }}-primary;Database={{ .Values.postgresql.auth.database }};Port={{ .Values.backend.dbConnection.port }};User Id={{ .Values.postgresql.auth.provisioningUser }};Password={{ .Values.postgresql.secret.provisioningPassword }};Ssl Mode={{ .Values.backend.dbConnection.sslMode }};"
         ports:
         - containerPort: {{ .Values.portContainer }}
