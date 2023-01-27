@@ -180,7 +180,8 @@ postgresql:
   secret:
     password: "<path:portal/data/pre-prod/postgres#postgres-password>"
     replicationPassword: "<path:portal/data/pre-prod/postgres#replication-password>"
-    initUserDbSql: "<path:portal/data/pre-prod/postgres-db-user#01-init-user-db.sql>"
+    portalPassword: "<path:portal/data/pre-prod/postgres#portal-password>"
+    provisioningPassword: "<path:portal/data/pre-prod/postgres#provisioning-password>"
 
 pgadmin4:
   enabled: true
