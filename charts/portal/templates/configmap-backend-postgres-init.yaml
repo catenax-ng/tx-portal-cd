@@ -30,17 +30,9 @@ data:
       echo "CREATE USER portal WITH PASSWORD '${escaped_password}';" | postgresql_execute
     }
     postgresql_create_portal_user
-    echo "CREATE SCHEMA portal;" | postgresql_execute
-    echo "ALTER SCHEMA portal OWNER TO portal;" | postgresql_execute
-    echo "CREATE TABLE public.__efmigrations_history_portal ( migration_id character varying(150) NOT NULL, product_version character varying(32) NOT NULL );" | postgresql_execute
-    echo "ALTER TABLE public.__efmigrations_history_portal OWNER TO portal;" | postgresql_execute
     postgresql_create_provisioning_user() {
       local -r escaped_password="${PROVISIONING_PASSWORD//\'/\'\'}"
       info "Creating user provisioning"
       echo "CREATE USER provisioning WITH PASSWORD '${escaped_password}';" | postgresql_execute
     }
     postgresql_create_provisioning_user
-    echo "CREATE SCHEMA provisioning;" | postgresql_execute
-    echo "ALTER SCHEMA provisioning OWNER TO provisioning;" | postgresql_execute
-    echo "CREATE TABLE public.__efmigrations_history_provisioning ( migration_id character varying(150) NOT NULL, product_version character varying(32) NOT NULL );" | postgresql_execute
-    echo "ALTER TABLE public.__efmigrations_history_provisioning OWNER TO provisioning;" | postgresql_execute
