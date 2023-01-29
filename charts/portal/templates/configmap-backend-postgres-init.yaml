@@ -27,12 +27,12 @@ data:
     postgresql_create_portal_user() {
       local -r escaped_password="${PORTAL_PASSWORD//\'/\'\'}"
       info "Creating user portal"
-      echo "CREATE USER portal WITH PASSWORD '${escaped_password}';" | postgresql_execute
+      echo "CREATE USER portal WITH PASSWORD '${escaped_password}';"
     }
     postgresql_create_portal_user
     postgresql_create_provisioning_user() {
       local -r escaped_password="${PROVISIONING_PASSWORD//\'/\'\'}"
       info "Creating user provisioning"
-      echo "CREATE USER provisioning WITH PASSWORD '${escaped_password}';" | postgresql_execute
+      echo "CREATE USER provisioning WITH PASSWORD '${escaped_password}';"
     }
     postgresql_create_provisioning_user
