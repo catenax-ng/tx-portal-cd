@@ -40,7 +40,7 @@ data:
     postgresql_create_provisioning_user
   02-init-db.sql: |
     CREATE SCHEMA portal;
-    ALTER SCHEMA portal OWNER TO portal};
+    ALTER SCHEMA portal OWNER TO portal;
     CREATE SCHEMA provisioning;
     ALTER SCHEMA provisioning OWNER TO provisioning;
     CREATE TABLE public.__efmigrations_history_portal (
