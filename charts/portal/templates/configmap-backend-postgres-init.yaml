@@ -23,7 +23,7 @@ metadata:
   name: {{ .Values.postgresql.primary.initdb.scriptsConfigMap }}
   namespace: {{ .Release.Namespace }}
 data:
-  01-init-db.sh: |
+  01-init-db-user.sh: |
     postgresql_create_portal_user() {
       local -r escaped_password="${PORTAL_PASSWORD//\'/\'\'}"
       info "Creating user portal"
@@ -38,3 +38,18 @@ data:
       echo "CREATE USER provisioning WITH PASSWORD '${escaped_password}';" | psql -U postgres
     }
     postgresql_create_provisioning_user
+ 02-init-db.sql: |
+    CREATE SCHEMA portal;
+    ALTER SCHEMA portal OWNER TO portal};
+    CREATE SCHEMA provisioning;
+    ALTER SCHEMA provisioning OWNER TO provisioning;
+    CREATE TABLE public.__efmigrations_history_portal (
+        migration_id character varying(150) NOT NULL,
+        product_version character varying(32) NOT NULL
+    );
+    ALTER TABLE public.__efmigrations_history_portal OWNER TO portal;
+    CREATE TABLE public.__efmigrations_history_provisioning (
+        migration_id character varying(150) NOT NULL,
+        product_version character varying(32) NOT NULL
+    );
+    ALTER TABLE public.__efmigrations_history_provisioning OWNER TO provisioning;
