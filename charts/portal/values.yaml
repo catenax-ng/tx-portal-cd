@@ -185,6 +185,17 @@ postgresql:
   primary:
     initdb:
       scriptsConfigMap: "configmap-postgres-init"
+    extraEnvVars:
+      - name: "PORTAL_PASSWORD"
+        valueFrom:
+          secretKeyRef:
+            name: "secret-postgres-init"
+            key: "portal-password"
+      - name: "PROVISIONING_PASSWORD"
+        valueFrom:
+          secretKeyRef:
+            name: "secret-postgres-init"
+            key: "provisioning-password"
   secret:
     password: ""
     replicationPassword: ""
