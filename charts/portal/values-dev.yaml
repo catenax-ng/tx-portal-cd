@@ -179,21 +179,32 @@ backend:
     bpdm:
       baseAddress: "https://portal-gate.dev.demo.catena-x.net/"
       tokenAddress: "https://centralidp.dev.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
-      scope: "openid"
-      grantType: "client_credentials"
       clientId: "<path:portal/data/dev/checklist-worker#bpdm-client-id>"
       clientSecret: "<path:portal/data/dev/checklist-worker#bpdm-client-secret>"
       username: "<path:portal/data/dev/checklist-worker#bpdm-username>"
       password: "<path:portal/data/dev/checklist-worker#bpdm-password>"
+    clearinghouse:
+      baseAddress: "https://validation.dev.dih-cloud.com/api/v1"
+      tokenAddress: "https://centralidp.dev.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
+      clientId: "<path:portal/data/dev/checklist-worker#clearinghouse-client-id>"
+      clientSecret: "<path:portal/data/dev/checklist-worker#clearinghouse-client-secret>"
+      username: "<path:portal/data/dev/checklist-worker#clearinghouse-username>"
+      password: "<path:portal/data/dev/checklist-worker#clearinghouse-password>"
     custodian:
       baseAddress: "https://managed-identity-wallets.dev.demo.catena-x.net"
       tokenAddress: "https://centralidp.dev.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
-      scope: "openid"
-      grantType: "client_credentials"
       clientId: "<path:portal/data/dev/checklist-worker#custodian-client-id>"
       clientSecret: "<path:portal/data/dev/checklist-worker#custodian-client-secret>"
       username: "<path:portal/data/dev/checklist-worker#custodian-username>"
       password: "<path:portal/data/dev/checklist-worker#custodian-password>"
+    sdfactory:
+      baseAddress: "https://sdfactory.dev.demo.catena-x.net/selfdescription"
+      tokenAddress: "https://centralidp.dev.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
+      issuerBpn: "BPNL00000003CRHK"
+      clientId: "<path:portal/data/dev/checklist-worker#sdfactory-client-id>"
+      clientSecret: "<path:portal/data/dev/checklist-worker#sdfactory-client-secret>"
+      username: "<path:portal/data/dev/checklist-worker#sdfactory-username>"
+      password: "<path:portal/data/dev/checklist-worker#sdfactory-password>"
 
 postgresql:
   fullnameOverride: "portal-backend-cplp-1617-postgresql"
