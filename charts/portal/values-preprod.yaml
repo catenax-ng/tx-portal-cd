@@ -129,10 +129,11 @@ backend:
       appsettings: "<path:portal/data/pre-prod/administration#appsettings.json>"
 
   provisioning:
-    image:
-      provisioningservicetag: v1.0.0-RC4
-    secret:
-      appsettings: "<path:portal/data/pre-prod/provisioning#appsettings.json>"
+    service:
+      image:
+        provisioningservicetag: v1.0.0-RC4
+      secret:
+        appsettings: "<path:portal/data/pre-prod/provisioning#appsettings.json>"
 
   appmarketplace:
     image:
@@ -173,8 +174,7 @@ backend:
   checklistworker:
     image:
       checklistworkertag: v1.0.0-RC4
-    secret:
-      appsettings: "<path:portal/data/pre-prod/checklist-worker#appsettings.json>"
+    secret: "secret-checklist-worker-env"
 
 postgresql:
   secret:

@@ -60,6 +60,24 @@ backend:
     sslMode: "Disable"
     port: "5432"
   basePortalAddress: ""
+  keycloak:
+    central:
+      baseAddress: ""
+      clientId: ""
+      clientSecret: ""
+      authRealm: "CX-Central"
+    shared:
+      baseAddress: ""
+      clientId: ""
+      clientSecret: ""
+      authRealm: "master"
+    secret: "secret-keycloak"
+  mailing:
+    host: ""
+    port: ""
+    user: ""
+    password: ""
+    secret: "secret-mailing"
   registration:
     name: "registration-service"
     image:
@@ -77,13 +95,34 @@ backend:
       name: "secret-administration"
       appsettings: ""
   provisioning:
-    name: "provisioning-service"
-    image:
-      name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-service"
-      provisioningservicetag: v1.0.0-RC4
-    secret:
-      name: "secret-provisioning"
-      appsettings: ""
+    centralRealm: "CX-Central"
+    centralRealmId: "CX-Central"
+    invitedUserInitialRoles:
+      registration: "Company Admin"
+    centralIdentityProvider:
+      clientId: "central-idp"
+    sharedRealmClient:
+      clientId: "central-idp"
+    sharedRealm:
+      smtpServer:
+        host: ""
+        port: ""
+        user: ""
+        password: ""
+        ssl: ""
+        startTls: "true"
+        auth: "true"
+        from: ""
+        replyTo: ""
+        secret: "secret-mailing"
+    service:
+      name: "provisioning-service"
+      image:
+        name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-service"
+        provisioningservicetag: v1.0.0-RC4
+      secret:
+        name: "secret-provisioning"
+        appsettings: ""
   appmarketplace:
     name: "marketplace-app-service"
     image:
@@ -163,8 +202,6 @@ backend:
       grantType: "client_credentials"
       clientId: ""
       clientSecret: ""
-      username: ""
-      password: ""
     clearinghouse:
       baseAddress: ""
       tokenAddress: ""
@@ -172,8 +209,6 @@ backend:
       grantType: "client_credentials"
       clientId: ""
       clientSecret: ""
-      username: ""
-      password: ""
     custodian:
       baseAddress: ""
       tokenAddress: ""
@@ -181,8 +216,6 @@ backend:
       grantType: "client_credentials"
       clientId: ""
       clientSecret: ""
-      username: ""
-      password: ""
     sdfactory:
       baseAddress: ""
       tokenAddress: ""
@@ -191,8 +224,7 @@ backend:
       issuerBpn: ""
       clientId: ""
       clientSecret: ""
-      username: ""
-      password: ""
+  placeholder: "empty"
 
 postgresql:
   enabled: true

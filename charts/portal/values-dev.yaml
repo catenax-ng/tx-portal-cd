@@ -116,7 +116,23 @@ backend:
               service: "services-service"
               port: 8080
 
-basePortalAddress: "https://portal.dev.demo.catena-x.net/home"
+  basePortalAddress: "https://portal.dev.demo.catena-x.net/home"
+
+  keycloak:
+    central:
+      baseAddress: "https://centralidp.dev.demo.catena-x.net"
+      clientId: "<path:portal/data/dev/keycloak#central-client-id>"
+      clientSecret: "<path:portal/data/dev/keycloak#central-client-secret>"
+    shared:
+      baseAddress: "<path:portal/data/dev/keycloak#shared-client-id>"
+      clientId: "<path:portal/data/dev/keycloak#shared-client-secret>"
+      clientSecret: "https://sharedidp.dev.demo.catena-x.net"
+
+  mailing:
+    host: "<path:portal/data/mailing#host>"
+    port: "<path:portal/data/mailing#port>"
+    user: "<path:portal/data/mailing#user>"
+    password: "<path:portal/data/mailing#password>"
 
   registration:
     image:
@@ -131,10 +147,19 @@ basePortalAddress: "https://portal.dev.demo.catena-x.net/home"
       appsettings: "<path:portal/data/dev/administration#appsettings.json>"
 
   provisioning:
-    image:
-      provisioningservicetag: a82045740b75f9d07ba7b81492a18af48180b108
-    secret:
-      appsettings: "<path:portal/data/dev/provisioning#appsettings.json>"
+    sharedRealm:
+      smtpServer:
+        host: "<path:portal/data/mailing#host>"
+        port: "<path:portal/data/mailing#port>"
+        user: "<path:portal/data/mailing#user>"
+        password: "<path:portal/data/mailing#password>"
+        from: "<path:portal/data/mailing#from>"
+        replyTo: "<path:portal/data/mailing#replyto>"
+    service:
+      image:
+        provisioningservicetag: a82045740b75f9d07ba7b81492a18af48180b108
+      secret:
+        appsettings: "<path:portal/data/dev/provisioning#appsettings.json>"
 
   appmarketplace:
     image:
@@ -183,30 +208,22 @@ basePortalAddress: "https://portal.dev.demo.catena-x.net/home"
       tokenAddress: "https://centralidp.dev.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
       clientId: "<path:portal/data/dev/checklist-worker#bpdm-client-id>"
       clientSecret: "<path:portal/data/dev/checklist-worker#bpdm-client-secret>"
-      username: "<path:portal/data/dev/checklist-worker#bpdm-username>"
-      password: "<path:portal/data/dev/checklist-worker#bpdm-password>"
     clearinghouse:
       baseAddress: "https://validation.dev.dih-cloud.com/api/v1"
       tokenAddress: "https://centralidp.dev.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
       clientId: "<path:portal/data/dev/checklist-worker#clearinghouse-client-id>"
       clientSecret: "<path:portal/data/dev/checklist-worker#clearinghouse-client-secret>"
-      username: "<path:portal/data/dev/checklist-worker#clearinghouse-username>"
-      password: "<path:portal/data/dev/checklist-worker#clearinghouse-password>"
     custodian:
       baseAddress: "https://managed-identity-wallets.dev.demo.catena-x.net"
       tokenAddress: "https://centralidp.dev.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
       clientId: "<path:portal/data/dev/checklist-worker#custodian-client-id>"
       clientSecret: "<path:portal/data/dev/checklist-worker#custodian-client-secret>"
-      username: "<path:portal/data/dev/checklist-worker#custodian-username>"
-      password: "<path:portal/data/dev/checklist-worker#custodian-password>"
     sdfactory:
       baseAddress: "https://sdfactory.dev.demo.catena-x.net/selfdescription"
       tokenAddress: "https://centralidp.dev.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
       issuerBpn: "BPNL00000003CRHK"
       clientId: "<path:portal/data/dev/checklist-worker#sdfactory-client-id>"
       clientSecret: "<path:portal/data/dev/checklist-worker#sdfactory-client-secret>"
-      username: "<path:portal/data/dev/checklist-worker#sdfactory-username>"
-      password: "<path:portal/data/dev/checklist-worker#sdfactory-password>"
 
 postgresql:
   fullnameOverride: "portal-backend-cplp-1617-postgresql"
