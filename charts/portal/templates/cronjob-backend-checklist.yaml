@@ -38,8 +38,6 @@ spec:
             ports:
             - containerPort: {{ .Values.portContainer }}
             env:
-            - name: "DOTNET_ENVIRONMENT"
-              value: "Kubernetes"
             - name: "PORTAL_PASSWORD"
               valueFrom:
                 secretKeyRef:
