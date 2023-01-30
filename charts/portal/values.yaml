@@ -59,6 +59,7 @@ backend:
   dbConnection:
     sslMode: "Disable"
     port: "5432"
+  basePortalAddress: ""
   registration:
     name: "registration-service"
     image:
@@ -147,6 +148,14 @@ backend:
       applicationApprovalInitialRoles:
         portal:
           role: "Company Admin"
+        registration:
+          role: "Company Admin"
+      welcomeNotificationTypeIds:
+        type0: "WELCOME"
+        type1: "WELCOME_USE_CASES"
+        type2: "WELCOME_SERVICE_PROVIDER"
+        type3: "WELCOME_CONNECTOR_REGISTRATION"
+        type4: "WELCOME_APP_MARKETPLACE"
     bpdm:
       baseAddress: ""
       tokenAddress: ""
