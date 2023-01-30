@@ -147,7 +147,7 @@ spec:
             - name: "CHECKLIST__SDFACTORY__KEYCLOAKTOKENADDRESS"
               value: "{{ .Values.backend.checklistworker.sdfactory.tokenAddress }}"
             - name: "CHECKLIST__SDFACTORY__PASSWORD"
-              value: "{{ .Values.backend.checklistworker.sdfactory.password }}"
+              value: "{{ .Values.backend.placeholder }}"
             - name: "CHECKLIST__SDFACTORY__SCOPE"
               value: "{{ .Values.backend.checklistworker.sdfactory.scope }}"
             - name: "CHECKLIST__SDFACTORY__SDFACTORYISSUERBPN"
