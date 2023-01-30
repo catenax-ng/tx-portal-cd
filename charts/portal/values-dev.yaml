@@ -121,11 +121,11 @@ backend:
   keycloak:
     central:
       baseAddress: "https://centralidp.dev.demo.catena-x.net"
-      clientId: "<path:portal/data/dev/keycloak#central-client-id>"
+      clientId: "<path:portal/data/keycloak#central-client-id>"
       clientSecret: "<path:portal/data/dev/keycloak#central-client-secret>"
     shared:
       baseAddress: "<path:portal/data/dev/keycloak#shared-client-id>"
-      clientId: "<path:portal/data/dev/keycloak#shared-client-secret>"
+      clientId: "<path:portal/data/keycloak#shared-client-secret>"
       clientSecret: "https://sharedidp.dev.demo.catena-x.net"
 
   mailing:
