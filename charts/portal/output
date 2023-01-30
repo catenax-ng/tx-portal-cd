@@ -1,0 +1,2176 @@
+---
+# Source: portal/templates/secret-backend-administration.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret-administration
+  namespace: default
+type: Opaque
+data:
+  appsettings.json: Company Admin
+---
+# Source: portal/templates/secret-backend-appmarketplace.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret-appmarketplace
+  namespace: default
+type: Opaque
+data:
+  appsettings.json:
+---
+# Source: portal/templates/secret-backend-checklist-worker.yaml
+###############################################################
+# Copyright (c) 2021,2022,2023 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret-checklist-worker
+  namespace: default
+type: Opaque
+stringData:
+  bpdm-client-id: 
+  bpdm-client-secret: 
+  clearinghouse-client-id: 
+  clearinghouse-client-secret: 
+  custodian-client-id: 
+  custodian-client-secret: 
+  sdfactory-client-id: 
+  sdfactory-client-secret:
+---
+# Source: portal/templates/secret-backend-keycloak.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret-keycloak
+  namespace: default
+type: Opaque
+stringData:
+  central-client-id: 
+  central-client-secret: 
+  shared-client-id: 
+  shared-client-secret:
+---
+# Source: portal/templates/secret-backend-mailing.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret-mailing
+  namespace: default
+type: Opaque
+stringData:
+  host: 
+  port: 
+  user: 
+  password: 
+  provisioning-sharedrealm-host: 
+  provisioning-sharedrealm-port: 
+  provisioning-sharedrealm-user: 
+  provisioning-sharedrealm-password: 
+  provisioning-sharedrealm-from: 
+  provisioning-sharedrealm-replyto:
+---
+# Source: portal/templates/secret-backend-notification.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret-notification
+  namespace: default
+type: Opaque
+data:
+  appsettings.json:
+---
+# Source: portal/templates/secret-backend-portal-maintenance.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret-portal-maintenance
+  namespace: default
+type: Opaque
+data:
+  appsettings.json:
+---
+# Source: portal/templates/secret-backend-portal-migrations.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret-portal-migrations
+  namespace: default
+type: Opaque
+data:
+  appsettings.json:
+---
+# Source: portal/templates/secret-backend-postgres-init.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret-postgres-init
+  namespace: default
+type: Opaque
+stringData:
+  postgres-password: "1dfeer0Fg252FQiHN5Woa6xqUxHyv4tZ"
+  replication-password: "EbdUX6myZUQ16S4iqUICPBw0Wl8k5pcW"
+  portal-password: "sfAmLXRNgPVi4GLqFmq2Tq4uR8VpTkH3"
+  provisioning-password: "Q2CYJDIxUWRyXW850DaUDIjxOOuVCot1"
+---
+# Source: portal/templates/secret-backend-provisioning-migrations.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret-provisioning-migrations
+  namespace: default
+type: Opaque
+data:
+  appsettings.json:
+---
+# Source: portal/templates/secret-backend-provisioning.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret-provisioning
+  namespace: default
+type: Opaque
+data:
+  appsettings.json:
+---
+# Source: portal/templates/secret-backend-registration.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret-registration
+  namespace: default
+type: Opaque
+data:
+  appsettings.json:
+---
+# Source: portal/templates/secret-backend-services.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret-services
+  namespace: default
+type: Opaque
+data:
+  appsettings.json:
+---
+# Source: portal/templates/configmap-backend-postgres-init.yaml
+###############################################################
+# Copyright (c) 2021,2023 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-postgres-init
+  namespace: default
+data:
+  01-init-db-user.sh: |
+    postgresql_create_portal_user() {
+      local -r escaped_password="${PORTAL_PASSWORD//\'/\'\'}"
+      info "Creating user portal"
+      export PGPASSWORD="$POSTGRES_PASSWORD"
+      echo "CREATE USER portal WITH PASSWORD '${escaped_password}';" | psql -U postgres
+    }
+    postgresql_create_portal_user
+    postgresql_create_provisioning_user() {
+      local -r escaped_password="${PROVISIONING_PASSWORD//\'/\'\'}"
+      info "Creating user provisioning"
+      export PGPASSWORD="$POSTGRES_PASSWORD"
+      echo "CREATE USER provisioning WITH PASSWORD '${escaped_password}';" | psql -U postgres
+    }
+    postgresql_create_provisioning_user
+  02-init-db.sql: |
+    CREATE SCHEMA portal;
+    ALTER SCHEMA portal OWNER TO portal;
+    CREATE SCHEMA provisioning;
+    ALTER SCHEMA provisioning OWNER TO provisioning;
+    CREATE TABLE public.__efmigrations_history_portal (
+        migration_id character varying(150) NOT NULL,
+        product_version character varying(32) NOT NULL
+    );
+    ALTER TABLE public.__efmigrations_history_portal OWNER TO portal;
+    CREATE TABLE public.__efmigrations_history_provisioning (
+        migration_id character varying(150) NOT NULL,
+        product_version character varying(32) NOT NULL
+    );
+    ALTER TABLE public.__efmigrations_history_provisioning OWNER TO provisioning;
+---
+# Source: portal/charts/postgresql/templates/primary/svc-headless.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: portal-backend-postgresql-primary-hl
+  namespace: "default"
+  labels:
+    app.kubernetes.io/name: postgresql
+    helm.sh/chart: postgresql-11.9.13
+    app.kubernetes.io/instance: portal
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/component: primary
+    # Use this annotation in addition to the actual publishNotReadyAddresses
+    # field below because the annotation will stop being respected soon but the
+    # field is broken in some versions of Kubernetes:
+    # https://github.com/kubernetes/kubernetes/issues/58662
+    service.alpha.kubernetes.io/tolerate-unready-endpoints: "true"
+spec:
+  type: ClusterIP
+  clusterIP: None
+  # We want all pods in the StatefulSet to have their addresses published for
+  # the sake of the other Postgresql pods even before they're ready, since they
+  # have to be able to talk to each other in order to become ready.
+  publishNotReadyAddresses: true
+  ports:
+    - name: tcp-postgresql
+      port: 5432
+      targetPort: tcp-postgresql
+  selector:
+    app.kubernetes.io/name: postgresql
+    app.kubernetes.io/instance: portal
+    app.kubernetes.io/component: primary
+---
+# Source: portal/charts/postgresql/templates/primary/svc.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: portal-backend-postgresql-primary
+  namespace: "default"
+  labels:
+    app.kubernetes.io/name: postgresql
+    helm.sh/chart: postgresql-11.9.13
+    app.kubernetes.io/instance: portal
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/component: primary
+  annotations:
+spec:
+  type: ClusterIP
+  sessionAffinity: None
+  ports:
+    - name: tcp-postgresql
+      port: 5432
+      targetPort: tcp-postgresql
+      nodePort: null
+  selector:
+    app.kubernetes.io/name: postgresql
+    app.kubernetes.io/instance: portal
+    app.kubernetes.io/component: primary
+---
+# Source: portal/charts/postgresql/templates/read/svc-headless.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: portal-backend-postgresql-read-hl
+  namespace: "default"
+  labels:
+    app.kubernetes.io/name: postgresql
+    helm.sh/chart: postgresql-11.9.13
+    app.kubernetes.io/instance: portal
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/component: read
+    # Use this annotation in addition to the actual publishNotReadyAddresses
+    # field below because the annotation will stop being respected soon but the
+    # field is broken in some versions of Kubernetes:
+    # https://github.com/kubernetes/kubernetes/issues/58662
+    service.alpha.kubernetes.io/tolerate-unready-endpoints: "true"
+spec:
+  type: ClusterIP
+  clusterIP: None
+  # We want all pods in the StatefulSet to have their addresses published for
+  # the sake of the other Postgresql pods even before they're ready, since they
+  # have to be able to talk to each other in order to become ready.
+  publishNotReadyAddresses: true
+  ports:
+    - name: tcp-postgresql
+      port: 5432
+      targetPort: tcp-postgresql
+  selector:
+    app.kubernetes.io/name: postgresql
+    app.kubernetes.io/instance: portal
+    app.kubernetes.io/component: read
+---
+# Source: portal/charts/postgresql/templates/read/svc.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: portal-backend-postgresql-read
+  namespace: "default"
+  labels:
+    app.kubernetes.io/name: postgresql
+    helm.sh/chart: postgresql-11.9.13
+    app.kubernetes.io/instance: portal
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/component: read
+  annotations:
+spec:
+  type: ClusterIP
+  sessionAffinity: None
+  ports:
+    - name: tcp-postgresql
+      port: 5432
+      targetPort: tcp-postgresql
+      nodePort: null
+  selector:
+    app.kubernetes.io/name: postgresql
+    app.kubernetes.io/instance: portal
+    app.kubernetes.io/component: read
+---
+# Source: portal/templates/service-backend-administration.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: administration-service
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app: administration-service
+---
+# Source: portal/templates/service-backend-appmarketplace.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: marketplace-app-service
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app: marketplace-app-service
+---
+# Source: portal/templates/service-backend-notification.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: notification-service
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app: notification-service
+---
+# Source: portal/templates/service-backend-provisioning.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: provisioning-service
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app: provisioning-service
+---
+# Source: portal/templates/service-backend-registration.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: registration-service
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app: registration-service
+---
+# Source: portal/templates/service-backend-services.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: services-service
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app: services-service
+---
+# Source: portal/templates/service-frontend-assets.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: assets
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app: assets
+---
+# Source: portal/templates/service-frontend-portal.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: portal
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app: portal
+---
+# Source: portal/templates/service-frontend-registration.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: registration
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app: registration
+---
+# Source: portal/templates/deployment-backend-administration.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: administration-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: administration-service
+  template:
+    metadata:
+      labels:
+        app: administration-service
+    spec:
+      containers:
+      - name: administration-service
+        securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+              - ALL
+            runAsNonRoot: true
+        image: "ghcr.io/catenax-ng/tx-portal-backend_administration-service:v1.0.0-RC4"
+        imagePullPolicy: "Always"
+        ports:
+        - containerPort: 8080
+        env:
+        - name: "ASPNETCORE_ENVIRONMENT"
+          value: "Kubernetes"
+        volumeMounts:
+        - name: secrets
+          mountPath: /app/secrets
+          readOnly: true
+      volumes:
+      - name: secrets
+        secret:
+          secretName: secret-administration
+---
+# Source: portal/templates/deployment-backend-appmarketplace.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: marketplace-app-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: marketplace-app-service
+  template:
+    metadata:
+      labels:
+        app: marketplace-app-service
+    spec:
+      containers:
+      - name: marketplace-app-service
+        securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+              - ALL
+            runAsNonRoot: true
+        image: "ghcr.io/catenax-ng/tx-portal-backend_marketplace-app-service:v1.0.0-RC4"
+        imagePullPolicy: "Always"
+        ports:
+        - containerPort: 8080
+        env:
+        - name: "ASPNETCORE_ENVIRONMENT"
+          value: "Kubernetes"
+        volumeMounts:
+        - name: secrets
+          mountPath: /app/secrets
+          readOnly: true
+      volumes:
+      - name: secrets
+        secret:
+          secretName: secret-appmarketplace
+---
+# Source: portal/templates/deployment-backend-notification.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notification-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notification-service
+  template:
+    metadata:
+      labels:
+        app: notification-service
+    spec:
+      containers:
+      - name: notification-service
+        securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+              - ALL
+            runAsNonRoot: true
+        image: "ghcr.io/catenax-ng/tx-portal-backend_notification-service:v1.0.0-RC4"
+        imagePullPolicy: "Always"
+        ports:
+        - containerPort: 8080
+        env:
+        - name: "ASPNETCORE_ENVIRONMENT"
+          value: "Kubernetes"
+        volumeMounts:
+        - name: secrets
+          mountPath: /app/secrets
+          readOnly: true
+      volumes:
+      - name: secrets
+        secret:
+          secretName: secret-notification
+---
+# Source: portal/templates/deployment-backend-provisioning.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: provisioning-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: provisioning-service
+  template:
+    metadata:
+      labels:
+        app: provisioning-service
+    spec:
+      containers:
+      - name: provisioning-service
+        securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+              - ALL
+            runAsNonRoot: true
+        image: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-service:v1.0.0-RC4"
+        imagePullPolicy: "Always"
+        ports:
+        - containerPort: 8080
+        env:
+        - name: "ASPNETCORE_ENVIRONMENT"
+          value: "Kubernetes"
+        volumeMounts:
+        - name: secrets
+          mountPath: /app/secrets
+          readOnly: true
+      volumes:
+      - name: secrets
+        secret:
+          secretName: secret-provisioning
+---
+# Source: portal/templates/deployment-backend-registration.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: registration-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: registration-service
+  template:
+    metadata:
+      labels:
+        app: registration-service
+    spec:
+      containers:
+      - name: registration-service
+        securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+              - ALL
+            runAsNonRoot: true
+        image: "ghcr.io/catenax-ng/tx-portal-backend_registration-service:v1.0.0-RC4"
+        imagePullPolicy: "Always"
+        ports:
+        - containerPort: 8080
+        env:
+        - name: "ASPNETCORE_ENVIRONMENT"
+          value: "Kubernetes"
+        volumeMounts:
+        - name: secrets
+          mountPath: /app/secrets
+          readOnly: true
+      volumes:
+      - name: secrets
+        secret:
+          secretName: secret-registration
+---
+# Source: portal/templates/deployment-backend-services.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: services-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: services-service
+  template:
+    metadata:
+      labels:
+        app: services-service
+    spec:
+      containers:
+      - name: services-service
+        securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+              - ALL
+            runAsNonRoot: true
+        image: "ghcr.io/catenax-ng/tx-portal-backend_services-service:v1.0.0-RC4"
+        imagePullPolicy: "Always"
+        ports:
+        - containerPort: 8080
+        env:
+        - name: "ASPNETCORE_ENVIRONMENT"
+          value: "Kubernetes"
+        volumeMounts:
+        - name: secrets
+          mountPath: /app/secrets
+          readOnly: true
+      volumes:
+      - name: secrets
+        secret:
+          secretName: secret-services
+---
+# Source: portal/templates/deployment-frontend-assets.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: assets
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: assets
+  template:
+    metadata:
+      labels:
+        app: assets
+    spec:
+      containers:
+      - name: assets
+        securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+              - ALL
+            runAsNonRoot: true
+        image: ghcr.io/catenax-ng/tx-portal-assets:1.0.0-RC2
+        imagePullPolicy: "Always"
+        ports:
+        - containerPort: 8080
+---
+# Source: portal/templates/deployment-frontend-portal.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portal
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: portal
+  template:
+    metadata:
+      labels:
+        app: portal
+    spec:
+      containers:
+      - name: portal
+        securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+              - ALL
+            runAsNonRoot: true
+        image: ghcr.io/catenax-ng/tx-portal-frontend:1.0.0-RC4
+        imagePullPolicy: "Always"
+        env:
+          - name: PORTAL_ASSETS_URL
+            value: ""
+          - name: PORTAL_BACKEND_URL
+            value: ""
+          - name: CENTRALIDP_URL
+            value: ""
+          - name: BPDM_API_URL
+            value: ""
+          - name: SEMANTICS_URL
+            value: ""
+        ports:
+        - containerPort: 8080
+---
+# Source: portal/templates/deployment-frontend-registration.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: registration
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: registration
+  template:
+    metadata:
+      labels:
+        app: registration
+    spec:
+      containers:
+      - name: registration
+        securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+              - ALL
+            runAsNonRoot: true
+        image: ghcr.io/catenax-ng/tx-portal-frontend-registration:1.0.0-RC2
+        imagePullPolicy: "Always"
+        env:
+          - name: PORTAL_ASSETS_URL
+            value: ""
+          - name: PORTAL_BACKEND_URL
+            value: ""
+          - name: CENTRALIDP_URL
+            value: ""
+        ports:
+        - containerPort: 8080
+---
+# Source: portal/charts/postgresql/templates/primary/statefulset.yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: portal-backend-postgresql-primary
+  namespace: "default"
+  labels:
+    app.kubernetes.io/name: postgresql
+    helm.sh/chart: postgresql-11.9.13
+    app.kubernetes.io/instance: portal
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/component: primary
+  annotations:
+spec:
+  replicas: 1
+  serviceName: portal-backend-postgresql-primary-hl
+  updateStrategy:
+    rollingUpdate: {}
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: postgresql
+      app.kubernetes.io/instance: portal
+      app.kubernetes.io/component: primary
+  template:
+    metadata:
+      name: portal-backend-postgresql-primary
+      labels:
+        app.kubernetes.io/name: postgresql
+        helm.sh/chart: postgresql-11.9.13
+        app.kubernetes.io/instance: portal
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/component: primary
+      annotations:
+    spec:
+      serviceAccountName: default
+      
+      affinity:
+        podAffinity:
+          
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                labelSelector:
+                  matchLabels:
+                    app.kubernetes.io/name: postgresql
+                    app.kubernetes.io/instance: portal
+                    app.kubernetes.io/component: primary
+                namespaces:
+                  - "default"
+                topologyKey: kubernetes.io/hostname
+              weight: 1
+        nodeAffinity:
+          
+      securityContext:
+        fsGroup: 1001
+      hostNetwork: false
+      hostIPC: false
+      initContainers:
+      containers:
+        - name: postgresql
+          image: docker.io/bitnami/postgresql:14.5.0-debian-11-r35
+          imagePullPolicy: "IfNotPresent"
+          securityContext:
+            runAsUser: 1001
+          env:
+            - name: BITNAMI_DEBUG
+              value: "false"
+            - name: POSTGRESQL_PORT_NUMBER
+              value: "5432"
+            - name: POSTGRESQL_VOLUME_DIR
+              value: "/bitnami/postgresql"
+            - name: PGDATA
+              value: "/bitnami/postgresql/data"
+            # Authentication
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: secret-postgres-init
+                  key: postgres-password
+            - name: POSTGRES_DB
+              value: "postgres"
+            # Replication
+            - name: POSTGRES_REPLICATION_MODE
+              value: "master"
+            - name: POSTGRES_REPLICATION_USER
+              value: "repl_user"
+            - name: POSTGRES_REPLICATION_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: secret-postgres-init
+                  key: replication-password
+            - name: POSTGRES_CLUSTER_APP_NAME
+              value: my_application
+            # Initdb
+            # Standby
+            # LDAP
+            - name: POSTGRESQL_ENABLE_LDAP
+              value: "no"
+            # TLS
+            - name: POSTGRESQL_ENABLE_TLS
+              value: "no"
+            # Audit
+            - name: POSTGRESQL_LOG_HOSTNAME
+              value: "false"
+            - name: POSTGRESQL_LOG_CONNECTIONS
+              value: "false"
+            - name: POSTGRESQL_LOG_DISCONNECTIONS
+              value: "false"
+            - name: POSTGRESQL_LOG_LINE_PREFIX
+              value: "%m %u %d "
+            - name: POSTGRESQL_PGAUDIT_LOG
+              value: "write, ddl"
+            - name: POSTGRESQL_PGAUDIT_LOG_CATALOG
+              value: "off"
+            # Others
+            - name: POSTGRESQL_CLIENT_MIN_MESSAGES
+              value: "error"
+            - name: POSTGRESQL_SHARED_PRELOAD_LIBRARIES
+              value: "pgaudit"
+            - name: PORTAL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: portal-password
+                  name: secret-postgres-init
+            - name: PROVISIONING_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: provisioning-password
+                  name: secret-postgres-init
+          ports:
+            - name: tcp-postgresql
+              containerPort: 5432
+          livenessProbe:
+            failureThreshold: 6
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 5
+            exec:
+              command:
+                - /bin/sh
+                - -c
+                - exec pg_isready -U "postgres" -d "dbname=postgres" -h 127.0.0.1 -p 5432
+          readinessProbe:
+            failureThreshold: 6
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 5
+            exec:
+              command:
+                - /bin/sh
+                - -c
+                - -e
+                
+                - |
+                  exec pg_isready -U "postgres" -d "dbname=postgres" -h 127.0.0.1 -p 5432
+                  [ -f /opt/bitnami/postgresql/tmp/.initialized ] || [ -f /bitnami/postgresql/.initialized ]
+          resources:
+            limits: {}
+            requests:
+              cpu: 250m
+              memory: 256Mi
+          volumeMounts:
+            - name: custom-init-scripts
+              mountPath: /docker-entrypoint-initdb.d/
+            - name: dshm
+              mountPath: /dev/shm
+            - name: data
+              mountPath: /bitnami/postgresql
+      volumes:
+        - name: custom-init-scripts
+          configMap:
+            name: configmap-postgres-init
+        - name: dshm
+          emptyDir:
+            medium: Memory
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes:
+          - "ReadWriteOnce"
+        resources:
+          requests:
+            storage: "8Gi"
+---
+# Source: portal/charts/postgresql/templates/read/statefulset.yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: portal-backend-postgresql-read
+  namespace: "default"
+  labels:
+    app.kubernetes.io/name: postgresql
+    helm.sh/chart: postgresql-11.9.13
+    app.kubernetes.io/instance: portal
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/component: read
+  annotations:
+spec:
+  replicas: 1
+  serviceName: portal-backend-postgresql-read-hl
+  updateStrategy:
+    rollingUpdate: {}
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: postgresql
+      app.kubernetes.io/instance: portal
+      app.kubernetes.io/component: read
+  template:
+    metadata:
+      name: portal-backend-postgresql-read
+      labels:
+        app.kubernetes.io/name: postgresql
+        helm.sh/chart: postgresql-11.9.13
+        app.kubernetes.io/instance: portal
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/component: read
+      annotations:
+    spec:
+      serviceAccountName: default
+      
+      affinity:
+        podAffinity:
+          
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                labelSelector:
+                  matchLabels:
+                    app.kubernetes.io/name: postgresql
+                    app.kubernetes.io/instance: portal
+                    app.kubernetes.io/component: read
+                namespaces:
+                  - "default"
+                topologyKey: kubernetes.io/hostname
+              weight: 1
+        nodeAffinity:
+          
+      securityContext:
+        fsGroup: 1001
+      hostNetwork: false
+      hostIPC: false
+      initContainers:
+      containers:
+        - name: postgresql
+          image: docker.io/bitnami/postgresql:14.5.0-debian-11-r35
+          imagePullPolicy: "IfNotPresent"
+          securityContext:
+            runAsUser: 1001
+          env:
+            - name: BITNAMI_DEBUG
+              value: "false"
+            - name: POSTGRESQL_PORT_NUMBER
+              value: "5432"
+            - name: POSTGRESQL_VOLUME_DIR
+              value: "/bitnami/postgresql"
+            - name: PGDATA
+              value: "/bitnami/postgresql/data"
+            # Authentication
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: secret-postgres-init
+                  key: postgres-password
+            # Replication
+            - name: POSTGRES_REPLICATION_MODE
+              value: "slave"
+            - name: POSTGRES_REPLICATION_USER
+              value: "repl_user"
+            - name: POSTGRES_REPLICATION_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: secret-postgres-init
+                  key: replication-password
+            - name: POSTGRES_CLUSTER_APP_NAME
+              value: my_application
+            - name: POSTGRES_MASTER_HOST
+              value: portal-backend-postgresql-primary
+            - name: POSTGRES_MASTER_PORT_NUMBER
+              value: "5432"
+            # TLS
+            - name: POSTGRESQL_ENABLE_TLS
+              value: "no"
+            # Audit
+            - name: POSTGRESQL_LOG_HOSTNAME
+              value: "false"
+            - name: POSTGRESQL_LOG_CONNECTIONS
+              value: "false"
+            - name: POSTGRESQL_LOG_DISCONNECTIONS
+              value: "false"
+            - name: POSTGRESQL_LOG_LINE_PREFIX
+              value: "%m %u %d "
+            - name: POSTGRESQL_PGAUDIT_LOG
+              value: "write, ddl"
+            - name: POSTGRESQL_PGAUDIT_LOG_CATALOG
+              value: "off"
+            # Others
+            - name: POSTGRESQL_CLIENT_MIN_MESSAGES
+              value: "error"
+            - name: POSTGRESQL_SHARED_PRELOAD_LIBRARIES
+              value: "pgaudit"
+          ports:
+            - name: tcp-postgresql
+              containerPort: 5432
+          livenessProbe:
+            failureThreshold: 6
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 5
+            exec:
+              command:
+                - /bin/sh
+                - -c
+                - exec pg_isready -U "postgres" -d "dbname=postgres" -h 127.0.0.1 -p 5432
+          readinessProbe:
+            failureThreshold: 6
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 5
+            exec:
+              command:
+                - /bin/sh
+                - -c
+                - -e
+                
+                - |
+                  exec pg_isready -U "postgres" -d "dbname=postgres" -h 127.0.0.1 -p 5432
+                  [ -f /opt/bitnami/postgresql/tmp/.initialized ] || [ -f /bitnami/postgresql/.initialized ]
+          resources:
+            limits: {}
+            requests:
+              cpu: 250m
+              memory: 256Mi
+          volumeMounts:
+            - name: dshm
+              mountPath: /dev/shm
+            - name: data
+              mountPath: /bitnami/postgresql
+      volumes:
+        - name: dshm
+          emptyDir:
+            medium: Memory
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes:
+          - "ReadWriteOnce"
+        resources:
+          requests:
+            storage: "8Gi"
+---
+# Source: portal/templates/cronjob-backend-checklist.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: checklist-worker
+spec:
+  schedule: "0 * * * *"
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: checklist-worker
+            securityContext:
+                allowPrivilegeEscalation: false
+                capabilities:
+                  drop:
+                  - ALL
+                runAsNonRoot: true
+            image: "ghcr.io/catenax-ng/tx-portal-backend_checklist-worker:v1.0.0-RC4"
+            imagePullPolicy: "Always"
+            ports:
+            - containerPort: 8080
+            env:
+            - name: "DOTNET_ENVIRONMENT"
+              value: "Kubernetes"
+            - name: "PORTAL_PASSWORD"
+              valueFrom:
+                secretKeyRef:
+                  name: "secret-postgres-init"
+                  key: "portal-password"
+            - name: "PROVISIONING_PASSWORD"
+              valueFrom:
+                secretKeyRef:
+                  name: "secret-postgres-init"
+                  key: "provisioning-password"
+            - name: "APPLICATIONACTIVATION__APPLICATIONAPPROVALINITIALROLES__CL2-CX-PORTAL__0"
+              value: "Company Admin"
+            - name: "APPLICATIONACTIVATION__BASEPORTALADDRESS"
+              value: ""
+            - name: "APPLICATIONACTIVATION__COMPANYADMINROLES__CL1-CX-REGISTRATION__0"
+              value: "Company Admin"
+            - name: "APPLICATIONACTIVATION__WELCOMENOTIFICATIONTYPEIDS__0"
+              value: "WELCOME"
+            - name: "APPLICATIONACTIVATION__WELCOMENOTIFICATIONTYPEIDS__1"
+              value: "WELCOME_USE_CASES"
+            - name: "APPLICATIONACTIVATION__WELCOMENOTIFICATIONTYPEIDS__2"
+              value: "WELCOME_SERVICE_PROVIDER"
+            - name: "APPLICATIONACTIVATION__WELCOMENOTIFICATIONTYPEIDS__3"
+              value: "WELCOME_CONNECTOR_REGISTRATION"
+            - name: "APPLICATIONACTIVATION__WELCOMENOTIFICATIONTYPEIDS__4"
+              value: "WELCOME_APP_MARKETPLACE"
+            - name: "CHECKLIST__BPDM__BASEADDRESS"
+              value: ""
+            - name: "CHECKLIST__BPDM__CLIENTID"
+              valueFrom:
+                secretKeyRef:
+                  name: "secret-checklist-worker"
+                  key: "bpdm-client-id"
+            - name: "CHECKLIST__BPDM__CLIENTSECRET"
+              valueFrom:
+                secretKeyRef:
+                  name: "secret-checklist-worker"
+                  key: "bpdm-client-secret"
+            - name: "CHECKLIST__BPDM__GRANTTYPE"
+              value: "client_credentials"
+            - name: "CHECKLIST__BPDM__KEYCLOAKTOKENADDRESS"
+              value: ""
+            - name: "CHECKLIST__BPDM__PASSWORD"
+              value: "empty"
+            - name: "CHECKLIST__BPDM__SCOPE"
+              value: "openid"
+            - name: "CHECKLIST__BPDM__USERNAME"
+              value: "empty"
+            - name: "CHECKLIST__CLEARINGHOUSE__BASEADDRESS"
+              value: ""
+            - name: "CHECKLIST__CLEARINGHOUSE__CLIENTID"
+              valueFrom:
+                secretKeyRef:
+                  name: "secret-checklist-worker"
+                  key: "clearinghouse-client-id"
+            - name: "CHECKLIST__CLEARINGHOUSE__CLIENTSECRET"
+              valueFrom:
+                secretKeyRef:
+                  name: "secret-checklist-worker"
+                  key: "clearinghouse-client-secret"
+            - name: "CHECKLIST__CLEARINGHOUSE__GRANTTYPE"
+              value: "client_credentials"
+            - name: "CHECKLIST__CLEARINGHOUSE__KEYCLOAKTOKENADDRESS"
+              value: ""
+            - name: "CHECKLIST__CLEARINGHOUSE__PASSWORD"
+              value: "empty"
+            - name: "CHECKLIST__CLEARINGHOUSE__SCOPE"
+              value: "openid"
+            - name: "CHECKLIST__CLEARINGHOUSE__USERNAME"
+              value: "empty"
+            - name: "CHECKLIST__CUSTODIAN__BASEADDRESS"
+              value: ""
+            - name: "CHECKLIST__CUSTODIAN__CLIENTID"
+              valueFrom:
+                secretKeyRef:
+                  name: "secret-checklist-worker"
+                  key: "custodian-client-id"
+            - name: "CHECKLIST__CUSTODIAN__CLIENTSECRET"
+              valueFrom:
+                secretKeyRef:
+                  name: "secret-checklist-worker"
+                  key: "custodian-client-secret"
+            - name: "CHECKLIST__CUSTODIAN__GRANTTYPE"
+              value: "client_credentials"
+            - name: "CHECKLIST__CUSTODIAN__KEYCLOAKTOKENADDRESS"
+              value: ""
+            - name: "CHECKLIST__CUSTODIAN__PASSWORD"
+              value: "empty"
+            - name: "CHECKLIST__CUSTODIAN__SCOPE"
+              value: "openid"
+            - name: "CHECKLIST__CUSTODIAN__USERNAME"
+              value: "empty"
+            - name: "CHECKLIST__SDFACTORY__CLIENTID"
+              valueFrom:
+                secretKeyRef:
+                  name: "secret-checklist-worker"
+                  key: "sdfactory-client-id"
+            - name: "CHECKLIST__SDFACTORY__CLIENTSECRET"
+              valueFrom:
+                secretKeyRef:
+                  name: "secret-checklist-worker"
+                  key: "sdfactory-client-secret"
+            - name: "CHECKLIST__SDFACTORY__GRANTTYPE"
+              value: "client_credentials"
+            - name: "CHECKLIST__SDFACTORY__KEYCLOAKTOKENADDRESS"
+              value: ""
+            - name: "CHECKLIST__SDFACTORY__PASSWORD"
+              value: ""
+            - name: "CHECKLIST__SDFACTORY__SCOPE"
+              value: "openid"
+            - name: "CHECKLIST__SDFACTORY__SDFACTORYISSUERBPN"
+              value: ""
+            - name: "CHECKLIST__SDFACTORY__SDFACTORYURL"
+              value: ""
+            - name: "CHECKLIST__SDFACTORY__USERNAME"
+              value: "empty"
+            - name: "CONNECTIONSTRINGS__PORTALDB"
+              value: "Server=portal-backend-postgresql-primary;Database=postgres;Port=5432;User Id=portal;Password=$(PORTAL_PASSWORD);Ssl Mode=Disable;"
+            - name: "CONNECTIONSTRINGS__PROVISIONINGDB"
+              value: "Server=portal-backend-postgresql-primary;Database=postgres;Port=5432;User Id=provisioning;Password=$(PROVISIONING_PASSWORD);Ssl Mode=Disable;"
+            - name: "KEYCLOAK__CENTRAL__AUTHREALM"
+              value: "CX-Central"
+            - name: "KEYCLOAK__CENTRAL__CLIENTID"
+              valueFrom:
+                secretKeyRef:
+                  name: "secret-keycloak"
+                  key: "central-client-id"
+            - name: "KEYCLOAK__CENTRAL__CLIENTSECRET"
+              valueFrom:
+                secretKeyRef:
+                  name: "secret-keycloak"
+                  key: "central-client-secret"
+            - name: "KEYCLOAK__CENTRAL__CONNECTIONSTRING"
+              value: ""
+            - name: "KEYCLOAK__SHARED__AUTHREALM"
+              value: "master"
+            - name: "KEYCLOAK__SHARED__CLIENTID"
+              valueFrom:
+                secretKeyRef:
+                  name: "secret-keycloak"
+                  key: "shared-client-id"
+            - name: "KEYCLOAK__SHARED__CLIENTSECRET"
+              valueFrom:
+                secretKeyRef:
+                  name: "secret-keycloak"
+                  key: "shared-client-secret"
+            - name: "KEYCLOAK__SHARED__CONNECTIONSTRING"
+              value: ""
+            - name: "LOGGING__LOGLEVEL__ORG.CATENAX.NG.PORTAL.BACKEND.ADMINISTRATION.SERVICE.BUSINESSLOGIC"
+              value: "Debug"
+            - name: "LOGGING__LOGLEVEL__ORG.ECLIPSE.TRACTUSX.PORTAL.BACKEND.BPDM.LIBRARY"
+              value: "Debug"
+            - name: "LOGGING__LOGLEVEL__ORG.ECLIPSE.TRACTUSX.PORTAL.BACKEND.CUSTODIAN.LIBRARY"
+              value: "Debug"
+            - name: "MAILINGSERVICE__MAIL__SMTPHOST"
+              valueFrom:
+                secretKeyRef:
+                  name: "secret-mailing"
+                  key: "host"
+            - name: "MAILINGSERVICE__MAIL__SMTPPASSWORD"
+              valueFrom:
+                secretKeyRef:
+                  name: "secret-mailing"
+                  key: "password"
+            - name: "MAILINGSERVICE__MAIL__SMTPPORT"
+              valueFrom:
+                secretKeyRef:
+                  name: "secret-mailing"
+                  key: "port"
+            - name: "MAILINGSERVICE__MAIL__SMTPUSER"
+              valueFrom:
+                secretKeyRef:
+                  name: "secret-mailing"
+                  key: "user"
+            - name: "PROVISIONING__CENTRALIDENTITYPROVIDER__CONFIG__CLIENTID"
+              value: "central-idp"
+            - name: "PROVISIONING__CENTRALREALM"
+              value: "CX-Central"
+            - name: "PROVISIONING__CENTRALREALMID"
+              value: "CX-Central"
+            - name: "PROVISIONING__INVITEDUSERINITIALROLES__CL1-CX-REGISTRATION__0"
+              value: "Company Admin"
+            - name: "PROVISIONING__SHAREDREALM__SMTPSERVER__AUTH"
+              value: "true"
+            - name: "PROVISIONING__SHAREDREALM__SMTPSERVER__FROM"
+              valueFrom:
+                secretKeyRef:
+                  name: "secret-mailing"
+                  key: "provisioning-sharedrealm-from"
+            - name: "PROVISIONING__SHAREDREALM__SMTPSERVER__HOST"
+              valueFrom:
+                secretKeyRef:
+                  name: "secret-mailing"
+                  key: "provisioning-sharedrealm-host"
+            - name: "PROVISIONING__SHAREDREALM__SMTPSERVER__PASSWORD"
+              valueFrom:
+                secretKeyRef:
+                  name: "secret-mailing"
+                  key: "provisioning-sharedrealm-password"
+            - name: "PROVISIONING__SHAREDREALM__SMTPSERVER__PORT"
+              valueFrom:
+                secretKeyRef:
+                  name: "secret-mailing"
+                  key: "provisioning-sharedrealm-port"
+            - name: "PROVISIONING__SHAREDREALM__SMTPSERVER__REPLYTO"
+              valueFrom:
+                secretKeyRef:
+                  name: "secret-mailing"
+                  key: "provisioning-sharedrealm-replyto"
+            - name: "PROVISIONING__SHAREDREALM__SMTPSERVER__STARTTLS"
+              value: "true"
+            - name: "PROVISIONING__SHAREDREALM__SMTPSERVER__USER"
+              valueFrom:
+                secretKeyRef:
+                  name: "secret-mailing"
+                  key: "provisioning-sharedrealm-user"
+            - name: "PROVISIONING__SHAREDREALMCLIENT__CLIENTID"
+              value: "central-idp"
+---
+# Source: portal/templates/cronjob-backend-portal-maintenance.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: portal-maintenance
+spec:
+  schedule: "0 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: portal-maintenance
+            securityContext:
+                allowPrivilegeEscalation: false
+                capabilities:
+                  drop:
+                  - ALL
+                runAsNonRoot: true
+            image: "ghcr.io/catenax-ng/tx-portal-backend_maintenance-service:v1.0.0-RC4"
+            imagePullPolicy: "Always"
+            ports:
+            - containerPort: 8080
+            env:
+            - name: "DOTNET_ENVIRONMENT"
+              value: "Kubernetes"
+            volumeMounts:
+            - name: secrets
+              mountPath: /app/secrets
+              readOnly: true
+          volumes:
+          - name: secrets
+            secret:
+              secretName: secret-portal-maintenance
+---
+# Source: portal/templates/job-backend-portal-migrations.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: portal-migrations
+  annotations:
+    "batch.kubernetes.io/job-tracking": "true"
+    "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook-weight": "-5"
+spec:
+  template:
+    metadata:
+      name: portal-migrations
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: portal-migrations
+        securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+              - ALL
+            runAsNonRoot: true
+        image: "ghcr.io/catenax-ng/tx-portal-backend_portal-migrations:v1.0.0-RC4"
+        imagePullPolicy: "Always"
+        env:
+          - name: "PORTAL_PASSWORD"
+            valueFrom:
+              secretKeyRef:
+                name: "secret-postgres-init"
+                key: "portal-password"
+          - name: "CONNECTIONSTRINGS__PORTALDB"
+            value: "Server=portal-backend-postgresql-primary;Database=postgres;Port=5432;User Id=portal;Password=$(PORTAL_PASSWORD);Ssl Mode=Disable;"
+          - name: "SEEDING__TESTDATAENVIRONMENTS__0"
+            value: ""
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: secrets
+          mountPath: /migrations/secrets
+          readOnly: true
+      volumes:
+      - name: secrets
+        secret:
+          secretName: secret-portal-migrations
+---
+# Source: portal/templates/job-backend-provisioning-migrations.yaml
+###############################################################
+# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+###############################################################
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: provisioning-migrations
+  annotations:
+    batch.kubernetes.io/job-tracking: "true"
+    "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook-weight": "-5"
+spec:
+  template:
+    metadata:
+      name: provisioning-migrations
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: provisioning-migrations
+        securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+              - ALL
+            runAsNonRoot: true
+        image: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-migrations:v1.0.0-RC4"
+        imagePullPolicy: "Always"
+        env:
+          - name: "PROVISIONING_PASSWORD"
+            valueFrom:
+              secretKeyRef:
+                name: "secret-postgres-init"
+                key: "provisioning-password"
+          - name: "CONNECTIONSTRINGS__PROVISIONINGDB"
+            value: "Server=portal-backend-postgresql-primary;Database=postgres;Port=5432;User Id=provisioning;Password=$(PROVISIONING_PASSWORD);Ssl Mode=Disable;"
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: secrets
+          mountPath: /migrations/secrets
+          readOnly: true
+      volumes:
+      - name: secrets
+        secret:
+          secretName: secret-provisioning-migrations
