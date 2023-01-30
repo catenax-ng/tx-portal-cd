@@ -175,8 +175,7 @@ backend:
   checklistworker:
     image:
       checklistworkertag: a82045740b75f9d07ba7b81492a18af48180b108
-    secret:
-      appsettings: "<path:portal/data/dev/checklist-worker#appsettings.json>"
+    secret: "secret-checklist-worker-env"
     bpdm:
       baseAddress: "https://portal-gate.dev.demo.catena-x.net/"
       tokenAddress: "https://centralidp.dev.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"

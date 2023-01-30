@@ -138,10 +138,7 @@ backend:
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_checklist-worker"
       checklistworkertag: v1.0.0-RC4
-    secret:
-      name: "secret-checklist-worker"
-      appsettings: ""
-      env: "secret-checklist-worker-env"
+    secret: "secret-checklist-worker"
     logging:
       checklistLibrary: "Debug"
       bpdmLibrary: "Debug"
