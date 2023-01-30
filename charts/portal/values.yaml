@@ -46,11 +46,11 @@ frontend:
       name: "ghcr.io/catenax-ng/tx-portal-assets"
       assetstag: 1.0.0-RC2
   env:
-    PORTAL_ASSETS_URL: "https://portal.dummy/assets"
-    PORTAL_BACKEND_URL: "https://portal-backend.dummy"
-    CENTRALIDP_URL: "https://centralidp.dummy/auth"
-    BPDM_API_URL: "https://partners-pool.dummy"
-    SEMANTICS_URL: "https://semantics.dummy"
+    PORTAL_ASSETS_URL: ""
+    PORTAL_BACKEND_URL: ""
+    CENTRALIDP_URL: ""
+    BPDM_API_URL: ""
+    SEMANTICS_URL: ""
 
 backend:
   ingress:
@@ -148,8 +148,8 @@ backend:
         portal:
           role: "Company Admin"
     bpdm:
-      baseAddress: "https://portal-gate.dummy"
-      tokenAddress: "https://centralidp.dummy/auth/realms/CX-Central/protocol/openid-connect/token"
+      baseAddress: ""
+      tokenAddress: ""
       scope: "openid"
       grantType: "client_credentials"
       clientId: ""
@@ -158,7 +158,7 @@ backend:
       password: ""
     clearinghouse:
       baseAddress: ""
-      tokenAddress: "https://centralidp.dummy/auth/realms/CX-Central/protocol/openid-connect/token"
+      tokenAddress: ""
       scope: "openid"
       grantType: "client_credentials"
       clientId: ""
@@ -166,8 +166,8 @@ backend:
       username: ""
       password: ""
     custodian:
-      baseAddress: "https://managed-identity-wallets.dummy"
-      tokenAddress: "https://centralidp.dummy/auth/realms/CX-Central/protocol/openid-connect/token"
+      baseAddress: ""
+      tokenAddress: ""
       scope: "openid"
       grantType: "client_credentials"
       clientId: ""
@@ -176,7 +176,7 @@ backend:
       password: ""
     sdfactory:
       baseAddress: ""
-      tokenAddress: "https://centralidp.dummy/auth/realms/CX-Central/protocol/openid-connect/token"
+      tokenAddress: ""
       scope: "openid"
       grantType: "client_credentials"
       issuerBpn: ""
