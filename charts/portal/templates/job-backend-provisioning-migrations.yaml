@@ -38,8 +38,13 @@ spec:
         image: "{{ .Values.backend.provisioningmigrations.image.name }}:{{ .Values.backend.provisioningmigrations.image.provisioningmigrationstag | default .Chart.AppVersion }}"
         imagePullPolicy: "Always"
         env:
+          - name: "PROVISIONING_PASSWORD"
+            valueFrom:
+              secretKeyRef:
+                name: "secret-postgres-init"
+                key: "provisioning-password"
           - name: "CONNECTIONSTRINGS__PROVISIONINGDB"
-            value: "Server={{ .Values.postgresql.fullnameOverride }}-primary;Database={{ .Values.postgresql.auth.database }};Port={{ .Values.backend.dbConnection.port }};User Id={{ .Values.postgresql.auth.provisioningUser }};Password={{ .Values.postgresql.secret.provisioningPassword }};Ssl Mode={{ .Values.backend.dbConnection.sslMode }};"
+            value: "Server={{ .Values.postgresql.fullnameOverride }}-primary;Database={{ .Values.postgresql.auth.database }};Port={{ .Values.backend.dbConnection.port }};User Id={{ .Values.postgresql.auth.provisioningUser }};Password=$PROVISIONING_PASSWORD;Ssl Mode={{ .Values.backend.dbConnection.sslMode }};"
         ports:
         - containerPort: {{ .Values.portContainer }}
         volumeMounts:
