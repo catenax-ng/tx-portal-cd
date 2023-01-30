@@ -126,7 +126,7 @@ backend:
     shared:
       baseAddress: "https://sharedidp.dev.demo.catena-x.net"
       clientId: "<path:portal/data/dev/keycloak#shared-client-id>"
-      clientSecret: "<path:portal/data/keycloak#shared-client-secret>"
+      clientSecret: "<path:portal/data/dev/keycloak#shared-client-secret>"
 
   mailing:
     host: "<path:portal/data/mailing#host>"
