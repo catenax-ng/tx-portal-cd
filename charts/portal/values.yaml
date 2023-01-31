@@ -180,9 +180,11 @@ backend:
       checklistworkertag: v1.0.0-RC4
     secret: "secret-checklist-worker"
     logging:
-      checklistLibrary: "Debug"
-      bpdmLibrary: "Debug"
-      custodianLibrary: "Debug"
+      checklistLibrary: "Information"
+      bpdmLibrary: "Information"
+      clearinghouseLibrary: "Information"
+      custodianLibrary: "Information"
+      sdfactoryLibrary: "Information"
     applicationActivation:
       applicationApprovalInitialRoles:
         portal:

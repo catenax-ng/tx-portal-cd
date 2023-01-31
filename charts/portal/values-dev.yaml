@@ -202,6 +202,12 @@ backend:
     image:
       checklistworkertag: 2aed4f18a6539b4634800e3331ebce4c07a02cb1
     secret: "secret-checklist-worker-env"
+    logging:
+      checklistLibrary: "Debug"
+      bpdmLibrary: "Debug"
+      clearinghouseLibrary: "Debug"
+      custodianLibrary: "Debug"
+      sdfactoryLibrary: "Debug"
     bpdm:
       baseAddress: "https://portal-gate.dev.demo.catena-x.net/"
       tokenAddress: "https://centralidp.dev.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
