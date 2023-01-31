@@ -20,7 +20,7 @@
 name: "portal"
 portContainer: 8080
 portService: 8080
-replicaCount: 1
+replicaCount: 3
 securityContext:
   allowPrivilegeEscalation: false
   runAsNonRoot: true
