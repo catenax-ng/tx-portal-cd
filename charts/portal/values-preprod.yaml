@@ -200,7 +200,6 @@ backend:
   checklistworker:
     image:
       checklistworkertag: v1.0.0-RC5
-    secret: "secret-checklist-worker-env"
     logging:
       checklistLibrary: "Debug"
       bpdmLibrary: "Debug"
