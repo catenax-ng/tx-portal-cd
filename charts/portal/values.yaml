@@ -30,6 +30,34 @@ securityContext:
 frontend:
   ingress:
     enabled: false
+    annotations:
+      kubernetes.io/ingress.class: "nginx"
+      nginx.ingress.kubernetes.io/rewrite-target: "/$1"
+      nginx.ingress.kubernetes.io/use-regex: "true"
+      nginx.ingress.kubernetes.io/enable-cors: "true"
+      nginx.ingress.kubernetes.io/cors-allow-origin: ""
+    tls:
+      - secretName: ""
+        hosts:
+          - ""
+    hosts:
+      - host: ""
+        paths:
+          - path: "/(.*)"
+            pathType: "Prefix"
+            backend:
+              service: "portal"
+              port: 8080
+          - path: "/registration/(.*)"
+            pathType: "Prefix"
+            backend:
+              service: "registration"
+              port: 8080
+          - path: "/((assets|documentation)/.*)"
+            pathType: "Prefix"
+            backend:
+              service: "assets"
+              port: 8080
   portal:
     name: "portal"
     image:
@@ -56,6 +84,49 @@ backend:
   ingress:
     enabled: false
     name: "portal-backend"
+    annotations:
+      kubernetes.io/ingress.class: "nginx"
+      nginx.ingress.kubernetes.io/use-regex: "true"
+      nginx.ingress.kubernetes.io/enable-cors: "true"
+      nginx.ingress.kubernetes.io/proxy-body-size: "8m"
+      nginx.ingress.kubernetes.io/cors-allow-origin: ""
+    tls:
+      - secretName: ""
+        hosts:
+          - ""
+    hosts:
+      - host: ""
+        paths:
+          - path: "/api/registration"
+            pathType: "Prefix"
+            backend:
+              service: "registration-service"
+              port: 8080
+          - path: "/api/administration"
+            pathType: "Prefix"
+            backend:
+              service: "administration-service"
+              port: 8080
+          - path: "/api/notification"
+            pathType: "Prefix"
+            backend:
+              service: "notification-service"
+              port: 8080
+          - path: "/api/provisioning"
+            pathType: "Prefix"
+            backend:
+              service: "provisioning-service"
+              port: 8080
+          - path: "/api/apps"
+            pathType: "Prefix"
+            backend:
+              service: "marketplace-app-service"
+              port: 8080
+          - path: "/api/services"
+            pathType: "Prefix"
+            backend:
+              service: "services-service"
+              port: 8080
   dbConnection:
     sslMode: "Disable"
     port: "5432"
