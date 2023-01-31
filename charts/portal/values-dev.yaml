@@ -246,9 +246,9 @@ pgadmin4:
     hosts:
       - host: portal-pgadmin4-cplp-1617.dev.demo.catena-x.net
         paths:
-          - path: /
-            pathType: Prefix
+        - path: /
+          pathType: Prefix
     tls:
       - hosts:
-          - portal-pgadmin4-cplp-1617.dev.demo.catena-x.net
+        - portal-pgadmin4-cplp-1617.dev.demo.catena-x.net
         secretName: tls-secret

@@ -27,7 +27,7 @@ frontend:
       nginx.ingress.kubernetes.io/use-regex: "true"
       nginx.ingress.kubernetes.io/enable-cors: "true"
       nginx.ingress.kubernetes.io/cors-allow-origin: "http://localhost:3000, https://*.pre-prod.demo.catena-x.net"
-    tls: 
+    tls:
       - secretName: "tls-secret"
         hosts:
           - "portal.pre-prod.demo.catena-x.net"
@@ -78,7 +78,7 @@ backend:
       nginx.ingress.kubernetes.io/enable-cors: "true"
       nginx.ingress.kubernetes.io/proxy-body-size: "8m"
       nginx.ingress.kubernetes.io/cors-allow-origin: "http://localhost:3000, https://*.pre-prod.demo.catena-x.net"
-    tls: 
+    tls:
       - secretName: "tls-secret"
         hosts:
           - "portal-backend.pre-prod.demo.catena-x.net"
