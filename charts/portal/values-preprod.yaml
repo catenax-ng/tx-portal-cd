@@ -170,6 +170,8 @@ backend:
   portalmigrations:
     image:
       portalmigrationstag: v1.0.0-RC5
+    seeding:
+      testDataEnvironments: "consortia"
 
   portalmaintenance:
     image:
