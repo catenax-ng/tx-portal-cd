@@ -1,5 +1,5 @@
 ###############################################################
-# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+# Copyright (c) 2021,2023 Contributors to the Eclipse Foundation
 #
 # See the NOTICE file(s) distributed with this work for additional
 # information regarding copyright ownership.
@@ -18,7 +18,6 @@
 ###############################################################
 
 frontend:
-
   ingress:
     enabled: true
     annotations:
@@ -27,7 +26,7 @@ frontend:
       nginx.ingress.kubernetes.io/use-regex: "true"
       nginx.ingress.kubernetes.io/enable-cors: "true"
       nginx.ingress.kubernetes.io/cors-allow-origin: "http://localhost:3000, https://*.dev.demo.catena-x.net"
-    tls: 
+    tls:
       - secretName: "tls-secret"
         hosts:
           - "portal.dev.demo.catena-x.net"
@@ -78,7 +77,7 @@ backend:
       nginx.ingress.kubernetes.io/enable-cors: "true"
       nginx.ingress.kubernetes.io/proxy-body-size: "8m"
       nginx.ingress.kubernetes.io/cors-allow-origin: "http://localhost:3000, https://*.dev.demo.catena-x.net"
-    tls: 
+    tls:
       - secretName: "tls-secret"
         hosts:
           - "portal-backend.dev.demo.catena-x.net"
@@ -116,6 +115,24 @@ backend:
               service: "services-service"
               port: 8080
 
+  basePortalAddress: "https://portal.dev.demo.catena-x.net/home"
+
+  keycloak:
+    central:
+      baseAddress: "https://centralidp.dev.demo.catena-x.net"
+      clientId: "<path:portal/data/keycloak#central-client-id>"
+      clientSecret: "<path:portal/data/dev/keycloak#central-client-secret>"
+    shared:
+      baseAddress: "https://sharedidp.dev.demo.catena-x.net"
+      clientId: "<path:portal/data/keycloak#shared-client-id>"
+      clientSecret: "<path:portal/data/dev/keycloak#shared-client-secret>"
+
+  mailing:
+    host: "<path:portal/data/mailing#host>"
+    port: "<path:portal/data/mailing#port>"
+    user: "<path:portal/data/mailing#user>"
+    password: "<path:portal/data/mailing#password>"
+
   registration:
     image:
       registrationservicetag: 9b05aa82a42e3d5a61bd8d45cff253ed6049d652
@@ -129,10 +146,19 @@ backend:
       appsettings: "<path:portal/data/dev/administration#appsettings.json>"
 
   provisioning:
-    image:
-      provisioningservicetag: 9b05aa82a42e3d5a61bd8d45cff253ed6049d652
-    secret:
-      appsettings: "<path:portal/data/dev/provisioning#appsettings.json>"
+    sharedRealm:
+      smtpServer:
+        host: "<path:portal/data/mailing#host>"
+        port: "<path:portal/data/mailing#port>"
+        user: "<path:portal/data/mailing#user>"
+        password: "<path:portal/data/mailing#password>"
+        from: "<path:portal/data/mailing#from>"
+        replyTo: "<path:portal/data/mailing#replyto>"
+    service:
+      image:
+        provisioningservicetag: 9b05aa82a42e3d5a61bd8d45cff253ed6049d652
+      secret:
+        appsettings: "<path:portal/data/dev/provisioning#appsettings.json>"
 
   appmarketplace:
     image:
@@ -145,6 +171,8 @@ backend:
       portalmigrationstag: a495ee254ca9a230872a54a2ab72a98249b5e3f5
     secret:
       appsettings: "<path:portal/data/dev/portal-migrations#appsettings.json>"
+    seeding:
+      testDataEnvironments: "consortia"
 
   portalmaintenance:
     image:
@@ -173,14 +201,40 @@ backend:
   checklistworker:
     image:
       checklistworkertag: 9b05aa82a42e3d5a61bd8d45cff253ed6049d652
-    secret:
-      appsettings: "<path:portal/data/dev/checklist-worker#appsettings.json>"
+    logging:
+      checklistLibrary: "Debug"
+      bpdmLibrary: "Debug"
+      clearinghouseLibrary: "Debug"
+      custodianLibrary: "Debug"
+      sdfactoryLibrary: "Debug"
+    bpdm:
+      baseAddress: "https://portal-gate.dev.demo.catena-x.net/"
+      tokenAddress: "https://centralidp.dev.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
+      clientId: "<path:portal/data/checklist-worker#bpdm-client-id>"
+      clientSecret: "<path:portal/data/dev/checklist-worker#bpdm-client-secret>"
+    clearinghouse:
+      baseAddress: "https://validation.dev.dih-cloud.com/api/v1"
+      tokenAddress: "https://centralidp.dev.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
+      clientId: "<path:portal/data/checklist-worker#clearinghouse-client-id>"
+      clientSecret: "<path:portal/data/dev/checklist-worker#clearinghouse-client-secret>"
+    custodian:
+      baseAddress: "https://managed-identity-wallets.dev.demo.catena-x.net"
+      tokenAddress: "https://centralidp.dev.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
+      clientId: "<path:portal/data/checklist-worker#custodian-client-id>"
+      clientSecret: "<path:portal/data/dev/checklist-worker#custodian-client-secret>"
+    sdfactory:
+      baseAddress: "https://sdfactory.dev.demo.catena-x.net/selfdescription"
+      tokenAddress: "https://centralidp.dev.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
+      issuerBpn: "BPNL00000003CRHK"
+      clientId: "<path:portal/data/checklist-worker#sdfactory-client-id>"
+      clientSecret: "<path:portal/data/dev/checklist-worker#sdfactory-client-secret>"
 
 postgresql:
   secret:
     password: "<path:portal/data/dev/postgres#postgres-password>"
     replicationPassword: "<path:portal/data/dev/postgres#replication-password>"
-    initUserDbSql: "<path:portal/data/dev/postgres-db-user#01-init-user-db.sql>"
+    portalPassword: "<path:portal/data/dev/postgres#portal-password>"
+    provisioningPassword: "<path:portal/data/dev/postgres#provisioning-password>"
 
 pgadmin4:
   enabled: true

@@ -1,5 +1,5 @@
 ###############################################################
-# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+# Copyright (c) 2021,2023 Contributors to the Eclipse Foundation
 #
 # See the NOTICE file(s) distributed with this work for additional
 # information regarding copyright ownership.
@@ -46,16 +46,38 @@ frontend:
       name: "ghcr.io/catenax-ng/tx-portal-assets"
       assetstag: 1.0.0-RC3
   env:
-    PORTAL_ASSETS_URL: "https://portal.dummy/assets"
-    PORTAL_BACKEND_URL: "https://portal-backend.dummy"
-    CENTRALIDP_URL: "https://centralidp.dummy/auth"
-    BPDM_API_URL: "https://partners-pool.dummy"
-    SEMANTICS_URL: "https://semantics.dummy"
+    PORTAL_ASSETS_URL: ""
+    PORTAL_BACKEND_URL: ""
+    CENTRALIDP_URL: ""
+    BPDM_API_URL: ""
+    SEMANTICS_URL: ""
 
 backend:
   ingress:
     enabled: false
     name: "portal-backend"
+  dbConnection:
+    sslMode: "Disable"
+    port: "5432"
+  basePortalAddress: ""
+  keycloak:
+    central:
+      baseAddress: ""
+      clientId: ""
+      clientSecret: ""
+      authRealm: "CX-Central"
+    shared:
+      baseAddress: ""
+      clientId: ""
+      clientSecret: ""
+      authRealm: "master"
+    secret: "secret-keycloak"
+  mailing:
+    host: ""
+    port: ""
+    user: ""
+    password: ""
+    secret: "secret-mailing"
   registration:
     name: "registration-service"
     image:
@@ -73,13 +95,34 @@ backend:
       name: "secret-administration"
       appsettings: ""
   provisioning:
-    name: "provisioning-service"
-    image:
-      name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-service"
-      provisioningservicetag: v1.0.0-RC5
-    secret:
-      name: "secret-provisioning"
-      appsettings: ""
+    centralRealm: "CX-Central"
+    centralRealmId: "CX-Central"
+    invitedUserInitialRoles:
+      registration: "Company Admin"
+    centralIdentityProvider:
+      clientId: "central-idp"
+    sharedRealmClient:
+      clientId: "central-idp"
+    sharedRealm:
+      smtpServer:
+        host: ""
+        port: ""
+        user: ""
+        password: ""
+        ssl: ""
+        startTls: "true"
+        auth: "true"
+        from: ""
+        replyTo: ""
+        secret: "secret-mailing"
+    service:
+      name: "provisioning-service"
+      image:
+        name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-service"
+        provisioningservicetag: v1.0.0-RC5
+      secret:
+        name: "secret-provisioning"
+        appsettings: ""
   appmarketplace:
     name: "marketplace-app-service"
     image:
@@ -96,6 +139,8 @@ backend:
     secret:
       name: "secret-portal-migrations"
       appsettings: ""
+    seeding:
+      testDataEnvironments: ""
   portalmaintenance:
     name: "portal-maintenance"
     image:
@@ -133,53 +178,88 @@ backend:
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_checklist-worker"
       checklistworkertag: v1.0.0-RC5
-    secret:
-      name: "secret-checklist-worker"
-      appsettings: ""
+    secret: "secret-checklist-worker"
+    logging:
+      checklistLibrary: "Information"
+      bpdmLibrary: "Information"
+      clearinghouseLibrary: "Information"
+      custodianLibrary: "Information"
+      sdfactoryLibrary: "Information"
+    applicationActivation:
+      applicationApprovalInitialRoles:
+        portal:
+          role: "Company Admin"
+        registration:
+          role: "Company Admin"
+      welcomeNotificationTypeIds:
+        type0: "WELCOME"
+        type1: "WELCOME_USE_CASES"
+        type2: "WELCOME_SERVICE_PROVIDER"
+        type3: "WELCOME_CONNECTOR_REGISTRATION"
+        type4: "WELCOME_APP_MARKETPLACE"
+    bpdm:
+      baseAddress: ""
+      tokenAddress: ""
+      scope: "openid"
+      grantType: "client_credentials"
+      clientId: ""
+      clientSecret: ""
+    clearinghouse:
+      baseAddress: ""
+      tokenAddress: ""
+      scope: "openid"
+      grantType: "client_credentials"
+      clientId: ""
+      clientSecret: ""
+    custodian:
+      baseAddress: ""
+      tokenAddress: ""
+      scope: "openid"
+      grantType: "client_credentials"
+      clientId: ""
+      clientSecret: ""
+    sdfactory:
+      baseAddress: ""
+      tokenAddress: ""
+      scope: "openid"
+      grantType: "client_credentials"
+      issuerBpn: ""
+      clientId: ""
+      clientSecret: ""
+  placeholder: "empty"
 
 postgresql:
   enabled: true
   fullnameOverride: "portal-backend-postgresql"
   auth:
+    database: "postgres"
     existingSecret: "secret-postgres-init"
+    # custom usernames for cx portal
+    portalUser: "portal"
+    provisioningUser: "provisioning"
   architecture: "replication"
   audit:
     pgAuditLog: "write, ddl"
     logLinePrefix: "%m %u %d "
   primary:
-    extraVolumeMounts:
-      - name: "initdb"
-        mountPath: "/docker-entrypoint-initdb.d"
-      - name: "initdb-secrets"
-        mountPath: "/secrets"
-    extraVolumes:
-      - name: "initdb"
-        emptyDir: {}
-      - name: "initdb-secrets"
-        secret:
-          secretName: "secret-postgres-init-db-user"
-    initContainers:
-      - name: "initdb"
-        image: "ghcr.io/catenax-ng/tx-portal-backend_initdb:v1.0.0-RC5"
-        imagePullPolicy: "Always"
-        command:
-          - sh
-        args:
-          - -c
-          - |
-            echo "Copying initdb secret sqls..."
-            cp /secrets/* /docker-entrypoint-initdb.d
-            echo "Copying initdb sqls..."
-            cp -R /import/* /docker-entrypoint-initdb.d
-        volumeMounts:
-        - name: "initdb"
-          mountPath: "/docker-entrypoint-initdb.d"
-        - name: "initdb-secrets"
-          mountPath: "/secrets"
+    initdb:
+      scriptsConfigMap: "configmap-postgres-init"
+    extraEnvVars:
+      - name: "PORTAL_PASSWORD"
+        valueFrom:
+          secretKeyRef:
+            name: "secret-postgres-init"
+            key: "portal-password"
+      - name: "PROVISIONING_PASSWORD"
+        valueFrom:
+          secretKeyRef:
+            name: "secret-postgres-init"
+            key: "provisioning-password"
   secret:
     password: ""
     replicationPassword: ""
-    initUserDbSql: ""
+    portalPassword: ""
+    provisioningPassword: ""
 
 pgadmin4:
   enabled: false

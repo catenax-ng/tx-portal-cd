@@ -1,5 +1,5 @@
 ###############################################################
-# Copyright (c) 2021,2022 Contributors to the Eclipse Foundation
+# Copyright (c) 2021,2023 Contributors to the Eclipse Foundation
 #
 # See the NOTICE file(s) distributed with this work for additional
 # information regarding copyright ownership.
@@ -27,7 +27,7 @@ frontend:
       nginx.ingress.kubernetes.io/use-regex: "true"
       nginx.ingress.kubernetes.io/enable-cors: "true"
       nginx.ingress.kubernetes.io/cors-allow-origin: "http://localhost:3000, https://*.pre-prod.demo.catena-x.net"
-    tls: 
+    tls:
       - secretName: "tls-secret"
         hosts:
           - "portal.pre-prod.demo.catena-x.net"
@@ -78,7 +78,7 @@ backend:
       nginx.ingress.kubernetes.io/enable-cors: "true"
       nginx.ingress.kubernetes.io/proxy-body-size: "8m"
       nginx.ingress.kubernetes.io/cors-allow-origin: "http://localhost:3000, https://*.pre-prod.demo.catena-x.net"
-    tls: 
+    tls:
       - secretName: "tls-secret"
         hosts:
           - "portal-backend.pre-prod.demo.catena-x.net"
@@ -116,6 +116,24 @@ backend:
               service: "services-service"
               port: 8080
 
+  basePortalAddress: "https://portal.pre-prod.demo.catena-x.net/home"
+
+  keycloak:
+    central:
+      baseAddress: "https://centralidp.pre-prod.demo.catena-x.net"
+      clientId: "<path:portal/data/keycloak#central-client-id>"
+      clientSecret: "<path:portal/data/pre-prod/keycloak#central-client-secret>"
+    shared:
+      baseAddress: "https://sharedidp.pre-prod.demo.catena-x.net"
+      clientId: "<path:portal/data/keycloak#shared-client-id>"
+      clientSecret: "<path:portal/data/pre-prod/keycloak#shared-client-secret>"
+
+  mailing:
+    host: "<path:portal/data/mailing#host>"
+    port: "<path:portal/data/mailing#port>"
+    user: "<path:portal/data/mailing#user>"
+    password: "<path:portal/data/mailing#password>"
+
   registration:
     image:
       registrationservicetag: v1.0.0-RC5
@@ -129,10 +147,19 @@ backend:
       appsettings: "<path:portal/data/pre-prod/administration#appsettings.json>"
 
   provisioning:
-    image:
-      provisioningservicetag: v1.0.0-RC5
-    secret:
-      appsettings: "<path:portal/data/pre-prod/provisioning#appsettings.json>"
+    sharedRealm:
+      smtpServer:
+        host: "<path:portal/data/mailing#host>"
+        port: "<path:portal/data/mailing#port>"
+        user: "<path:portal/data/mailing#user>"
+        password: "<path:portal/data/mailing#password>"
+        from: "<path:portal/data/mailing#from>"
+        replyTo: "<path:portal/data/mailing#replyto>"
+    service:
+      image:
+        provisioningservicetag: v1.0.0-RC5
+      secret:
+        appsettings: "<path:portal/data/pre-prod/provisioning#appsettings.json>"
 
   appmarketplace:
     image:
@@ -173,14 +200,40 @@ backend:
   checklistworker:
     image:
       checklistworkertag: v1.0.0-RC5
-    secret:
-      appsettings: "<path:portal/data/pre-prod/checklist-worker#appsettings.json>"
+    logging:
+      checklistLibrary: "Debug"
+      bpdmLibrary: "Debug"
+      clearinghouseLibrary: "Debug"
+      custodianLibrary: "Debug"
+      sdfactoryLibrary: "Debug"
+    bpdm:
+      baseAddress: "https://portal-gate.pre-prod.demo.catena-x.net/"
+      tokenAddress: "https://centralidp.pre-prod.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
+      clientId: "<path:portal/data/checklist-worker#bpdm-client-id>"
+      clientSecret: "<path:portal/data/pre-prod/checklist-worker#bpdm-client-secret>"
+    clearinghouse:
+      baseAddress: "https://validation.pre-prod.dih-cloud.com/api/v1"
+      tokenAddress: "https://centralidp.pre-prod.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
+      clientId: "<path:portal/data/checklist-worker#clearinghouse-client-id>"
+      clientSecret: "<path:portal/data/pre-prod/checklist-worker#clearinghouse-client-secret>"
+    custodian:
+      baseAddress: "https://managed-identity-wallets.pre-prod.demo.catena-x.net"
+      tokenAddress: "https://centralidp.pre-prod.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
+      clientId: "<path:portal/data/checklist-worker#custodian-client-id>"
+      clientSecret: "<path:portal/data/pre-prod/checklist-worker#custodian-client-secret>"
+    sdfactory:
+      baseAddress: "https://sdfactory.pre-prod.demo.catena-x.net/selfdescription"
+      tokenAddress: "https://centralidp.pre-prod.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
+      issuerBpn: "BPNL00000003CRHK"
+      clientId: "<path:portal/data/checklist-worker#sdfactory-client-id>"
+      clientSecret: "<path:portal/data/pre-prod/checklist-worker#sdfactory-client-secret>"
 
 postgresql:
   secret:
     password: "<path:portal/data/pre-prod/postgres#postgres-password>"
     replicationPassword: "<path:portal/data/pre-prod/postgres#replication-password>"
-    initUserDbSql: "<path:portal/data/pre-prod/postgres-db-user#01-init-user-db.sql>"
+    portalPassword: "<path:portal/data/pre-prod/postgres#portal-password>"
+    provisioningPassword: "<path:portal/data/pre-prod/postgres#provisioning-password>"
 
 pgadmin4:
   enabled: true
