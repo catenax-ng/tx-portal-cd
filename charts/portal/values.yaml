@@ -136,9 +136,6 @@ backend:
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_portal-migrations"
       portalmigrationstag: v1.0.0-RC5
-    secret:
-      name: "secret-portal-migrations"
-      appsettings: ""
     seeding:
       testDataEnvironments: ""
   portalmaintenance:
@@ -170,9 +167,6 @@ backend:
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-migrations"
       provisioningmigrationstag: v1.0.0-RC5
-    secret:
-      name: "secret-provisioning-migrations"
-      appsettings: ""
   checklistworker:
     name: "checklist-worker"
     image:

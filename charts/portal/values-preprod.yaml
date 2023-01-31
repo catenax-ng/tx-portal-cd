@@ -170,8 +170,6 @@ backend:
   portalmigrations:
     image:
       portalmigrationstag: v1.0.0-RC5
-    secret:
-      appsettings: "<path:portal/data/pre-prod/portal-migrations#appsettings.json>"
 
   portalmaintenance:
     image:
@@ -194,8 +192,6 @@ backend:
   provisioningmigrations:
     image:
       provisioningmigrationstag: v1.0.0-RC5
-    secret:
-      appsettings: "<path:portal/data/pre-prod/provisioning-migrations#appsettings.json>"
   
   checklistworker:
     image:

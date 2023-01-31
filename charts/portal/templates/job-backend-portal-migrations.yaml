@@ -49,11 +49,3 @@ spec:
             value: "{{ .Values.backend.portalmigrations.seeding.testDataEnvironments }}"
         ports:
         - containerPort: {{ .Values.portContainer }}
-        volumeMounts:
-        - name: secrets
-          mountPath: /migrations/secrets
-          readOnly: true
-      volumes:
-      - name: secrets
-        secret:
-          secretName: {{ .Values.backend.portalmigrations.secret.name }}
