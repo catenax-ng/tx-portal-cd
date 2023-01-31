@@ -200,7 +200,7 @@ backend:
 
   checklistworker:
     image:
-      checklistworkertag: d117a875fde94b01d5e9cb686dca5eb9fb3e96c7
+      checklistworkertag: 2aed4f18a6539b4634800e3331ebce4c07a02cb1
     secret: "secret-checklist-worker-env"
     bpdm:
       baseAddress: "https://portal-gate.dev.demo.catena-x.net/"
