@@ -51,15 +51,15 @@ frontend:
 
   portal:
     image:
-      portaltag: dev_512986a5ce2ed68a30aa1d53655f974e325b10e3
+      portaltag: main_be6f17f7c42aa9cb988bab517b3683ce76231dfd
 
   assets:
     image:
-      assetstag: main_cfa6cd6c623bb263c109c12379ff7300b596437b
+      assetstag: main_015c719f6df56720e7c4693b62a72ce154f608c8
 
   registration:
     image:
-      registrationtag: main_6646ce475039fb3e259a57645101b6bffc126ce1
+      registrationtag: dev_80c7888cd9eb32f318a55ceb39f1a0a5c5d0c450
 
   env:
     PORTAL_ASSETS_URL: "https://portal.dev.demo.catena-x.net/assets"
@@ -135,13 +135,13 @@ backend:
 
   registration:
     image:
-      registrationservicetag: a82045740b75f9d07ba7b81492a18af48180b108
+      registrationservicetag: 9b05aa82a42e3d5a61bd8d45cff253ed6049d652
     secret:
       appsettings: "<path:portal/data/dev/registration#appsettings.json>"
 
   administration:
     image:
-      administrationservicetag: a82045740b75f9d07ba7b81492a18af48180b108
+      administrationservicetag: 9b05aa82a42e3d5a61bd8d45cff253ed6049d652
     secret:
       appsettings: "<path:portal/data/dev/administration#appsettings.json>"
 
@@ -156,19 +156,19 @@ backend:
         replyTo: "<path:portal/data/mailing#replyto>"
     service:
       image:
-        provisioningservicetag: a82045740b75f9d07ba7b81492a18af48180b108
+        provisioningservicetag: 9b05aa82a42e3d5a61bd8d45cff253ed6049d652
       secret:
         appsettings: "<path:portal/data/dev/provisioning#appsettings.json>"
 
   appmarketplace:
     image:
-      appmarketplaceservicetag: a82045740b75f9d07ba7b81492a18af48180b108
+      appmarketplaceservicetag: 9b05aa82a42e3d5a61bd8d45cff253ed6049d652
     secret:
       appsettings: "<path:portal/data/dev/appmarketplace#appsettings.json>"
 
   portalmigrations:
     image:
-      portalmigrationstag: a82045740b75f9d07ba7b81492a18af48180b108
+      portalmigrationstag: a495ee254ca9a230872a54a2ab72a98249b5e3f5
     secret:
       appsettings: "<path:portal/data/dev/portal-migrations#appsettings.json>"
     seeding:
@@ -176,31 +176,31 @@ backend:
 
   portalmaintenance:
     image:
-      portalmaintenancetag: a82045740b75f9d07ba7b81492a18af48180b108
+      portalmaintenancetag: a495ee254ca9a230872a54a2ab72a98249b5e3f5
     secret:
       appsettings: "<path:portal/data/dev/portal-maintenance#appsettings.json>"
 
   notification:
     image:
-      notificationservicetag: a82045740b75f9d07ba7b81492a18af48180b108
+      notificationservicetag: 9b05aa82a42e3d5a61bd8d45cff253ed6049d652
     secret:
       appsettings: "<path:portal/data/dev/notification#appsettings.json>"
 
   services:
     image:
-      servicesservicetag: a82045740b75f9d07ba7b81492a18af48180b108
+      servicesservicetag: 9b05aa82a42e3d5a61bd8d45cff253ed6049d652
     secret:
       appsettings: "<path:portal/data/dev/services#appsettings.json>"
 
   provisioningmigrations:
     image:
-      provisioningmigrationstag: a82045740b75f9d07ba7b81492a18af48180b108
+      provisioningmigrationstag: a495ee254ca9a230872a54a2ab72a98249b5e3f5
     secret:
       appsettings: "<path:portal/data/dev/provisioning-migrations#appsettings.json>"
 
   checklistworker:
     image:
-      checklistworkertag: 2aed4f18a6539b4634800e3331ebce4c07a02cb1
+      checklistworkertag: 9b05aa82a42e3d5a61bd8d45cff253ed6049d652
     secret: "secret-checklist-worker-env"
     logging:
       checklistLibrary: "Debug"

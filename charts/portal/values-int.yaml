@@ -52,11 +52,11 @@ frontend:
 
   portal:
     image:
-      portaltag: 1.0.0-RC4
+      portaltag: 1.0.0-RC5
 
   assets:
     image:
-      assetstag: 1.0.0-RC2
+      assetstag: 1.0.0-RC3
 
   registration:
     image:
@@ -136,13 +136,13 @@ backend:
 
   registration:
     image:
-      registrationservicetag: v1.0.0-RC4
+      registrationservicetag: v1.0.0-RC5
     secret:
       appsettings: "<path:portal/data/int/registration#appsettings.json>"
 
   administration:
     image:
-      administrationservicetag: v1.0.0-RC4
+      administrationservicetag: v1.0.0-RC5
     secret:
       appsettings: "<path:portal/data/int/administration#appsettings.json>"
 
@@ -157,49 +157,49 @@ backend:
         replyTo: "<path:portal/data/mailing#replyto>"
     service:
       image:
-        provisioningservicetag: v1.0.0-RC4
+        provisioningservicetag: v1.0.0-RC5
       secret:
         appsettings: "<path:portal/data/int/provisioning#appsettings.json>"
 
   appmarketplace:
     image:
-      appmarketplaceservicetag: v1.0.0-RC4
+      appmarketplaceservicetag: v1.0.0-RC5
     secret:
       appsettings: "<path:portal/data/int/appmarketplace#appsettings.json>"
 
   portalmigrations:
     image:
-      portalmigrationstag: v1.0.0-RC4
+      portalmigrationstag: v1.0.0-RC5
     secret:
       appsettings: "<path:portal/data/int/portal-migrations#appsettings.json>"
 
   portalmaintenance:
     image:
-      portalmaintenancetag: v1.0.0-RC4
+      portalmaintenancetag: v1.0.0-RC5
     secret:
       appsettings: "<path:portal/data/int/portal-maintenance#appsettings.json>"
 
   notification:
     image:
-      notificationservicetag: v1.0.0-RC4
+      notificationservicetag: v1.0.0-RC5
     secret:
       appsettings: "<path:portal/data/int/notification#appsettings.json>"
 
   services:
     image:
-      servicesservicetag: v1.0.0-RC4
+      servicesservicetag: v1.0.0-RC5
     secret:
       appsettings: "<path:portal/data/int/services#appsettings.json>"
 
   provisioningmigrations:
     image:
-      provisioningmigrationstag: v1.0.0-RC4
+      provisioningmigrationstag: v1.0.0-RC5
     secret:
       appsettings: "<path:portal/data/int/provisioning-migrations#appsettings.json>"
 
   checklistworker:
     image:
-      checklistworkertag: v1.0.0-RC4
+      checklistworkertag: v1.0.0-RC5
     secret: "secret-checklist-worker-env"
     logging:
       checklistLibrary: "Debug"
