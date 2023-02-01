@@ -176,8 +176,6 @@ backend:
   portalmaintenance:
     image:
       portalmaintenancetag: v1.0.0-RC5
-    secret:
-      appsettings: "<path:portal/data/pen/portal-maintenance#appsettings.json>"
 
   notification:
     image:
