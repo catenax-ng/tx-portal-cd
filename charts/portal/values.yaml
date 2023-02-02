@@ -128,8 +128,9 @@ backend:
               service: "services-service"
               port: 8080
   dbConnection:
-    sslMode: "Disable"
     port: "5432"
+    schema: "portal"
+    sslMode: "Disable"
   basePortalAddress: ""
   keycloak:
     central:
@@ -137,6 +138,19 @@ backend:
       clientId: ""
       clientSecret: ""
       authRealm: "CX-Central"
+      jwtBearerOptions:
+        metadataAddress: ""
+        tokenValidationParameters:
+          validIssuer: ""
+          validAudience: "Cl2-CX-Portal"
+      dbConnection:
+        host: ""
+        port: "5432"
+        user: ""
+        database: "iamcentralidp"
+        password: ""
+        schema: "public"
+        sslMode: "Disable"
     shared:
       baseAddress: ""
       clientId: ""
@@ -219,9 +233,8 @@ backend:
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_notification-service"
       notificationservicetag: v1.0.0-RC5
-    secret:
-      name: "secret-notification"
-      appsettings: ""
+    debugenabled: false
+    swaggerenabled: false
   services:
     name: "services-service"
     image:
