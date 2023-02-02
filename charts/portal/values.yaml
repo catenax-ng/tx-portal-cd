@@ -214,9 +214,6 @@ backend:
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_maintenance-service"
       portalmaintenancetag: v1.0.0-RC5
-    secret:
-      name: "secret-portal-maintenance"
-      appsettings: ""
   notification:
     name: "notification-service"
     image:
