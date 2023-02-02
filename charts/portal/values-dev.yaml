@@ -156,7 +156,7 @@ backend:
         replyTo: "<path:portal/data/mailing#replyto>"
     service:
       image:
-        provisioningservicetag: 084e3fdcae171c99f47cb81793ae59e3e0ca9ccf
+        provisioningservicetag: 93ec86b3817f41fceee62f3d65235796df218741
       secret:
         appsettings: "<path:portal/data/dev/provisioning#appsettings.json>"
 
