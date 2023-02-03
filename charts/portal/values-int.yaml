@@ -144,13 +144,13 @@ backend:
 
   registration:
     image:
-      registrationservicetag: v1.0.0-RC5
+      registrationservicetag: v1.0.0-RC6
     secret:
       appsettings: "<path:portal/data/int/registration#appsettings.json>"
 
   administration:
     image:
-      administrationservicetag: v1.0.0-RC5
+      administrationservicetag: v1.0.0-RC6
     secret:
       appsettings: "<path:portal/data/int/administration#appsettings.json>"
 
@@ -165,45 +165,45 @@ backend:
         replyTo: "<path:portal/data/mailing#replyto>"
     service:
       image:
-        provisioningservicetag: v1.0.0-RC5
+        provisioningservicetag: v1.0.0-RC6
       secret:
         appsettings: "<path:portal/data/int/provisioning#appsettings.json>"
 
   appmarketplace:
     image:
-      appmarketplaceservicetag: v1.0.0-RC5
+      appmarketplaceservicetag: v1.0.0-RC6
     secret:
       appsettings: "<path:portal/data/int/appmarketplace#appsettings.json>"
 
   portalmigrations:
     image:
-      portalmigrationstag: v1.0.0-RC5
+      portalmigrationstag: v1.0.0-RC6
     seeding:
       testDataEnvironments: "consortia"
 
   portalmaintenance:
     image:
-      portalmaintenancetag: v1.0.0-RC5
+      portalmaintenancetag: v1.0.0-RC6
 
   notification:
     image:
-      notificationservicetag: v1.0.0-RC5
+      notificationservicetag: v1.0.0-RC6
     debugenabled: true
     swaggerenabled: true
 
   services:
     image:
-      servicesservicetag: v1.0.0-RC5
+      servicesservicetag: v1.0.0-RC6
     secret:
       appsettings: "<path:portal/data/int/services#appsettings.json>"
 
   provisioningmigrations:
     image:
-      provisioningmigrationstag: v1.0.0-RC5
+      provisioningmigrationstag: v1.0.0-RC6
 
   checklistworker:
     image:
-      checklistworkertag: v1.0.0-RC5
+      checklistworkertag: v1.0.0-RC6
     logging:
       checklistLibrary: "Debug"
       bpdmLibrary: "Debug"
