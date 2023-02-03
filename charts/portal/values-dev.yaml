@@ -51,11 +51,11 @@ frontend:
 
   portal:
     image:
-      portaltag: dev_4417677bd093fba06d8f93dfa4b1be1bbb2a94aa
+      portaltag: dev_2d2a18f9974e6c9a2ada93d99dd14ef2ebc7b755
 
   assets:
     image:
-      assetstag: main_84da8e7c2afacbb0fed3017b6846463014b21dcc
+      assetstag: main_a66c675354faba6da3327bb2313c95de657e26b1
 
   registration:
     image:
@@ -143,13 +143,13 @@ backend:
 
   registration:
     image:
-      registrationservicetag: 93ec86b3817f41fceee62f3d65235796df218741
+      registrationservicetag: cb28d5307ae5f47562aedbea706331aee6fa7610
     secret:
       appsettings: "<path:portal/data/dev/registration#appsettings.json>"
 
   administration:
     image:
-      administrationservicetag: 93ec86b3817f41fceee62f3d65235796df218741
+      administrationservicetag: 699b52bbb96d35be25d0818eaec174cb06a20db2
     secret:
       appsettings: "<path:portal/data/dev/administration#appsettings.json>"
 
@@ -170,7 +170,7 @@ backend:
 
   appmarketplace:
     image:
-      appmarketplaceservicetag: 93ec86b3817f41fceee62f3d65235796df218741
+      appmarketplaceservicetag: 699b52bbb96d35be25d0818eaec174cb06a20db2
     secret:
       appsettings: "<path:portal/data/dev/appmarketplace#appsettings.json>"
 
@@ -186,13 +186,13 @@ backend:
 
   notification:
     image:
-      notificationservicetag: 93ec86b3817f41fceee62f3d65235796df218741
+      notificationservicetag: 699b52bbb96d35be25d0818eaec174cb06a20db2
     debugenabled: true
     swaggerenabled: true
 
   services:
     image:
-      servicesservicetag: 93ec86b3817f41fceee62f3d65235796df218741
+      servicesservicetag: 699b52bbb96d35be25d0818eaec174cb06a20db2
     secret:
       appsettings: "<path:portal/data/dev/services#appsettings.json>"
 
@@ -202,7 +202,7 @@ backend:
 
   checklistworker:
     image:
-      checklistworkertag: 93ec86b3817f41fceee62f3d65235796df218741
+      checklistworkertag: 4464b673fd0df1bd2262a662f29f28f646857a28
     logging:
       checklistLibrary: "Debug"
       bpdmLibrary: "Debug"
