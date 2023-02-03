@@ -216,8 +216,8 @@ backend:
       clientId: "<path:portal/data/checklist-worker#bpdm-client-id>"
       clientSecret: "<path:portal/data/pen/checklist-worker#bpdm-client-secret>"
     clearinghouse:
-      baseAddress: "https://validation-pen.dev.dih-cloud.com/api/v1"
-      tokenAddress: "https://centralidp-pen.dev.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
+      baseAddress: "https://validation-pen.dev.dih-cloud.com"
+      tokenAddress: "https://keycloak-dev.dih-cloud.com/realms/notarisation/protocol/openid-connect/token"
       clientId: "<path:portal/data/checklist-worker#clearinghouse-client-id>"
       clientSecret: "<path:portal/data/pen/checklist-worker#clearinghouse-client-secret>"
     custodian:
