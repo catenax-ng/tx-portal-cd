@@ -122,6 +122,14 @@ backend:
       baseAddress: "https://centralidp.dev.demo.catena-x.net"
       clientId: "<path:portal/data/keycloak#central-client-id>"
       clientSecret: "<path:portal/data/dev/keycloak#central-client-secret>"
+      jwtBearerOptions:
+        metadataAddress: "https://centralidp.dev.demo.catena-x.net/auth/realms/CX-Central/.well-known/openid-configuration"
+        tokenValidationParameters:
+          validIssuer: "https://centralidp.dev.demo.catena-x.net/auth/realms/CX-Central"
+      dbConnection:
+        host: "centralidp-postgresql-primary"
+        user: "<path:portal/data/keycloak#central-db-user>"
+        password: "<path:portal/data/dev/keycloak#central-db-password>"
     shared:
       baseAddress: "https://sharedidp.dev.demo.catena-x.net"
       clientId: "<path:portal/data/keycloak#shared-client-id>"
@@ -174,13 +182,13 @@ backend:
 
   portalmaintenance:
     image:
-      portalmaintenancetag: 93ec86b3817f41fceee62f3d65235796df218741
+      portalmaintenancetag: 084e3fdcae171c99f47cb81793ae59e3e0ca9ccf
 
   notification:
     image:
       notificationservicetag: 699b52bbb96d35be25d0818eaec174cb06a20db2
-    secret:
-      appsettings: "<path:portal/data/dev/notification#appsettings.json>"
+    debugenabled: true
+    swaggerenabled: true
 
   services:
     image:
