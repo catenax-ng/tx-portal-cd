@@ -207,8 +207,8 @@ backend:
       clientId: "<path:portal/data/checklist-worker#bpdm-client-id>"
       clientSecret: "<path:portal/data/dev/checklist-worker#bpdm-client-secret>"
     clearinghouse:
-      baseAddress: "https://validation.dev.dih-cloud.com/api/v1"
-      tokenAddress: "https://centralidp.dev.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
+      baseAddress: "https://validation.dev.dih-cloud.com"
+      tokenAddress: "https://keycloak-dev.dih-cloud.com/realms/notarisation/protocol/openid-connect/token"
       clientId: "<path:portal/data/checklist-worker#clearinghouse-client-id>"
       clientSecret: "<path:portal/data/dev/checklist-worker#clearinghouse-client-secret>"
     custodian:
@@ -244,9 +244,9 @@ pgadmin4:
     hosts:
       - host: portal-pgadmin4.dev.demo.catena-x.net
         paths:
-        - path: /
-          pathType: Prefix
+          - path: /
+            pathType: Prefix
     tls:
       - hosts:
-        - portal-pgadmin4.dev.demo.catena-x.net
+          - portal-pgadmin4.dev.demo.catena-x.net
         secretName: tls-secret
