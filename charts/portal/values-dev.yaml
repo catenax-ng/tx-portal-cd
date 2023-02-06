@@ -56,7 +56,7 @@ frontend:
 
   assets:
     image:
-      assetstag: main_00bfbc34f9171780b565797293314a2cd19f0a52
+      assetstag: main_dec4a7b4015b83efe95fb7b95e2554868f28168b
 
   registration:
     image:
