@@ -232,8 +232,8 @@ backend:
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_notification-service"
       notificationservicetag: v1.0.0-RC6
-    debugenabled: false
-    swaggerenabled: false
+    debugEnabled: false
+    swaggerEnabled: false
   services:
     name: "services-service"
     image:

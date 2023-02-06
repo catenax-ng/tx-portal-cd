@@ -186,8 +186,8 @@ backend:
   notification:
     image:
       notificationservicetag: v1.0.0-RC6
-    debugenabled: true
-    swaggerenabled: true
+    debugEnabled: true
+    swaggerEnabled: true
 
   services:
     image:
