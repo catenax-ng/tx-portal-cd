@@ -41,12 +41,12 @@ spec:
             - name: "PORTAL_PASSWORD"
               valueFrom:
                 secretKeyRef:
-                  name: "secret-postgres-init"
+                  name: "{{ .Values.postgresql.auth.existingSecret }}"
                   key: "portal-password"
             - name: "PROVISIONING_PASSWORD"
               valueFrom:
                 secretKeyRef:
-                  name: "secret-postgres-init"
+                  name: "{{ .Values.postgresql.auth.existingSecret }}"
                   key: "provisioning-password"
             - name: "APPLICATIONACTIVATION__APPLICATIONAPPROVALINITIALROLES__CL2-CX-PORTAL__0"
               value: "{{ .Values.backend.checklistworker.applicationActivation.applicationApprovalInitialRoles.portal.role }}"

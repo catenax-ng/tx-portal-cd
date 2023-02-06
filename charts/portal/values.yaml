@@ -327,12 +327,12 @@ postgresql:
       - name: "PORTAL_PASSWORD"
         valueFrom:
           secretKeyRef:
-            name: "secret-postgres-init"
+            name: "{{ .Values.auth.existingSecret }}"
             key: "portal-password"
       - name: "PROVISIONING_PASSWORD"
         valueFrom:
           secretKeyRef:
-            name: "secret-postgres-init"
+            name: "{{ .Values.auth.existingSecret }}"
             key: "provisioning-password"
 
 pgadmin4:

@@ -43,7 +43,7 @@ spec:
         - name: "PORTAL_PASSWORD"
           valueFrom:
             secretKeyRef:
-              name: "secret-postgres-init"
+              name: "{{ .Values.postgresql.auth.existingSecret }}"
               key: "portal-password"
         - name: "KEYCLOAK_CENTRAL_USER"
           valueFrom:
