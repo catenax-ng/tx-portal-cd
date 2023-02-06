@@ -146,7 +146,7 @@ backend:
       dbConnection:
         host: ""
         port: "5432"
-        user: ""
+        user: "kccentral"
         database: "iamcentralidp"
         password: ""
         schema: "public"
