@@ -205,9 +205,8 @@ backend:
       image:
         name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-service"
         provisioningservicetag: v1.0.0-RC6
-      secret:
-        name: "secret-provisioning"
-        appsettings: ""
+      debugEnabled: false
+      swaggerEnabled: false
   appmarketplace:
     name: "marketplace-app-service"
     image:

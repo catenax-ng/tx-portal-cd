@@ -164,8 +164,8 @@ backend:
     service:
       image:
         provisioningservicetag: v1.0.0-RC6
-      secret:
-        appsettings: "<path:portal/data/pre-prod/provisioning#appsettings.json>"
+      debugEnabled: true
+      swaggerEnabled: true
 
   appmarketplace:
     image:
