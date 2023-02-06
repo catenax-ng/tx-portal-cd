@@ -190,10 +190,14 @@ backend:
     swaggerEnabled: true
 
   services:
+    name: "services-service"
     image:
       servicesservicetag: 51c32cbaababbb46b818962a210264f4dff7e336
-    secret:
-      appsettings: "<path:portal/data/dev/services#appsettings.json>"
+    logging:
+      offersLibrary: "Debug"
+    serviceMarketplaceAddress: "https://portal.dev.demo.catena-x.net/servicemarketplace"
+    debugEnabled: true
+    swaggerEnabled: true
 
   provisioningmigrations:
     image:

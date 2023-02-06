@@ -192,8 +192,11 @@ backend:
   services:
     image:
       servicesservicetag: v1.0.0-RC6
-    secret:
-      appsettings: "<path:portal/data/int/services#appsettings.json>"
+    logging:
+      offersLibrary: "Debug"
+    serviceMarketplaceAddress: "https://portal.int.demo.catena-x.net/servicemarketplace"
+    debugEnabled: true
+    swaggerEnabled: true
 
   provisioningmigrations:
     image:

@@ -239,9 +239,32 @@ backend:
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_services-service"
       servicesservicetag: v1.0.0-RC6
-    secret:
-      name: "secret-services"
-      appsettings: ""
+    logging:
+      offersLibrary: "Information"
+    serviceMarketplaceAddress: ""
+    catenaAdminRoles:
+      role: "CX Admin"
+    serviceAccountRoles:
+      role: "Digital Twin Management"
+    salesManagerRoles:
+      role: "Sales Manager"
+    serviceManagerRoles:
+      role: "Sales Manager"
+    approveServiceUserRoles:
+      role0: "Sales Manager"
+      role1: "Service Manager"
+    ITAdminRoles:
+      role: "IT Admin"
+    documentTypeIds:
+      type0: "ADDITIONAL_DETAILS"
+    contentTypeSettings:
+      setting0: "application/pdf"
+    submitServiceNotificationTypeIds:
+      type0: "SERVICE_RELEASE_REQUEST"
+    approveServiceNotificationTypeIds:
+     type0: "SERVICE_RELEASE_APPROVAL"
+    debugEnabled: false
+    swaggerEnabled: false
   provisioningmigrations:
     name: "provisioning-migrations"
     image:
