@@ -52,15 +52,15 @@ frontend:
 
   portal:
     image:
-      portaltag: main_c79335f3194699fd3789cbf918ed0146d79e8089
+      portaltag: dev_6fd81bf1494d763cae83cdacbaca8550f2f23e22
 
   assets:
     image:
-      assetstag: main_00bfbc34f9171780b565797293314a2cd19f0a52
+      assetstag: main_52591b926081090ba6dbd2840bfe06f0220cea5b
 
   registration:
     image:
-      registrationtag: dev_a0547869497583e2c4fa062ffede9510eaa9d494
+      registrationtag: dev_2cabcb2269c9c5747b671262a155cfc44df3de2a
 
   env:
     PORTAL_ASSETS_URL: "https://portal.dev.demo.catena-x.net/assets"
@@ -169,7 +169,7 @@ backend:
 
   appmarketplace:
     image:
-      appmarketplaceservicetag: 699b52bbb96d35be25d0818eaec174cb06a20db2
+      appmarketplaceservicetag: 51c32cbaababbb46b818962a210264f4dff7e336
     secret:
       appsettings: "<path:portal/data/dev/appmarketplace#appsettings.json>"
 
@@ -191,7 +191,7 @@ backend:
 
   services:
     image:
-      servicesservicetag: 699b52bbb96d35be25d0818eaec174cb06a20db2
+      servicesservicetag: 51c32cbaababbb46b818962a210264f4dff7e336
     secret:
       appsettings: "<path:portal/data/dev/services#appsettings.json>"
 
