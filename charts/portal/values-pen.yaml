@@ -170,8 +170,11 @@ backend:
   appmarketplace:
     image:
       appmarketplaceservicetag: v1.0.0-RC6
-    secret:
-      appsettings: "<path:portal/data/pen/appmarketplace#appsettings.json>"
+    logging:
+      offersLibrary: "Debug"
+    appOverviewAddress: "https://portal-pen.dev.demo.catena-x.net/appoverview"
+    debugEnabled: true
+    swaggerEnabled: true
 
   portalmigrations:
     image:

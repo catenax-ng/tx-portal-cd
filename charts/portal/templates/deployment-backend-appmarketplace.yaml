@@ -40,13 +40,137 @@ spec:
         ports:
         - containerPort: {{ .Values.portContainer }}
         env:
-        - name: "ASPNETCORE_ENVIRONMENT"
-          value: "Kubernetes"
-        volumeMounts:
-        - name: secrets
-          mountPath: /app/secrets
-          readOnly: true
-      volumes:
-      - name: secrets
-        secret:
-          secretName: {{ .Values.backend.appmarketplace.secret.name }}
+        - name: "APPMARKETPLACE__ACTIVEAPPCOMPANYADMINROLES__CL2-CX-PORTAL__0"
+          value: "{{ .Values.backend.appmarketplace.activeAppCompanyAdminRoles.role0 }}"
+        - name: "APPMARKETPLACE__ACTIVEAPPCOMPANYADMINROLES__CL2-CX-PORTAL__1"
+          value: "{{ .Values.backend.appmarketplace.activeAppCompanyAdminRoles.role1 }}"
+        - name: "APPMARKETPLACE__ACTIVEAPPNOTIFICATIONTYPEIDS__0"
+          value: "{{ .Values.backend.appmarketplace.activeAppNotificationTypeIds.type0 }}"
+        - name: "APPMARKETPLACE__APPIMAGEDOCUMENTTYPEIDS__0"
+          value: "{{ .Values.backend.appmarketplace.appImageDocumentTypeIds.type0 }}"
+        - name: "APPMARKETPLACE__APPIMAGEDOCUMENTTYPEIDS__1"
+          value: "{{ .Values.backend.appmarketplace.appImageDocumentTypeIds.type1 }}"
+        - name: "APPMARKETPLACE__APPOVERVIEWADDRESS"
+          value: "{{ .Values.backend.appmarketplace.appOverviewAddress }}"
+        - name: "APPMARKETPLACE__APPROVEAPPNOTIFICATIONTYPEIDS__0"
+          value: "{{ .Values.backend.appmarketplace.approveAppNotificationTypeIds.type0 }}"
+        - name: "APPMARKETPLACE__APPROVEAPPUSERROLES__CL2-CX-PORTAL__0"
+          value: "{{ .Values.backend.appmarketplace.approveAppUserRoles.role0 }}"
+        - name: "APPMARKETPLACE__APPROVEAPPUSERROLES__CL2-CX-PORTAL__1"
+          value: "{{ .Values.backend.appmarketplace.approveAppUserRoles.role1 }}"
+        - name: "APPMARKETPLACE__BASEPORTALADDRESS"
+          value: "{{ .Values.backend.basePortalAddress }}"
+        - name: "APPMARKETPLACE__CATENAADMINROLES__CL2-CX-PORTAL__0"
+          value: "{{ .Values.backend.appmarketplace.catenaAdminRoles.role }}"
+        - name: "APPMARKETPLACE__CONTENTTYPESETTINGS__0"
+          value: "{{ .Values.backend.appmarketplace.contentTypeSettings.setting0 }}"
+        - name: "APPMARKETPLACE__CONTENTTYPESETTINGS__1"
+          value: "{{ .Values.backend.appmarketplace.contentTypeSettings.setting1 }}"
+        - name: "APPMARKETPLACE__CONTENTTYPESETTINGS__2"
+          value: "{{ .Values.backend.appmarketplace.contentTypeSettings.setting2 }}"
+        - name: "APPMARKETPLACE__DOCUMENTTYPEIDS__0"
+          value: "{{ .Values.backend.appmarketplace.documentTypeIds.type0 }}"
+        - name: "APPMARKETPLACE__DOCUMENTTYPEIDS__1"
+          value: "{{ .Values.backend.appmarketplace.documentTypeIds.type1 }}"
+        - name: "APPMARKETPLACE__DOCUMENTTYPEIDS__2"
+          value: "{{ .Values.backend.appmarketplace.documentTypeIds.type2 }}"
+        - name: "APPMARKETPLACE__DOCUMENTTYPEIDS__3"
+          value: "{{ .Values.backend.appmarketplace.documentTypeIds.type3 }}"
+        - name: "APPMARKETPLACE__DOCUMENTTYPEIDS__4"
+          value: "{{ .Values.backend.appmarketplace.documentTypeIds.type4 }}"
+        - name: "APPMARKETPLACE__DOCUMENTTYPEIDS__5"
+          value: "{{ .Values.backend.appmarketplace.documentTypeIds.type5 }}"
+        - name: "APPMARKETPLACE__ITADMINROLES__CL2-CX-PORTAL__0"
+          value: "{{ .Values.backend.appmarketplace.ITAdminRoles.role }}"
+        - name: "APPMARKETPLACE__NOTIFICATIONTYPEIDS__0"
+          value: "{{ .Values.backend.appmarketplace.notificationTypeIds.type0 }}"
+        - name: "APPMARKETPLACE__OFFERSTATUSIDS__0"
+          value: "{{ .Values.backend.appmarketplace.offerStatusIds.status0 }}"
+        - name: "APPMARKETPLACE__OFFERSTATUSIDS__1"
+          value: "{{ .Values.backend.appmarketplace.offerStatusIds.status1 }}"
+        - name: "APPMARKETPLACE__SALESMANAGERROLES__CL2-CX-PORTAL__0"
+          value: "{{ .Values.backend.appmarketplace.salesManagerRoles.role }}"
+        - name: "APPMARKETPLACE__SERVICEACCOUNTROLES__TECHNICAL_ROLES_MANAGEMENT__0"
+          value: "{{ .Values.backend.appmarketplace.serviceAccountRoles.role }}"
+        - name: "APPMARKETPLACE__SERVICEMANAGERROLES__CL2-CX-PORTAL__0"
+          value: "{{ .Values.backend.appmarketplace.serviceManagerRoles.role }}"
+        - name: "APPMARKETPLACE__SUBMITAPPNOTIFICATIONTYPEIDS__0"
+          value: "{{ .Values.backend.appmarketplace.submitAppNotificationTypeIds.type0 }}"
+        - name: "PORTAL_PASSWORD"
+          valueFrom:
+            secretKeyRef:
+              name: "{{ .Values.postgresql.auth.existingSecret }}"
+              key: "portal-password"
+        - name: "PROVISIONING_PASSWORD"
+          valueFrom:
+            secretKeyRef:
+              name: "{{ .Values.postgresql.auth.existingSecret }}"
+              key: "provisioning-password"
+        - name: "CONNECTIONSTRINGS__PORTALDB"
+          value: "Server={{ .Values.postgresql.fullnameOverride }}-primary;Database={{ .Values.postgresql.auth.database }};Port={{ .Values.backend.dbConnection.port }};User Id={{ .Values.postgresql.auth.portalUser }};Password=$(PORTAL_PASSWORD);Ssl Mode={{ .Values.backend.dbConnection.sslMode }};"
+        - name: "CONNECTIONSTRINGS__PROVISIONINGDB"
+          value: "Server={{ .Values.postgresql.fullnameOverride }}-primary;Database={{ .Values.postgresql.auth.database }};Port={{ .Values.backend.dbConnection.port }};User Id={{ .Values.postgresql.auth.provisioningUser }};Password=$(PROVISIONING_PASSWORD);Ssl Mode={{ .Values.backend.dbConnection.sslMode }};"
+        - name: "DebugEnabled"
+          value: "{{ .Values.backend.appmarketplace.debugEnabled }}"
+        - name: "JWTBEAREROPTIONS__METADATAADDRESS"
+          value: "{{ .Values.backend.keycloak.central.jwtBearerOptions.metadataAddress }}"
+        - name: "JWTBEAREROPTIONS__TOKENVALIDATIONPARAMETERS__VALIDAUDIENCE"
+          value: "{{ .Values.backend.keycloak.central.jwtBearerOptions.tokenValidationParameters.validAudience }}"
+        - name: "JWTBEAREROPTIONS__TOKENVALIDATIONPARAMETERS__VALIDISSUER"
+          value: "{{ .Values.backend.keycloak.central.jwtBearerOptions.tokenValidationParameters.validIssuer }}"
+        - name: "KEYCLOAK__CENTRAL__AUTHREALM"
+          value: "{{ .Values.backend.keycloak.central.authRealm }}"
+        - name: "KEYCLOAK__CENTRAL__CLIENTID"
+          valueFrom:
+            secretKeyRef:
+              name: "{{ .Values.backend.keycloak.secret }}"
+              key: "central-client-id"
+        - name: "KEYCLOAK__CENTRAL__CLIENTSECRET"
+          valueFrom:
+            secretKeyRef:
+              name: "{{ .Values.backend.keycloak.secret }}"
+              key: "central-client-secret"
+        - name: "KEYCLOAK__CENTRAL__CONNECTIONSTRING"
+          value: "{{ .Values.backend.keycloak.central.baseAddress }}"
+        - name: "KEYCLOAK__SHARED__AUTHREALM"
+          value: "{{ .Values.backend.keycloak.shared.authRealm }}"
+        - name: "KEYCLOAK__SHARED__CLIENTID"
+          valueFrom:
+            secretKeyRef:
+              name: "{{ .Values.backend.keycloak.secret }}"
+              key: "shared-client-id"
+        - name: "KEYCLOAK__SHARED__CLIENTSECRET"
+          valueFrom:
+            secretKeyRef:
+              name: "{{ .Values.backend.keycloak.secret }}"
+              key: "shared-client-secret"
+        - name: "KEYCLOAK__SHARED__CONNECTIONSTRING"
+          value: "{{ .Values.backend.keycloak.shared.baseAddress }}"
+        - name: "Logging__LogLevel__Org.CatenaX.Ng.Portal.Backend.Offers.Library.Service"
+          value: "{{ .Values.backend.appmarketplace.logging.offersLibrary }}"
+        - name: "MAILINGSERVICE__MAIL__SMTPHOST"
+          valueFrom:
+            secretKeyRef:
+              name: "{{ .Values.backend.mailing.secret }}"
+              key: "host"
+        - name: "MAILINGSERVICE__MAIL__SMTPPASSWORD"
+          valueFrom:
+            secretKeyRef:
+              name: "{{ .Values.backend.mailing.secret }}"
+              key: "password"
+        - name: "MAILINGSERVICE__MAIL__SMTPPORT"
+          valueFrom:
+            secretKeyRef:
+              name: "{{ .Values.backend.mailing.secret }}"
+              key: "port"
+        - name: "MAILINGSERVICE__MAIL__SMTPUSER"
+          valueFrom:
+            secretKeyRef:
+              name: "{{ .Values.backend.mailing.secret }}"
+              key: "user"
+        - name: "PROVISIONING__CENTRALREALM"
+          value: "{{ .Values.backend.provisioning.centralRealm }}"
+        - name: "PROVISIONING__CENTRALREALMID"
+          value: "{{ .Values.backend.provisioning.centralRealmId }}"
+        - name: "SWAGGERENABLED"
+          value: "{{ .Values.backend.appmarketplace.swaggerEnabled }}"
