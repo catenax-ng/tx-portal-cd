@@ -144,7 +144,7 @@ backend:
           validIssuer: ""
           validAudience: "Cl2-CX-Portal"
       dbConnection:
-        host: ""
+        host: "centralidp-postgresql-primary"
         port: "5432"
         user: "kccentral"
         database: "iamcentralidp"

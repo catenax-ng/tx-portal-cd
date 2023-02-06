@@ -128,7 +128,6 @@ backend:
         tokenValidationParameters:
           validIssuer: "https://centralidp.int.demo.catena-x.net/auth/realms/CX-Central"
       dbConnection:
-        host: "centralidp-postgresql-primary"
         password: "<path:portal/data/int/keycloak#central-db-password>"
     shared:
       baseAddress: "https://sharedidp.int.demo.catena-x.net"
