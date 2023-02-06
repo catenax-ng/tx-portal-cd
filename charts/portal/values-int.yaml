@@ -233,7 +233,7 @@ backend:
       clientSecret: "<path:portal/data/int/checklist-worker#sdfactory-client-secret>"
 
 postgresql:
-  secret:
+  auth:
     password: "<path:portal/data/int/postgres#postgres-password>"
     replicationPassword: "<path:portal/data/int/postgres#replication-password>"
     portalPassword: "<path:portal/data/int/postgres#portal-password>"

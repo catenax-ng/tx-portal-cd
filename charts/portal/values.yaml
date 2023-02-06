@@ -309,9 +309,13 @@ postgresql:
   auth:
     database: "postgres"
     existingSecret: "secret-postgres-init"
-    # custom usernames for cx portal
+    password: ""
+    replicationPassword: ""
+    # custom users for cx portal
     portalUser: "portal"
     provisioningUser: "provisioning"
+    portalPassword: ""
+    provisioningPassword: ""
   architecture: "replication"
   audit:
     pgAuditLog: "write, ddl"
@@ -330,11 +334,6 @@ postgresql:
           secretKeyRef:
             name: "secret-postgres-init"
             key: "provisioning-password"
-  secret:
-    password: ""
-    replicationPassword: ""
-    portalPassword: ""
-    provisioningPassword: ""
 
 pgadmin4:
   enabled: false
