@@ -168,9 +168,20 @@ backend:
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_registration-service"
       registrationservicetag: v1.0.0-RC6
-    secret:
-      name: "secret-registration"
-      appsettings: ""
+    logging:
+      registrationServiceBpn: "Information"
+    basePortalAddress: ""
+    bpnAddress: ""
+    keycloakClientId: "Cl1-CX-Registration"
+    applicationStatusIds:
+      status0: "SUBMITTED"
+      status1: "DECLINED"
+      status2: "CONFIRMED"
+    documentTypeIds:
+      type0: "CX_FRAME_CONTRACT"
+      type1: "COMMERCIAL_REGISTER_EXTRACT"
+    debugEnabled: false
+    swaggerEnabled: false
   administration:
     name: "administration-service"
     image:
@@ -184,6 +195,7 @@ backend:
     centralRealmId: "CX-Central"
     invitedUserInitialRoles:
       registration: "Company Admin"
+    serviceAccountClientPrefix: "sa"
     centralIdentityProvider:
       clientId: "central-idp"
     sharedRealmClient:

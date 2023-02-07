@@ -143,8 +143,12 @@ backend:
   registration:
     image:
       registrationservicetag: v1.0.0-RC6
-    secret:
-      appsettings: "<path:portal/data/beta/registration#appsettings.json>"
+    logging:
+      registrationServiceBpn: "Debug"
+    basePortalAddress: "https://portal.beta.demo.catena-x.net/registration"
+    bpnAddress: "https://partners-pool.beta.demo.catena-x.net"
+    debugEnabled: true
+    swaggerEnabled: true
 
   administration:
     image:
