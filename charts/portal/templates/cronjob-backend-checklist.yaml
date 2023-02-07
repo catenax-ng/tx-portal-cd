@@ -50,6 +50,8 @@ spec:
                   key: "provisioning-password"
             - name: "APPLICATIONACTIVATION__APPLICATIONAPPROVALINITIALROLES__Cl2-CX-Portal__0"
               value: "{{ .Values.backend.checklistworker.applicationActivation.applicationApprovalInitialRoles.portal.role }}"
+            - name: "APPLICATIONACTIVATION__CLIENTTTREMOVEROLESONACTIVATION__0"
+              value: "{{ .Values.backend.checklistworker.applicationActivation.clientToRemoveRolesOnActivation.client0 }}"
             - name: "APPLICATIONACTIVATION__BASEPORTALADDRESS"
               value: "{{ .Values.backend.basePortalAddress }}"
             - name: "APPLICATIONACTIVATION__COMPANYADMINROLES__Cl1-CX-Registration__0"
