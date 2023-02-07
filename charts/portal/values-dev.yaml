@@ -195,7 +195,7 @@ backend:
   services:
     name: "services-service"
     image:
-      servicesservicetag: 695e8d4774c40425a48c11a0a4ddbf73da6c73b8
+      servicesservicetag: eccf1f31dc864e83151776eabe73f2e2765afd2f
     logging:
       offersLibrary: "Debug"
     serviceMarketplaceAddress: "https://portal.dev.demo.catena-x.net/servicemarketplace"
