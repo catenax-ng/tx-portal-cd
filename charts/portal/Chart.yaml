@@ -21,8 +21,8 @@ apiVersion: v2
 name: portal
 description: Helm chart for Catena-X Portal
 type: application
-version: 1.0.0-RC6
-appVersion: 1.0.0-RC6
+version: 1.0.0-RC7
+appVersion: 1.0.0-RC7
 dependencies:
   - condition: postgresql.enabled
     name: postgresql

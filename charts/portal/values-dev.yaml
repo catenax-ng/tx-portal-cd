@@ -52,15 +52,15 @@ frontend:
 
   portal:
     image:
-      portaltag: dev_689c67d5c41307da053463c189b78778c52e8a86
+      portaltag: main_7194d84a7bbfb8e187d7c588833759d06bab3f30
 
   assets:
     image:
-      assetstag: main_aef215cb733deb1c9fdf745653afffa690bb7798
+      assetstag: main_fa6dca83b7a3e344a10f368d0988ee1ea93bc37b
 
   registration:
     image:
-      registrationtag: dev_eb45a5ee53334c1425d1916fbbd52a4d0d3c36b7
+      registrationtag: main_c13fd5ac5ef8eaccf1ba88ba3c7f10a3be715cab
 
   env:
     PORTAL_ASSETS_URL: "https://portal.dev.demo.catena-x.net/assets"

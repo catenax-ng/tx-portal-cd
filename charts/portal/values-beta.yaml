@@ -52,15 +52,15 @@ frontend:
 
   portal:
     image:
-      portaltag: 1.0.0-RC6
+      portaltag: 1.0.0-RC7
 
   assets:
     image:
-      assetstag: 1.0.0-RC4
+      assetstag: 1.0.0-RC5
 
   registration:
     image:
-      registrationtag: 1.0.0-RC2
+      registrationtag: 1.0.0-RC3
 
   env:
     PORTAL_ASSETS_URL: "https://portal.beta.demo.catena-x.net/assets"
@@ -142,7 +142,7 @@ backend:
 
   registration:
     image:
-      registrationservicetag: v1.0.0-RC6
+      registrationservicetag: v1.0.0-RC7
     logging:
       registrationServiceBpn: "Debug"
     basePortalAddress: "https://portal.beta.demo.catena-x.net/registration"
@@ -152,7 +152,7 @@ backend:
 
   administration:
     image:
-      administrationservicetag: v1.0.0-RC6
+      administrationservicetag: v1.0.0-RC7
     secret:
       appsettings: "<path:portal/data/beta/administration#appsettings.json>"
 
@@ -167,13 +167,13 @@ backend:
         replyTo: "<path:portal/data/mailing#replyto>"
     service:
       image:
-        provisioningservicetag: v1.0.0-RC6
+        provisioningservicetag: v1.0.0-RC7
       debugEnabled: true
       swaggerEnabled: true
 
   appmarketplace:
     image:
-      appmarketplaceservicetag: v1.0.0-RC6
+      appmarketplaceservicetag: v1.0.0-RC7
     logging:
       offersLibrary: "Debug"
     appOverviewAddress: "https://portal.beta.demo.catena-x.net/appoverview"
@@ -182,23 +182,23 @@ backend:
 
   portalmigrations:
     image:
-      portalmigrationstag: v1.0.0-RC6
+      portalmigrationstag: v1.0.0-RC7
     seeding:
       testDataEnvironments: "consortia"
 
   portalmaintenance:
     image:
-      portalmaintenancetag: v1.0.0-RC6
+      portalmaintenancetag: v1.0.0-RC7
 
   notification:
     image:
-      notificationservicetag: v1.0.0-RC6
+      notificationservicetag: v1.0.0-RC7
     debugEnabled: true
     swaggerEnabled: true
 
   services:
     image:
-      servicesservicetag: v1.0.0-RC6
+      servicesservicetag: v1.0.0-RC7
     logging:
       offersLibrary: "Debug"
     serviceMarketplaceAddress: "https://portal.beta.demo.catena-x.net/servicemarketplace"
@@ -207,11 +207,11 @@ backend:
 
   provisioningmigrations:
     image:
-      provisioningmigrationstag: v1.0.0-RC6
+      provisioningmigrationstag: v1.0.0-RC7
 
   checklistworker:
     image:
-      checklistworkertag: v1.0.0-RC6
+      checklistworkertag: v1.0.0-RC7
     logging:
       checklistLibrary: "Debug"
       bpdmLibrary: "Debug"
