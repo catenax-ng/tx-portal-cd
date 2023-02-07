@@ -52,15 +52,15 @@ frontend:
 
   portal:
     image:
-      portaltag: dev_6fd81bf1494d763cae83cdacbaca8550f2f23e22
+      portaltag: dev_689c67d5c41307da053463c189b78778c52e8a86
 
   assets:
     image:
-      assetstag: main_52591b926081090ba6dbd2840bfe06f0220cea5b
+      assetstag: main_aef215cb733deb1c9fdf745653afffa690bb7798
 
   registration:
     image:
-      registrationtag: dev_2cabcb2269c9c5747b671262a155cfc44df3de2a
+      registrationtag: dev_eb45a5ee53334c1425d1916fbbd52a4d0d3c36b7
 
   env:
     PORTAL_ASSETS_URL: "https://portal.dev.demo.catena-x.net/assets"
@@ -142,13 +142,13 @@ backend:
 
   registration:
     image:
-      registrationservicetag: cb28d5307ae5f47562aedbea706331aee6fa7610
+      registrationservicetag: ad314aa3d6f9fbe870fc89ecdd9368d264761621
     secret:
       appsettings: "<path:portal/data/dev/registration#appsettings.json>"
 
   administration:
     image:
-      administrationservicetag: 699b52bbb96d35be25d0818eaec174cb06a20db2
+      administrationservicetag: ad314aa3d6f9fbe870fc89ecdd9368d264761621
     secret:
       appsettings: "<path:portal/data/dev/administration#appsettings.json>"
 
@@ -163,13 +163,13 @@ backend:
         replyTo: "<path:portal/data/mailing#replyto>"
     service:
       image:
-        provisioningservicetag: 93ec86b3817f41fceee62f3d65235796df218741
+        provisioningservicetag: ad314aa3d6f9fbe870fc89ecdd9368d264761621
       debugEnabled: true
       swaggerEnabled: true
 
   appmarketplace:
     image:
-      appmarketplaceservicetag: 51c32cbaababbb46b818962a210264f4dff7e336
+      appmarketplaceservicetag: ad314aa3d6f9fbe870fc89ecdd9368d264761621
     logging:
       offersLibrary: "Debug"
     appOverviewAddress: "https://portal.dev.demo.catena-x.net/appoverview"
@@ -195,7 +195,7 @@ backend:
   services:
     name: "services-service"
     image:
-      servicesservicetag: 51c32cbaababbb46b818962a210264f4dff7e336
+      servicesservicetag: ad314aa3d6f9fbe870fc89ecdd9368d264761621
     logging:
       offersLibrary: "Debug"
     serviceMarketplaceAddress: "https://portal.dev.demo.catena-x.net/servicemarketplace"
