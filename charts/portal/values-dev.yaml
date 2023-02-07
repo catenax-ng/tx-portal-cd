@@ -184,7 +184,7 @@ backend:
 
   portalmaintenance:
     image:
-      portalmaintenancetag: 084e3fdcae171c99f47cb81793ae59e3e0ca9ccf
+      portalmaintenancetag: 695e8d4774c40425a48c11a0a4ddbf73da6c73b8
 
   notification:
     image:
