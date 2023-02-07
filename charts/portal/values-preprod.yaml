@@ -128,8 +128,6 @@ backend:
         tokenValidationParameters:
           validIssuer: "https://centralidp.pre-prod.demo.catena-x.net/auth/realms/CX-Central"
       dbConnection:
-        host: "centralidp-postgresql-primary"
-        user: "<path:portal/data/keycloak#central-db-user>"
         password: "<path:portal/data/pre-prod/keycloak#central-db-password>"
     shared:
       baseAddress: "https://sharedidp.pre-prod.demo.catena-x.net"
@@ -166,14 +164,17 @@ backend:
     service:
       image:
         provisioningservicetag: v1.0.0-RC6
-      secret:
-        appsettings: "<path:portal/data/pre-prod/provisioning#appsettings.json>"
+      debugEnabled: true
+      swaggerEnabled: true
 
   appmarketplace:
     image:
       appmarketplaceservicetag: v1.0.0-RC6
-    secret:
-      appsettings: "<path:portal/data/pre-prod/appmarketplace#appsettings.json>"
+    logging:
+      offersLibrary: "Debug"
+    appOverviewAddress: "https://portal.pre-prod.demo.catena-x.net/appoverview"
+    debugEnabled: true
+    swaggerEnabled: true
 
   portalmigrations:
     image:
@@ -188,14 +189,17 @@ backend:
   notification:
     image:
       notificationservicetag: v1.0.0-RC6
-    debugenabled: true
-    swaggerenabled: true
+    debugEnabled: true
+    swaggerEnabled: true
 
   services:
     image:
       servicesservicetag: v1.0.0-RC6
-    secret:
-      appsettings: "<path:portal/data/pre-prod/services#appsettings.json>"
+    logging:
+      offersLibrary: "Debug"
+    serviceMarketplaceAddress: "https://portal.pre-prod.demo.catena-x.net/servicemarketplace"
+    debugEnabled: true
+    swaggerEnabled: true
 
   provisioningmigrations:
     image:
@@ -233,7 +237,7 @@ backend:
       clientSecret: "<path:portal/data/pre-prod/checklist-worker#sdfactory-client-secret>"
 
 postgresql:
-  secret:
+  auth:
     password: "<path:portal/data/pre-prod/postgres#postgres-password>"
     replicationPassword: "<path:portal/data/pre-prod/postgres#replication-password>"
     portalPassword: "<path:portal/data/pre-prod/postgres#portal-password>"

@@ -144,9 +144,9 @@ backend:
           validIssuer: ""
           validAudience: "Cl2-CX-Portal"
       dbConnection:
-        host: ""
+        host: "centralidp-postgresql-primary"
         port: "5432"
-        user: ""
+        user: "kccentral"
         database: "iamcentralidp"
         password: ""
         schema: "public"
@@ -205,17 +205,59 @@ backend:
       image:
         name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-service"
         provisioningservicetag: v1.0.0-RC6
-      secret:
-        name: "secret-provisioning"
-        appsettings: ""
+      debugEnabled: false
+      swaggerEnabled: false
   appmarketplace:
     name: "marketplace-app-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_marketplace-app-service"
       appmarketplaceservicetag: v1.0.0-RC6
-    secret:
-      name: "secret-appmarketplace"
-      appsettings: ""
+    logging:
+      offersLibrary: "Information"
+    appOverviewAddress: ""
+    catenaAdminRoles:
+      role: "CX Admin"
+    serviceAccountRoles:
+      role: "Digital Twin Management"
+    salesManagerRoles:
+      role: "Sales Manager"
+    serviceManagerRoles:
+      role: "App Manager"
+    activeAppCompanyAdminRoles:
+      role0: "IT Admin"
+      role1: "Company Admin"
+    approveAppUserRoles:
+      role0: "Sales Manager"
+      role1: "Service Manager"
+    ITAdminRoles:
+      role: "IT Admin"
+    documentTypeIds:
+      type0: "APP_CONTRACT"
+      type1: "APP_DATA_DETAILS"
+      type2: "ADDITIONAL_DETAILS"
+      type3: "APP_TECHNICAL_INFORMATION"
+      type4: "APP_LEADIMAGE"
+      type5: "APP_IMAGE"
+    contentTypeSettings:
+      setting0: "application/pdf"
+      setting1: "image/jpeg"
+      setting2: "image/png"
+    notificationTypeIds:
+      type0: "APP_RELEASE_REQUEST"
+    activeAppNotificationTypeIds:
+      type0: "APP_ROLE_ADDED"
+    submitAppNotificationTypeIds:
+      type0: "APP_RELEASE_REQUEST"
+    approveAppNotificationTypeIds:
+     type0: "APP_RELEASE_APPROVAL"
+    appImageDocumentTypeIds:
+      type0: "APP_LEADIMAGE"
+      type1: "APP_IMAGE"
+    offerStatusIds:
+      status0: "IN_REVIEW"
+      status1: "ACTIVE"
+    debugEnabled: false
+    swaggerEnabled: false
   portalmigrations:
     name: "portal-migrations"
     image:
@@ -233,16 +275,39 @@ backend:
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_notification-service"
       notificationservicetag: v1.0.0-RC6
-    debugenabled: false
-    swaggerenabled: false
+    debugEnabled: false
+    swaggerEnabled: false
   services:
     name: "services-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_services-service"
       servicesservicetag: v1.0.0-RC6
-    secret:
-      name: "secret-services"
-      appsettings: ""
+    logging:
+      offersLibrary: "Information"
+    serviceMarketplaceAddress: ""
+    catenaAdminRoles:
+      role: "CX Admin"
+    serviceAccountRoles:
+      role: "Digital Twin Management"
+    salesManagerRoles:
+      role: "Sales Manager"
+    serviceManagerRoles:
+      role: "Service Manager"
+    approveServiceUserRoles:
+      role0: "Sales Manager"
+      role1: "Service Manager"
+    ITAdminRoles:
+      role: "IT Admin"
+    documentTypeIds:
+      type0: "ADDITIONAL_DETAILS"
+    contentTypeSettings:
+      setting0: "application/pdf"
+    submitServiceNotificationTypeIds:
+      type0: "SERVICE_RELEASE_REQUEST"
+    approveServiceNotificationTypeIds:
+     type0: "SERVICE_RELEASE_APPROVAL"
+    debugEnabled: false
+    swaggerEnabled: false
   provisioningmigrations:
     name: "provisioning-migrations"
     image:
@@ -309,9 +374,13 @@ postgresql:
   auth:
     database: "postgres"
     existingSecret: "secret-postgres-init"
-    # custom usernames for cx portal
+    password: ""
+    replicationPassword: ""
+    # custom users for cx portal
     portalUser: "portal"
     provisioningUser: "provisioning"
+    portalPassword: ""
+    provisioningPassword: ""
   architecture: "replication"
   audit:
     pgAuditLog: "write, ddl"
@@ -323,18 +392,13 @@ postgresql:
       - name: "PORTAL_PASSWORD"
         valueFrom:
           secretKeyRef:
-            name: "secret-postgres-init"
+            name: "{{ .Values.auth.existingSecret }}"
             key: "portal-password"
       - name: "PROVISIONING_PASSWORD"
         valueFrom:
           secretKeyRef:
-            name: "secret-postgres-init"
+            name: "{{ .Values.auth.existingSecret }}"
             key: "provisioning-password"
-  secret:
-    password: ""
-    replicationPassword: ""
-    portalPassword: ""
-    provisioningPassword: ""
 
 pgadmin4:
   enabled: false

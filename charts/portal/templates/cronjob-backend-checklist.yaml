@@ -41,18 +41,18 @@ spec:
             - name: "PORTAL_PASSWORD"
               valueFrom:
                 secretKeyRef:
-                  name: "secret-postgres-init"
+                  name: "{{ .Values.postgresql.auth.existingSecret }}"
                   key: "portal-password"
             - name: "PROVISIONING_PASSWORD"
               valueFrom:
                 secretKeyRef:
-                  name: "secret-postgres-init"
+                  name: "{{ .Values.postgresql.auth.existingSecret }}"
                   key: "provisioning-password"
-            - name: "APPLICATIONACTIVATION__APPLICATIONAPPROVALINITIALROLES__CL2-CX-PORTAL__0"
+            - name: "APPLICATIONACTIVATION__APPLICATIONAPPROVALINITIALROLES__Cl2-CX-Portal__0"
               value: "{{ .Values.backend.checklistworker.applicationActivation.applicationApprovalInitialRoles.portal.role }}"
             - name: "APPLICATIONACTIVATION__BASEPORTALADDRESS"
               value: "{{ .Values.backend.basePortalAddress }}"
-            - name: "APPLICATIONACTIVATION__COMPANYADMINROLES__CL1-CX-REGISTRATION__0"
+            - name: "APPLICATIONACTIVATION__COMPANYADMINROLES__Cl1-CX-Registration__0"
               value: "{{ .Values.backend.checklistworker.applicationActivation.applicationApprovalInitialRoles.registration.role }}"
             - name: "APPLICATIONACTIVATION__WELCOMENOTIFICATIONTYPEIDS__0"
               value: "{{ .Values.backend.checklistworker.applicationActivation.welcomeNotificationTypeIds.type0 }}"
@@ -222,7 +222,7 @@ spec:
               value: "{{ .Values.backend.provisioning.centralRealm }}"
             - name: "PROVISIONING__CENTRALREALMID"
               value: "{{ .Values.backend.provisioning.centralRealmId }}"
-            - name: "PROVISIONING__INVITEDUSERINITIALROLES__CL1-CX-REGISTRATION__0"
+            - name: "PROVISIONING__INVITEDUSERINITIALROLES__Cl1-CX-Registration__0"
               value: "{{ .Values.backend.provisioning.invitedUserInitialRoles.registration }}"
             - name: "PROVISIONING__SHAREDREALM__SMTPSERVER__AUTH"
               value: "{{ .Values.backend.provisioning.sharedRealm.smtpServer.auth }}"

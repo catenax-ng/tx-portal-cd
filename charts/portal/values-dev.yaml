@@ -128,8 +128,6 @@ backend:
         tokenValidationParameters:
           validIssuer: "https://centralidp.dev.demo.catena-x.net/auth/realms/CX-Central"
       dbConnection:
-        host: "centralidp-postgresql-primary"
-        user: "<path:portal/data/keycloak#central-db-user>"
         password: "<path:portal/data/dev/keycloak#central-db-password>"
     shared:
       baseAddress: "https://sharedidp.dev.demo.catena-x.net"
@@ -166,14 +164,17 @@ backend:
     service:
       image:
         provisioningservicetag: ad314aa3d6f9fbe870fc89ecdd9368d264761621
-      secret:
-        appsettings: "<path:portal/data/dev/provisioning#appsettings.json>"
+      debugEnabled: true
+      swaggerEnabled: true
 
   appmarketplace:
     image:
       appmarketplaceservicetag: ad314aa3d6f9fbe870fc89ecdd9368d264761621
-    secret:
-      appsettings: "<path:portal/data/dev/appmarketplace#appsettings.json>"
+    logging:
+      offersLibrary: "Debug"
+    appOverviewAddress: "https://portal.dev.demo.catena-x.net/appoverview"
+    debugEnabled: true
+    swaggerEnabled: true
 
   portalmigrations:
     image:
@@ -188,14 +189,18 @@ backend:
   notification:
     image:
       notificationservicetag: 699b52bbb96d35be25d0818eaec174cb06a20db2
-    debugenabled: true
-    swaggerenabled: true
+    debugEnabled: true
+    swaggerEnabled: true
 
   services:
+    name: "services-service"
     image:
       servicesservicetag: ad314aa3d6f9fbe870fc89ecdd9368d264761621
-    secret:
-      appsettings: "<path:portal/data/dev/services#appsettings.json>"
+    logging:
+      offersLibrary: "Debug"
+    serviceMarketplaceAddress: "https://portal.dev.demo.catena-x.net/servicemarketplace"
+    debugEnabled: true
+    swaggerEnabled: true
 
   provisioningmigrations:
     image:
@@ -233,7 +238,7 @@ backend:
       clientSecret: "<path:portal/data/dev/checklist-worker#sdfactory-client-secret>"
 
 postgresql:
-  secret:
+  auth:
     password: "<path:portal/data/dev/postgres#postgres-password>"
     replicationPassword: "<path:portal/data/dev/postgres#replication-password>"
     portalPassword: "<path:portal/data/dev/postgres#portal-password>"
