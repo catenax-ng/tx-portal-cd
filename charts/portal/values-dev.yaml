@@ -169,7 +169,7 @@ backend:
 
   appmarketplace:
     image:
-      appmarketplaceservicetag: eccf1f31dc864e83151776eabe73f2e2765afd2f
+      appmarketplaceservicetag: c3f7bb0b24f5d1ce77a3594eb85f271327b7edb5
     logging:
       offersLibrary: "Debug"
     appOverviewAddress: "https://portal.dev.demo.catena-x.net/appoverview"
