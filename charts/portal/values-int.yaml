@@ -52,7 +52,7 @@ frontend:
 
   portal:
     image:
-      portaltag: 1.0.0-RC6
+      portaltag: 1.0.0-RC7
 
   assets:
     image:
