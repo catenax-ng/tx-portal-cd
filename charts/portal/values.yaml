@@ -187,9 +187,43 @@ backend:
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_administration-service"
       administrationservicetag: v1.0.0-RC7
-    secret:
-      name: "secret-administration"
-      appsettings: ""
+    connectors:
+      validCertificationContentTypes:
+        type0: ""
+        type1: ""
+        type3: ""
+        type4: ""
+    keycloakClientId: "Cl2-CX-Portal"
+    daps:
+      baseAddress: ""
+      tokenAddress: ""
+      scope: "openid"
+      grantType: "client_credentials"
+      clientId: ""
+      clientSecret: ""
+    identityProviderAdmin:
+      csvSettings:
+        fileName: "identityproviderlinks.csv"
+        contentType: "text/csv"
+        charset: "UTF-8"
+        separator: ","
+        headerUserId: "UserId"
+        headerFirstName: "FirstName"
+        headerLastName: "LastName"
+        headerEmail: "Email"
+        headerProviderAlias: "ProviderAlias"
+        headerProviderUserId: "ProviderUserId"
+        headerProviderUserName: "ProviderUserName"
+    invitation:
+      invitedUserInitialRoles:
+        role: "Company Admin"
+    registration:
+      partnerUserInitialRoles:
+        role: "Company Admin"
+      documentTypeIds:
+        type0: "COMMERCIAL_REGISTER_EXTRACT"
+    debugEnabled: false
+    swaggerEnabled: false
   provisioning:
     centralRealm: "CX-Central"
     centralRealmId: "CX-Central"
