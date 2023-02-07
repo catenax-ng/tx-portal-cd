@@ -62,17 +62,17 @@ frontend:
     name: "portal"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-frontend"
-      portaltag: 1.0.0-RC6
+      portaltag: 1.0.0-RC7
   registration:
     name: "registration"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-frontend-registration"
-      registrationtag: 1.0.0-RC2
+      registrationtag: 1.0.0-RC3
   assets:
     name: "assets"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-assets"
-      assetstag: 1.0.0-RC4
+      assetstag: 1.0.0-RC5
   env:
     PORTAL_ASSETS_URL: ""
     PORTAL_BACKEND_URL: ""
@@ -167,7 +167,7 @@ backend:
     name: "registration-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_registration-service"
-      registrationservicetag: v1.0.0-RC6
+      registrationservicetag: v1.0.0-RC7
     secret:
       name: "secret-registration"
       appsettings: ""
@@ -175,7 +175,7 @@ backend:
     name: "administration-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_administration-service"
-      administrationservicetag: v1.0.0-RC6
+      administrationservicetag: v1.0.0-RC7
     secret:
       name: "secret-administration"
       appsettings: ""
@@ -204,14 +204,14 @@ backend:
       name: "provisioning-service"
       image:
         name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-service"
-        provisioningservicetag: v1.0.0-RC6
+        provisioningservicetag: v1.0.0-RC7
       debugEnabled: false
       swaggerEnabled: false
   appmarketplace:
     name: "marketplace-app-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_marketplace-app-service"
-      appmarketplaceservicetag: v1.0.0-RC6
+      appmarketplaceservicetag: v1.0.0-RC7
     logging:
       offersLibrary: "Information"
     appOverviewAddress: ""
@@ -262,26 +262,26 @@ backend:
     name: "portal-migrations"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_portal-migrations"
-      portalmigrationstag: v1.0.0-RC6
+      portalmigrationstag: v1.0.0-RC7
     seeding:
       testDataEnvironments: ""
   portalmaintenance:
     name: "portal-maintenance"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_maintenance-service"
-      portalmaintenancetag: v1.0.0-RC6
+      portalmaintenancetag: v1.0.0-RC7
   notification:
     name: "notification-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_notification-service"
-      notificationservicetag: v1.0.0-RC6
+      notificationservicetag: v1.0.0-RC7
     debugEnabled: false
     swaggerEnabled: false
   services:
     name: "services-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_services-service"
-      servicesservicetag: v1.0.0-RC6
+      servicesservicetag: v1.0.0-RC7
     logging:
       offersLibrary: "Information"
     serviceMarketplaceAddress: ""
@@ -312,12 +312,12 @@ backend:
     name: "provisioning-migrations"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-migrations"
-      provisioningmigrationstag: v1.0.0-RC6
+      provisioningmigrationstag: v1.0.0-RC7
   checklistworker:
     name: "checklist-worker"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_checklist-worker"
-      checklistworkertag: v1.0.0-RC6
+      checklistworkertag: v1.0.0-RC7
     secret: "secret-checklist-worker"
     logging:
       checklistLibrary: "Information"
