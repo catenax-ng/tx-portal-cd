@@ -132,6 +132,7 @@ backend:
     schema: "portal"
     sslMode: "Disable"
   basePortalAddress: ""
+  userManagementAddress: ""
   keycloak:
     central:
       baseAddress: ""
