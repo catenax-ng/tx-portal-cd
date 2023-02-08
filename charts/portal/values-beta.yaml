@@ -230,7 +230,7 @@ backend:
       clientId: "<path:portal/data/checklist-worker#custodian-client-id>"
       clientSecret: "<path:portal/data/beta/checklist-worker#custodian-client-secret>"
     sdfactory:
-      baseAddress: "https://sdfactory.beta.demo.catena-x.net/selfdescription"
+      baseAddress:  "https://sdfactory-r3.beta.demo.catena-x.net/selfdescription"
       tokenAddress: "https://centralidp.beta.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
       issuerBpn: "BPNL00000003CRHK"
       clientId: "<path:portal/data/checklist-worker#sdfactory-client-id>"
