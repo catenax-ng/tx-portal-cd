@@ -208,7 +208,7 @@ backend:
 
   checklistworker:
     image:
-      checklistworkertag: c3f7bb0b24f5d1ce77a3594eb85f271327b7edb5
+      checklistworkertag: 49193dd45205c62a21219dec2401785449b4a773
     logging:
       checklistLibrary: "Debug"
       bpdmLibrary: "Debug"
