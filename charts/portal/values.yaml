@@ -164,6 +164,9 @@ backend:
     user: ""
     password: ""
     secret: "secret-mailing"
+  # secret data (client-ids and client-secrets) for interfaces (daps, custodian, bpdm, sdFactory, clearinghouse) of the backend services and jobs
+  interfaces:
+    secret: "secret-backend-interfaces"
   registration:
     name: "registration-service"
     image:
@@ -190,10 +193,10 @@ backend:
       administrationservicetag: v1.0.0-RC7
     connectors:
       validCertificationContentTypes:
-        type0: ""
-        type1: ""
-        type3: ""
-        type4: ""
+        type0: "application/x-pem-file"
+        type1: "application/x-x509-ca-cert"
+        type2: "application/pkix-cert"
+        type3: "application/octet-stream"
     keycloakClientId: "Cl2-CX-Portal"
     daps:
       baseAddress: ""
@@ -223,6 +226,12 @@ backend:
         role: "Company Admin"
       documentTypeIds:
         type0: "COMMERCIAL_REGISTER_EXTRACT"
+    userManagement:
+      companyUserStatusIds:
+        status0: "ACTIVE"
+        status1: "INACTIVE"
+    serviceAccount:
+      clientId: "technical_roles_management"
     debugEnabled: false
     swaggerEnabled: false
   provisioning:

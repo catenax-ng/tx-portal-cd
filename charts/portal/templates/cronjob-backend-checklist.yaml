@@ -71,12 +71,12 @@ spec:
             - name: "CHECKLIST__BPDM__CLIENTID"
               valueFrom:
                 secretKeyRef:
-                  name: "{{ .Values.backend.checklistworker.secret }}"
+                  name: "{{ .Values.backend.interfaces.secret }}"
                   key: "bpdm-client-id"
             - name: "CHECKLIST__BPDM__CLIENTSECRET"
               valueFrom:
                 secretKeyRef:
-                  name: "{{ .Values.backend.checklistworker.secret }}"
+                  name: "{{ .Values.backend.interfaces.secret }}"
                   key: "bpdm-client-secret"
             - name: "CHECKLIST__BPDM__GRANTTYPE"
               value: "{{ .Values.backend.checklistworker.bpdm.grantType }}"
@@ -93,12 +93,12 @@ spec:
             - name: "CHECKLIST__CLEARINGHOUSE__CLIENTID"
               valueFrom:
                 secretKeyRef:
-                  name: "{{ .Values.backend.checklistworker.secret }}"
+                  name: "{{ .Values.backend.interfaces.secret }}"
                   key: "clearinghouse-client-id"
             - name: "CHECKLIST__CLEARINGHOUSE__CLIENTSECRET"
               valueFrom:
                 secretKeyRef:
-                  name: "{{ .Values.backend.checklistworker.secret }}"
+                  name: "{{ .Values.backend.interfaces.secret }}"
                   key: "clearinghouse-client-secret"
             - name: "CHECKLIST__CLEARINGHOUSE__GRANTTYPE"
               value: "{{ .Values.backend.checklistworker.clearinghouse.grantType }}"
@@ -115,12 +115,12 @@ spec:
             - name: "CHECKLIST__CUSTODIAN__CLIENTID"
               valueFrom:
                 secretKeyRef:
-                  name: "{{ .Values.backend.checklistworker.secret }}"
+                  name: "{{ .Values.backend.interfaces.secret }}"
                   key: "custodian-client-id"
             - name: "CHECKLIST__CUSTODIAN__CLIENTSECRET"
               valueFrom:
                 secretKeyRef:
-                  name: "{{ .Values.backend.checklistworker.secret }}"
+                  name: "{{ .Values.backend.interfaces.secret }}"
                   key: "custodian-client-secret"
             - name: "CHECKLIST__CUSTODIAN__GRANTTYPE"
               value: "{{ .Values.backend.checklistworker.custodian.grantType }}"
@@ -135,12 +135,12 @@ spec:
             - name: "CHECKLIST__SDFACTORY__CLIENTID"
               valueFrom:
                 secretKeyRef:
-                  name: "{{ .Values.backend.checklistworker.secret }}"
+                  name: "{{ .Values.backend.interfaces.secret }}"
                   key: "sdfactory-client-id"
             - name: "CHECKLIST__SDFACTORY__CLIENTSECRET"
               valueFrom:
                 secretKeyRef:
-                  name: "{{ .Values.backend.checklistworker.secret }}"
+                  name: "{{ .Values.backend.interfaces.secret }}"
                   key: "sdfactory-client-secret"
             - name: "CHECKLIST__SDFACTORY__GRANTTYPE"
               value: "{{ .Values.backend.checklistworker.sdfactory.grantType }}"

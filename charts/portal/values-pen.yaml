@@ -154,8 +154,13 @@ backend:
   administration:
     image:
       administrationservicetag: v1.0.0-RC7
-    secret:
-      appsettings: "<path:portal/data/pen/administration#appsettings.json>"
+    daps:
+      baseAddress: "https://drs-pen.int.demo.catena-x.net/api/v1/daps"
+      tokenAddress: "https://centralidp-pen.dev.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
+      clientId: "<path:portal/data/administration#daps-client-id>"
+      clientSecret: "<path:portal/data/pen/administration#daps-client-secret>"
+    debugEnabled: true
+    swaggerEnabled: true
 
   provisioning:
     sharedRealm:
