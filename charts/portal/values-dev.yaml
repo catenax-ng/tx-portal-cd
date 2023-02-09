@@ -60,7 +60,7 @@ frontend:
 
   registration:
     image:
-      registrationtag: dev_0a5620d6d2b319e1305486efb4656e89d6571a29
+      registrationtag: dev_7d23046b7ae75ea2416fe13edbb2ab38e78b3af2
 
   env:
     PORTAL_ASSETS_URL: "https://portal.dev.demo.catena-x.net/assets"
