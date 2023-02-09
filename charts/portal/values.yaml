@@ -157,13 +157,13 @@ backend:
       clientId: ""
       clientSecret: ""
       authRealm: "master"
-    secret: "secret-keycloak"
+    secret: "secret-backend-keycloak"
   mailing:
     host: ""
     port: ""
     user: ""
     password: ""
-    secret: "secret-mailing"
+    secret: "secret-backend-mailing"
   # secret data (client-ids and client-secrets) for interfaces (daps, custodian, bpdm, sdFactory, clearinghouse) of the backend services and jobs
   interfaces:
     secret: "secret-backend-interfaces"
