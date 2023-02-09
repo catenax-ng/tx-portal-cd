@@ -225,7 +225,7 @@ backend:
       custodianLibrary: "Debug"
       sdfactoryLibrary: "Debug"
     bpdm:
-      baseAddress: "https://portal-gate.beta.demo.catena-x.net/"
+      baseAddress: "https://portal-gate.beta.demo.catena-x.net"
       tokenAddress: "https://centralidp.beta.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
       clientId: "<path:portal/data/checklist-worker#bpdm-client-id>"
       clientSecret: "<path:portal/data/beta/checklist-worker#bpdm-client-secret>"
