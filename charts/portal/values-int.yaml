@@ -117,6 +117,7 @@ backend:
               port: 8080
 
   basePortalAddress: "https://portal.int.demo.catena-x.net/home"
+  userManagementAddress: "https://portal.int.demo.catena-x.net/usermanagement"
 
   keycloak:
     central:

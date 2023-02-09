@@ -132,6 +132,7 @@ backend:
     schema: "portal"
     sslMode: "Disable"
   basePortalAddress: ""
+  userManagementAddress: ""
   keycloak:
     central:
       baseAddress: ""
@@ -377,6 +378,8 @@ backend:
           role: "Company Admin"
         registration:
           role: "Company Admin"
+      clientToRemoveRolesOnActivation:
+        client0: "Cl1-CX-Registration"
       welcomeNotificationTypeIds:
         type0: "WELCOME"
         type1: "WELCOME_USE_CASES"

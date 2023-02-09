@@ -52,15 +52,15 @@ frontend:
 
   portal:
     image:
-      portaltag: main_7194d84a7bbfb8e187d7c588833759d06bab3f30
+      portaltag: dev_c98c60af1cbb1ee0396016df289482ae2224332a
 
   assets:
     image:
-      assetstag: main_fa6dca83b7a3e344a10f368d0988ee1ea93bc37b
+      assetstag: main_4593b18bbdf563ccdb951d611581737f59e00dba
 
   registration:
     image:
-      registrationtag: main_c13fd5ac5ef8eaccf1ba88ba3c7f10a3be715cab
+      registrationtag: dev_620175da0ccd7a9de618124c419432b352b83afa
 
   env:
     PORTAL_ASSETS_URL: "https://portal.dev.demo.catena-x.net/assets"
@@ -117,6 +117,7 @@ backend:
               port: 8080
 
   basePortalAddress: "https://portal.dev.demo.catena-x.net/home"
+  userManagementAddress: "https://portal.dev.demo.catena-x.net/usermanagement"
 
   keycloak:
     central:
@@ -142,7 +143,7 @@ backend:
 
   registration:
     image:
-      registrationservicetag: ad314aa3d6f9fbe870fc89ecdd9368d264761621
+      registrationservicetag: 62de0e786a5eee840bf96aabacdc3678b8441bbd
     logging:
       registrationServiceBpn: "Debug"
     basePortalAddress: "https://portal.dev.demo.catena-x.net/registration"
@@ -152,7 +153,7 @@ backend:
 
   administration:
     image:
-      administrationservicetag: ad314aa3d6f9fbe870fc89ecdd9368d264761621
+      administrationservicetag: 62de0e786a5eee840bf96aabacdc3678b8441bbd
     secret:
       appsettings: "<path:portal/data/dev/administration#appsettings.json>"
 
@@ -167,13 +168,13 @@ backend:
         replyTo: "<path:portal/data/mailing#replyto>"
     service:
       image:
-        provisioningservicetag: ad314aa3d6f9fbe870fc89ecdd9368d264761621
+        provisioningservicetag: 4afab5f953937a2fdb6d70eb08dacf395381382c
       debugEnabled: true
       swaggerEnabled: true
 
   appmarketplace:
     image:
-      appmarketplaceservicetag: ad314aa3d6f9fbe870fc89ecdd9368d264761621
+      appmarketplaceservicetag: 62de0e786a5eee840bf96aabacdc3678b8441bbd
     logging:
       offersLibrary: "Debug"
     appOverviewAddress: "https://portal.dev.demo.catena-x.net/appoverview"
@@ -182,24 +183,24 @@ backend:
 
   portalmigrations:
     image:
-      portalmigrationstag: 93ec86b3817f41fceee62f3d65235796df218741
+      portalmigrationstag: 7832c75627c59308a657b5f614bd5cf9a691d33c
     seeding:
       testDataEnvironments: "consortia"
 
   portalmaintenance:
     image:
-      portalmaintenancetag: 084e3fdcae171c99f47cb81793ae59e3e0ca9ccf
+      portalmaintenancetag: 4afab5f953937a2fdb6d70eb08dacf395381382c
 
   notification:
     image:
-      notificationservicetag: 699b52bbb96d35be25d0818eaec174cb06a20db2
+      notificationservicetag: 62de0e786a5eee840bf96aabacdc3678b8441bbd
     debugEnabled: true
     swaggerEnabled: true
 
   services:
     name: "services-service"
     image:
-      servicesservicetag: ad314aa3d6f9fbe870fc89ecdd9368d264761621
+      servicesservicetag: 62de0e786a5eee840bf96aabacdc3678b8441bbd
     logging:
       offersLibrary: "Debug"
     serviceMarketplaceAddress: "https://portal.dev.demo.catena-x.net/servicemarketplace"
@@ -208,11 +209,11 @@ backend:
 
   provisioningmigrations:
     image:
-      provisioningmigrationstag: 93ec86b3817f41fceee62f3d65235796df218741
+      provisioningmigrationstag: 4afab5f953937a2fdb6d70eb08dacf395381382c
 
   checklistworker:
     image:
-      checklistworkertag: 4464b673fd0df1bd2262a662f29f28f646857a28
+      checklistworkertag: 4afab5f953937a2fdb6d70eb08dacf395381382c
     logging:
       checklistLibrary: "Debug"
       bpdmLibrary: "Debug"
