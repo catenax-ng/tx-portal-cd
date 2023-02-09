@@ -124,6 +124,8 @@ spec:
           value:  "{{ .Values.backend.services.approveServiceUserRoles.role1 }}"
         - name: "SERVICES__BASEPORTALADDRESS"
           value: "{{ .Values.backend.basePortalAddress }}"
+        - name: "SERVICES__USERMANAGEMENTADDRESS"
+          value: "{{ .Values.backend.userManagementAddress }}"
         - name: "SERVICES__CATENAADMINROLES__Cl2-CX-Portal__0"
           value: "{{ .Values.backend.services.catenaAdminRoles.role }}"
         - name: "SERVICES__CONTENTTYPESETTINGS__0"

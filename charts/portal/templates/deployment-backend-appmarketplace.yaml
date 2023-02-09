@@ -60,6 +60,8 @@ spec:
           value: "{{ .Values.backend.appmarketplace.approveAppUserRoles.role1 }}"
         - name: "APPMARKETPLACE__BASEPORTALADDRESS"
           value: "{{ .Values.backend.basePortalAddress }}"
+        - name: "APPMARKETPLACE__USERMANAGEMENTADDRESS"
+          value: "{{ .Values.backend.userManagementAddress }}"
         - name: "APPMARKETPLACE__CATENAADMINROLES__Cl2-CX-Portal__0"
           value: "{{ .Values.backend.appmarketplace.catenaAdminRoles.role }}"
         - name: "APPMARKETPLACE__CONTENTTYPESETTINGS__0"
