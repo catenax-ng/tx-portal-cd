@@ -220,10 +220,10 @@ backend:
         headerProviderUserName: "ProviderUserName"
     invitation:
       invitedUserInitialRoles:
-        role: "Company Admin"
+        role0: "Company Admin"
     registration:
       partnerUserInitialRoles:
-        role: "Company Admin"
+        role0: "Company Admin"
       documentTypeIds:
         type0: "COMMERCIAL_REGISTER_EXTRACT"
     userManagement:
@@ -272,13 +272,13 @@ backend:
       offersLibrary: "Information"
     appOverviewAddress: ""
     catenaAdminRoles:
-      role: "CX Admin"
+      role0: "CX Admin"
     serviceAccountRoles:
-      role: "Digital Twin Management"
+      role0: "Digital Twin Management"
     salesManagerRoles:
-      role: "Sales Manager"
+      role0: "Sales Manager"
     serviceManagerRoles:
-      role: "App Manager"
+      role0: "App Manager"
     activeAppCompanyAdminRoles:
       role0: "IT Admin"
       role1: "Company Admin"
@@ -286,7 +286,7 @@ backend:
       role0: "Sales Manager"
       role1: "Service Manager"
     ITAdminRoles:
-      role: "IT Admin"
+      role0: "IT Admin"
     documentTypeIds:
       type0: "APP_CONTRACT"
       type1: "APP_DATA_DETAILS"
@@ -342,18 +342,18 @@ backend:
       offersLibrary: "Information"
     serviceMarketplaceAddress: ""
     catenaAdminRoles:
-      role: "CX Admin"
+      role0: "CX Admin"
     serviceAccountRoles:
-      role: "Digital Twin Management"
+      role0: "Digital Twin Management"
     salesManagerRoles:
-      role: "Sales Manager"
+      role0: "Sales Manager"
     serviceManagerRoles:
-      role: "Service Manager"
+      role0: "Service Manager"
     approveServiceUserRoles:
       role0: "Sales Manager"
       role1: "Service Manager"
     ITAdminRoles:
-      role: "IT Admin"
+      role0: "IT Admin"
     documentTypeIds:
       type0: "ADDITIONAL_DETAILS"
     contentTypeSettings:
@@ -384,9 +384,9 @@ backend:
     applicationActivation:
       applicationApprovalInitialRoles:
         portal:
-          role: "Company Admin"
+          role0: "Company Admin"
         registration:
-          role: "Company Admin"
+          role0: "Company Admin"
       clientToRemoveRolesOnActivation:
         client0: "Cl1-CX-Registration"
       welcomeNotificationTypeIds:
