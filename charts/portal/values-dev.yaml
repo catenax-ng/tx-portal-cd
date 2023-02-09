@@ -203,7 +203,6 @@ backend:
     swaggerEnabled: true
 
   services:
-    name: "services-service"
     image:
       servicesservicetag: 62de0e786a5eee840bf96aabacdc3678b8441bbd
     logging:
