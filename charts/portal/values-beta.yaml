@@ -144,14 +144,21 @@ backend:
   registration:
     image:
       registrationservicetag: v1.0.0-RC7
-    secret:
-      appsettings: "<path:portal/data/beta/registration#appsettings.json>"
+    logging:
+      registrationServiceBpn: "Debug"
+    basePortalAddress: "https://portal.beta.demo.catena-x.net/registration"
+    bpnAddress: "https://partners-pool.beta.demo.catena-x.net"
+    swaggerEnabled: true
 
   administration:
     image:
       administrationservicetag: v1.0.0-RC7
-    secret:
-      appsettings: "<path:portal/data/beta/administration#appsettings.json>"
+    daps:
+      baseAddress: "https://drs-pen.int.demo.catena-x.net/api/v1/daps"
+      tokenAddress: "https://centralidp.beta.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
+      clientId: "<path:portal/data/administration#daps-client-id>"
+      clientSecret: "<path:portal/data/beta/administration#daps-client-secret>"
+    swaggerEnabled: true
 
   provisioning:
     sharedRealm:
@@ -165,7 +172,6 @@ backend:
     service:
       image:
         provisioningservicetag: v1.0.0-RC7
-      debugEnabled: true
       swaggerEnabled: true
 
   appmarketplace:
@@ -174,7 +180,6 @@ backend:
     logging:
       offersLibrary: "Debug"
     appOverviewAddress: "https://portal.beta.demo.catena-x.net/appoverview"
-    debugEnabled: true
     swaggerEnabled: true
 
   portalmigrations:
@@ -190,7 +195,6 @@ backend:
   notification:
     image:
       notificationservicetag: v1.0.0-RC7
-    debugEnabled: true
     swaggerEnabled: true
 
   services:
@@ -199,7 +203,6 @@ backend:
     logging:
       offersLibrary: "Debug"
     serviceMarketplaceAddress: "https://portal.beta.demo.catena-x.net/servicemarketplace"
-    debugEnabled: true
     swaggerEnabled: true
 
   provisioningmigrations:
@@ -216,7 +219,7 @@ backend:
       custodianLibrary: "Debug"
       sdfactoryLibrary: "Debug"
     bpdm:
-      baseAddress: "https://portal-gate.beta.demo.catena-x.net/"
+      baseAddress: "https://portal-gate.beta.demo.catena-x.net"
       tokenAddress: "https://centralidp.beta.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
       clientId: "<path:portal/data/checklist-worker#bpdm-client-id>"
       clientSecret: "<path:portal/data/beta/checklist-worker#bpdm-client-secret>"
