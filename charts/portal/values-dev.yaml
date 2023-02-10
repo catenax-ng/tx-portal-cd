@@ -164,7 +164,7 @@ backend:
         replyTo: "<path:portal/data/mailing#replyto>"
     service:
       image:
-        provisioningservicetag: a7b1555c40eaf183d68e6360d3ab1983c02542f9
+        provisioningservicetag: 2b2e17ec9f3f61ad6eb291778b46c24e743d44c5
       debugEnabled: true
       swaggerEnabled: true
 
