@@ -253,7 +253,7 @@ backend:
         auth: "true"
         from: ""
         replyTo: ""
-        secret: "secret-mailing"
+        secret: "secret-backend-mailing"
     service:
       name: "provisioning-service"
       image:
