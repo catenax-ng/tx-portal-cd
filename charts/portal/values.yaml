@@ -184,7 +184,6 @@ backend:
     documentTypeIds:
       type0: "CX_FRAME_CONTRACT"
       type1: "COMMERCIAL_REGISTER_EXTRACT"
-    debugEnabled: false
     swaggerEnabled: false
   administration:
     name: "administration-service"
@@ -232,7 +231,6 @@ backend:
         status1: "INACTIVE"
     serviceAccount:
       clientId: "technical_roles_management"
-    debugEnabled: false
     swaggerEnabled: false
   provisioning:
     centralRealm: "CX-Central"
@@ -261,7 +259,6 @@ backend:
       image:
         name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-service"
         provisioningservicetag: v1.0.0-RC7
-      debugEnabled: false
       swaggerEnabled: false
   appmarketplace:
     name: "marketplace-app-service"
@@ -312,7 +309,6 @@ backend:
     offerStatusIds:
       status0: "IN_REVIEW"
       status1: "ACTIVE"
-    debugEnabled: false
     swaggerEnabled: false
   portalmigrations:
     name: "portal-migrations"
@@ -331,7 +327,6 @@ backend:
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_notification-service"
       notificationservicetag: v1.0.0-RC7
-    debugEnabled: false
     swaggerEnabled: false
   services:
     name: "services-service"
@@ -362,7 +357,6 @@ backend:
       type0: "SERVICE_RELEASE_REQUEST"
     approveServiceNotificationTypeIds:
      type0: "SERVICE_RELEASE_APPROVAL"
-    debugEnabled: false
     swaggerEnabled: false
   provisioningmigrations:
     name: "provisioning-migrations"

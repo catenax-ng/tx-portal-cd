@@ -148,7 +148,6 @@ backend:
       registrationServiceBpn: "Debug"
     basePortalAddress: "https://portal.int.demo.catena-x.net/registration"
     bpnAddress: "https://partners-pool.int.demo.catena-x.net"
-    debugEnabled: true
     swaggerEnabled: true
 
   administration:
@@ -159,7 +158,6 @@ backend:
       tokenAddress: "https://centralidp.int.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
       clientId: "<path:portal/data/administration#daps-client-id>"
       clientSecret: "<path:portal/data/int/administration#daps-client-secret>"
-    debugEnabled: true
     swaggerEnabled: true
 
   provisioning:
@@ -174,7 +172,6 @@ backend:
     service:
       image:
         provisioningservicetag: v1.0.0-RC7
-      debugEnabled: true
       swaggerEnabled: true
 
   appmarketplace:
@@ -183,7 +180,6 @@ backend:
     logging:
       offersLibrary: "Debug"
     appOverviewAddress: "https://portal.int.demo.catena-x.net/appoverview"
-    debugEnabled: true
     swaggerEnabled: true
 
   portalmigrations:
@@ -199,7 +195,6 @@ backend:
   notification:
     image:
       notificationservicetag: v1.0.0-RC7
-    debugEnabled: true
     swaggerEnabled: true
 
   services:
@@ -208,7 +203,6 @@ backend:
     logging:
       offersLibrary: "Debug"
     serviceMarketplaceAddress: "https://portal.int.demo.catena-x.net/servicemarketplace"
-    debugEnabled: true
     swaggerEnabled: true
 
   provisioningmigrations:
