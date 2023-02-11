@@ -249,6 +249,8 @@ spec:
               key: "shared-client-secret"
         - name: "KEYCLOAK__SHARED__CONNECTIONSTRING"
           value: "{{ .Values.backend.keycloak.shared.baseAddress }}"
+        - name: "LOGGING__LOGLEVEL__ORG.CATENAX.NG.PORTAL.BACKEND.ADMINISTRATION.SERVICE.BUSINESSLOGIC"
+          value: "{{ .Values.backend.administration.logging.businessLogic }}"
         - name: "MAILINGSERVICE__MAIL__SMTPHOST"
           valueFrom:
             secretKeyRef:

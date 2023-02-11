@@ -191,6 +191,8 @@ backend:
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_administration-service"
       administrationservicetag: v1.0.0-RC7
+    logging:
+      businessLogic: "Information"
     connectors:
       validCertificationContentTypes:
         type0: "application/x-pem-file"

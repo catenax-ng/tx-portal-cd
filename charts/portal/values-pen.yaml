@@ -153,6 +153,8 @@ backend:
   administration:
     image:
       administrationservicetag: v1.0.0-RC7
+    logging:
+      businessLogic: "Debug"
     daps:
       baseAddress: "https://drs-pen.int.demo.catena-x.net/api/v1/daps"
       tokenAddress: "https://centralidp-pen.dev.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
