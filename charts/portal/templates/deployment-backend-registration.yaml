@@ -40,7 +40,7 @@ spec:
         ports:
         - containerPort: {{ .Values.portContainer }}
         env:
-        - name: "BPN_Address"
+        - name: "BPN_ADDRESS"
           value: "{{ .Values.backend.registration.bpnAddress }}"
         - name: "PORTAL_PASSWORD"
           valueFrom:
