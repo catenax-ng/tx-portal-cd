@@ -305,7 +305,7 @@ backend:
     submitAppNotificationTypeIds:
       type0: "APP_RELEASE_REQUEST"
     approveAppNotificationTypeIds:
-     type0: "APP_RELEASE_APPROVAL"
+      type0: "APP_RELEASE_APPROVAL"
     appImageDocumentTypeIds:
       type0: "APP_LEADIMAGE"
       type1: "APP_IMAGE"
@@ -359,7 +359,7 @@ backend:
     submitServiceNotificationTypeIds:
       type0: "SERVICE_RELEASE_REQUEST"
     approveServiceNotificationTypeIds:
-     type0: "SERVICE_RELEASE_APPROVAL"
+      type0: "SERVICE_RELEASE_APPROVAL"
     swaggerEnabled: false
   provisioningmigrations:
     name: "provisioning-migrations"
