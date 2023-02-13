@@ -78,6 +78,9 @@ backend:
       nginx.ingress.kubernetes.io/enable-cors: "true"
       nginx.ingress.kubernetes.io/proxy-body-size: "8m"
       nginx.ingress.kubernetes.io/cors-allow-origin: "http://localhost:3000, https://*.dev.demo.catena-x.net"
+      nginx.ingress.kubernetes.io/x-xss-protection: "1; mode=block"
+      nginx.ingress.kubernetes.io/x-content-type-options: "nosniff"
+      nginx.ingress.kubernetes.io/x-frame-options: "DENY"
     tls:
       - secretName: "tls-secret"
         hosts:
