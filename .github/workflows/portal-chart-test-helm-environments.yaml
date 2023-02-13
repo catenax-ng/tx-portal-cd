@@ -52,5 +52,5 @@ jobs:
       # install the chart to the kind cluster and run helm test
       # define charts to test with the --charts parameter
       - name: Run chart-testing (install)
-        run: ct install --charts charts/portal --config charts/chart-testing-config-helm-environments.yaml
+        run: ct install --all --config charts/chart-testing-config-helm-environments.yaml
         # if: steps.list-changed.outputs.changed == 'true'
