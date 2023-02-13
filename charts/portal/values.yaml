@@ -160,9 +160,9 @@ backend:
       authRealm: "master"
     secret: "secret-backend-keycloak"
   mailing:
-    host: ""
-    port: ""
-    user: ""
+    host: "smtp.example.org"
+    port: "587"
+    user: "smtp-user"
     password: ""
     secret: "secret-backend-mailing"
   # secret data (client-ids and client-secrets) for interfaces (daps, custodian, bpdm, sdFactory, clearinghouse) of the backend services and jobs
@@ -247,15 +247,15 @@ backend:
       clientId: "central-idp"
     sharedRealm:
       smtpServer:
-        host: ""
-        port: ""
-        user: ""
+        host: "smtp.example.org"
+        port: "578"
+        user: "smtp-user"
         password: ""
         ssl: ""
         startTls: "true"
         auth: "true"
-        from: ""
-        replyTo: ""
+        from: "smtp@example.org"
+        replyTo: "smtp@example.org"
         secret: "secret-backend-mailing"
     service:
       name: "provisioning-service"
