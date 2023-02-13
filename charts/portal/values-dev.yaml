@@ -143,7 +143,7 @@ backend:
 
   registration:
     image:
-      registrationservicetag: b7efd69b590c3902af58d9b6e19811f498ddca84
+      registrationservicetag: a95bd121299a31e2139e7fb5e37ae46b76362cfd
     logging:
       registrationServiceBpn: "Debug"
     basePortalAddress: "https://portal.dev.demo.catena-x.net/registration"
