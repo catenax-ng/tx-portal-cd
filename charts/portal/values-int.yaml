@@ -56,7 +56,7 @@ frontend:
 
   assets:
     image:
-      assetstag: 1.0.0-RC5
+      assetstag: 1.0.0-RC6
 
   registration:
     image:
