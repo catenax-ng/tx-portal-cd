@@ -42,7 +42,7 @@ jobs:
 
       # run chart linting 
       - name: Run chart-testing (lint)
-        run: ct lint --target-branch helm environments --config charts/chart-testing-config-helm-environments.yaml
+        run: ct lint --all --config charts/chart-testing-config-helm-environments.yaml
 
       # Preparing a kind cluster to install and test charts on
       - name: Create kind cluster
