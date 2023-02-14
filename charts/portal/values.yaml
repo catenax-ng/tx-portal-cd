@@ -134,6 +134,7 @@ backend:
   basePortalAddress: "https://portal.dummy"
   userManagementAddress: "https://portal.dummy/usermanagement"
   keycloak:
+    secret: "secret-backend-keycloak"
     central:
       baseAddress: "https://centralidp.dummy"
       clientId: "central-client-id"
@@ -158,13 +159,12 @@ backend:
       clientId: "shared-client-id"
       clientSecret: ""
       authRealm: "master"
-    secret: "secret-backend-keycloak"
   mailing:
+    secret: "secret-backend-mailing"
     host: "smtp.example.org"
     port: "587"
     user: "smtp-user"
     password: ""
-    secret: "secret-backend-mailing"
   # secret data (client-ids and client-secrets) for interfaces (daps, custodian, bpdm, sdFactory, clearinghouse) of the backend services and jobs
   interfaces:
     secret: "secret-backend-interfaces"
@@ -256,7 +256,6 @@ backend:
         auth: "true"
         from: "smtp@example.org"
         replyTo: "smtp@example.org"
-        secret: "secret-backend-mailing"
     service:
       name: "provisioning-service"
       image:

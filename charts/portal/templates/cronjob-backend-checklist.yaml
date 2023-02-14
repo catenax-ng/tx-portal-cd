@@ -208,7 +208,7 @@ spec:
             - name: "PROVISIONING__SHAREDREALM__SMTPSERVER__PASSWORD"
               valueFrom:
                 secretKeyRef:
-                  name: "{{ .Values.backend.provisioning.sharedRealm.smtpServer.secret }}"
+                  name: "{{ .Values.backend.mailing.secret }}"
                   key: "provisioning-sharedrealm-password"
             - name: "PROVISIONING__SHAREDREALM__SMTPSERVER__PORT"
               value: "{{ .Values.backend.provisioning.sharedRealm.smtpServer.port }}"
