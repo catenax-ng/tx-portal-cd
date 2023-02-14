@@ -175,8 +175,8 @@ backend:
       registrationservicetag: v1.0.0-RC8
     logging:
       registrationServiceBpn: "Information"
-    basePortalAddress: ""
-    bpnAddress: ""
+    basePortalAddress: "https://portal.dummy/registration"
+    bpnAddress: "https://partners-pool.dummy"
     keycloakClientId: "Cl1-CX-Registration"
     applicationStatusIds:
       status0: "SUBMITTED"
@@ -407,14 +407,14 @@ backend:
       clientId: "clearinghouse-client-id"
       clientSecret: ""
     custodian:
-      baseAddress: ""
+      baseAddress: "https://managed-identity-wallets.dummy"
       tokenAddress: ""
       scope: "openid"
       grantType: "client_credentials"
       clientId: "custodian-client-id"
       clientSecret: ""
     sdfactory:
-      baseAddress: ""
+      baseAddress: "https://sdfactory.dummy/selfdescription"
       tokenAddress: ""
       scope: "openid"
       grantType: "client_credentials"
