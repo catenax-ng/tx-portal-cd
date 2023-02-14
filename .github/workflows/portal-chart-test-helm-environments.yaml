@@ -42,7 +42,7 @@ jobs:
 
       # run chart linting 
       - name: Run chart-testing (lint)
-        run: ct lint --all --config charts/chart-testing-config-helm-environments.yaml
+        run: ct lint --charts charts/portal --config charts/chart-testing-config-helm-environments.yaml
 
       # Preparing a kind cluster to install and test charts on
       - name: Create kind cluster
@@ -52,5 +52,5 @@ jobs:
       # install the chart to the kind cluster and run helm test
       # define charts to test with the --charts parameter
       - name: Run chart-testing (install)
-        run: ct install --all --namespace test-portal --config charts/chart-testing-config-helm-environments.yaml
+        run: ct install --charts charts/portal --config charts/chart-testing-config-helm-environments.yaml
         # if: steps.list-changed.outputs.changed == 'true'
