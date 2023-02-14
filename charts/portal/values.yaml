@@ -131,18 +131,18 @@ backend:
     port: "5432"
     schema: "portal"
     sslMode: "Disable"
-  basePortalAddress: ""
+  basePortalAddress: "https://portal.dummy"
   userManagementAddress: ""
   keycloak:
     central:
-      baseAddress: ""
-      clientId: ""
+      baseAddress: "https://centralidp.dummy"
+      clientId: "central-client-id"
       clientSecret: ""
       authRealm: "CX-Central"
       jwtBearerOptions:
-        metadataAddress: ""
+        metadataAddress: "https://centralidp.dummy/auth/realms/CX-Central/.well-known/openid-configuration"
         tokenValidationParameters:
-          validIssuer: ""
+          validIssuer: "https://centralidp.dummy/auth/realms/CX-Central"
           validAudiencePortal: "Cl2-CX-Portal"
           validAudienceRegistration: "Cl1-CX-Registration"
       dbConnection:
@@ -154,8 +154,8 @@ backend:
         schema: "public"
         sslMode: "Disable"
     shared:
-      baseAddress: ""
-      clientId: ""
+      baseAddress: "https://sharedidp.dummy"
+      clientId: "shared-client-id"
       clientSecret: ""
       authRealm: "master"
     secret: "secret-backend-keycloak"
@@ -205,7 +205,7 @@ backend:
       tokenAddress: ""
       scope: "openid"
       grantType: "client_credentials"
-      clientId: ""
+      clientId: "daps-client-id"
       clientSecret: ""
     identityProviderAdmin:
       csvSettings:
@@ -397,21 +397,21 @@ backend:
       tokenAddress: ""
       scope: "openid"
       grantType: "client_credentials"
-      clientId: ""
+      clientId: "bpdm-client-id"
       clientSecret: ""
     clearinghouse:
       baseAddress: ""
       tokenAddress: ""
       scope: "openid"
       grantType: "client_credentials"
-      clientId: ""
+      clientId: "clearinghouse-client-id"
       clientSecret: ""
     custodian:
       baseAddress: ""
       tokenAddress: ""
       scope: "openid"
       grantType: "client_credentials"
-      clientId: ""
+      clientId: "custodian-client-id"
       clientSecret: ""
     sdfactory:
       baseAddress: ""
@@ -419,7 +419,7 @@ backend:
       scope: "openid"
       grantType: "client_credentials"
       issuerBpn: ""
-      clientId: ""
+      clientId: "sdfactory-client-id"
       clientSecret: ""
   placeholder: "empty"
 

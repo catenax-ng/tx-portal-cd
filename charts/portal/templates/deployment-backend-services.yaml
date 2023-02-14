@@ -63,10 +63,7 @@ spec:
         - name: "KEYCLOAK__CENTRAL__AUTHREALM"
           value: "{{ .Values.backend.keycloak.central.authRealm }}"
         - name: "KEYCLOAK__CENTRAL__CLIENTID"
-          valueFrom:
-            secretKeyRef:
-              name: "{{ .Values.backend.keycloak.secret }}"
-              key: "central-client-id"
+          value: "{{ .Values.backend.keycloak.central.clientId }}"
         - name: "KEYCLOAK__CENTRAL__CLIENTSECRET"
           valueFrom:
             secretKeyRef:
@@ -77,10 +74,7 @@ spec:
         - name: "KEYCLOAK__SHARED__AUTHREALM"
           value: "{{ .Values.backend.keycloak.shared.authRealm }}"
         - name: "KEYCLOAK__SHARED__CLIENTID"
-          valueFrom:
-            secretKeyRef:
-              name: "{{ .Values.backend.keycloak.secret }}"
-              key: "shared-client-id"
+          value: "{{ .Values.backend.keycloak.shared.clientId }}"
         - name: "KEYCLOAK__SHARED__CLIENTSECRET"
           valueFrom:
             secretKeyRef:

@@ -43,10 +43,7 @@ spec:
         - name: "CHECKLIST__BPDM__BASEADDRESS"
           value: "{{ .Values.backend.checklistworker.bpdm.baseAddress }}"
         - name: "CHECKLIST__BPDM__CLIENTID"
-          valueFrom:
-            secretKeyRef:
-              name: "{{ .Values.backend.interfaces.secret }}"
-              key: "bpdm-client-id"
+          value: "{{ .Values.backend.checklistworker.bpdm.clientId }}"
         - name: "CHECKLIST__BPDM__CLIENTSECRET"
           valueFrom:
             secretKeyRef:
@@ -65,10 +62,7 @@ spec:
         - name: "CHECKLIST__CLEARINGHOUSE__BASEADDRESS"
           value: "{{ .Values.backend.checklistworker.clearinghouse.baseAddress }}"
         - name: "CHECKLIST__CLEARINGHOUSE__CLIENTID"
-          valueFrom:
-            secretKeyRef:
-              name: "{{ .Values.backend.interfaces.secret }}"
-              key: "clearinghouse-client-id"
+          value: "{{ .Values.backend.checklistworker.clearinghouse.clientId }}"
         - name: "CHECKLIST__CLEARINGHOUSE__CLIENTSECRET"
           valueFrom:
             secretKeyRef:
@@ -87,10 +81,7 @@ spec:
         - name: "CHECKLIST__CUSTODIAN__BASEADDRESS"
           value: "{{ .Values.backend.checklistworker.custodian.baseAddress }}"
         - name: "CHECKLIST__CUSTODIAN__CLIENTID"
-          valueFrom:
-            secretKeyRef:
-              name: "{{ .Values.backend.interfaces.secret }}"
-              key: "custodian-client-id"
+          value: "{{ .Values.backend.checklistworker.custodian.clientId }}"
         - name: "CHECKLIST__CUSTODIAN__CLIENTSECRET"
           valueFrom:
             secretKeyRef:
@@ -107,10 +98,7 @@ spec:
         - name: "CHECKLIST__CUSTODIAN__USERNAME"
           value: "{{ .Values.backend.placeholder }}"
         - name: "CHECKLIST__SDFACTORY__CLIENTID"
-          valueFrom:
-            secretKeyRef:
-              name: "{{ .Values.backend.interfaces.secret }}"
-              key: "sdfactory-client-id"
+          value: "{{ .Values.backend.checklistworker.sdfactory.clientId }}"
         - name: "CHECKLIST__SDFACTORY__CLIENTSECRET"
           valueFrom:
             secretKeyRef:
@@ -153,10 +141,7 @@ spec:
         - name: "CONNECTORS__VALIDCERTIFICATIONCONTENTTYPES__3"
           value: "{{ .Values.backend.administration.connectors.validCertificationContentTypes.type3 }}"
         - name: "DAPS__CLIENTID"
-          valueFrom:
-            secretKeyRef:
-              name: "{{ .Values.backend.interfaces.secret }}"
-              key: "daps-client-id"
+          value: "{{ .Values.backend.administration.daps.clientId }}"
         - name: "DAPS__CLIENTSECRET"
           valueFrom:
             secretKeyRef:
@@ -224,10 +209,7 @@ spec:
         - name: "KEYCLOAK__CENTRAL__AUTHREALM"
           value: "{{ .Values.backend.keycloak.central.authRealm }}"
         - name: "KEYCLOAK__CENTRAL__CLIENTID"
-          valueFrom:
-            secretKeyRef:
-              name: "{{ .Values.backend.keycloak.secret }}"
-              key: "central-client-id"
+          value: "{{ .Values.backend.keycloak.central.clientId }}"
         - name: "KEYCLOAK__CENTRAL__CLIENTSECRET"
           valueFrom:
             secretKeyRef:
@@ -238,10 +220,7 @@ spec:
         - name: "KEYCLOAK__SHARED__AUTHREALM"
           value: "{{ .Values.backend.keycloak.shared.authRealm }}"
         - name: "KEYCLOAK__SHARED__CLIENTID"
-          valueFrom:
-            secretKeyRef:
-              name: "{{ .Values.backend.keycloak.secret }}"
-              key: "shared-client-id"
+          value: "{{ .Values.backend.keycloak.shared.clientId }}"
         - name: "KEYCLOAK__SHARED__CLIENTSECRET"
           valueFrom:
             secretKeyRef:
