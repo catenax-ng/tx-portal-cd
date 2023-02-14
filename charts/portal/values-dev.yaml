@@ -152,7 +152,7 @@ backend:
 
   administration:
     image:
-      administrationservicetag: 25d813382e704df966ae3cbc2c13900380e59bb9
+      administrationservicetag: aa1d9e4e2cc2b75d0d4be1159f06e399786077d5
     logging:
       businessLogic: "Debug"
     daps:
