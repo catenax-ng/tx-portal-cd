@@ -424,7 +424,7 @@ backend:
 
 postgresql:
   enabled: true
-  fullnameOverride: "portal-backend-cplp-1617-postgresql"
+  fullnameOverride: "portal-backend-postgresql"
   auth:
     database: "postgres"
     existingSecret: "secret-postgres-init"
