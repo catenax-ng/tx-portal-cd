@@ -2,9 +2,9 @@ name: Portal Lint and Test Chart
 
 on: 
   push:
-    # paths:
-    #   - 'charts/portal/**'
-    branches: [fix/helm-test]
+    paths:
+      - 'charts/portal/**'
+    branches: [helm-environments]
   pull_request:
     paths:
       - 'charts/portal/**'
