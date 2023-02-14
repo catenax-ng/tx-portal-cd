@@ -132,7 +132,7 @@ backend:
     schema: "portal"
     sslMode: "Disable"
   basePortalAddress: "https://portal.dummy"
-  userManagementAddress: ""
+  userManagementAddress: "https://portal.dummy/usermanagement"
   keycloak:
     central:
       baseAddress: "https://centralidp.dummy"
@@ -201,8 +201,8 @@ backend:
         type3: "application/octet-stream"
     keycloakClientId: "Cl2-CX-Portal"
     daps:
-      baseAddress: ""
-      tokenAddress: ""
+      baseAddress: "https://daps.dummy"
+      tokenAddress: "https://centralidp.dummy/auth/realms/CX-Central/protocol/openid-connect/token"
       scope: "openid"
       grantType: "client_credentials"
       clientId: "daps-client-id"
@@ -270,7 +270,7 @@ backend:
       appmarketplaceservicetag: v1.0.0-RC8
     logging:
       offersLibrary: "Information"
-    appOverviewAddress: ""
+    appOverviewAddress: "https://portal.dummy/appoverview"
     catenaAdminRoles:
       role0: "CX Admin"
     serviceAccountRoles:
@@ -338,7 +338,7 @@ backend:
       servicesservicetag: v1.0.0-RC8
     logging:
       offersLibrary: "Information"
-    serviceMarketplaceAddress: ""
+    serviceMarketplaceAddress: "https://portal.dummy/servicemarketplace"
     catenaAdminRoles:
       role0: "CX Admin"
     serviceAccountRoles:
@@ -393,32 +393,32 @@ backend:
         type3: "WELCOME_CONNECTOR_REGISTRATION"
         type4: "WELCOME_APP_MARKETPLACE"
     bpdm:
-      baseAddress: ""
-      tokenAddress: ""
+      baseAddress: "https://portal-gate.dummy"
+      tokenAddress: "https://centralidp.dummy/auth/realms/CX-Central/protocol/openid-connect/token"
       scope: "openid"
       grantType: "client_credentials"
       clientId: "bpdm-client-id"
       clientSecret: ""
     clearinghouse:
-      baseAddress: ""
-      tokenAddress: ""
+      baseAddress: "https://validation.dummy"
+      tokenAddress: "https://keycloak.dummy/realms/dummy/protocol/openid-connect/token"
       scope: "openid"
       grantType: "client_credentials"
       clientId: "clearinghouse-client-id"
       clientSecret: ""
     custodian:
       baseAddress: "https://managed-identity-wallets.dummy"
-      tokenAddress: ""
+      tokenAddress: "https://centralidp.dummy/auth/realms/CX-Central/protocol/openid-connect/token"
       scope: "openid"
       grantType: "client_credentials"
       clientId: "custodian-client-id"
       clientSecret: ""
     sdfactory:
       baseAddress: "https://sdfactory.dummy/selfdescription"
-      tokenAddress: ""
+      tokenAddress: "https://centralidp.dummy/auth/realms/CX-Central/protocol/openid-connect/token"
       scope: "openid"
       grantType: "client_credentials"
-      issuerBpn: ""
+      issuerBpn: "BPNDUMMY000DUMMY"
       clientId: "sdfactory-client-id"
       clientSecret: ""
   placeholder: "empty"
