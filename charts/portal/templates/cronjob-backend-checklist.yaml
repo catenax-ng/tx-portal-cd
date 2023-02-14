@@ -69,10 +69,7 @@ spec:
             - name: "CHECKLIST__BPDM__BASEADDRESS"
               value: "{{ .Values.backend.checklistworker.bpdm.baseAddress }}"
             - name: "CHECKLIST__BPDM__CLIENTID"
-              valueFrom:
-                secretKeyRef:
-                  name: "{{ .Values.backend.interfaces.secret }}"
-                  key: "bpdm-client-id"
+              value: "{{ .Values.backend.checklistworker.bpdm.clientId }}"
             - name: "CHECKLIST__BPDM__CLIENTSECRET"
               valueFrom:
                 secretKeyRef:
@@ -91,10 +88,7 @@ spec:
             - name: "CHECKLIST__CLEARINGHOUSE__BASEADDRESS"
               value: "{{ .Values.backend.checklistworker.clearinghouse.baseAddress }}"
             - name: "CHECKLIST__CLEARINGHOUSE__CLIENTID"
-              valueFrom:
-                secretKeyRef:
-                  name: "{{ .Values.backend.interfaces.secret }}"
-                  key: "clearinghouse-client-id"
+              value: "{{ .Values.backend.checklistworker.clearinghouse.clientId }}"
             - name: "CHECKLIST__CLEARINGHOUSE__CLIENTSECRET"
               valueFrom:
                 secretKeyRef:
@@ -113,10 +107,7 @@ spec:
             - name: "CHECKLIST__CUSTODIAN__BASEADDRESS"
               value: "{{ .Values.backend.checklistworker.custodian.baseAddress }}"
             - name: "CHECKLIST__CUSTODIAN__CLIENTID"
-              valueFrom:
-                secretKeyRef:
-                  name: "{{ .Values.backend.interfaces.secret }}"
-                  key: "custodian-client-id"
+              value: "{{ .Values.backend.checklistworker.custodian.clientId }}"
             - name: "CHECKLIST__CUSTODIAN__CLIENTSECRET"
               valueFrom:
                 secretKeyRef:
@@ -133,10 +124,7 @@ spec:
             - name: "CHECKLIST__CUSTODIAN__USERNAME"
               value: "{{ .Values.backend.placeholder }}"
             - name: "CHECKLIST__SDFACTORY__CLIENTID"
-              valueFrom:
-                secretKeyRef:
-                  name: "{{ .Values.backend.interfaces.secret }}"
-                  key: "sdfactory-client-id"
+              value: "{{ .Values.backend.checklistworker.sdfactory.clientId }}"
             - name: "CHECKLIST__SDFACTORY__CLIENTSECRET"
               valueFrom:
                 secretKeyRef:
@@ -163,10 +151,7 @@ spec:
             - name: "KEYCLOAK__CENTRAL__AUTHREALM"
               value: "{{ .Values.backend.keycloak.central.authRealm }}"
             - name: "KEYCLOAK__CENTRAL__CLIENTID"
-              valueFrom:
-                secretKeyRef:
-                  name: "{{ .Values.backend.keycloak.secret }}"
-                  key: "central-client-id"
+              value: "{{ .Values.backend.keycloak.central.clientId }}"
             - name: "KEYCLOAK__CENTRAL__CLIENTSECRET"
               valueFrom:
                 secretKeyRef:
@@ -177,10 +162,7 @@ spec:
             - name: "KEYCLOAK__SHARED__AUTHREALM"
               value: "{{ .Values.backend.keycloak.shared.authRealm }}"
             - name: "KEYCLOAK__SHARED__CLIENTID"
-              valueFrom:
-                secretKeyRef:
-                  name: "{{ .Values.backend.keycloak.secret }}"
-                  key: "shared-client-id"
+              value: "{{ .Values.backend.keycloak.shared.clientId }}"
             - name: "KEYCLOAK__SHARED__CLIENTSECRET"
               valueFrom:
                 secretKeyRef:
@@ -199,25 +181,16 @@ spec:
             - name: "LOGGING__LOGLEVEL__ORG.ECLIPSE.TRACTUSX.PORTAL.BACKEND.SDFACTORY.LIBRARY"
               value: "{{ .Values.backend.checklistworker.logging.sdfactoryLibrary }}"
             - name: "MAILINGSERVICE__MAIL__SMTPHOST"
-              valueFrom:
-                secretKeyRef:
-                  name: "{{ .Values.backend.mailing.secret }}"
-                  key: "host"
+              value: "{{ .Values.backend.mailing.host }}"
             - name: "MAILINGSERVICE__MAIL__SMTPPASSWORD"
               valueFrom:
                 secretKeyRef:
                   name: "{{ .Values.backend.mailing.secret }}"
                   key: "password"
             - name: "MAILINGSERVICE__MAIL__SMTPPORT"
-              valueFrom:
-                secretKeyRef:
-                  name: "{{ .Values.backend.mailing.secret }}"
-                  key: "port"
+              value: "{{ .Values.backend.mailing.port }}"
             - name: "MAILINGSERVICE__MAIL__SMTPUSER"
-              valueFrom:
-                secretKeyRef:
-                  name: "{{ .Values.backend.mailing.secret }}"
-                  key: "user"
+              value: "{{ .Values.backend.mailing.user }}"
             - name: "PROVISIONING__CENTRALIDENTITYPROVIDER__CONFIG__CLIENTID"
               value: "{{ .Values.backend.provisioning.centralIdentityProvider.clientId }}"
             - name: "PROVISIONING__CENTRALREALM"
@@ -229,36 +202,21 @@ spec:
             - name: "PROVISIONING__SHAREDREALM__SMTPSERVER__AUTH"
               value: "{{ .Values.backend.provisioning.sharedRealm.smtpServer.auth }}"
             - name: "PROVISIONING__SHAREDREALM__SMTPSERVER__FROM"
-              valueFrom:
-                secretKeyRef:
-                  name: "{{ .Values.backend.provisioning.sharedRealm.smtpServer.secret }}"
-                  key: "provisioning-sharedrealm-from"
+              value: "{{ .Values.backend.provisioning.sharedRealm.smtpServer.from }}"
             - name: "PROVISIONING__SHAREDREALM__SMTPSERVER__HOST"
-              valueFrom:
-                secretKeyRef:
-                  name: "{{ .Values.backend.provisioning.sharedRealm.smtpServer.secret }}"
-                  key: "provisioning-sharedrealm-host"
+              value: "{{ .Values.backend.provisioning.sharedRealm.smtpServer.host }}"
             - name: "PROVISIONING__SHAREDREALM__SMTPSERVER__PASSWORD"
               valueFrom:
                 secretKeyRef:
-                  name: "{{ .Values.backend.provisioning.sharedRealm.smtpServer.secret }}"
+                  name: "{{ .Values.backend.mailing.secret }}"
                   key: "provisioning-sharedrealm-password"
             - name: "PROVISIONING__SHAREDREALM__SMTPSERVER__PORT"
-              valueFrom:
-                secretKeyRef:
-                  name: "{{ .Values.backend.provisioning.sharedRealm.smtpServer.secret }}"
-                  key: "provisioning-sharedrealm-port"
+              value: "{{ .Values.backend.provisioning.sharedRealm.smtpServer.port }}"
             - name: "PROVISIONING__SHAREDREALM__SMTPSERVER__REPLYTO"
-              valueFrom:
-                secretKeyRef:
-                  name: "{{ .Values.backend.provisioning.sharedRealm.smtpServer.secret }}"
-                  key: "provisioning-sharedrealm-replyto"
+              value: "{{ .Values.backend.provisioning.sharedRealm.smtpServer.replyTo }}"
             - name: "PROVISIONING__SHAREDREALM__SMTPSERVER__STARTTLS"
               value: "{{ .Values.backend.provisioning.sharedRealm.smtpServer.startTls }}"
             - name: "PROVISIONING__SHAREDREALM__SMTPSERVER__USER"
-              valueFrom:
-                secretKeyRef:
-                  name: "{{ .Values.backend.provisioning.sharedRealm.smtpServer.secret }}"
-                  key: "provisioning-sharedrealm-user"
+              value: "{{ .Values.backend.provisioning.sharedRealm.smtpServer.user }}"
             - name: "PROVISIONING__SHAREDREALMCLIENT__CLIENTID"
               value: "{{ .Values.backend.provisioning.sharedRealmClient.clientId }}"

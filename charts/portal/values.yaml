@@ -131,18 +131,19 @@ backend:
     port: "5432"
     schema: "portal"
     sslMode: "Disable"
-  basePortalAddress: ""
-  userManagementAddress: ""
+  basePortalAddress: "https://portal.dummy"
+  userManagementAddress: "https://portal.dummy/usermanagement"
   keycloak:
+    secret: "secret-backend-keycloak"
     central:
-      baseAddress: ""
-      clientId: ""
+      baseAddress: "https://centralidp.dummy"
+      clientId: "central-client-id"
       clientSecret: ""
       authRealm: "CX-Central"
       jwtBearerOptions:
-        metadataAddress: ""
+        metadataAddress: "https://centralidp.dummy/auth/realms/CX-Central/.well-known/openid-configuration"
         tokenValidationParameters:
-          validIssuer: ""
+          validIssuer: "https://centralidp.dummy/auth/realms/CX-Central"
           validAudiencePortal: "Cl2-CX-Portal"
           validAudienceRegistration: "Cl1-CX-Registration"
       dbConnection:
@@ -154,17 +155,16 @@ backend:
         schema: "public"
         sslMode: "Disable"
     shared:
-      baseAddress: ""
-      clientId: ""
+      baseAddress: "https://sharedidp.dummy"
+      clientId: "shared-client-id"
       clientSecret: ""
       authRealm: "master"
-    secret: "secret-backend-keycloak"
   mailing:
-    host: ""
-    port: ""
-    user: ""
-    password: ""
     secret: "secret-backend-mailing"
+    host: "smtp.example.org"
+    port: "587"
+    user: "smtp-user"
+    password: ""
   # secret data (client-ids and client-secrets) for interfaces (daps, custodian, bpdm, sdFactory, clearinghouse) of the backend services and jobs
   interfaces:
     secret: "secret-backend-interfaces"
@@ -175,8 +175,8 @@ backend:
       registrationservicetag: v1.0.0-RC8
     logging:
       registrationServiceBpn: "Information"
-    basePortalAddress: ""
-    bpnAddress: ""
+    basePortalAddress: "https://portal.dummy/registration"
+    bpnAddress: "https://partners-pool.dummy"
     keycloakClientId: "Cl1-CX-Registration"
     applicationStatusIds:
       status0: "SUBMITTED"
@@ -201,11 +201,11 @@ backend:
         type3: "application/octet-stream"
     keycloakClientId: "Cl2-CX-Portal"
     daps:
-      baseAddress: ""
-      tokenAddress: ""
+      baseAddress: "https://daps.dummy"
+      tokenAddress: "https://centralidp.dummy/auth/realms/CX-Central/protocol/openid-connect/token"
       scope: "openid"
       grantType: "client_credentials"
-      clientId: ""
+      clientId: "daps-client-id"
       clientSecret: ""
     identityProviderAdmin:
       csvSettings:
@@ -247,16 +247,15 @@ backend:
       clientId: "central-idp"
     sharedRealm:
       smtpServer:
-        host: ""
-        port: ""
-        user: ""
+        host: "smtp.example.org"
+        port: "587"
+        user: "smtp-user"
         password: ""
         ssl: ""
         startTls: "true"
         auth: "true"
-        from: ""
-        replyTo: ""
-        secret: "secret-backend-mailing"
+        from: "smtp@example.org"
+        replyTo: "smtp@example.org"
     service:
       name: "provisioning-service"
       image:
@@ -270,7 +269,7 @@ backend:
       appmarketplaceservicetag: v1.0.0-RC8
     logging:
       offersLibrary: "Information"
-    appOverviewAddress: ""
+    appOverviewAddress: "https://portal.dummy/appoverview"
     catenaAdminRoles:
       role0: "CX Admin"
     serviceAccountRoles:
@@ -338,7 +337,7 @@ backend:
       servicesservicetag: v1.0.0-RC8
     logging:
       offersLibrary: "Information"
-    serviceMarketplaceAddress: ""
+    serviceMarketplaceAddress: "https://portal.dummy/servicemarketplace"
     catenaAdminRoles:
       role0: "CX Admin"
     serviceAccountRoles:
@@ -393,33 +392,33 @@ backend:
         type3: "WELCOME_CONNECTOR_REGISTRATION"
         type4: "WELCOME_APP_MARKETPLACE"
     bpdm:
-      baseAddress: ""
-      tokenAddress: ""
+      baseAddress: "https://portal-gate.dummy"
+      tokenAddress: "https://centralidp.dummy/auth/realms/CX-Central/protocol/openid-connect/token"
       scope: "openid"
       grantType: "client_credentials"
-      clientId: ""
+      clientId: "bpdm-client-id"
       clientSecret: ""
     clearinghouse:
-      baseAddress: ""
-      tokenAddress: ""
+      baseAddress: "https://validation.dummy"
+      tokenAddress: "https://keycloak.dummy/realms/dummy/protocol/openid-connect/token"
       scope: "openid"
       grantType: "client_credentials"
-      clientId: ""
+      clientId: "clearinghouse-client-id"
       clientSecret: ""
     custodian:
-      baseAddress: ""
-      tokenAddress: ""
+      baseAddress: "https://managed-identity-wallets.dummy"
+      tokenAddress: "https://centralidp.dummy/auth/realms/CX-Central/protocol/openid-connect/token"
       scope: "openid"
       grantType: "client_credentials"
-      clientId: ""
+      clientId: "custodian-client-id"
       clientSecret: ""
     sdfactory:
-      baseAddress: ""
-      tokenAddress: ""
+      baseAddress: "https://sdfactory.dummy/selfdescription"
+      tokenAddress: "https://centralidp.dummy/auth/realms/CX-Central/protocol/openid-connect/token"
       scope: "openid"
       grantType: "client_credentials"
-      issuerBpn: ""
-      clientId: ""
+      issuerBpn: "BPNDUMMY000DUMMY"
+      clientId: "sdfactory-client-id"
       clientSecret: ""
   placeholder: "empty"
 

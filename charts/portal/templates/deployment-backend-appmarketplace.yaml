@@ -121,10 +121,7 @@ spec:
         - name: "KEYCLOAK__CENTRAL__AUTHREALM"
           value: "{{ .Values.backend.keycloak.central.authRealm }}"
         - name: "KEYCLOAK__CENTRAL__CLIENTID"
-          valueFrom:
-            secretKeyRef:
-              name: "{{ .Values.backend.keycloak.secret }}"
-              key: "central-client-id"
+          value: "{{ .Values.backend.keycloak.central.clientId }}"
         - name: "KEYCLOAK__CENTRAL__CLIENTSECRET"
           valueFrom:
             secretKeyRef:
@@ -135,10 +132,7 @@ spec:
         - name: "KEYCLOAK__SHARED__AUTHREALM"
           value: "{{ .Values.backend.keycloak.shared.authRealm }}"
         - name: "KEYCLOAK__SHARED__CLIENTID"
-          valueFrom:
-            secretKeyRef:
-              name: "{{ .Values.backend.keycloak.secret }}"
-              key: "shared-client-id"
+          value: "{{ .Values.backend.keycloak.shared.clientId }}"
         - name: "KEYCLOAK__SHARED__CLIENTSECRET"
           valueFrom:
             secretKeyRef:
@@ -149,25 +143,16 @@ spec:
         - name: "LOGGING__LOGLEVEL__ORG.CATENAX.NG.PORTAL.BACKEND.OFFERS.LIBRARY.SERVICE"
           value: "{{ .Values.backend.appmarketplace.logging.offersLibrary }}"
         - name: "MAILINGSERVICE__MAIL__SMTPHOST"
-          valueFrom:
-            secretKeyRef:
-              name: "{{ .Values.backend.mailing.secret }}"
-              key: "host"
+          value: "{{ .Values.backend.mailing.host }}"
         - name: "MAILINGSERVICE__MAIL__SMTPPASSWORD"
           valueFrom:
             secretKeyRef:
               name: "{{ .Values.backend.mailing.secret }}"
               key: "password"
         - name: "MAILINGSERVICE__MAIL__SMTPPORT"
-          valueFrom:
-            secretKeyRef:
-              name: "{{ .Values.backend.mailing.secret }}"
-              key: "port"
+          value: "{{ .Values.backend.mailing.port }}"
         - name: "MAILINGSERVICE__MAIL__SMTPUSER"
-          valueFrom:
-            secretKeyRef:
-              name: "{{ .Values.backend.mailing.secret }}"
-              key: "user"
+          value: "{{ .Values.backend.mailing.user }}"
         - name: "PROVISIONING__CENTRALREALM"
           value: "{{ .Values.backend.provisioning.centralRealm }}"
         - name: "PROVISIONING__CENTRALREALMID"

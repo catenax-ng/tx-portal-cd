@@ -1,13 +1,13 @@
 name: Portal Lint and Test Chart
 
 on: 
-  # push:
-    # paths:
-    #   - 'charts/portal/**'
-  #   branches: [helm-environments]
-  # pull_request:
-  #   paths:
-  #     - 'charts/portal/**'
+  push:
+    paths:
+      - 'charts/portal/**'
+    branches: [helm-environments]
+  pull_request:
+    paths:
+      - 'charts/portal/**'
   workflow_dispatch:
 
 jobs:
@@ -20,12 +20,12 @@ jobs:
           fetch-depth: 0
 
       - name: Set up Helm
-        uses: azure/setup-helm@v1
+        uses: azure/setup-helm@v3
         with:
-          version: v3.9.3
+          version: v3.10.3
 
       # Setup python as a prerequisite for chart linting 
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v4
         with:
           python-version: 3.7
 
@@ -42,7 +42,7 @@ jobs:
 
       # run chart linting 
       - name: Run chart-testing (lint)
-        run: ct lint --all --config charts/chart-testing-config-helm-environments.yaml
+        run: ct lint --charts charts/portal --config charts/chart-testing-config-helm-environments.yaml
 
       # Preparing a kind cluster to install and test charts on
       - name: Create kind cluster
