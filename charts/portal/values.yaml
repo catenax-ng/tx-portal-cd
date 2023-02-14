@@ -248,7 +248,7 @@ backend:
     sharedRealm:
       smtpServer:
         host: "smtp.example.org"
-        port: "578"
+        port: "587"
         user: "smtp-user"
         password: ""
         ssl: ""
