@@ -227,7 +227,7 @@ backend:
       clientSecret: "<path:portal/data/int/checklist-worker#bpdm-client-secret>"
     clearinghouse:
       baseAddress: "https://validation.int.dih-cloud.com"
-      tokenAddress: "https://keycloak-dev.dih-cloud.com/realms/notarisation/protocol/openid-connect/token"
+      tokenAddress: "https://iam.dev.dih-cloud.com/realms/notarisation/protocol/openid-connect/token"
       clientId: "<path:portal/data/checklist-worker#clearinghouse-client-id>"
       clientSecret: "<path:portal/data/int/checklist-worker#clearinghouse-client-secret>"
     custodian:
