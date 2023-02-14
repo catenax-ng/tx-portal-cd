@@ -4,10 +4,10 @@ on:
   push:
     # paths:
     #   - 'charts/portal/**'
-    branches: [helm-environments]
-  pull_request:
-    paths:
-      - 'charts/portal/**'
+  #   branches: [helm-environments]
+  # pull_request:
+  #   paths:
+  #     - 'charts/portal/**'
   workflow_dispatch:
 
 jobs:
