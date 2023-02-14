@@ -52,15 +52,15 @@ frontend:
 
   portal:
     image:
-      portaltag: 1.0.0-RC7
+      portaltag: 1.0.0-RC8
 
   assets:
     image:
-      assetstag: 1.0.0-RC5
+      assetstag: 1.0.0-RC6
 
   registration:
     image:
-      registrationtag: 1.0.0-RC3
+      registrationtag: 1.0.0-RC4
 
   env:
     PORTAL_ASSETS_URL: "https://portal.pre-prod.demo.catena-x.net/assets"
@@ -143,15 +143,24 @@ backend:
 
   registration:
     image:
-      registrationservicetag: v1.0.0-RC7
-    secret:
-      appsettings: "<path:portal/data/pre-prod/registration#appsettings.json>"
+      registrationservicetag: v1.0.0-RC8
+    logging:
+      registrationServiceBpn: "Debug"
+    basePortalAddress: "https://portal.pre-prod.demo.catena-x.net/registration"
+    bpnAddress: "https://partners-pool.pre-prod.demo.catena-x.net"
+    swaggerEnabled: true
 
   administration:
     image:
-      administrationservicetag: v1.0.0-RC7
-    secret:
-      appsettings: "<path:portal/data/pre-prod/administration#appsettings.json>"
+      administrationservicetag: v1.0.0-RC8
+    logging:
+      businessLogic: "Debug"
+    daps:
+      baseAddress: "https://drs-pen.int.demo.catena-x.net/api/v1/daps"
+      tokenAddress: "https://centralidp.pre-prod.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
+      clientId: "<path:portal/data/administration#daps-client-id>"
+      clientSecret: "<path:portal/data/pre-prod/administration#daps-client-secret>"
+    swaggerEnabled: true
 
   provisioning:
     sharedRealm:
@@ -164,51 +173,47 @@ backend:
         replyTo: "<path:portal/data/mailing#replyto>"
     service:
       image:
-        provisioningservicetag: v1.0.0-RC7
-      debugEnabled: true
+        provisioningservicetag: v1.0.0-RC8
       swaggerEnabled: true
 
   appmarketplace:
     image:
-      appmarketplaceservicetag: v1.0.0-RC7
+      appmarketplaceservicetag: v1.0.0-RC8
     logging:
       offersLibrary: "Debug"
     appOverviewAddress: "https://portal.pre-prod.demo.catena-x.net/appoverview"
-    debugEnabled: true
     swaggerEnabled: true
 
   portalmigrations:
     image:
-      portalmigrationstag: v1.0.0-RC7
+      portalmigrationstag: v1.0.0-RC8
     seeding:
       testDataEnvironments: "consortia"
 
   portalmaintenance:
     image:
-      portalmaintenancetag: v1.0.0-RC7
+      portalmaintenancetag: v1.0.0-RC8
 
   notification:
     image:
-      notificationservicetag: v1.0.0-RC7
-    debugEnabled: true
+      notificationservicetag: v1.0.0-RC8
     swaggerEnabled: true
 
   services:
     image:
-      servicesservicetag: v1.0.0-RC7
+      servicesservicetag: v1.0.0-RC8
     logging:
       offersLibrary: "Debug"
     serviceMarketplaceAddress: "https://portal.pre-prod.demo.catena-x.net/servicemarketplace"
-    debugEnabled: true
     swaggerEnabled: true
 
   provisioningmigrations:
     image:
-      provisioningmigrationstag: v1.0.0-RC7
+      provisioningmigrationstag: v1.0.0-RC8
   
   checklistworker:
     image:
-      checklistworkertag: v1.0.0-RC7
+      checklistworkertag: v1.0.0-RC8
     logging:
       checklistLibrary: "Debug"
       bpdmLibrary: "Debug"
@@ -216,7 +221,7 @@ backend:
       custodianLibrary: "Debug"
       sdfactoryLibrary: "Debug"
     bpdm:
-      baseAddress: "https://portal-gate.pre-prod.demo.catena-x.net/"
+      baseAddress: "https://portal-gate.pre-prod.demo.catena-x.net"
       tokenAddress: "https://centralidp.pre-prod.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
       clientId: "<path:portal/data/checklist-worker#bpdm-client-id>"
       clientSecret: "<path:portal/data/pre-prod/checklist-worker#bpdm-client-secret>"

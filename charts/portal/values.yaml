@@ -62,17 +62,17 @@ frontend:
     name: "portal"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-frontend"
-      portaltag: 1.0.0-RC7
+      portaltag: 1.0.0-RC8
   registration:
     name: "registration"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-frontend-registration"
-      registrationtag: 1.0.0-RC3
+      registrationtag: 1.0.0-RC4
   assets:
     name: "assets"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-assets"
-      assetstag: 1.0.0-RC5
+      assetstag: 1.0.0-RC6
   env:
     PORTAL_ASSETS_URL: ""
     PORTAL_BACKEND_URL: ""
@@ -143,7 +143,8 @@ backend:
         metadataAddress: ""
         tokenValidationParameters:
           validIssuer: ""
-          validAudience: "Cl2-CX-Portal"
+          validAudiencePortal: "Cl2-CX-Portal"
+          validAudienceRegistration: "Cl1-CX-Registration"
       dbConnection:
         host: "centralidp-postgresql-primary"
         port: "5432"
@@ -157,34 +158,89 @@ backend:
       clientId: ""
       clientSecret: ""
       authRealm: "master"
-    secret: "secret-keycloak"
+    secret: "secret-backend-keycloak"
   mailing:
     host: ""
     port: ""
     user: ""
     password: ""
-    secret: "secret-mailing"
+    secret: "secret-backend-mailing"
+  # secret data (client-ids and client-secrets) for interfaces (daps, custodian, bpdm, sdFactory, clearinghouse) of the backend services and jobs
+  interfaces:
+    secret: "secret-backend-interfaces"
   registration:
     name: "registration-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_registration-service"
-      registrationservicetag: v1.0.0-RC7
-    secret:
-      name: "secret-registration"
-      appsettings: ""
+      registrationservicetag: v1.0.0-RC8
+    logging:
+      registrationServiceBpn: "Information"
+    basePortalAddress: ""
+    bpnAddress: ""
+    keycloakClientId: "Cl1-CX-Registration"
+    applicationStatusIds:
+      status0: "SUBMITTED"
+      status1: "DECLINED"
+      status2: "CONFIRMED"
+    documentTypeIds:
+      type0: "CX_FRAME_CONTRACT"
+      type1: "COMMERCIAL_REGISTER_EXTRACT"
+    swaggerEnabled: false
   administration:
     name: "administration-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_administration-service"
-      administrationservicetag: v1.0.0-RC7
-    secret:
-      name: "secret-administration"
-      appsettings: ""
+      administrationservicetag: v1.0.0-RC8
+    logging:
+      businessLogic: "Information"
+    connectors:
+      validCertificationContentTypes:
+        type0: "application/x-pem-file"
+        type1: "application/x-x509-ca-cert"
+        type2: "application/pkix-cert"
+        type3: "application/octet-stream"
+    keycloakClientId: "Cl2-CX-Portal"
+    daps:
+      baseAddress: ""
+      tokenAddress: ""
+      scope: "openid"
+      grantType: "client_credentials"
+      clientId: ""
+      clientSecret: ""
+    identityProviderAdmin:
+      csvSettings:
+        fileName: "identityproviderlinks.csv"
+        contentType: "text/csv"
+        charset: "UTF-8"
+        separator: ","
+        headerUserId: "UserId"
+        headerFirstName: "FirstName"
+        headerLastName: "LastName"
+        headerEmail: "Email"
+        headerProviderAlias: "ProviderAlias"
+        headerProviderUserId: "ProviderUserId"
+        headerProviderUserName: "ProviderUserName"
+    invitation:
+      invitedUserInitialRoles:
+        role0: "Company Admin"
+    registration:
+      partnerUserInitialRoles:
+        role0: "Company Admin"
+      documentTypeIds:
+        type0: "COMMERCIAL_REGISTER_EXTRACT"
+    userManagement:
+      companyUserStatusIds:
+        status0: "ACTIVE"
+        status1: "INACTIVE"
+    serviceAccount:
+      clientId: "technical_roles_management"
+    swaggerEnabled: false
   provisioning:
     centralRealm: "CX-Central"
     centralRealmId: "CX-Central"
     invitedUserInitialRoles:
       registration: "Company Admin"
+    serviceAccountClientPrefix: "sa"
     centralIdentityProvider:
       clientId: "central-idp"
     sharedRealmClient:
@@ -200,30 +256,29 @@ backend:
         auth: "true"
         from: ""
         replyTo: ""
-        secret: "secret-mailing"
+        secret: "secret-backend-mailing"
     service:
       name: "provisioning-service"
       image:
         name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-service"
-        provisioningservicetag: v1.0.0-RC7
-      debugEnabled: false
+        provisioningservicetag: v1.0.0-RC8
       swaggerEnabled: false
   appmarketplace:
     name: "marketplace-app-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_marketplace-app-service"
-      appmarketplaceservicetag: v1.0.0-RC7
+      appmarketplaceservicetag: v1.0.0-RC8
     logging:
       offersLibrary: "Information"
     appOverviewAddress: ""
     catenaAdminRoles:
-      role: "CX Admin"
+      role0: "CX Admin"
     serviceAccountRoles:
-      role: "App Tech User"
+      role0: "App Tech User"
     salesManagerRoles:
-      role: "Sales Manager"
+      role0: "Sales Manager"
     serviceManagerRoles:
-      role: "App Manager"
+      role0: "App Manager"
     activeAppCompanyAdminRoles:
       role0: "IT Admin"
       role1: "Company Admin"
@@ -231,7 +286,7 @@ backend:
       role0: "Sales Manager"
       role1: "Service Manager"
     ITAdminRoles:
-      role: "IT Admin"
+      role0: "IT Admin"
     documentTypeIds:
       type0: "APP_CONTRACT"
       type1: "APP_DATA_DETAILS"
@@ -250,55 +305,53 @@ backend:
     submitAppNotificationTypeIds:
       type0: "APP_RELEASE_REQUEST"
     approveAppNotificationTypeIds:
-     type0: "APP_RELEASE_APPROVAL"
+      type0: "APP_RELEASE_APPROVAL"
     appImageDocumentTypeIds:
       type0: "APP_LEADIMAGE"
       type1: "APP_IMAGE"
     offerStatusIds:
       status0: "IN_REVIEW"
       status1: "ACTIVE"
-    debugEnabled: false
     swaggerEnabled: false
   portalmigrations:
     name: "portal-migrations"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_portal-migrations"
-      portalmigrationstag: v1.0.0-RC7
+      portalmigrationstag: v1.0.0-RC8
     seeding:
       testDataEnvironments: ""
   portalmaintenance:
     name: "portal-maintenance"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_maintenance-service"
-      portalmaintenancetag: v1.0.0-RC7
+      portalmaintenancetag: v1.0.0-RC8
   notification:
     name: "notification-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_notification-service"
-      notificationservicetag: v1.0.0-RC7
-    debugEnabled: false
+      notificationservicetag: v1.0.0-RC8
     swaggerEnabled: false
   services:
     name: "services-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_services-service"
-      servicesservicetag: v1.0.0-RC7
+      servicesservicetag: v1.0.0-RC8
     logging:
       offersLibrary: "Information"
     serviceMarketplaceAddress: ""
     catenaAdminRoles:
-      role: "CX Admin"
+      role0: "CX Admin"
     serviceAccountRoles:
-      role: "App Tech User"
+      role0: "App Tech User"
     salesManagerRoles:
-      role: "Sales Manager"
+      role0: "Sales Manager"
     serviceManagerRoles:
-      role: "Service Manager"
+      role0: "Service Manager"
     approveServiceUserRoles:
       role0: "Sales Manager"
       role1: "Service Manager"
     ITAdminRoles:
-      role: "IT Admin"
+      role0: "IT Admin"
     documentTypeIds:
       type0: "ADDITIONAL_DETAILS"
     contentTypeSettings:
@@ -306,19 +359,18 @@ backend:
     submitServiceNotificationTypeIds:
       type0: "SERVICE_RELEASE_REQUEST"
     approveServiceNotificationTypeIds:
-     type0: "SERVICE_RELEASE_APPROVAL"
-    debugEnabled: false
+      type0: "SERVICE_RELEASE_APPROVAL"
     swaggerEnabled: false
   provisioningmigrations:
     name: "provisioning-migrations"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-migrations"
-      provisioningmigrationstag: v1.0.0-RC7
+      provisioningmigrationstag: v1.0.0-RC8
   checklistworker:
     name: "checklist-worker"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_checklist-worker"
-      checklistworkertag: v1.0.0-RC7
+      checklistworkertag: v1.0.0-RC8
     secret: "secret-checklist-worker"
     logging:
       checklistLibrary: "Information"
@@ -329,9 +381,9 @@ backend:
     applicationActivation:
       applicationApprovalInitialRoles:
         portal:
-          role: "Company Admin"
+          role0: "Company Admin"
         registration:
-          role: "Company Admin"
+          role0: "Company Admin"
       clientToRemoveRolesOnActivation:
         client0: "Cl1-CX-Registration"
       welcomeNotificationTypeIds:

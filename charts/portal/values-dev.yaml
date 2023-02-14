@@ -52,15 +52,15 @@ frontend:
 
   portal:
     image:
-      portaltag: dev_c98c60af1cbb1ee0396016df289482ae2224332a
+      portaltag: main_14995a16fd664222c80bee7fe6c955d9e5ff54ad
 
   assets:
     image:
-      assetstag: main_48c9925b660e66a6b22b5332f57c685a3787c23e
+      assetstag: main_7f1a6b76ef720e906e7899b59d8ed1388af6b861
 
   registration:
     image:
-      registrationtag: dev_620175da0ccd7a9de618124c419432b352b83afa
+      registrationtag: main_a671e0e029acdabbb43bba93cd78acb53ec6c397
 
   env:
     PORTAL_ASSETS_URL: "https://portal.dev.demo.catena-x.net/assets"
@@ -143,15 +143,24 @@ backend:
 
   registration:
     image:
-      registrationservicetag: a7b1555c40eaf183d68e6360d3ab1983c02542f9
-    secret:
-      appsettings: "<path:portal/data/dev/registration#appsettings.json>"
+      registrationservicetag: d28a016655769bd7dc1d8eb5afef02747bc5ec09
+    logging:
+      registrationServiceBpn: "Debug"
+    basePortalAddress: "https://portal.dev.demo.catena-x.net/registration"
+    bpnAddress: "https://partners-pool.dev.demo.catena-x.net"
+    swaggerEnabled: true
 
   administration:
     image:
-      administrationservicetag: a7b1555c40eaf183d68e6360d3ab1983c02542f9
-    secret:
-      appsettings: "<path:portal/data/dev/administration#appsettings.json>"
+      administrationservicetag: d28a016655769bd7dc1d8eb5afef02747bc5ec09
+    logging:
+      businessLogic: "Debug"
+    daps:
+      baseAddress: "https://drs-pen.int.demo.catena-x.net/api/v1/daps"
+      tokenAddress: "https://centralidp.dev.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
+      clientId: "<path:portal/data/administration#daps-client-id>"
+      clientSecret: "<path:portal/data/dev/administration#daps-client-secret>"
+    swaggerEnabled: true
 
   provisioning:
     sharedRealm:
@@ -164,52 +173,47 @@ backend:
         replyTo: "<path:portal/data/mailing#replyto>"
     service:
       image:
-        provisioningservicetag: a7b1555c40eaf183d68e6360d3ab1983c02542f9
-      debugEnabled: true
+        provisioningservicetag: a95bd121299a31e2139e7fb5e37ae46b76362cfd
       swaggerEnabled: true
 
   appmarketplace:
     image:
-      appmarketplaceservicetag: a7b1555c40eaf183d68e6360d3ab1983c02542f9
+      appmarketplaceservicetag: d28a016655769bd7dc1d8eb5afef02747bc5ec09
     logging:
       offersLibrary: "Debug"
     appOverviewAddress: "https://portal.dev.demo.catena-x.net/appoverview"
-    debugEnabled: true
     swaggerEnabled: true
 
   portalmigrations:
     image:
-      portalmigrationstag: a7b1555c40eaf183d68e6360d3ab1983c02542f9
+      portalmigrationstag: d28a016655769bd7dc1d8eb5afef02747bc5ec09
     seeding:
       testDataEnvironments: "consortia"
 
   portalmaintenance:
     image:
-      portalmaintenancetag: a7b1555c40eaf183d68e6360d3ab1983c02542f9
+      portalmaintenancetag: a95bd121299a31e2139e7fb5e37ae46b76362cfd
 
   notification:
     image:
-      notificationservicetag: a7b1555c40eaf183d68e6360d3ab1983c02542f9
-    debugEnabled: true
+      notificationservicetag: d28a016655769bd7dc1d8eb5afef02747bc5ec09
     swaggerEnabled: true
 
   services:
-    name: "services-service"
     image:
-      servicesservicetag: a7b1555c40eaf183d68e6360d3ab1983c02542f9
+      servicesservicetag: d28a016655769bd7dc1d8eb5afef02747bc5ec09
     logging:
       offersLibrary: "Debug"
     serviceMarketplaceAddress: "https://portal.dev.demo.catena-x.net/servicemarketplace"
-    debugEnabled: true
     swaggerEnabled: true
 
   provisioningmigrations:
     image:
-      provisioningmigrationstag: a7b1555c40eaf183d68e6360d3ab1983c02542f9
+      provisioningmigrationstag: a95bd121299a31e2139e7fb5e37ae46b76362cfd
 
   checklistworker:
     image:
-      checklistworkertag: a7b1555c40eaf183d68e6360d3ab1983c02542f9
+      checklistworkertag: b56925b497a4228131307ef50cbafa021e8698dc
     logging:
       checklistLibrary: "Debug"
       bpdmLibrary: "Debug"
@@ -217,7 +221,7 @@ backend:
       custodianLibrary: "Debug"
       sdfactoryLibrary: "Debug"
     bpdm:
-      baseAddress: "https://portal-gate.dev.demo.catena-x.net/"
+      baseAddress: "https://portal-gate.dev.demo.catena-x.net"
       tokenAddress: "https://centralidp.dev.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
       clientId: "<path:portal/data/checklist-worker#bpdm-client-id>"
       clientSecret: "<path:portal/data/dev/checklist-worker#bpdm-client-secret>"
