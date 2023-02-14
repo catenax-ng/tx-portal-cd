@@ -273,7 +273,7 @@ backend:
     catenaAdminRoles:
       role0: "CX Admin"
     serviceAccountRoles:
-      role0: "Digital Twin Management"
+      role0: "App Tech User"
     salesManagerRoles:
       role0: "Sales Manager"
     serviceManagerRoles:
@@ -341,7 +341,7 @@ backend:
     catenaAdminRoles:
       role0: "CX Admin"
     serviceAccountRoles:
-      role0: "Digital Twin Management"
+      role0: "App Tech User"
     salesManagerRoles:
       role0: "Sales Manager"
     serviceManagerRoles:

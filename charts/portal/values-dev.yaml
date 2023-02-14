@@ -52,15 +52,15 @@ frontend:
 
   portal:
     image:
-      portaltag: main_14995a16fd664222c80bee7fe6c955d9e5ff54ad
+      portaltag: dev_d22c94c8d679f5e37f19e76c8e8c977add632f69
 
   assets:
     image:
-      assetstag: main_cba8517387739dda8a55ad465e910313543cd624
+      assetstag: main_7f1a6b76ef720e906e7899b59d8ed1388af6b861
 
   registration:
     image:
-      registrationtag: main_a671e0e029acdabbb43bba93cd78acb53ec6c397
+      registrationtag: dev_91c506a0bf1fe73f0a05faf988561bcb3177737f
 
   env:
     PORTAL_ASSETS_URL: "https://portal.dev.demo.catena-x.net/assets"
@@ -143,7 +143,7 @@ backend:
 
   registration:
     image:
-      registrationservicetag: a95bd121299a31e2139e7fb5e37ae46b76362cfd
+      registrationservicetag: aa1d9e4e2cc2b75d0d4be1159f06e399786077d5
     logging:
       registrationServiceBpn: "Debug"
     basePortalAddress: "https://portal.dev.demo.catena-x.net/registration"
@@ -152,7 +152,7 @@ backend:
 
   administration:
     image:
-      administrationservicetag: a95bd121299a31e2139e7fb5e37ae46b76362cfd
+      administrationservicetag: 6c908071a81db855bf4f363b943de8b0bc5982bb
     logging:
       businessLogic: "Debug"
     daps:
@@ -173,12 +173,12 @@ backend:
         replyTo: "<path:portal/data/mailing#replyto>"
     service:
       image:
-        provisioningservicetag: a95bd121299a31e2139e7fb5e37ae46b76362cfd
+        provisioningservicetag: aa1d9e4e2cc2b75d0d4be1159f06e399786077d5
       swaggerEnabled: true
 
   appmarketplace:
     image:
-      appmarketplaceservicetag: a95bd121299a31e2139e7fb5e37ae46b76362cfd
+      appmarketplaceservicetag: aa1d9e4e2cc2b75d0d4be1159f06e399786077d5
     logging:
       offersLibrary: "Debug"
     appOverviewAddress: "https://portal.dev.demo.catena-x.net/appoverview"
@@ -186,22 +186,22 @@ backend:
 
   portalmigrations:
     image:
-      portalmigrationstag: a95bd121299a31e2139e7fb5e37ae46b76362cfd
+      portalmigrationstag: aa1d9e4e2cc2b75d0d4be1159f06e399786077d5
     seeding:
       testDataEnvironments: "consortia"
 
   portalmaintenance:
     image:
-      portalmaintenancetag: a95bd121299a31e2139e7fb5e37ae46b76362cfd
+      portalmaintenancetag: aa1d9e4e2cc2b75d0d4be1159f06e399786077d5
 
   notification:
     image:
-      notificationservicetag: a95bd121299a31e2139e7fb5e37ae46b76362cfd
+      notificationservicetag: aa1d9e4e2cc2b75d0d4be1159f06e399786077d5
     swaggerEnabled: true
 
   services:
     image:
-      servicesservicetag: a95bd121299a31e2139e7fb5e37ae46b76362cfd
+      servicesservicetag: aa1d9e4e2cc2b75d0d4be1159f06e399786077d5
     logging:
       offersLibrary: "Debug"
     serviceMarketplaceAddress: "https://portal.dev.demo.catena-x.net/servicemarketplace"
@@ -209,11 +209,11 @@ backend:
 
   provisioningmigrations:
     image:
-      provisioningmigrationstag: a95bd121299a31e2139e7fb5e37ae46b76362cfd
+      provisioningmigrationstag: aa1d9e4e2cc2b75d0d4be1159f06e399786077d5
 
   checklistworker:
     image:
-      checklistworkertag: a95bd121299a31e2139e7fb5e37ae46b76362cfd
+      checklistworkertag: aa1d9e4e2cc2b75d0d4be1159f06e399786077d5
     logging:
       checklistLibrary: "Debug"
       bpdmLibrary: "Debug"
@@ -227,7 +227,7 @@ backend:
       clientSecret: "<path:portal/data/dev/checklist-worker#bpdm-client-secret>"
     clearinghouse:
       baseAddress: "https://validation.dev.dih-cloud.com"
-      tokenAddress: "https://keycloak-dev.dih-cloud.com/realms/notarisation/protocol/openid-connect/token"
+      tokenAddress: "https://iam.dev.dih-cloud.com/realms/notarisation/protocol/openid-connect/token"
       clientId: "<path:portal/data/checklist-worker#clearinghouse-client-id>"
       clientSecret: "<path:portal/data/dev/checklist-worker#clearinghouse-client-secret>"
     custodian:
