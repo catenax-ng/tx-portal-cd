@@ -84,6 +84,8 @@ spec:
           value: "{{ .Values.backend.checklistworker.clearinghouse.scope }}"
         - name: "CHECKLIST__CLEARINGHOUSE__USERNAME"
           value: "{{ .Values.backend.placeholder }}"
+        - name: "CHECKLIST__CLEARINGHOUSE__CALLBACKURL"
+          value: "{{ .Values.frontend.env.PORTAL_BACKEND_URL }}{{ .Values.backend.checklistworker.clearinghouse.callbackUrl }}"
         - name: "CHECKLIST__CUSTODIAN__BASEADDRESS"
           value: "{{ .Values.backend.checklistworker.custodian.baseAddress }}"
         - name: "CHECKLIST__CUSTODIAN__CLIENTID"
