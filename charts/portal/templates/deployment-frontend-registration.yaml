@@ -39,10 +39,10 @@ spec:
         imagePullPolicy: "Always"
         env:
           - name: PORTAL_ASSETS_URL
-            value: "{{ .Values.frontend.env.PORTAL_ASSETS_URL }}"
+            value: "{{ .Values.portalAddress }}{{ .Values.frontend.assets.path }}"
           - name: PORTAL_BACKEND_URL
-            value: "{{ .Values.frontend.env.PORTAL_BACKEND_URL }}"
+            value: "{{ .Values.portalBackendAddress }}"
           - name: CENTRALIDP_URL
-            value: "{{ .Values.frontend.env.CENTRALIDP_URL }}"
+            value: "{{ .Values.centralidpAddress }}{{ .Values.frontend.centralidpAuthPath }}"
         ports:
         - containerPort: {{ .Values.portContainer }}

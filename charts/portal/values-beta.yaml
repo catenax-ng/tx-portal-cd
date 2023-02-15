@@ -17,6 +17,19 @@
 # SPDX-License-Identifier: Apache-2.0
 ###############################################################
 
+portalAddress: "https://portal.beta.demo.catena-x.net"
+portalBackendAddress: "https://portal-backend.beta.demo.catena-x.net"
+centralidpAddress: "https://centralidp.beta.demo.catena-x.net"
+sharedidpAddress: "https://sharedidp.beta.demo.catena-x.net"
+semanticsAddress: "https://semantics.beta.demo.catena-x.net"
+dapsAddress: "https://drs-pen.int.demo.catena-x.net"
+bpdmPartnersPoolAddress: "https://partners-pool.beta.demo.catena-x.net"
+bpdmPortalGateAddress: "https://portal-gate.beta.demo.catena-x.net"
+custodianAddress: "https://managed-identity-wallets.beta.demo.catena-x.net"
+sdfactoryAddress: "https://sdfactory.beta.demo.catena-x.net"
+clearinghouseAddress: "https://validation.beta.dih-cloud.com"
+clearinghouseTokenAddress: "https://iam.dev.dih-cloud.com/realms/notarisation/protocol/openid-connect/token"
+
 frontend:
 
   ingress:
@@ -61,13 +74,6 @@ frontend:
   registration:
     image:
       registrationtag: 1.0.0-RC4
-
-  env:
-    PORTAL_ASSETS_URL: "https://portal.beta.demo.catena-x.net/assets"
-    PORTAL_BACKEND_URL: "https://portal-backend.beta.demo.catena-x.net"
-    CENTRALIDP_URL: "https://centralidp.beta.demo.catena-x.net/auth"
-    BPDM_API_URL: "https://partners-pool.beta.demo.catena-x.net/api"
-    SEMANTICS_URL: "https://semantics.beta.demo.catena-x.net"
 
 backend:
   ingress:
@@ -116,22 +122,13 @@ backend:
               service: "services-service"
               port: 8080
 
-  basePortalAddress: "https://portal.beta.demo.catena-x.net/home"
-  userManagementAddress: "https://portal.beta.demo.catena-x.net/usermanagement"
-
   keycloak:
     central:
-      baseAddress: "https://centralidp.beta.demo.catena-x.net"
       clientId: "<path:portal/data/keycloak#central-client-id>"
       clientSecret: "<path:portal/data/beta/keycloak#central-client-secret>"
-      jwtBearerOptions:
-        metadataAddress: "https://centralidp.beta.demo.catena-x.net/auth/realms/CX-Central/.well-known/openid-configuration"
-        tokenValidationParameters:
-          validIssuer: "https://centralidp.beta.demo.catena-x.net/auth/realms/CX-Central"
       dbConnection:
         password: "<path:portal/data/beta/keycloak#central-db-password>"
     shared:
-      baseAddress: "https://sharedidp.beta.demo.catena-x.net"
       clientId: "<path:portal/data/keycloak#shared-client-id>"
       clientSecret: "<path:portal/data/beta/keycloak#shared-client-secret>"
 
@@ -146,8 +143,6 @@ backend:
       registrationservicetag: v1.0.0-RC8
     logging:
       registrationServiceBpn: "Debug"
-    basePortalAddress: "https://portal.beta.demo.catena-x.net/registration"
-    bpnAddress: "https://partners-pool.beta.demo.catena-x.net"
     swaggerEnabled: true
 
   administration:
@@ -156,8 +151,6 @@ backend:
     logging:
       businessLogic: "Debug"
     daps:
-      baseAddress: "https://drs-pen.int.demo.catena-x.net/api/v1/daps"
-      tokenAddress: "https://centralidp.beta.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
       clientId: "<path:portal/data/administration#daps-client-id>"
       clientSecret: "<path:portal/data/beta/administration#daps-client-secret>"
     swaggerEnabled: true
@@ -181,7 +174,6 @@ backend:
       appmarketplaceservicetag: v1.0.0-RC8
     logging:
       offersLibrary: "Debug"
-    appOverviewAddress: "https://portal.beta.demo.catena-x.net/appoverview"
     swaggerEnabled: true
 
   portalmigrations:
@@ -204,7 +196,6 @@ backend:
       servicesservicetag: v1.0.0-RC8
     logging:
       offersLibrary: "Debug"
-    serviceMarketplaceAddress: "https://portal.beta.demo.catena-x.net/servicemarketplace"
     swaggerEnabled: true
 
   provisioningmigrations:
@@ -221,23 +212,15 @@ backend:
       custodianLibrary: "Debug"
       sdfactoryLibrary: "Debug"
     bpdm:
-      baseAddress: "https://portal-gate.beta.demo.catena-x.net"
-      tokenAddress: "https://centralidp.beta.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
       clientId: "<path:portal/data/checklist-worker#bpdm-client-id>"
       clientSecret: "<path:portal/data/beta/checklist-worker#bpdm-client-secret>"
     clearinghouse:
-      baseAddress: "https://validation.beta.dih-cloud.com"
-      tokenAddress: "https://iam.dev.dih-cloud.com/realms/notarisation/protocol/openid-connect/token"
       clientId: "<path:portal/data/checklist-worker#clearinghouse-client-id>"
       clientSecret: "<path:portal/data/beta/checklist-worker#clearinghouse-client-secret>"
     custodian:
-      baseAddress: "https://managed-identity-wallets.beta.demo.catena-x.net"
-      tokenAddress: "https://centralidp.beta.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
       clientId: "<path:portal/data/checklist-worker#custodian-client-id>"
       clientSecret: "<path:portal/data/beta/checklist-worker#custodian-client-secret>"
     sdfactory:
-      baseAddress: "https://sdfactory-r3.beta.demo.catena-x.net/selfdescription"
-      tokenAddress: "https://centralidp.beta.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token"
       issuerBpn: "BPNL00000003CRHK"
       clientId: "<path:portal/data/checklist-worker#sdfactory-client-id>"
       clientSecret: "<path:portal/data/beta/checklist-worker#sdfactory-client-secret>"
