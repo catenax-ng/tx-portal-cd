@@ -38,12 +38,23 @@ spec:
         image: "{{ .Values.backend.provisioningmigrations.image.name }}:{{ .Values.backend.provisioningmigrations.image.provisioningmigrationstag | default .Chart.AppVersion }}"
         imagePullPolicy: "Always"
         env:
+          {{- if .Values.postgresql.enabled }}
           - name: "PROVISIONING_PASSWORD"
             valueFrom:
               secretKeyRef:
                 name: "{{ .Values.postgresql.auth.existingSecret }}"
                 key: "provisioning-password"
           - name: "CONNECTIONSTRINGS__PROVISIONINGDB"
-            value: "Server={{ .Values.postgresql.fullnameOverride }}-primary;Database={{ .Values.postgresql.auth.database }};Port={{ .Values.backend.dbConnection.port }};User Id={{ .Values.postgresql.auth.provisioningUser }};Password=$(PROVISIONING_PASSWORD);Ssl Mode={{ .Values.backend.dbConnection.sslMode }};"
+            value: "Server={{ .Values.postgresql.fullnameOverride }}-primary;Database={{ .Values.postgresql.auth.database }};Port={{ .Values.postgresql.auth.port }};User Id={{ .Values.postgresql.auth.provisioningUser }};Password=$(PROVISIONING_PASSWORD);Ssl Mode={{ .Values.backend.dbConnection.sslMode }};"
+          {{- end }}
+          {{- if not .Values.postgresql.enabled }}
+          - name: "PROVISIONING_PASSWORD"
+            valueFrom:
+              secretKeyRef:
+                name: "{{ .Values.externalDatabase.secret }}"
+                key: "provisioning-password"
+          - name: "CONNECTIONSTRINGS__PROVISIONINGDB"
+            value: "Server={{ .Values.externalDatabase.host }};Database={{ .Values.externalDatabase.database }};Port={{ .Values.externalDatabase.port }};User Id={{ .Values.externalDatabase.provisioningUser }};Password=$(PROVISIONING_PASSWORD);Ssl Mode={{ .Values.backend.dbConnection.sslMode }};"
+          {{- end }}
         ports:
         - containerPort: {{ .Values.portContainer }}
