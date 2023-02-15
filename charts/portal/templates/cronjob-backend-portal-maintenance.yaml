@@ -54,4 +54,6 @@ spec:
                 value: "Server={{ .Values.externalDatabase.host }};Database={{ .Values.externalDatabase.database }};Port={{ .Values.externalDatabase.port }};User Id={{ .Values.externalDatabase.portalUser }};Password=$(PORTAL_PASSWORD);Ssl Mode={{ .Values.backend.dbConnection.sslMode }};"
               {{- end }}
             ports:
-            - containerPort: {{ .Values.portContainer }}
+            - name: http
+              containerPort: {{ .Values.portContainer }}
+              protocol: TCP

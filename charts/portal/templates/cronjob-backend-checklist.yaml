@@ -239,4 +239,6 @@ spec:
             - name: "PROVISIONING__SHAREDREALMCLIENT__CLIENTID"
               value: "{{ .Values.backend.provisioning.sharedRealmClient.clientId }}"
             ports:
-            - containerPort: {{ .Values.portContainer }}
+            - name: http
+              containerPort: {{ .Values.portContainer }}
+              protocol: TCP
