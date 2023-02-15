@@ -39,14 +39,14 @@ spec:
         imagePullPolicy: "Always"
         env:
           - name: PORTAL_ASSETS_URL
-            value: "{{ .Values.frontend.env.PORTAL_ASSETS_URL }}"
+            value: "{{ .Values.portalAddress }}{{ .Values.frontend.assets.path }}"
           - name: PORTAL_BACKEND_URL
-            value: "{{ .Values.frontend.env.PORTAL_BACKEND_URL }}"
+            value: "{{ .Values.portalBackendAddress }}"
           - name: CENTRALIDP_URL
-            value: "{{ .Values.frontend.env.CENTRALIDP_URL }}"
+            value: "{{ .Values.centralidpAddress }}{{ .Values.frontend.centralidpAuthPath }}"
           - name: BPDM_API_URL
-            value: "{{ .Values.frontend.env.BPDM_API_URL }}"
+            value: "{{ .Values.bpdmPartnersPoolAddress }}{{ .Values.frontend.bpdmPartnersPoolApiPath }}"
           - name: SEMANTICS_URL
-            value: "{{ .Values.frontend.env.SEMANTICS_URL }}"
+            value: "{{ .Values.semanticsAddress }}"
         ports:
         - containerPort: {{ .Values.portContainer }}
