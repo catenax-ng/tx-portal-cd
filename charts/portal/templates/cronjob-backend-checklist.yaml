@@ -238,32 +238,5 @@ spec:
               value: "{{ .Values.backend.provisioning.sharedRealm.smtpServer.user }}"
             - name: "PROVISIONING__SHAREDREALMCLIENT__CLIENTID"
               value: "{{ .Values.backend.provisioning.sharedRealmClient.clientId }}"
-          ports:
-          - name: http
-            containerPort: {{ .Values.portContainer }}
-            protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: "/"
-              port: {{ .Values.portContainer }}
-              scheme: HTTP
-          # @url: https://cloud.google.com/blog/products/containers-kubernetes/kubernetes-best-practices-setting-up-health-checks-with-readiness-and-liveness-probes
-          readinessProbe:
-            httpGet:
-              path: "/"
-              port: {{ .Values.portContainer }}
-              scheme: HTTP
-          resources:
-            {{- toYaml .Values.resources | nindent 12 }}
-        {{- with .Values.nodeSelector }}
-        nodeSelector:
-          {{- toYaml . | nindent 8 }}
-        {{- end }}
-        {{- with .Values.affinity }}
-        affinity:
-          {{- toYaml . | nindent 8 }}
-        {{- end }}
-        {{- with .Values.tolerations }}
-        tolerations:
-          {{- toYaml . | nindent 8 }}
-        {{- end }}
+            ports:
+            - containerPort: {{ .Values.portContainer }}
