@@ -52,7 +52,7 @@ spec:
           protocol: TCP
         livenessProbe:
           httpGet:
-            path: "/registration"
+            path: "/"
             port: {{ .Values.portContainer }}
             scheme: HTTP
           initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
@@ -63,7 +63,7 @@ spec:
         # @url: https://cloud.google.com/blog/products/containers-kubernetes/kubernetes-best-practices-setting-up-health-checks-with-readiness-and-liveness-probes
         readinessProbe:
           httpGet:
-            path: "/registration"
+            path: "/"
             port: {{ .Values.portContainer }}
             scheme: HTTP
           initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
