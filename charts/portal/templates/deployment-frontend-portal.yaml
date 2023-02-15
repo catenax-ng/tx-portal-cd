@@ -45,7 +45,7 @@ spec:
           - name: CENTRALIDP_URL
             value: "{{ .Values.centralidpAddress }}{{ .Values.frontend.centralidpAuthPath }}"
           - name: BPDM_API_URL
-            value: "{{ .Values.bpdmPartnersPoolAddress }}{{ .Values.bpdmPartnersPoolApiPath }}"
+            value: "{{ .Values.bpdmPartnersPoolAddress }}{{ .Values.frontend.bpdmPartnersPoolApiPath }}"
           - name: SEMANTICS_URL
             value: "{{ .Values.semanticsAddress }}"
         ports:

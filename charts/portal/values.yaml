@@ -420,7 +420,7 @@ backend:
       grantType: "client_credentials"
       clientId: "clearinghouse-client-id"
       clientSecret: ""
-      callbackPath: "/api/administration/registration/clearinghouse" 
+      callbackPath: "/api/administration/registration/clearinghouse"
   placeholder: "empty"
 
 postgresql:
