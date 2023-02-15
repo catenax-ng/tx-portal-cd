@@ -509,6 +509,12 @@ readinessProbe:
   successThreshold: 1
   timeoutSeconds: 1
 
+strategy:
+  type: RollingUpdate
+  rollingUpdate:
+    maxSurge: 1
+    maxUnavailable: 0
+
 pgadmin4:
   enabled: false
   ingress:
