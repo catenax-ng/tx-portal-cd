@@ -65,7 +65,7 @@ frontend:
 
   portal:
     image:
-      portaltag: 1.0.0-RC8
+      portaltag: 1.0.0-RC9
 
   assets:
     image:
