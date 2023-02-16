@@ -17,14 +17,23 @@
 # SPDX-License-Identifier: Apache-2.0
 ###############################################################
 
-apiVersion: v2
-name: portal
-description: Helm chart for Catena-X Portal
-type: application
-version: 1.0.0-RC9
-appVersion: 1.0.0-RC8
-dependencies:
-  - condition: postgresql.enabled
-    name: postgresql
-    repository: https://charts.bitnami.com/bitnami
-    version: 11.9.13
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: portal-pgadmin4
+spec:
+  destination:
+    namespace: product-portal
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: charts/pgadmin4
+    repoURL: 'https://github.com/catenax-ng/tx-portal-cd.git'
+    targetRevision: helm-environments
+    plugin:
+      name: argocd-vault-plugin-helm-args
+      env:
+        - name: AVP_SECRET
+          value: vault-secret
+        - name: helm_args
+          value: '-f values.yaml -f values-beta.yaml'
+  project: project-portal
