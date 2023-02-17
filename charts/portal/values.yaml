@@ -408,7 +408,7 @@ backend:
       clientId: "custodian-client-id"
       clientSecret: ""
     sdfactory:
-      selfdescriptionPath: "/selfdescription"
+      selfdescriptionPath: "/api/rel3/selfdescription"
       scope: "openid"
       grantType: "client_credentials"
       issuerBpn: "BPNDUMMY000DUMMY"
