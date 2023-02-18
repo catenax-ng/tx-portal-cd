@@ -1,0 +1,46 @@
+# {{ template "chart.description" . }}
+
+{{ template "chart.versionBadge" . }}{{ template "chart.typeBadge" . }}{{ template "chart.appVersionBadge" . }}
+
+This helm chart installs the Catena-X Portal application which consists of [portal-frontend](https://github.com/eclipse-tractusx/portal-frontend), 
+[portal-frontend-registration](https://github.com/eclipse-tractusx/portal-frontend-registration), [portal-assets](https://github.com/eclipse-tractusx/portal-assets) and [portal-backend](https://github.com/eclipse-tractusx/portal-backend).
+
+The Catena-X Portal is designed to work with the [Catena-X IAM](https://github.com/eclipse-tractusx/portal-iam).
+
+The referenced container images are for demonstration purposes only.
+
+## Installation
+
+To install the chart with the release name `portal`:
+
+### Stable Repository
+
+```shell
+$ helm repo add tractusx https://eclipse-tractusx.github.io/charts/stable
+$ helm install portal tractusx-stable/portal
+```
+
+To install the Helm chart into your cluster:
+
+```shell
+$ helm install -f your-values.yaml portal tractusx-stable/portal
+```
+
+### Dev Repository
+
+```shell
+$ helm repo add tractusx-dev https://eclipse-tractusx.github.io/charts/dev
+$ helm install portal tractusx-dev/portal
+```
+
+To install the Helm chart into your cluster:
+
+```shell
+$ helm install -f your-values.yaml portal tractusx-dev/portal
+```
+
+{{ template "chart.requirementsSection" . }}
+
+{{ template "chart.valuesSection" . }}
+
+{{ template "helm-docs.versionFooter" . }}

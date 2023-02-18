@@ -18,30 +18,46 @@
 ###############################################################
 
 name: "portal"
-portContainer: 8080
-portService: 8080
-replicaCount: 3
-securityContext:
-  allowPrivilegeEscalation: false
-  runAsNonRoot: true
-  capabilities:
-    drop: ["ALL"]
 
+# -- Provide portal base address.
 portalAddress: "https://portal.dummy"
+
+# -- Provide portal-backend base address.
 portalBackendAddress: "https://portal-backend.dummy"
+
+# -- Provide centralidp base address (CX IAM), without trailing '/auth'.
 centralidpAddress: "https://centralidp.dummy"
+
+# -- Provide sharedidp address (CX IAM), without trailing '/auth'.
 sharedidpAddress: "https://sharedidp.dummy"
+
+# -- Provide semantics base address.
 semanticsAddress: "https://semantics.dummy"
+
+# -- Provide daps base address
 dapsAddress: "https://daps.dummy"
+
+# -- Provide bpdm partners pool base address.
 bpdmPartnersPoolAddress: "https://partners-pool.dummy"
+
+# -- Provide bpdm portal gate base address.
 bpdmPortalGateAddress: "https://portal-gate.dummy"
+
+# -- Provide custodian base address.
 custodianAddress: "https://managed-identity-wallets.dummy"
+
+# -- Provide sdfactory base address.
 sdfactoryAddress: "https://sdfactory.dummy"
+
+# -- Provide clearinghouse base address.
 clearinghouseAddress: "https://validation.dummy"
+# -- Provide clearinghouse token address.
 clearinghouseTokenAddress: "https://keycloak.dummy/realms/dummy/protocol/openid-connect/token"
 
 frontend:
   ingress:
+  # -- Portal frontend ingress parameters,
+    # enable ingress record generation for portal frontend.
     enabled: false
     annotations:
       kubernetes.io/ingress.class: "nginx"
@@ -50,10 +66,13 @@ frontend:
       nginx.ingress.kubernetes.io/enable-cors: "true"
       nginx.ingress.kubernetes.io/cors-allow-origin: ""
     tls:
+      # -- Provide tls secret.
       - secretName: ""
+        # -- Provide host for tls secret.
         hosts:
           - ""
     hosts:
+      # -- Provide default path for the ingress record.
       - host: ""
         paths:
           - path: "/(.*)"
@@ -92,6 +111,8 @@ frontend:
 
 backend:
   ingress:
+  # -- Portal-backend ingress parameters,
+    # enable ingress record generation for portal-backend.
     enabled: false
     name: "portal-backend"
     annotations:
@@ -101,10 +122,13 @@ backend:
       nginx.ingress.kubernetes.io/proxy-body-size: "8m"
       nginx.ingress.kubernetes.io/cors-allow-origin: ""
     tls:
+      # -- Provide tls secret.
       - secretName: ""
+        # -- Provide host for tls secret.
         hosts:
           - ""
     hosts:
+      # -- Provide default path for the ingress record.
       - host: ""
         paths:
           - path: "/api/registration"
@@ -143,9 +167,12 @@ backend:
   portalHomePath: "/home"
   userManagementPath: "/usermanagement"
   keycloak:
+    # -- Secret containing the database-password and the client-secret for the connection to the centralidp (CX IAM) and the client-secret for the connection to the sharedidp (CX-IAM).
     secret: "secret-backend-keycloak"
     central:
+      # -- Provide centralidp client-id from CX IAM centralidp.
       clientId: "central-client-id"
+      # -- Client-secret for centralidp client-id. Secret-key 'central-client-secret'.
       clientSecret: ""
       authRealm: "CX-Central"
       jwtBearerOptions:
@@ -160,21 +187,29 @@ backend:
         port: 5432
         user: "kccentral"
         database: "iamcentralidp"
+        # -- Password for the kccentral username. Secret-key 'central-db-password'.
         password: ""
         schema: "public"
         sslMode: "Disable"
     shared:
+      # -- Provide sharedidp client-id from CX IAM sharedidp.
       clientId: "shared-client-id"
+      # -- Client-secret for sharedidp client-id. Secret-key 'shared-client-secret'.
       clientSecret: ""
       authRealm: "master"
   mailing:
+    # -- Secret containing the passwords for backend.mailing and backend.provisioning.sharedRealm.
     secret: "secret-backend-mailing"
+    # -- Provide host.
     host: "smtp.example.org"
+    # -- Provide port.
     port: "587"
+    # -- Provide user.
     user: "smtp-user"
+    # -- Password for the smtp username. Secret-key 'password'.
     password: ""
-  # secret data (client-ids and client-secrets) for interfaces (daps, custodian, bpdm, sdFactory, clearinghouse) of the backend services and jobs
   interfaces:
+    # -- Secret containing the client-secrets for the connection to daps, custodian, bpdm, sdFactory and clearinghouse.
     secret: "secret-backend-interfaces"
   registration:
     name: "registration-service"
@@ -211,7 +246,9 @@ backend:
       apiPath: "/api/v1/daps"
       scope: "openid"
       grantType: "client_credentials"
+      # -- Provide daps client-id from CX IAM centralidp.
       clientId: "daps-client-id"
+      # -- Client-secret for daps client-id. Secret-key 'daps-client-secret'.
       clientSecret: ""
     identityProviderAdmin:
       csvSettings:
@@ -253,14 +290,20 @@ backend:
       clientId: "central-idp"
     sharedRealm:
       smtpServer:
+        # -- Provide host.
         host: "smtp.example.org"
+        # -- Provide port.
         port: "587"
+        # -- Provide user.
         user: "smtp-user"
+        # -- Password for the smtp username. Secret-key 'provisioning-sharedrealm-password'.
         password: ""
         ssl: ""
         startTls: "true"
         auth: "true"
+        # -- Provide from.
         from: "smtp@example.org"
+        # -- Provide replyTo.
         replyTo: "smtp@example.org"
     service:
       name: "provisioning-service"
@@ -376,7 +419,6 @@ backend:
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_checklist-worker"
       checklistworkertag: v1.0.0-RC9
-    secret: "secret-checklist-worker"
     logging:
       checklistLibrary: "Information"
       bpdmLibrary: "Information"
@@ -400,41 +442,61 @@ backend:
     bpdm:
       scope: "openid"
       grantType: "client_credentials"
+      # -- Provide bpdm client-id from CX IAM centralidp.
       clientId: "bpdm-client-id"
+      # -- Client-secret for bpdm client-id. Secret-key 'bpdm-client-secret'.
       clientSecret: ""
     custodian:
       scope: "openid"
       grantType: "client_credentials"
+      # -- Provide custodian client-id from CX IAM centralidp.
       clientId: "custodian-client-id"
+      # -- Client-secret for custodian client-id. Secret-key 'custodian-client-secret'.
       clientSecret: ""
     sdfactory:
       selfdescriptionPath: "/api/rel3/selfdescription"
       scope: "openid"
       grantType: "client_credentials"
+      # -- Provide BPN for sdfactory.
       issuerBpn: "BPNDUMMY000DUMMY"
+      # -- Provide sdfactory client-id from CX IAM centralidp.
       clientId: "sdfactory-client-id"
+      # -- Client-secret for sdfactory client-id. Secret-key 'sdfactory-client-secret'.
       clientSecret: ""
     clearinghouse:
       scope: "openid"
       grantType: "client_credentials"
+      # -- Provide clearinghouse client-id from clearinghouse IAM.
       clientId: "clearinghouse-client-id"
+      # -- Client-secret for clearinghouse client-id. Secret-key 'clearinghouse-client-secret'.
       clientSecret: ""
       callbackPath: "/api/administration/registration/clearinghouse"
   placeholder: "empty"
 
 postgresql:
+# -- PostgreSQL chart configuration
+  # Switch to enable or disable the PostgreSQL helm chart
   enabled: true
+  # -- FullnameOverride to 'portal-backend-postgresql'.
   fullnameOverride: "portal-backend-postgresql"
   auth:
+    # -- Database name
     database: "postgres"
+    # -- Database port number
     port: 5432
+    # -- Secret containing the passwords for root usernames postgres and non-root usernames repl_user, portal and provisioning.
     existingSecret: "secret-postgres-init"
+    # -- Password for the root username 'postgres'. Secret-key 'postgres-password'.
     password: ""
+    # -- Password for the non-root username 'repl_user'. Secret-key 'replication-password'.
     replicationPassword: ""
-    # custom users for cx portal
+    # -- Non-root username for portal.
     portalUser: "portal"
+    # -- Non-root username for provisioning.
     provisioningUser: "provisioning"
+    # -- Password for the non-root username 'portal'. Secret-key 'portal-password'.
     portalPassword: ""
+    # -- Password for the non-root username 'provisioning'. Secret-key 'provisioning-password'.
     provisioningPassword: ""
   architecture: "replication"
   audit:
@@ -455,21 +517,43 @@ postgresql:
             name: "{{ .Values.auth.existingSecret }}"
             key: "provisioning-password"
 
-# in case of external database the init scripts (01-init-db-user.sh and 02-init-db.sql) available in configmap-backend-postgres-init.yaml need to be executed beforehand
-externalDatabase:
-  host: "portal-backend-postgresql-external-db"
-  port: 5432
-  database: "postgres"
-  portalUser: "portal"
-  provisioningUser: "provisioning"
-  password: ""
-  secret: "secret-postgres-external-db"
 
+externalDatabase:
+# -- External PostgreSQL configuration
+# IMPORTANT: init scripts (01-init-db-user.sh and 02-init-db.sql) available
+# in templates/configmap-backend-postgres-init.yaml need to be executed beforehand.
+  # Database host
+  host: "portal-backend-postgresql-external-db"
+  # -- Database name
+  database: "postgres"
+  # -- Database port number
+  port: 5432
+  # -- Secret containing the passwords non-root usernames portal and provisioning.
+  secret: "secret-postgres-external-db"
+  # -- Non-root username for portal.
+  portalUser: "portal"
+  # -- Non-root username for provisioning.
+  provisioningUser: "provisioning"
+  # -- Password for the non-root username 'portal'. Secret-key 'portal-password'.
+  portalPassword: ""
+  # -- Password for the non-root username 'provisioning'. Secret-key 'provisioning-password'.
+  provisioningPassword: ""
+
+portContainer: 8080
+
+portService: 8080
+
+replicaCount: 3
+
+securityContext:
+  allowPrivilegeEscalation: false
+  runAsNonRoot: true
+  capabilities:
+    drop: ["ALL"]
+
+# -- If you do want to specify resources, uncomment the following lines,
+# adjust them as necessary, and remove the curly braces after 'resources:'.
 resources: {}
-  # We usually recommend not to specify default resources and to leave this as a conscious
-  # choice for the user. This also increases chances charts run on environments with little
-  # resources, such as Minikube. If you do want to specify resources, uncomment the following
-  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
   # limits:
   #   cpu: 100m
   #   memory: 128Mi
@@ -477,13 +561,16 @@ resources: {}
   #   cpu: 100m
   #   memory: 128Mi
 
+# -- Node labels for pod assignment
 nodeSelector: {}
 
+# -- Tolerations for pod assignment
 tolerations: []
 
-# Following Catena-X Helm Best Practices @url: https://catenax-ng.github.io/docs/kubernetes-basics/helm
-# @url: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity
+
 affinity:
+# -- Following Catena-X Helm Best Practices,
+# [reference](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity).
   podAntiAffinity:
     preferredDuringSchedulingIgnoredDuringExecution:
       - weight: 100
@@ -494,9 +581,19 @@ affinity:
                 operator: DoesNotExist
           topologyKey: kubernetes.io/hostname
 
-# Following Catena-X Helm Best Practices @url: https://catenax-ng.github.io/docs/kubernetes-basics/helm
-# @url: https://github.com/helm/charts/blob/master/stable/nginx-ingress/values.yaml#L210
+
+updateStrategy:
+# -- Update strategy type,
+# rolling update configuration parameters,
+# [reference](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#update-strategies).
+  type: RollingUpdate
+  rollingUpdate:
+    maxSurge: 1
+    maxUnavailable: 0
+
 livenessProbe:
+# -- Following Catena-X Helm Best Practices,
+# [reference](https://github.com/helm/charts/blob/master/stable/nginx-ingress/values.yaml#L210).
   failureThreshold: 3
   initialDelaySeconds: 10
   periodSeconds: 10
@@ -508,9 +605,3 @@ readinessProbe:
   periodSeconds: 10
   successThreshold: 1
   timeoutSeconds: 1
-
-strategy:
-  type: RollingUpdate
-  rollingUpdate:
-    maxSurge: 1
-    maxUnavailable: 0
