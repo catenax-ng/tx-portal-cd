@@ -68,10 +68,10 @@ frontend:
       nginx.ingress.kubernetes.io/cors-allow-origin: "https://*.example.org"
     tls:
       # -- Provide tls secret.
-      - secretName: ""
+      - secretName: "portal.example.org"
         # -- Provide host for tls secret.
         hosts:
-          - ""
+          - "portal.example.org"
     hosts:
       # -- Provide default path for the ingress record.
       - host: ""
@@ -125,10 +125,10 @@ backend:
       nginx.ingress.kubernetes.io/cors-allow-origin: "https://*.example.org"
     tls:
       # -- Provide tls secret.
-      - secretName: ""
+      - secretName: "portal-backend.example.org"
         # -- Provide host for tls secret.
         hosts:
-          - ""
+          - "portal-backend.example.org"
     hosts:
       # -- Provide default path for the ingress record.
       - host: ""
