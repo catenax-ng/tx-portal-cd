@@ -50,24 +50,24 @@ $ helm install -f your-values.yaml portal tractusx-dev/portal
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | name | string | `"portal"` |  |
-| portalAddress | string | `"https://portal.dummy"` | Provide portal base address. |
-| portalBackendAddress | string | `"https://portal-backend.dummy"` | Provide portal-backend base address. |
-| centralidpAddress | string | `"https://centralidp.dummy"` | Provide centralidp base address (CX IAM), without trailing '/auth'. |
-| sharedidpAddress | string | `"https://sharedidp.dummy"` | Provide sharedidp address (CX IAM), without trailing '/auth'. |
-| semanticsAddress | string | `"https://semantics.dummy"` | Provide semantics base address. |
-| dapsAddress | string | `"https://daps.dummy"` | Provide daps base address |
-| bpdmPartnersPoolAddress | string | `"https://partners-pool.dummy"` | Provide bpdm partners pool base address. |
-| bpdmPortalGateAddress | string | `"https://portal-gate.dummy"` | Provide bpdm portal gate base address. |
-| custodianAddress | string | `"https://managed-identity-wallets.dummy"` | Provide custodian base address. |
-| sdfactoryAddress | string | `"https://sdfactory.dummy"` | Provide sdfactory base address. |
-| clearinghouseAddress | string | `"https://validation.dummy"` | Provide clearinghouse base address. |
-| clearinghouseTokenAddress | string | `"https://keycloak.dummy/realms/dummy/protocol/openid-connect/token"` | Provide clearinghouse token address. |
+| portalAddress | string | `"https://portal.example.org"` | Provide portal base address. |
+| portalBackendAddress | string | `"https://portal-backend.example.org"` | Provide portal-backend base address. |
+| centralidpAddress | string | `"https://centralidp.example.org"` | Provide centralidp base address (CX IAM), without trailing '/auth'. |
+| sharedidpAddress | string | `"https://sharedidp.example.org"` | Provide sharedidp address (CX IAM), without trailing '/auth'. |
+| semanticsAddress | string | `"https://semantics.example.org"` | Provide semantics base address. |
+| dapsAddress | string | `"https://daps.example.org"` | Provide daps base address |
+| bpdmPartnersPoolAddress | string | `"https://partners-pool.example.org"` | Provide bpdm partners pool base address. |
+| bpdmPortalGateAddress | string | `"https://portal-gate.example.org"` | Provide bpdm portal gate base address. |
+| custodianAddress | string | `"https://managed-identity-wallets.example.org"` | Provide custodian base address. |
+| sdfactoryAddress | string | `"https://sdfactory.example.org"` | Provide sdfactory base address. |
+| clearinghouseAddress | string | `"https://validation.example.org"` | Provide clearinghouse base address. |
+| clearinghouseTokenAddress | string | `"https://keycloak.example.org/realms/example/protocol/openid-connect/token"` | Provide clearinghouse token address. |
 | frontend.ingress.enabled | bool | `false` | Portal frontend ingress parameters, enable ingress record generation for portal frontend. |
 | frontend.ingress.annotations."kubernetes.io/ingress.class" | string | `"nginx"` |  |
 | frontend.ingress.annotations."nginx.ingress.kubernetes.io/rewrite-target" | string | `"/$1"` |  |
 | frontend.ingress.annotations."nginx.ingress.kubernetes.io/use-regex" | string | `"true"` |  |
 | frontend.ingress.annotations."nginx.ingress.kubernetes.io/enable-cors" | string | `"true"` |  |
-| frontend.ingress.annotations."nginx.ingress.kubernetes.io/cors-allow-origin" | string | `""` |  |
+| frontend.ingress.annotations."nginx.ingress.kubernetes.io/cors-allow-origin" | string | `"https://*.example.org"` | Provide CORS allowed origin. |
 | frontend.ingress.tls[0] | object | `{"hosts":[""],"secretName":""}` | Provide tls secret. |
 | frontend.ingress.tls[0].hosts | list | `[""]` | Provide host for tls secret. |
 | frontend.ingress.hosts[0] | object | `{"host":"","paths":[{"backend":{"port":8080,"service":"portal"},"path":"/(.*)","pathType":"Prefix"},{"backend":{"port":8080,"service":"registration"},"path":"/registration/(.*)","pathType":"Prefix"},{"backend":{"port":8080,"service":"assets"},"path":"/((assetsORdocumentation)/.*)","pathType":"Prefix"}]}` | Provide default path for the ingress record. |
@@ -89,7 +89,7 @@ $ helm install -f your-values.yaml portal tractusx-dev/portal
 | backend.ingress.annotations."nginx.ingress.kubernetes.io/use-regex" | string | `"true"` |  |
 | backend.ingress.annotations."nginx.ingress.kubernetes.io/enable-cors" | string | `"true"` |  |
 | backend.ingress.annotations."nginx.ingress.kubernetes.io/proxy-body-size" | string | `"8m"` |  |
-| backend.ingress.annotations."nginx.ingress.kubernetes.io/cors-allow-origin" | string | `""` |  |
+| backend.ingress.annotations."nginx.ingress.kubernetes.io/cors-allow-origin" | string | `"https://*.example.org"` | Provide CORS allowed origin. |
 | backend.ingress.tls[0] | object | `{"hosts":[""],"secretName":""}` | Provide tls secret. |
 | backend.ingress.tls[0].hosts | list | `[""]` | Provide host for tls secret. |
 | backend.ingress.hosts[0] | object | `{"host":"","paths":[{"backend":{"port":8080,"service":"registration-service"},"path":"/api/registration","pathType":"Prefix"},{"backend":{"port":8080,"service":"administration-service"},"path":"/api/administration","pathType":"Prefix"},{"backend":{"port":8080,"service":"notification-service"},"path":"/api/notification","pathType":"Prefix"},{"backend":{"port":8080,"service":"provisioning-service"},"path":"/api/provisioning","pathType":"Prefix"},{"backend":{"port":8080,"service":"marketplace-app-service"},"path":"/api/apps","pathType":"Prefix"},{"backend":{"port":8080,"service":"services-service"},"path":"/api/services","pathType":"Prefix"}]}` | Provide default path for the ingress record. |

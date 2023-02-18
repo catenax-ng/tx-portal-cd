@@ -20,39 +20,39 @@
 name: "portal"
 
 # -- Provide portal base address.
-portalAddress: "https://portal.dummy"
+portalAddress: "https://portal.example.org"
 
 # -- Provide portal-backend base address.
-portalBackendAddress: "https://portal-backend.dummy"
+portalBackendAddress: "https://portal-backend.example.org"
 
 # -- Provide centralidp base address (CX IAM), without trailing '/auth'.
-centralidpAddress: "https://centralidp.dummy"
+centralidpAddress: "https://centralidp.example.org"
 
 # -- Provide sharedidp address (CX IAM), without trailing '/auth'.
-sharedidpAddress: "https://sharedidp.dummy"
+sharedidpAddress: "https://sharedidp.example.org"
 
 # -- Provide semantics base address.
-semanticsAddress: "https://semantics.dummy"
+semanticsAddress: "https://semantics.example.org"
 
 # -- Provide daps base address
-dapsAddress: "https://daps.dummy"
+dapsAddress: "https://daps.example.org"
 
 # -- Provide bpdm partners pool base address.
-bpdmPartnersPoolAddress: "https://partners-pool.dummy"
+bpdmPartnersPoolAddress: "https://partners-pool.example.org"
 
 # -- Provide bpdm portal gate base address.
-bpdmPortalGateAddress: "https://portal-gate.dummy"
+bpdmPortalGateAddress: "https://portal-gate.example.org"
 
 # -- Provide custodian base address.
-custodianAddress: "https://managed-identity-wallets.dummy"
+custodianAddress: "https://managed-identity-wallets.example.org"
 
 # -- Provide sdfactory base address.
-sdfactoryAddress: "https://sdfactory.dummy"
+sdfactoryAddress: "https://sdfactory.example.org"
 
 # -- Provide clearinghouse base address.
-clearinghouseAddress: "https://validation.dummy"
+clearinghouseAddress: "https://validation.example.org"
 # -- Provide clearinghouse token address.
-clearinghouseTokenAddress: "https://keycloak.dummy/realms/dummy/protocol/openid-connect/token"
+clearinghouseTokenAddress: "https://keycloak.example.org/realms/example/protocol/openid-connect/token"
 
 frontend:
   ingress:
@@ -64,7 +64,8 @@ frontend:
       nginx.ingress.kubernetes.io/rewrite-target: "/$1"
       nginx.ingress.kubernetes.io/use-regex: "true"
       nginx.ingress.kubernetes.io/enable-cors: "true"
-      nginx.ingress.kubernetes.io/cors-allow-origin: ""
+      # -- Provide CORS allowed origin.
+      nginx.ingress.kubernetes.io/cors-allow-origin: "https://*.example.org"
     tls:
       # -- Provide tls secret.
       - secretName: ""
@@ -120,7 +121,8 @@ backend:
       nginx.ingress.kubernetes.io/use-regex: "true"
       nginx.ingress.kubernetes.io/enable-cors: "true"
       nginx.ingress.kubernetes.io/proxy-body-size: "8m"
-      nginx.ingress.kubernetes.io/cors-allow-origin: ""
+      # -- Provide CORS allowed origin.
+      nginx.ingress.kubernetes.io/cors-allow-origin: "https://*.example.org"
     tls:
       # -- Provide tls secret.
       - secretName: ""
