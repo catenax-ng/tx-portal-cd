@@ -176,7 +176,7 @@ spec:
         - name: "CONNECTORS__VALIDCERTIFICATIONCONTENTTYPES__3"
           value: "{{ .Values.backend.administration.connectors.validCertificationContentTypes.type3 }}"
         - name: "CONNECTORS__SELFDESCRIPTIONDOCUMENTURL"
-          value: "{{ .Values.portalBackendAddress }}{{ .Values.backend.administration.connectors.selfDescriptionDocumentUrl }}"
+          value: "{{ .Values.portalBackendAddress }}{{ .Values.backend.administration.connectors.selfDescriptionDocumentPath }}"
         - name: "DAPS__CLIENTID"
           value: "{{ .Values.backend.administration.daps.clientId }}"
         - name: "DAPS__CLIENTSECRET"
