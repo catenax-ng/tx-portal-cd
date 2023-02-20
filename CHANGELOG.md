@@ -24,10 +24,11 @@ New features, fixed bugs, known defects and other noteworthy changes to each rel
 ### Technical Support
 
 * added chart test workflow for lint and install.
-* added documentation of installation and changelog.
+* added documentation for installation and changelog.
 
 ## 0.6.0
 
 ### Change
 
-* Added product helm chart for portal, combining frontend and backend chart.
+* added product helm chart for portal, combining frontend and backend chart.
+* moved repository to eclipse-tractusx.
