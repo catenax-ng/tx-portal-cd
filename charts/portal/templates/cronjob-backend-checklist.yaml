@@ -70,7 +70,7 @@ spec:
             {{- end }}
             - name: "APPLICATIONACTIVATION__APPLICATIONAPPROVALINITIALROLES__Cl2-CX-Portal__0"
               value: "{{ .Values.backend.checklistworker.applicationActivation.applicationApprovalInitialRoles.portal.role0 }}"
-            - name: "APPLICATIONACTIVATION__CLIENTTTREMOVEROLESONACTIVATION__0"
+            - name: "APPLICATIONACTIVATION__CLIENTTOREMOVEROLESONACTIVATION__0"
               value: "{{ .Values.backend.checklistworker.applicationActivation.clientToRemoveRolesOnActivation.client0 }}"
             - name: "APPLICATIONACTIVATION__BASEPORTALADDRESS"
               value: "{{ .Values.portalAddress }}{{ .Values.backend.portalHomePath }}"
