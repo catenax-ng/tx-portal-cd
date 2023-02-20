@@ -1,9 +1,13 @@
 # Helm chart for Catena-X Portal
 
-![Version: 1.0.0-RC9](https://img.shields.io/badge/Version-1.0.0--RC9-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.0-RC9](https://img.shields.io/badge/AppVersion-1.0.0--RC9-informational?style=flat-square)
+![Version: 1.0.0-RC9](https://img.shields.io/badge/Version-1.0.0--RC9-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.0-RC9](https://img.shields.io/badge/AppVersion-1.0.0--RC9-informational?style=flat-square) ![Tag](https://img.shields.io/static/v1?label=&message=LeadingRepository&color=green&style=flat)
 
-This helm chart installs the Catena-X Portal application which consists of [portal-frontend](https://github.com/eclipse-tractusx/portal-frontend),
-[portal-frontend-registration](https://github.com/eclipse-tractusx/portal-frontend-registration), [portal-assets](https://github.com/eclipse-tractusx/portal-assets) and [portal-backend](https://github.com/eclipse-tractusx/portal-backend).
+This helm chart installs the Catena-X Portal application which consists of
+
+* [portal-frontend](https://github.com/eclipse-tractusx/portal-frontend),
+* [portal-frontend-registration](https://github.com/eclipse-tractusx/portal-frontend-registration),
+* [portal-assets](https://github.com/eclipse-tractusx/portal-assets) and
+* [portal-backend](https://github.com/eclipse-tractusx/portal-backend).
 
 The Catena-X Portal is designed to work with the [Catena-X IAM](https://github.com/eclipse-tractusx/portal-iam).
 
