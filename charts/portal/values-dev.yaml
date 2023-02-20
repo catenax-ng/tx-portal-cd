@@ -150,6 +150,7 @@ backend:
       administrationservicetag: 8428dbe3d4fe9a344ea5d0adb178e6807d9fa78c
     logging:
       businessLogic: "Debug"
+      sdfactoryLibrary: "Debug"
     daps:
       clientId: "<path:portal/data/administration#daps-client-id>"
       clientSecret: "<path:portal/data/dev/administration#daps-client-secret>"

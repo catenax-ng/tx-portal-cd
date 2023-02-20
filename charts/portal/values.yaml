@@ -237,12 +237,14 @@ backend:
       administrationservicetag: v1.0.0-RC9
     logging:
       businessLogic: "Information"
+      sdfactoryLibrary: "Information"
     connectors:
       validCertificationContentTypes:
         type0: "application/x-pem-file"
         type1: "application/x-x509-ca-cert"
         type2: "application/pkix-cert"
         type3: "application/octet-stream"
+      selfDescriptionDocumentUrl: /api/administration/documents/selfDescription
     keycloakClientId: "Cl2-CX-Portal"
     daps:
       apiPath: "/api/v1/daps"
