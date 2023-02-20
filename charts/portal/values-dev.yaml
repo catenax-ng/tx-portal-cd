@@ -73,7 +73,7 @@ frontend:
 
   registration:
     image:
-      registrationtag: main_1cfb4a4f683edf99932c62c6591495fa6f1ceca7
+      registrationtag: dev_fed63ef0a8349198c9b9502f03597b7e994cfd89
 
 backend:
   ingress:
