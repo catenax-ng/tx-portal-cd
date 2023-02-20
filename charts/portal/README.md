@@ -19,30 +19,6 @@ The referenced container images are for demonstration purposes only.
 
 To install the chart with the release name `portal`:
 
-### Stable Repository
-
-```shell
-$ helm repo add tractusx https://eclipse-tractusx.github.io/charts/stable
-$ helm install portal tractusx/portal
-```
-
-To install the helm chart into your cluster with your values:
-
-```shell
-$ helm install -f your-values.yaml portal tractusx/portal
-```
-
-To use the helm chart as a dependency:
-
-```yaml
-dependencies:
-  - name: portal
-    repository: https://eclipse-tractusx.github.io/charts/stable
-    version: 1.0.0-RC9
-```
-
-### Dev Repository
-
 ```shell
 $ helm repo add tractusx-dev https://eclipse-tractusx.github.io/charts/dev
 $ helm install portal tractusx-dev/portal
@@ -94,7 +70,7 @@ dependencies:
 | frontend.ingress.annotations."nginx.ingress.kubernetes.io/cors-allow-origin" | string | `"https://*.example.org"` | Provide CORS allowed origin. |
 | frontend.ingress.tls[0] | object | `{"hosts":[""],"secretName":""}` | Provide tls secret. |
 | frontend.ingress.tls[0].hosts | list | `[""]` | Provide host for tls secret. |
-| frontend.ingress.hosts[0] | object | `{"host":"portal.example.org","paths":[{"backend":{"port":8080,"service":"portal"},"path":"/(.*)","pathType":"Prefix"},{"backend":{"port":8080,"service":"registration"},"path":"/registration/(.*)","pathType":"Prefix"},{"backend":{"port":8080,"service":"assets"},"path":"/((assetsORdocumentation)/.*)","pathType":"Prefix"}]}` | Provide default path for the ingress record. |
+| frontend.ingress.hosts[0] | object | `{"host":"portal.example.org","paths":[{"backend":{"port":8080,"service":"portal"},"path":"/(.*)","pathType":"Prefix"},{"backend":{"port":8080,"service":"registration"},"path":"/registration/(.*)","pathType":"Prefix"},{"backend":{"port":8080,"service":"assets"},"path":"/((assets|documentation)/.*)","pathType":"Prefix"}]}` | Provide default path for the ingress record. |
 | frontend.portal.name | string | `"portal"` |  |
 | frontend.portal.image.name | string | `"ghcr.io/catenax-ng/tx-portal-frontend"` |  |
 | frontend.portal.image.portaltag | string | `"1.0.0-RC9"` |  |
@@ -162,10 +138,12 @@ dependencies:
 | backend.administration.image.name | string | `"ghcr.io/catenax-ng/tx-portal-backend_administration-service"` |  |
 | backend.administration.image.administrationservicetag | string | `"v1.0.0-RC9"` |  |
 | backend.administration.logging.businessLogic | string | `"Information"` |  |
+| backend.administration.logging.sdfactoryLibrary | string | `"Information"` |  |
 | backend.administration.connectors.validCertificationContentTypes.type0 | string | `"application/x-pem-file"` |  |
 | backend.administration.connectors.validCertificationContentTypes.type1 | string | `"application/x-x509-ca-cert"` |  |
 | backend.administration.connectors.validCertificationContentTypes.type2 | string | `"application/pkix-cert"` |  |
 | backend.administration.connectors.validCertificationContentTypes.type3 | string | `"application/octet-stream"` |  |
+| backend.administration.connectors.selfDescriptionDocumentPath | string | `"/api/administration/documents/selfDescription"` |  |
 | backend.administration.keycloakClientId | string | `"Cl2-CX-Portal"` |  |
 | backend.administration.daps.apiPath | string | `"/api/v1/daps"` |  |
 | backend.administration.daps.scope | string | `"openid"` |  |
