@@ -244,7 +244,7 @@ backend:
         type1: "application/x-x509-ca-cert"
         type2: "application/pkix-cert"
         type3: "application/octet-stream"
-      selfDescriptionDocumentUrl: /api/administration/documents/selfDescription
+      selfDescriptionDocumentPath: /api/administration/documents/selfDescription
     keycloakClientId: "Cl2-CX-Portal"
     daps:
       apiPath: "/api/v1/daps"
