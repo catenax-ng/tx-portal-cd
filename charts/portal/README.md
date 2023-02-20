@@ -7,6 +7,8 @@ This helm chart installs the Catena-X Portal application which consists of [port
 
 The Catena-X Portal is designed to work with the [Catena-X IAM](https://github.com/eclipse-tractusx/portal-iam).
 
+For further information please refer to the [technical documentation](https://github.com/eclipse-tractusx/portal-assets/tree/1.0.0-RC9/developer/Technical%20Documentation).
+
 The referenced container images are for demonstration purposes only.
 
 ## Installation
@@ -17,13 +19,22 @@ To install the chart with the release name `portal`:
 
 ```shell
 $ helm repo add tractusx https://eclipse-tractusx.github.io/charts/stable
-$ helm install portal tractusx-stable/portal
+$ helm install portal tractusx/portal
 ```
 
-To install the Helm chart into your cluster:
+To install the helm chart into your cluster with your values:
 
 ```shell
-$ helm install -f your-values.yaml portal tractusx-stable/portal
+$ helm install -f your-values.yaml portal tractusx/portal
+```
+
+To use the helm chart as a dependency:
+
+```yaml
+dependencies:
+  - name: portal
+    repository: https://eclipse-tractusx.github.io/charts/stable
+    version: 1.0.0-RC9
 ```
 
 ### Dev Repository
@@ -33,10 +44,19 @@ $ helm repo add tractusx-dev https://eclipse-tractusx.github.io/charts/dev
 $ helm install portal tractusx-dev/portal
 ```
 
-To install the Helm chart into your cluster:
+To install the helm chart into your cluster with your values:
 
 ```shell
 $ helm install -f your-values.yaml portal tractusx-dev/portal
+```
+
+To use the helm chart as a dependency:
+
+```yaml
+dependencies:
+  - name: portal
+    repository: https://eclipse-tractusx.github.io/charts/dev
+    version: 1.0.0-RC9
 ```
 
 ## Requirements
@@ -70,7 +90,7 @@ $ helm install -f your-values.yaml portal tractusx-dev/portal
 | frontend.ingress.annotations."nginx.ingress.kubernetes.io/cors-allow-origin" | string | `"https://*.example.org"` | Provide CORS allowed origin. |
 | frontend.ingress.tls[0] | object | `{"hosts":[""],"secretName":""}` | Provide tls secret. |
 | frontend.ingress.tls[0].hosts | list | `[""]` | Provide host for tls secret. |
-| frontend.ingress.hosts[0] | object | `{"host":"","paths":[{"backend":{"port":8080,"service":"portal"},"path":"/(.*)","pathType":"Prefix"},{"backend":{"port":8080,"service":"registration"},"path":"/registration/(.*)","pathType":"Prefix"},{"backend":{"port":8080,"service":"assets"},"path":"/((assetsORdocumentation)/.*)","pathType":"Prefix"}]}` | Provide default path for the ingress record. |
+| frontend.ingress.hosts[0] | object | `{"host":"portal.example.org","paths":[{"backend":{"port":8080,"service":"portal"},"path":"/(.*)","pathType":"Prefix"},{"backend":{"port":8080,"service":"registration"},"path":"/registration/(.*)","pathType":"Prefix"},{"backend":{"port":8080,"service":"assets"},"path":"/((assetsORdocumentation)/.*)","pathType":"Prefix"}]}` | Provide default path for the ingress record. |
 | frontend.portal.name | string | `"portal"` |  |
 | frontend.portal.image.name | string | `"ghcr.io/catenax-ng/tx-portal-frontend"` |  |
 | frontend.portal.image.portaltag | string | `"1.0.0-RC9"` |  |
@@ -92,7 +112,7 @@ $ helm install -f your-values.yaml portal tractusx-dev/portal
 | backend.ingress.annotations."nginx.ingress.kubernetes.io/cors-allow-origin" | string | `"https://*.example.org"` | Provide CORS allowed origin. |
 | backend.ingress.tls[0] | object | `{"hosts":[""],"secretName":""}` | Provide tls secret. |
 | backend.ingress.tls[0].hosts | list | `[""]` | Provide host for tls secret. |
-| backend.ingress.hosts[0] | object | `{"host":"","paths":[{"backend":{"port":8080,"service":"registration-service"},"path":"/api/registration","pathType":"Prefix"},{"backend":{"port":8080,"service":"administration-service"},"path":"/api/administration","pathType":"Prefix"},{"backend":{"port":8080,"service":"notification-service"},"path":"/api/notification","pathType":"Prefix"},{"backend":{"port":8080,"service":"provisioning-service"},"path":"/api/provisioning","pathType":"Prefix"},{"backend":{"port":8080,"service":"marketplace-app-service"},"path":"/api/apps","pathType":"Prefix"},{"backend":{"port":8080,"service":"services-service"},"path":"/api/services","pathType":"Prefix"}]}` | Provide default path for the ingress record. |
+| backend.ingress.hosts[0] | object | `{"host":"portal-backend.example.org","paths":[{"backend":{"port":8080,"service":"registration-service"},"path":"/api/registration","pathType":"Prefix"},{"backend":{"port":8080,"service":"administration-service"},"path":"/api/administration","pathType":"Prefix"},{"backend":{"port":8080,"service":"notification-service"},"path":"/api/notification","pathType":"Prefix"},{"backend":{"port":8080,"service":"provisioning-service"},"path":"/api/provisioning","pathType":"Prefix"},{"backend":{"port":8080,"service":"marketplace-app-service"},"path":"/api/apps","pathType":"Prefix"},{"backend":{"port":8080,"service":"services-service"},"path":"/api/services","pathType":"Prefix"}]}` | Provide default path for the ingress record. |
 | backend.dbConnection.schema | string | `"portal"` |  |
 | backend.dbConnection.sslMode | string | `"Disable"` |  |
 | backend.portalHomePath | string | `"/home"` |  |
@@ -219,7 +239,7 @@ $ helm install -f your-values.yaml portal tractusx-dev/portal
 | backend.appmarketplace.swaggerEnabled | bool | `false` |  |
 | backend.portalmigrations.name | string | `"portal-migrations"` |  |
 | backend.portalmigrations.image.name | string | `"ghcr.io/catenax-ng/tx-portal-backend_portal-migrations"` |  |
-| backend.portalmigrations.image.portalmigrationstag | string | `"v1.0.0-RC9"` |  |
+| backend.portalmigrations.image.portalmigrationstag | string | `"8428dbe3d4fe9a344ea5d0adb178e6807d9fa78c"` |  |
 | backend.portalmigrations.seeding.testDataEnvironments | string | `""` |  |
 | backend.portalmaintenance.name | string | `"portal-maintenance"` |  |
 | backend.portalmaintenance.image.name | string | `"ghcr.io/catenax-ng/tx-portal-backend_maintenance-service"` |  |
