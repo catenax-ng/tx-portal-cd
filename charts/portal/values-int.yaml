@@ -69,7 +69,7 @@ frontend:
 
   assets:
     image:
-      assetstag: 1.0.0-RC7
+      assetstag: 1.0.0-RC8
 
   registration:
     image:
