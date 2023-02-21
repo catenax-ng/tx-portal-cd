@@ -28,7 +28,7 @@ spec:
   source:
     path: charts/portal
     repoURL: 'https://github.com/catenax-ng/tx-portal-cd.git'
-    targetRevision: portal-1.0.0-RC9
+    targetRevision: portal-1.0.0-RC10
     plugin:
       name: argocd-vault-plugin-helm-args
       env:
