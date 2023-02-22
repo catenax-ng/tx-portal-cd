@@ -201,7 +201,7 @@ backend:
 
   provisioningmigrations:
     image:
-      provisioningmigrationstag: cef1c203c669dd5e9efe4c4316e91d4e4f6ac69f
+      provisioningmigrationstag: db64e20d910ceeafd924f6168597ea4dd0d278f9
 
   checklistworker:
     image:
