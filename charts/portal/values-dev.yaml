@@ -65,15 +65,15 @@ frontend:
 
   portal:
     image:
-      portaltag: dev_7f8e29298a0936430b4e1f58751d83583c83dacc
+      portaltag: main_8de819b59636cc3592494626577934148301cfd2
 
   assets:
     image:
-      assetstag: main_9dbf8eb6d288a944b2ae789006a646533f52e4af
+      assetstag: main_ef21d799f32fa8f48a82db1590449ea12cd63f19
 
   registration:
     image:
-      registrationtag: dev_2d59e5a71838b174de2f46e9c6a0b038e1b46d76
+      registrationtag: main_ad83ade2753e52b122f4f21376705153913b4c19
 
 backend:
   ingress:
@@ -140,14 +140,14 @@ backend:
 
   registration:
     image:
-      registrationservicetag: de5aa691e54a1f620ce7f00f945b9b0cf3352e3a
+      registrationservicetag: e59fe742f63668b735b38de5c0bf9d9fc3875b7c
     logging:
       registrationServiceBpn: "Debug"
     swaggerEnabled: true
 
   administration:
     image:
-      administrationservicetag: de5aa691e54a1f620ce7f00f945b9b0cf3352e3a
+      administrationservicetag: e59fe742f63668b735b38de5c0bf9d9fc3875b7c
     logging:
       businessLogic: "Debug"
       sdfactoryLibrary: "Debug"
@@ -167,45 +167,45 @@ backend:
         replyTo: "<path:portal/data/mailing#replyto>"
     service:
       image:
-        provisioningservicetag: cef1c203c669dd5e9efe4c4316e91d4e4f6ac69f
+        provisioningservicetag: e59fe742f63668b735b38de5c0bf9d9fc3875b7c
       swaggerEnabled: true
 
   appmarketplace:
     image:
-      appmarketplaceservicetag: 922a94bc7ed434e00323bf5ed0055c87e06ca739
+      appmarketplaceservicetag: 1e76085a0861f7d12edf7f6de0b5453484b722e4
     logging:
       offersLibrary: "Debug"
     swaggerEnabled: true
 
   portalmigrations:
     image:
-      portalmigrationstag: 922a94bc7ed434e00323bf5ed0055c87e06ca739
+      portalmigrationstag: 307af24ab53c9807e8172a7e0615cd3aea557b6b
     seeding:
       testDataEnvironments: "consortia"
 
   portalmaintenance:
     image:
-      portalmaintenancetag: cef1c203c669dd5e9efe4c4316e91d4e4f6ac69f
+      portalmaintenancetag: db64e20d910ceeafd924f6168597ea4dd0d278f9
 
   notification:
     image:
-      notificationservicetag: 922a94bc7ed434e00323bf5ed0055c87e06ca739
+      notificationservicetag: 1e76085a0861f7d12edf7f6de0b5453484b722e4
     swaggerEnabled: true
 
   services:
     image:
-      servicesservicetag: de5aa691e54a1f620ce7f00f945b9b0cf3352e3a
+      servicesservicetag: 1e76085a0861f7d12edf7f6de0b5453484b722e4
     logging:
       offersLibrary: "Debug"
     swaggerEnabled: true
 
   provisioningmigrations:
     image:
-      provisioningmigrationstag: cef1c203c669dd5e9efe4c4316e91d4e4f6ac69f
+      provisioningmigrationstag: e59fe742f63668b735b38de5c0bf9d9fc3875b7c
 
   checklistworker:
     image:
-      checklistworkertag: 514e15cea30504504bee80228cd35c0b3d4f901b
+      checklistworkertag: 61ac1ded723ef4526af6aedd27b7f6cd383715d6
     logging:
       checklistLibrary: "Debug"
       bpdmLibrary: "Debug"
