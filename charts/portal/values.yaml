@@ -347,6 +347,12 @@ backend:
       type4: "APP_LEADIMAGE"
       type5: "APP_IMAGE"
       type6: "CONFORMITY_APPROVAL_BUSINESS_APPS"
+    deleteDocumentTypeIds:
+      type0: "APP_CONTRACT"
+      type1: "ADDITIONAL_DETAILS"
+      type2: "APP_TECHNICAL_INFORMATION"
+      type3: "APP_LEADIMAGE"
+      type4: "APP_IMAGE"
     contentTypeSettings:
       setting0: "application/pdf"
       setting1: "image/jpeg"
