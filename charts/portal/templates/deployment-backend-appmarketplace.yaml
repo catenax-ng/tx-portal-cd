@@ -126,7 +126,12 @@ spec:
           value: "{{ .Values.backend.appmarketplace.deleteDocumentTypeIds.type3 }}"
         - name: "APPMARKETPLACE__DELETEDOCUMENTTYPEIDS__4"
           value: "{{ .Values.backend.appmarketplace.deleteDocumentTypeIds.type4 }}"
-        
+         - name: "APPMARKETPLACE__SUBMITDAPPOCUMENTTYPEIDS__0"
+          value: "{{ .Values.backend.appmarketplace.submitAppDocumentTypeIds.type0 }}"
+        - name: "APPMARKETPLACE__SUBMITAPPDOCUMENTTYPEIDS__1"
+          value: "{{ .Values.backend.appmarketplace.submitAppDocumentTypeIds.type1 }}"
+        - name: "APPMARKETPLACE__SUBMITAPPDOCUMENTTYPEIDS__2"
+          value: "{{ .Values.backend.appmarketplace.submitAppDocumentTypeIds.type2 }}"
         - name: "APPMARKETPLACE__ITADMINROLES__Cl2-CX-Portal__0"
           value: "{{ .Values.backend.appmarketplace.ITAdminRoles.role0 }}"
         - name: "APPMARKETPLACE__NOTIFICATIONTYPEIDS__0"
