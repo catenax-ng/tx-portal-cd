@@ -65,15 +65,15 @@ frontend:
 
   portal:
     image:
-      portaltag: dev_d80069c34aab7435d8e4d55d6fed8daaeb7c407c
+      portaltag: dev_a0aaa43a051c1c03d1a899a22c89af26cd161613
 
   assets:
     image:
-      assetstag: main_2bca3d748523fa7ac45eee2ecef43eaed96d72d8
+      assetstag: main_396ab3a447f4800c96d79cb4eb1302199c90c3aa
 
   registration:
     image:
-      registrationtag: main_ad83ade2753e52b122f4f21376705153913b4c19
+      registrationtag: dev_6afb0bae04e7a318ff2d386016239272295f1475
 
 backend:
   ingress:

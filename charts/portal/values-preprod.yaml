@@ -27,7 +27,7 @@ bpdmPartnersPoolAddress: "https://partners-pool.pre-prod.demo.catena-x.net"
 bpdmPortalGateAddress: "https://portal-gate.pre-prod.demo.catena-x.net"
 custodianAddress: "https://managed-identity-wallets.pre-prod.demo.catena-x.net"
 sdfactoryAddress: "https://sdfactory.pre-prod.demo.catena-x.net"
-clearinghouseAddress: "https://validation.pre-prod.dih-cloud.com"
+clearinghouseAddress: "https://validation.dev.dih-cloud.com"
 clearinghouseTokenAddress: "https://iam.dev.dih-cloud.com/realms/notarisation/protocol/openid-connect/token"
 
 frontend:
