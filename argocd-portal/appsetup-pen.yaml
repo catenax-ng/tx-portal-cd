@@ -20,15 +20,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: portal
+  name: portal-pen
 spec:
   destination:
-    namespace: product-portal
+    namespace: product-portal-pen
     server: 'https://kubernetes.default.svc'
   source:
     path: charts/portal
     repoURL: 'https://github.com/catenax-ng/tx-portal-cd.git'
-    targetRevision: portal-1.0.0
+    targetRevision: portal-1.0.1
     plugin:
       name: argocd-vault-plugin-helm-args
       env:

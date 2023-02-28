@@ -23,7 +23,7 @@ metadata:
   name: portal-pgadmin4-pen
 spec:
   destination:
-    namespace: product-portal
+    namespace: product-portal-pen
     server: 'https://kubernetes.default.svc'
   source:
     path: charts/pgadmin4
