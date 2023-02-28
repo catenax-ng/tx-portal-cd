@@ -353,6 +353,7 @@ backend:
       type2: "APP_TECHNICAL_INFORMATION"
       type3: "APP_LEADIMAGE"
       type4: "APP_IMAGE"
+      type5: "CONFORMITY_APPROVAL_BUSINESS_APPS"
     contentTypeSettings:
       setting0: "application/pdf"
       setting1: "image/jpeg"
