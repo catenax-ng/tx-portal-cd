@@ -26,7 +26,7 @@ dapsAddress: "https://drs-pen.int.demo.catena-x.net"
 bpdmPartnersPoolAddress: "https://partners-pool.beta.demo.catena-x.net"
 bpdmPortalGateAddress: "https://portal-gate.beta.demo.catena-x.net"
 custodianAddress: "https://managed-identity-wallets.beta.demo.catena-x.net"
-sdfactoryAddress: "https://sdfactory-r3.beta.demo.catena-x.net"
+sdfactoryAddress: "https://sdfactory.beta.demo.catena-x.net"
 clearinghouseAddress: "https://validation.dev.dih-cloud.com"
 clearinghouseTokenAddress: "https://iam.dev.dih-cloud.com/realms/notarisation/protocol/openid-connect/token"
 
