@@ -373,6 +373,10 @@ backend:
     appImageDocumentTypeIds:
       type0: "APP_LEADIMAGE"
       type1: "APP_IMAGE"
+      type2: "APP_CONTRACT"
+      type3: "ADDITIONAL_DETAILS"
+      type4: "APP_TECHNICAL_INFORMATION"
+      type5: "CONFORMITY_APPROVAL_BUSINESS_APPS"
     offerStatusIds:
       status0: "IN_REVIEW"
       status1: "ACTIVE"
