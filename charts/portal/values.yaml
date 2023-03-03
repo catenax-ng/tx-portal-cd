@@ -270,6 +270,7 @@ backend:
     invitation:
       invitedUserInitialRoles:
         role0: "Company Admin"
+      initialLoginTheme: "catenax-shared"
     registration:
       partnerUserInitialRoles:
         role0: "Company Admin"
@@ -459,6 +460,7 @@ backend:
         type2: "WELCOME_SERVICE_PROVIDER"
         type3: "WELCOME_CONNECTOR_REGISTRATION"
         type4: "WELCOME_APP_MARKETPLACE"
+      loginTheme: "catenax-shared-portal"
     bpdm:
       scope: "openid"
       grantType: "client_credentials"
