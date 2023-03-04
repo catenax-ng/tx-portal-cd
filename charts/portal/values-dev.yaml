@@ -167,7 +167,7 @@ backend:
         replyTo: "<path:portal/data/mailing#replyto>"
     service:
       image:
-        provisioningservicetag: 53017fff86f9a86acf7787768bb23c5a72ad6089
+        provisioningservicetag: 7468fee7c9c680257016a7496a6f1d94191720e8
       swaggerEnabled: true
 
   appmarketplace:
