@@ -189,7 +189,7 @@ backend:
 
   notification:
     image:
-      notificationservicetag: 7468fee7c9c680257016a7496a6f1d94191720e8
+      notificationservicetag: 9641e535111f2b00009b86f1d79127b171c098c7
     swaggerEnabled: true
 
   services:
