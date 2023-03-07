@@ -147,7 +147,7 @@ backend:
 
   administration:
     image:
-      administrationservicetag: c382da78aa735671c80048c5b1df3f553860c6d4
+      administrationservicetag: 219420b03d68cd6728b8a13c5db2263ae8af0079
     logging:
       businessLogic: "Debug"
       sdfactoryLibrary: "Debug"
