@@ -140,7 +140,7 @@ backend:
 
   registration:
     image:
-      registrationservicetag: c382da78aa735671c80048c5b1df3f553860c6d4
+      registrationservicetag: acf74026a80ca984a2dc270ea3c281b1c4b109e5
     logging:
       registrationServiceBpn: "Debug"
     swaggerEnabled: true
