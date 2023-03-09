@@ -6,6 +6,7 @@ New features, fixed bugs, known defects and other noteworthy changes to each rel
 
 ### Change
 
+* changed to v1.1.0 images
 * enabled additional config for portal-backend
 
 ## 1.0.0
