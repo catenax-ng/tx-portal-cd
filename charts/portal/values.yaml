@@ -183,6 +183,7 @@ backend:
           validIssuerPath: "/auth/realms/CX-Central"
           validAudiencePortal: "Cl2-CX-Portal"
           validAudienceRegistration: "Cl1-CX-Registration"
+        refreshInterval: "00:00:30"
       tokenPath: "/auth/realms/CX-Central/protocol/openid-connect/token"
       dbConnection:
         host: "centralidp-postgresql-primary"
