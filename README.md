@@ -105,6 +105,7 @@ dependencies:
 | backend.keycloak.central.jwtBearerOptions.tokenValidationParameters.validIssuerPath | string | `"/auth/realms/CX-Central"` |  |
 | backend.keycloak.central.jwtBearerOptions.tokenValidationParameters.validAudiencePortal | string | `"Cl2-CX-Portal"` |  |
 | backend.keycloak.central.jwtBearerOptions.tokenValidationParameters.validAudienceRegistration | string | `"Cl1-CX-Registration"` |  |
+| backend.keycloak.central.jwtBearerOptions.RefreshInterval | string | `"00:00:30"` |  |
 | backend.keycloak.central.tokenPath | string | `"/auth/realms/CX-Central/protocol/openid-connect/token"` |  |
 | backend.keycloak.central.dbConnection.host | string | `"centralidp-postgresql-primary"` |  |
 | backend.keycloak.central.dbConnection.port | int | `5432` |  |
