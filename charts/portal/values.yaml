@@ -445,13 +445,13 @@ backend:
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-migrations"
       provisioningmigrationstag: v1.3.0-RC4
-  checklistworker:
-    name: "checklist-worker"
+  processesworker:
+    name: "processes-worker"
     image:
-      name: "ghcr.io/catenax-ng/tx-portal-backend_checklist-worker"
-      checklistworkertag: v1.3.0-RC4
+      name: "ghcr.io/catenax-ng/tx-portal-backend_processes-worker"
+      processesworkertag: v1.3.0-RC4
     logging:
-      checklistLibrary: "Information"
+      processesLibrary: "Information"
       bpdmLibrary: "Information"
       clearinghouseLibrary: "Information"
       custodianLibrary: "Information"
