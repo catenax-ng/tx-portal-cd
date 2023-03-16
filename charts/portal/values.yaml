@@ -494,6 +494,8 @@ backend:
       # -- Client-secret for clearinghouse client-id. Secret-key 'clearinghouse-client-secret'.
       clientSecret: ""
       callbackPath: "/api/administration/registration/clearinghouse"
+    processes:
+      lockExpirySeconds: "300"
   placeholder: "empty"
 
 postgresql:
