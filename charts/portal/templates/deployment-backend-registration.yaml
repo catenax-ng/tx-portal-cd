@@ -145,6 +145,8 @@ spec:
           value: "{{ .Values.backend.registration.keycloakClientId }}"
         - name: "SWAGGERENABLED"
           value: "{{ .Values.backend.registration.swaggerEnabled }}"
+        - name: "REGISTRATION__REGISTRATIONDOCUMENTTYPEIDS__0"
+          value: "{{ .Values.backend.registration.registrationDocumentTypeIds.type0 }}"
         ports:
         - name: http
           containerPort: {{ .Values.portContainer }}
