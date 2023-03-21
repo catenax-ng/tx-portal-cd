@@ -284,6 +284,8 @@ backend:
     serviceAccount:
       clientId: "technical_roles_management"
     swaggerEnabled: false
+    frameDocumentTypeIds:
+      type0: "CX_FRAME_CONTRACT"
   provisioning:
     centralRealm: "CX-Central"
     centralRealmId: "CX-Central"
