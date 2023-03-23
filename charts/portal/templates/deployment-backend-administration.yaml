@@ -198,7 +198,7 @@ spec:
           value: "{{ .Values.backend.placeholder }}"
         - name: "Document__EnableSeedEndpoint"
           value: "True"
-        - name: "Document__FRAMEDOCUMENTTYPEIDS_0"
+        - name: "Document__FRAMEDOCUMENTTYPEIDS__0"
           value: "{{ .Values.backend.administration.frameDocumentTypeIds.type0 }}"
         - name: "IDENTITYPROVIDERADMIN__CSVSETTINGS__CHARSET"
           value: "{{ .Values.backend.administration.identityProviderAdmin.csvSettings.charset }}"
