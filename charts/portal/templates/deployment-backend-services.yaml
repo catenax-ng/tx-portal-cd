@@ -155,6 +155,10 @@ spec:
           value: "{{ .Values.backend.services.serviceImageDocumentTypeIds.type1 }}"
         - name: "SERVICES__SERVICEIMAGEDOCUMENTTYPEIDS__2"
           value: "{{ .Values.backend.services.serviceImageDocumentTypeIds.type2 }}"
+        - name: "SERVICES__OFFERSTATUSIDS__0"
+          value: "{{ .Values.backend.services.offerStatusIds.status0 }}"
+        - name: "SERVICES__OFFERSTATUSIDS__1"
+          value: "{{ .Values.backend.services.offerStatusIds.status1 }}"
         ports:
         - name: http
           containerPort: {{ .Values.portContainer }}
