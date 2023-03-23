@@ -172,7 +172,7 @@ backend:
 
   appmarketplace:
     image:
-      appmarketplaceservicetag: 320ae20ee1a8ce7a9cde87ec724a026214453bdc
+      appmarketplaceservicetag: a435d171b9553f0e670dc91a174e2517fbcc684e
     logging:
       offersLibrary: "Debug"
     swaggerEnabled: true
