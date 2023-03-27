@@ -95,17 +95,17 @@ frontend:
     name: "portal"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-frontend"
-      portaltag: 1.1.0
+      portaltag: v1.2.0
   registration:
     name: "registration"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-frontend-registration"
-      registrationtag: 1.1.0
+      registrationtag: v1.2.0
   assets:
     name: "assets"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-assets"
-      assetstag: 1.1.0
+      assetstag: v1.2.0
     path: "/assets"
   centralidpAuthPath: "/auth"
   bpdmPartnersPoolApiPath: "/api"
@@ -218,7 +218,7 @@ backend:
     name: "registration-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_registration-service"
-      registrationservicetag: v1.1.0
+      registrationservicetag: v1.2.0
     logging:
       registrationServiceBpn: "Information"
     portalRegistrationPath: "/registration"
@@ -237,7 +237,7 @@ backend:
     name: "administration-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_administration-service"
-      administrationservicetag: v1.1.0
+      administrationservicetag: v1.2.0
     logging:
       businessLogic: "Information"
       sdfactoryLibrary: "Information"
@@ -319,13 +319,13 @@ backend:
       name: "provisioning-service"
       image:
         name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-service"
-        provisioningservicetag: v1.1.0
+        provisioningservicetag: v1.2.0
       swaggerEnabled: false
   appmarketplace:
     name: "marketplace-app-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_marketplace-app-service"
-      appmarketplaceservicetag: v1.1.0
+      appmarketplaceservicetag: v1.2.0
     logging:
       offersLibrary: "Information"
     appOverviewPath: "/appoverview"
@@ -398,18 +398,18 @@ backend:
     name: "portal-maintenance"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_maintenance-service"
-      portalmaintenancetag: v1.1.0
+      portalmaintenancetag: v1.2.0
   notification:
     name: "notification-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_notification-service"
-      notificationservicetag: v1.1.0
+      notificationservicetag: v1.2.0
     swaggerEnabled: false
   services:
     name: "services-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_services-service"
-      servicesservicetag: v1.1.0
+      servicesservicetag: v1.2.0
     logging:
       offersLibrary: "Information"
     serviceMarketplacePath: "/servicemarketplace"
@@ -439,12 +439,12 @@ backend:
     name: "provisioning-migrations"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-migrations"
-      provisioningmigrationstag: v1.1.0
+      provisioningmigrationstag: v1.2.0
   checklistworker:
     name: "checklist-worker"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_checklist-worker"
-      checklistworkertag: v1.1.0
+      checklistworkertag: v1.2.0
     logging:
       checklistLibrary: "Information"
       bpdmLibrary: "Information"
