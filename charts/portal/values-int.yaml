@@ -69,7 +69,7 @@ frontend:
 
   assets:
     image:
-      assetstag: 1.1.0
+      assetstag: v1.2.0
 
   registration:
     image:
