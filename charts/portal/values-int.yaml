@@ -73,7 +73,7 @@ frontend:
 
   registration:
     image:
-      registrationtag: 1.1.0
+      registrationtag: v1.2.0
 
 backend:
   ingress:
