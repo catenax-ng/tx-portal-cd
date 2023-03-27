@@ -11,7 +11,7 @@ This helm chart installs the Catena-X Portal application which consists of
 
 The Catena-X Portal is designed to work with the [Catena-X IAM](https://github.com/eclipse-tractusx/portal-iam).
 
-For further information please refer to the [technical documentation](https://github.com/eclipse-tractusx/portal-assets/tree/1.2.0/developer/Technical%20Documentation).
+For further information please refer to the [technical documentation](https://github.com/eclipse-tractusx/portal-assets/tree/v1.2.0/developer/Technical%20Documentation).
 
 The referenced container images are for demonstration purposes only.
 
