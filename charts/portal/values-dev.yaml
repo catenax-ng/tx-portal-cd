@@ -194,7 +194,7 @@ backend:
 
   services:
     image:
-      servicesservicetag: 189b3fed9632b829fab403db45bb8c5ef009b615
+      servicesservicetag: ef20007123d333ff4c3136fd38d062189f2b3ff6
     logging:
       offersLibrary: "Debug"
     swaggerEnabled: true
