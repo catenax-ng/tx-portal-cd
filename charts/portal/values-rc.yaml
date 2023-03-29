@@ -227,7 +227,6 @@ backend:
       clientSecret: "<path:portal/data/dev/checklist-worker#sdfactory-client-secret>"
 
 postgresql:
-  fullnameOverride: "portal-backend-rc-postgresql"
   auth:
     password: "<path:portal/data/dev/postgres#postgres-password>"
     replicationPassword: "<path:portal/data/dev/postgres#replication-password>"
