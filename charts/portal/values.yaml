@@ -435,6 +435,10 @@ backend:
     approveServiceNotificationTypeIds:
       type0: "SERVICE_RELEASE_APPROVAL"
     swaggerEnabled: false
+    serviceImageDocumentTypeIds:
+      type0: "ADDITIONAL_DETAILS"
+      type1: "CONFORMITY_APPROVAL_SERVICES"
+      type2: "SERVICE_LEADIMAGE"
   provisioningmigrations:
     name: "provisioning-migrations"
     image:
