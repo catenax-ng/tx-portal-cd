@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - 'charts/portal/**'
-    branches: [main, helm-environments]
+    branches: [main, helm-environments, release-candidate]
   pull_request:
     paths:
       - 'charts/portal/**'
