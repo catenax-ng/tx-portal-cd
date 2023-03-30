@@ -439,6 +439,9 @@ backend:
       type0: "ADDITIONAL_DETAILS"
       type1: "CONFORMITY_APPROVAL_SERVICES"
       type2: "SERVICE_LEADIMAGE"
+    offerStatusIds:
+      status0: "IN_REVIEW"
+      status1: "ACTIVE"
   provisioningmigrations:
     name: "provisioning-migrations"
     image:
