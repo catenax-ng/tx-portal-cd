@@ -100,7 +100,7 @@ frontend:
     name: "registration"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-frontend-registration"
-      registrationtag: v1.2.0
+      registrationtag: v1.3.0-RC1
   assets:
     name: "assets"
     image:
