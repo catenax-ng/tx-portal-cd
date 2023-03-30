@@ -17,13 +17,22 @@
 # SPDX-License-Identifier: Apache-2.0
 ###############################################################
 
-apiVersion: v2
-name: portal-pgadmin4
-description: pgAdmin4 for Catena-X Portal
-type: application
-version: 1.1.0
-dependencies:
-  - condition: pgadmin4.enabled
-    name: pgadmin4
-    repository: https://helm.runix.net
-    version: 1.11.x
+pgadmin4:
+  secret:
+    password: "<path:portal/data/dev/pgadmin4#password>"
+  env:
+    email: portal@catena-x.net
+  existingSecret: secret-pgadmin4
+  ingress:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: nginx
+    hosts:
+      - host: portal-pgadmin4-rc.dev.demo.catena-x.net
+        paths:
+        - path: /
+          pathType: Prefix
+    tls:
+      - hosts:
+        - portal-pgadmin4-rc.dev.demo.catena-x.net
+        secretName: tls-secret

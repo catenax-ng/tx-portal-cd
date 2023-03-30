@@ -17,16 +17,16 @@
 # SPDX-License-Identifier: Apache-2.0
 ###############################################################
 
-portalAddress: "https://portal.int.demo.catena-x.net"
-portalBackendAddress: "https://portal-backend.int.demo.catena-x.net"
-centralidpAddress: "https://centralidp.int.demo.catena-x.net"
-sharedidpAddress: "https://sharedidp.int.demo.catena-x.net"
-semanticsAddress: "https://semantics.int.demo.catena-x.net"
-dapsAddress: "https://drs.int.demo.catena-x.net"
-bpdmPartnersPoolAddress: "https://partners-pool.int.demo.catena-x.net"
+portalAddress: "https://portal-rc.dev.demo.catena-x.net"
+portalBackendAddress: "https://portal-backend-rc.dev.demo.catena-x.net"
+centralidpAddress: "https://centralidp.dev.demo.catena-x.net"
+sharedidpAddress: "https://sharedidp.dev.demo.catena-x.net"
+semanticsAddress: "https://semantics.dev.demo.catena-x.net"
+dapsAddress: "https://drs.dev.demo.catena-x.net"
+bpdmPartnersPoolAddress: "https://partners-pool.dev.demo.catena-x.net"
 bpdmPortalGateAddress: "https://portal-gate.dev.demo.catena-x.net"
-custodianAddress: "https://managed-identity-wallets.int.demo.catena-x.net"
-sdfactoryAddress: "https://sdfactory.int.demo.catena-x.net"
+custodianAddress: "https://managed-identity-wallets.dev.demo.catena-x.net"
+sdfactoryAddress: "https://sdfactory.dev.demo.catena-x.net"
 clearinghouseAddress: "https://validation.dev.dih-cloud.com"
 clearinghouseTokenAddress: "https://iam.dev.dih-cloud.com/realms/notarisation/protocol/openid-connect/token"
 
@@ -39,13 +39,13 @@ frontend:
       nginx.ingress.kubernetes.io/rewrite-target: "/$1"
       nginx.ingress.kubernetes.io/use-regex: "true"
       nginx.ingress.kubernetes.io/enable-cors: "true"
-      nginx.ingress.kubernetes.io/cors-allow-origin: "http://localhost:3000, https://*.int.demo.catena-x.net"
+      nginx.ingress.kubernetes.io/cors-allow-origin: "http://localhost:3000, https://*.dev.demo.catena-x.net"
     tls:
       - secretName: "tls-secret"
         hosts:
-          - "portal.int.demo.catena-x.net"
+          - "portal-rc.dev.demo.catena-x.net"
     hosts:
-      - host: "portal.int.demo.catena-x.net"
+      - host: "portal-rc.dev.demo.catena-x.net"
         paths:
           - path: "/(.*)"
             pathType: "Prefix"
@@ -63,6 +63,18 @@ frontend:
               service: "assets"
               port: 8080
 
+  portal:
+    image:
+      portaltag: v1.2.0
+
+  assets:
+    image:
+      assetstag: v1.2.0
+
+  registration:
+    image:
+      registrationtag: v1.2.0
+
 backend:
   ingress:
     enabled: true
@@ -71,13 +83,13 @@ backend:
       nginx.ingress.kubernetes.io/use-regex: "true"
       nginx.ingress.kubernetes.io/enable-cors: "true"
       nginx.ingress.kubernetes.io/proxy-body-size: "8m"
-      nginx.ingress.kubernetes.io/cors-allow-origin: "http://localhost:3000, https://*.int.demo.catena-x.net"
+      nginx.ingress.kubernetes.io/cors-allow-origin: "http://localhost:3000, https://*.dev.demo.catena-x.net"
     tls:
       - secretName: "tls-secret"
         hosts:
-          - "portal-backend.int.demo.catena-x.net"
+          - "portal-backend-rc.dev.demo.catena-x.net"
     hosts:
-      - host: "portal-backend.int.demo.catena-x.net"
+      - host: "portal-backend-rc.dev.demo.catena-x.net"
         paths:
           - path: "/api/registration"
             pathType: "Prefix"
@@ -113,12 +125,12 @@ backend:
   keycloak:
     central:
       clientId: "<path:portal/data/keycloak#central-client-id>"
-      clientSecret: "<path:portal/data/int/keycloak#central-client-secret>"
+      clientSecret: "<path:portal/data/dev/keycloak#central-client-secret>"
       dbConnection:
-        password: "<path:portal/data/int/keycloak#central-db-password>"
+        password: "<path:portal/data/dev/keycloak#central-db-password>"
     shared:
       clientId: "<path:portal/data/keycloak#shared-client-id>"
-      clientSecret: "<path:portal/data/int/keycloak#shared-client-secret>"
+      clientSecret: "<path:portal/data/dev/keycloak#shared-client-secret>"
 
   mailing:
     host: "<path:portal/data/mailing#host>"
@@ -127,17 +139,21 @@ backend:
     password: "<path:portal/data/mailing#password>"
 
   registration:
+    image:
+      registrationservicetag: v1.2.0
     logging:
       registrationServiceBpn: "Debug"
     swaggerEnabled: true
 
   administration:
+    image:
+      administrationservicetag: v1.2.0
     logging:
       businessLogic: "Debug"
       sdfactoryLibrary: "Debug"
     daps:
       clientId: "<path:portal/data/administration#daps-client-id>"
-      clientSecret: "<path:portal/data/int/administration#daps-client-secret>"
+      clientSecret: "<path:portal/data/dev/administration#daps-client-secret>"
     swaggerEnabled: true
 
   provisioning:
@@ -150,26 +166,46 @@ backend:
         from: "<path:portal/data/mailing#from>"
         replyTo: "<path:portal/data/mailing#replyto>"
     service:
+      image:
+        provisioningservicetag: v1.2.0
       swaggerEnabled: true
 
   appmarketplace:
+    image:
+      appmarketplaceservicetag: v1.2.0
     logging:
       offersLibrary: "Debug"
     swaggerEnabled: true
 
   portalmigrations:
+    image:
+      portalmigrationstag: v1.2.0
     seeding:
       testDataEnvironments: "consortia"
 
+  portalmaintenance:
+    image:
+      portalmaintenancetag: v1.2.0
+
   notification:
+    image:
+      notificationservicetag: v1.2.0
     swaggerEnabled: true
 
   services:
+    image:
+      servicesservicetag: v1.2.0
     logging:
       offersLibrary: "Debug"
     swaggerEnabled: true
 
+  provisioningmigrations:
+    image:
+      provisioningmigrationstag: v1.2.0
+
   checklistworker:
+    image:
+      checklistworkertag: v1.2.0
     logging:
       checklistLibrary: "Debug"
       bpdmLibrary: "Debug"
@@ -178,21 +214,22 @@ backend:
       sdfactoryLibrary: "Debug"
     bpdm:
       clientId: "<path:portal/data/checklist-worker#bpdm-client-id>"
-      clientSecret: "<path:portal/data/int/checklist-worker#bpdm-client-secret>"
+      clientSecret: "<path:portal/data/dev/checklist-worker#bpdm-client-secret>"
     clearinghouse:
       clientId: "<path:portal/data/checklist-worker#clearinghouse-client-id>"
-      clientSecret: "<path:portal/data/int/checklist-worker#clearinghouse-client-secret>"
+      clientSecret: "<path:portal/data/dev/checklist-worker#clearinghouse-client-secret>"
     custodian:
       clientId: "<path:portal/data/checklist-worker#custodian-client-id>"
-      clientSecret: "<path:portal/data/int/checklist-worker#custodian-client-secret>"
+      clientSecret: "<path:portal/data/dev/checklist-worker#custodian-client-secret>"
     sdfactory:
       issuerBpn: "BPNL00000003CRHK"
       clientId: "<path:portal/data/checklist-worker#sdfactory-client-id>"
-      clientSecret: "<path:portal/data/int/checklist-worker#sdfactory-client-secret>"
+      clientSecret: "<path:portal/data/dev/checklist-worker#sdfactory-client-secret>"
 
 postgresql:
+  fullnameOverride: "portal-backend-rc-postgresql"
   auth:
-    password: "<path:portal/data/int/postgres#postgres-password>"
-    replicationPassword: "<path:portal/data/int/postgres#replication-password>"
-    portalPassword: "<path:portal/data/int/postgres#portal-password>"
-    provisioningPassword: "<path:portal/data/int/postgres#provisioning-password>"
+    password: "<path:portal/data/dev/postgres#postgres-password>"
+    replicationPassword: "<path:portal/data/dev/postgres#replication-password>"
+    portalPassword: "<path:portal/data/dev/postgres#portal-password>"
+    provisioningPassword: "<path:portal/data/dev/postgres#provisioning-password>"

@@ -17,13 +17,22 @@
 # SPDX-License-Identifier: Apache-2.0
 ###############################################################
 
-apiVersion: v2
-name: portal-pgadmin4
-description: pgAdmin4 for Catena-X Portal
-type: application
-version: 1.1.0
-dependencies:
-  - condition: pgadmin4.enabled
-    name: pgadmin4
-    repository: https://helm.runix.net
-    version: 1.11.x
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: portal-rc
+spec:
+  destination:
+    namespace: product-iam
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: charts/portal
+    repoURL: 'https://github.com/catenax-ng/tx-portal-cd.git'
+    targetRevision: release-candidate
+    plugin:
+      env:
+        - name: AVP_SECRET
+          value: vault-secret
+        - name: helm_args
+          value: '-f values.yaml -f values-rc.yaml'
+  project: project-portal
