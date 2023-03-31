@@ -140,14 +140,14 @@ backend:
 
   registration:
     image:
-      registrationservicetag: v1.3.0-RC1
+      registrationservicetag: de262e71d58419061cee321d2c7544225a14c127
     logging:
       registrationServiceBpn: "Debug"
     swaggerEnabled: true
 
   administration:
     image:
-      administrationservicetag: v1.3.0-RC1
+      administrationservicetag: de262e71d58419061cee321d2c7544225a14c127
     logging:
       businessLogic: "Debug"
       sdfactoryLibrary: "Debug"
@@ -167,45 +167,45 @@ backend:
         replyTo: "<path:portal/data/mailing#replyto>"
     service:
       image:
-        provisioningservicetag: v1.3.0-RC1
+        provisioningservicetag: de262e71d58419061cee321d2c7544225a14c127
       swaggerEnabled: true
 
   appmarketplace:
     image:
-      appmarketplaceservicetag: v1.3.0-RC1
+      appmarketplaceservicetag: de262e71d58419061cee321d2c7544225a14c127
     logging:
       offersLibrary: "Debug"
     swaggerEnabled: true
 
   portalmigrations:
     image:
-      portalmigrationstag: v1.3.0-RC1
+      portalmigrationstag: de262e71d58419061cee321d2c7544225a14c127
     seeding:
       testDataEnvironments: "consortia"
 
   portalmaintenance:
     image:
-      portalmaintenancetag: v1.3.0-RC1
+      portalmaintenancetag: de262e71d58419061cee321d2c7544225a14c127
 
   notification:
     image:
-      notificationservicetag: v1.3.0-RC1
+      notificationservicetag: de262e71d58419061cee321d2c7544225a14c127
     swaggerEnabled: true
 
   services:
     image:
-      servicesservicetag: v1.3.0-RC1
+      servicesservicetag: de262e71d58419061cee321d2c7544225a14c127
     logging:
       offersLibrary: "Debug"
     swaggerEnabled: true
 
   provisioningmigrations:
     image:
-      provisioningmigrationstag: v1.3.0-RC1
+      provisioningmigrationstag: de262e71d58419061cee321d2c7544225a14c127
 
   checklistworker:
     image:
-      checklistworkertag: v1.3.0-RC1
+      checklistworkertag: de262e71d58419061cee321d2c7544225a14c127
     logging:
       checklistLibrary: "Debug"
       bpdmLibrary: "Debug"
