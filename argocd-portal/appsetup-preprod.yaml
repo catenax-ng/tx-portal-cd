@@ -28,7 +28,7 @@ spec:
   source:
     path: charts/portal
     repoURL: 'https://github.com/catenax-ng/tx-portal-cd.git'
-    targetRevision: portal-1.2.0
+    targetRevision: portal-1.3.0-RC1
     plugin:
       env:
         - name: AVP_SECRET
