@@ -65,11 +65,11 @@ frontend:
 
   portal:
     image:
-      portaltag: v1.3.0-RC1
+      portaltag: v1.3.0-RC2
 
   assets:
     image:
-      assetstag: v1.3.0-RC1
+      assetstag: v1.3.0-RC2
 
   registration:
     image:
@@ -140,14 +140,14 @@ backend:
 
   registration:
     image:
-      registrationservicetag: v1.3.0-RC1
+      registrationservicetag: v1.3.0-RC2
     logging:
       registrationServiceBpn: "Debug"
     swaggerEnabled: true
 
   administration:
     image:
-      administrationservicetag: v1.3.0-RC1
+      administrationservicetag: v1.3.0-RC2
     logging:
       businessLogic: "Debug"
       sdfactoryLibrary: "Debug"
@@ -167,45 +167,45 @@ backend:
         replyTo: "<path:portal/data/mailing#replyto>"
     service:
       image:
-        provisioningservicetag: v1.3.0-RC1
+        provisioningservicetag: v1.3.0-RC2
       swaggerEnabled: true
 
   appmarketplace:
     image:
-      appmarketplaceservicetag: v1.3.0-RC1
+      appmarketplaceservicetag: v1.3.0-RC2
     logging:
       offersLibrary: "Debug"
     swaggerEnabled: true
 
   portalmigrations:
     image:
-      portalmigrationstag: v1.3.0-RC1
+      portalmigrationstag: v1.3.0-RC2
     seeding:
       testDataEnvironments: "consortia"
 
   portalmaintenance:
     image:
-      portalmaintenancetag: v1.3.0-RC1
+      portalmaintenancetag: v1.3.0-RC2
 
   notification:
     image:
-      notificationservicetag: v1.3.0-RC1
+      notificationservicetag: v1.3.0-RC2
     swaggerEnabled: true
 
   services:
     image:
-      servicesservicetag: v1.3.0-RC1
+      servicesservicetag: v1.3.0-RC2
     logging:
       offersLibrary: "Debug"
     swaggerEnabled: true
 
   provisioningmigrations:
     image:
-      provisioningmigrationstag: v1.3.0-RC1
+      provisioningmigrationstag: v1.3.0-RC2
 
   checklistworker:
     image:
-      checklistworkertag: v1.3.0-RC1
+      checklistworkertag: v1.3.0-RC2
     logging:
       checklistLibrary: "Debug"
       bpdmLibrary: "Debug"
