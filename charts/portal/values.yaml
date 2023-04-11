@@ -442,6 +442,9 @@ backend:
     offerStatusIds:
       status0: "IN_REVIEW"
       status1: "ACTIVE"
+    deleteDocumentTypeIds:
+      type0: "SERVICE_LEADIMAGE"
+      type1: "ADDITIONAL_DETAILS"
   provisioningmigrations:
     name: "provisioning-migrations"
     image:
