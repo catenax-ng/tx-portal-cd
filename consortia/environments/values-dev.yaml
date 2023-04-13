@@ -63,6 +63,18 @@ frontend:
               service: "assets"
               port: 8080
 
+  portal:
+    image:
+      portaltag: 020f786a7b7660424bdac6a2dd78eb25ed4518e6
+
+  assets:
+    image:
+      assetstag: 7f25a2b242bc98b31eabe1e540b63a1e4a5adb7a
+
+  registration:
+    image:
+      registrationtag: 8d79cd5765be80c640101bb288c9c8fe75c9bed4
+
 backend:
   ingress:
     enabled: true
@@ -122,30 +134,18 @@ backend:
     password: "<path:portal/data/mailing#password>"
 
   registration:
+    image:
+      registrationservicetag: b95b04fab0557ac18362a61e89cfc45ba2a97b25
     logging:
       registrationServiceBpn: "Debug"
-    healthChecks:
-      startup:
-        tags:
-        - name: "HEALTHCHECKS__0__TAGS__0"
-          value: "keycloak"
-        - name: "HEALTHCHECKS__0__TAGS__1"
-          value: "portaldb"
     swaggerEnabled: true
 
   administration:
+    image:
+      administrationservicetag: b95b04fab0557ac18362a61e89cfc45ba2a97b25
     logging:
       businessLogic: "Debug"
       sdfactoryLibrary: "Debug"
-    healthChecks:
-      startup:
-        tags:
-        - name: "HEALTHCHECKS__0__TAGS__0"
-          value: "keycloak"
-        - name: "HEALTHCHECKS__0__TAGS__1"
-          value: "portaldb"
-        - name: "HEALTHCHECKS__0__TAGS__2"
-          value: "provisioningdb"
     daps:
       clientId: "<path:portal/data/administration#daps-client-id>"
       clientSecret: "<path:portal/data/dev/administration#daps-client-secret>"
@@ -162,63 +162,63 @@ backend:
         replyTo: "<path:portal/data/mailing#replyto>"
 
   appmarketplace:
+    image:
+      appmarketplaceservicetag: b95b04fab0557ac18362a61e89cfc45ba2a97b25
     logging:
       offersLibrary: "Debug"
-    healthChecks:
-      startup:
-        tags:
-        - name: "HEALTHCHECKS__0__TAGS__0"
-          value: "keycloak"
-        - name: "HEALTHCHECKS__0__TAGS__1"
-          value: "portaldb"
     swaggerEnabled: true
 
   portalmigrations:
+    image:
+      portalmigrationstag: 65319cddf7bab277948146ce88e95ea3b07c0d99
     seeding:
       testDataEnvironments: "consortia"
 
+  portalmaintenance:
+    image:
+      portalmaintenancetag: 65319cddf7bab277948146ce88e95ea3b07c0d99
+
   notification:
-    healthChecks:
-      startup:
-        tags:
-        - name: "HEALTHCHECKS__0__TAGS__0"
-          value: "keycloak"
-        - name: "HEALTHCHECKS__0__TAGS__1"
-          value: "portaldb"
+    image:
+      notificationservicetag: b95b04fab0557ac18362a61e89cfc45ba2a97b25
     swaggerEnabled: true
 
   services:
+    image:
+      servicesservicetag: b95b04fab0557ac18362a61e89cfc45ba2a97b25
     logging:
       offersLibrary: "Debug"
-    healthChecks:
-      startup:
-        tags:
-        - name: "HEALTHCHECKS__0__TAGS__0"
-          value: "keycloak"
-        - name: "HEALTHCHECKS__0__TAGS__1"
-          value: "portaldb"
     swaggerEnabled: true
 
-  processesworker:
+  provisioningmigrations:
+    image:
+      provisioningmigrationstag: 8724784f40be5c4d5b3490ba1053000994419ad2
+
+  checklistworker:
+    image:
+      checklistworkertag: 65319cddf7bab277948146ce88e95ea3b07c0d99
     logging:
-      processesLibrary: "Debug"
+      checklistLibrary: "Debug"
       bpdmLibrary: "Debug"
       clearinghouseLibrary: "Debug"
       custodianLibrary: "Debug"
       sdfactoryLibrary: "Debug"
     bpdm:
-      clientId: "<path:portal/data/processes-worker#bpdm-client-id>"
-      clientSecret: "<path:portal/data/dev/processes-worker#bpdm-client-secret>"
+      clientId: "<path:portal/data/checklist-worker#bpdm-client-id>"
+      clientSecret: "<path:portal/data/dev/checklist-worker#bpdm-client-secret>"
     clearinghouse:
-      clientId: "<path:portal/data/processes-worker#clearinghouse-client-id>"
-      clientSecret: "<path:portal/data/dev/processes-worker#clearinghouse-client-secret>"
+      clientId: "<path:portal/data/checklist-worker#clearinghouse-client-id>"
+      clientSecret: "<path:portal/data/dev/checklist-worker#clearinghouse-client-secret>"
     custodian:
-      clientId: "<path:portal/data/processes-worker#custodian-client-id>"
-      clientSecret: "<path:portal/data/dev/processes-worker#custodian-client-secret>"
+      clientId: "<path:portal/data/checklist-worker#custodian-client-id>"
+      clientSecret: "<path:portal/data/dev/checklist-worker#custodian-client-secret>"
     sdfactory:
       issuerBpn: "BPNL00000003CRHK"
-      clientId: "<path:portal/data/processes-worker#sdfactory-client-id>"
-      clientSecret: "<path:portal/data/dev/processes-worker#sdfactory-client-secret>"
+      clientId: "<path:portal/data/checklist-worker#sdfactory-client-id>"
+      clientSecret: "<path:portal/data/dev/checklist-worker#sdfactory-client-secret>"
+    offerProvider:
+      clientId: "<path:portal/data/checklist-worker#offerprovider-client-id>"
+      clientSecret: "<path:portal/data/beta/checklist-worker#offerprovider-client-secret>"
 
 postgresql:
   auth:
