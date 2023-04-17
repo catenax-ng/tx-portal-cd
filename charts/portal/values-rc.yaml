@@ -65,15 +65,15 @@ frontend:
 
   portal:
     image:
-      portaltag: v1.3.0-RC2
+      portaltag: a9eca06a19e5aa91dcf1fe62baeff4706c83a1c4
 
   assets:
     image:
-      assetstag: v1.3.0-RC2
+      assetstag: 9c86739236692efd4f27221a9669d45322981f97
 
   registration:
     image:
-      registrationtag: v1.3.0-RC1
+      registrationtag: 4feda6e70e967ff247bb24b43ca78217afc8331b
 
 backend:
   ingress:
@@ -140,14 +140,14 @@ backend:
 
   registration:
     image:
-      registrationservicetag: v1.3.0-RC2
+      registrationservicetag: b4d8c2a9141495d215a15be5e7565befbd834900
     logging:
       registrationServiceBpn: "Debug"
     swaggerEnabled: true
 
   administration:
     image:
-      administrationservicetag: v1.3.0-RC2
+      administrationservicetag: b4d8c2a9141495d215a15be5e7565befbd834900
     logging:
       businessLogic: "Debug"
       sdfactoryLibrary: "Debug"
@@ -167,45 +167,45 @@ backend:
         replyTo: "<path:portal/data/mailing#replyto>"
     service:
       image:
-        provisioningservicetag: v1.3.0-RC2
+        provisioningservicetag: b4d8c2a9141495d215a15be5e7565befbd834900
       swaggerEnabled: true
 
   appmarketplace:
     image:
-      appmarketplaceservicetag: v1.3.0-RC2
+      appmarketplaceservicetag: b4d8c2a9141495d215a15be5e7565befbd834900
     logging:
       offersLibrary: "Debug"
     swaggerEnabled: true
 
   portalmigrations:
     image:
-      portalmigrationstag: v1.3.0-RC2
+      portalmigrationstag: b4d8c2a9141495d215a15be5e7565befbd834900
     seeding:
       testDataEnvironments: "consortia"
 
   portalmaintenance:
     image:
-      portalmaintenancetag: v1.3.0-RC2
+      portalmaintenancetag: b4d8c2a9141495d215a15be5e7565befbd834900
 
   notification:
     image:
-      notificationservicetag: v1.3.0-RC2
+      notificationservicetag: b4d8c2a9141495d215a15be5e7565befbd834900
     swaggerEnabled: true
 
   services:
     image:
-      servicesservicetag: v1.3.0-RC2
+      servicesservicetag: b4d8c2a9141495d215a15be5e7565befbd834900
     logging:
       offersLibrary: "Debug"
     swaggerEnabled: true
 
   provisioningmigrations:
     image:
-      provisioningmigrationstag: v1.3.0-RC2
+      provisioningmigrationstag: b4d8c2a9141495d215a15be5e7565befbd834900
 
   checklistworker:
     image:
-      checklistworkertag: v1.3.0-RC2
+      checklistworkertag: b4d8c2a9141495d215a15be5e7565befbd834900
     logging:
       checklistLibrary: "Debug"
       bpdmLibrary: "Debug"
