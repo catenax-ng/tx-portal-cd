@@ -140,14 +140,14 @@ backend:
 
   registration:
     image:
-      registrationservicetag: b4d8c2a9141495d215a15be5e7565befbd834900
+      registrationservicetag: 283f250976fe9a8dbc8498bcfcb9745a45c1e254
     logging:
       registrationServiceBpn: "Debug"
     swaggerEnabled: true
 
   administration:
     image:
-      administrationservicetag: b4d8c2a9141495d215a15be5e7565befbd834900
+      administrationservicetag: 283f250976fe9a8dbc8498bcfcb9745a45c1e254
     logging:
       businessLogic: "Debug"
       sdfactoryLibrary: "Debug"
@@ -167,45 +167,45 @@ backend:
         replyTo: "<path:portal/data/mailing#replyto>"
     service:
       image:
-        provisioningservicetag: b4d8c2a9141495d215a15be5e7565befbd834900
+        provisioningservicetag: 283f250976fe9a8dbc8498bcfcb9745a45c1e254
       swaggerEnabled: true
 
   appmarketplace:
     image:
-      appmarketplaceservicetag: b4d8c2a9141495d215a15be5e7565befbd834900
+      appmarketplaceservicetag: 283f250976fe9a8dbc8498bcfcb9745a45c1e254
     logging:
       offersLibrary: "Debug"
     swaggerEnabled: true
 
   portalmigrations:
     image:
-      portalmigrationstag: b4d8c2a9141495d215a15be5e7565befbd834900
+      portalmigrationstag: 283f250976fe9a8dbc8498bcfcb9745a45c1e254
     seeding:
       testDataEnvironments: "consortia"
 
   portalmaintenance:
     image:
-      portalmaintenancetag: b4d8c2a9141495d215a15be5e7565befbd834900
+      portalmaintenancetag: 283f250976fe9a8dbc8498bcfcb9745a45c1e254
 
   notification:
     image:
-      notificationservicetag: b4d8c2a9141495d215a15be5e7565befbd834900
+      notificationservicetag: 283f250976fe9a8dbc8498bcfcb9745a45c1e254
     swaggerEnabled: true
 
   services:
     image:
-      servicesservicetag: b4d8c2a9141495d215a15be5e7565befbd834900
+      servicesservicetag: 283f250976fe9a8dbc8498bcfcb9745a45c1e254
     logging:
       offersLibrary: "Debug"
     swaggerEnabled: true
 
   provisioningmigrations:
     image:
-      provisioningmigrationstag: b4d8c2a9141495d215a15be5e7565befbd834900
+      provisioningmigrationstag: 283f250976fe9a8dbc8498bcfcb9745a45c1e254
 
   checklistworker:
     image:
-      checklistworkertag: b4d8c2a9141495d215a15be5e7565befbd834900
+      checklistworkertag: 283f250976fe9a8dbc8498bcfcb9745a45c1e254
     logging:
       checklistLibrary: "Debug"
       bpdmLibrary: "Debug"
