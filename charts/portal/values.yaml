@@ -445,6 +445,7 @@ backend:
     deleteDocumentTypeIds:
       type0: "SERVICE_LEADIMAGE"
       type1: "ADDITIONAL_DETAILS"
+    technicalUserProfileClient: "technical_roles_management"
   provisioningmigrations:
     name: "provisioning-migrations"
     image:
