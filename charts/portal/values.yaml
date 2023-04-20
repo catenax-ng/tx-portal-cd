@@ -423,7 +423,7 @@ backend:
       setting0: "application/pdf"
       setting1: "image/jpeg"
       setting2: "image/png"
-      settings3: "image/svg+xml"
+      setting3: "image/svg+xml"
     submitServiceNotificationTypeIds:
       type0: "SERVICE_RELEASE_REQUEST"
     approveServiceNotificationTypeIds:
