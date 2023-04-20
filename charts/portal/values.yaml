@@ -345,14 +345,11 @@ backend:
       role1: "Service Manager"
     ITAdminRoles:
       role0: "IT Admin"
-    documentTypeIds:
-      type0: "APP_CONTRACT"
-      type1: "APP_DATA_DETAILS"
-      type2: "ADDITIONAL_DETAILS"
-      type3: "APP_TECHNICAL_INFORMATION"
-      type4: "APP_LEADIMAGE"
-      type5: "APP_IMAGE"
-      type6: "CONFORMITY_APPROVAL_BUSINESS_APPS"
+    uploadAppDocumentTypeIds:
+      setting0: "application/pdf"
+      setting1: "image/jpeg"
+      setting2: "image/png"
+      settings3: "image/svg+xml"
     deleteDocumentTypeIds:
       type0: "APP_CONTRACT"
       type1: "ADDITIONAL_DETAILS"
@@ -364,10 +361,6 @@ backend:
       type0: "APP_LEADIMAGE"
       type1: "APP_IMAGE"
       type2: "CONFORMITY_APPROVAL_BUSINESS_APPS"
-    contentTypeSettings:
-      setting0: "application/pdf"
-      setting1: "image/jpeg"
-      setting2: "image/png"
     notificationTypeIds:
       type0: "APP_RELEASE_REQUEST"
     activeAppNotificationTypeIds:
@@ -426,10 +419,11 @@ backend:
       role1: "Service Manager"
     ITAdminRoles:
       role0: "IT Admin"
-    documentTypeIds:
-      type0: "ADDITIONAL_DETAILS"
-    contentTypeSettings:
+    uploadServiceDocumentTypeIds:
       setting0: "application/pdf"
+      setting1: "image/jpeg"
+      setting2: "image/png"
+      settings3: "image/svg+xml"
     submitServiceNotificationTypeIds:
       type0: "SERVICE_RELEASE_REQUEST"
     approveServiceNotificationTypeIds:
