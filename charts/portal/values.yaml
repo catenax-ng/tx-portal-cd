@@ -325,7 +325,7 @@ backend:
     name: "marketplace-app-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_marketplace-app-service"
-      appmarketplaceservicetag: v1.3.0-RC4
+      appmarketplaceservicetag: fb1ba2fdaea20122d29469a30d3d3a20d30fd960
     logging:
       offersLibrary: "Information"
     appOverviewPath: "/appoverview"
@@ -409,7 +409,7 @@ backend:
     name: "services-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_services-service"
-      servicesservicetag: v1.3.0-RC4
+      servicesservicetag: fb1ba2fdaea20122d29469a30d3d3a20d30fd960
     logging:
       offersLibrary: "Information"
     serviceMarketplacePath: "/servicemarketplace"
