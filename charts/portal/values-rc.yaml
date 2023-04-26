@@ -143,6 +143,13 @@ backend:
       registrationservicetag: f85b253a09b707c30efc89fd58db74a69c4c55a0
     logging:
       registrationServiceBpn: "Debug"
+    healthChecks:
+      startup:
+        tags:
+        - name: "HEALTHCHECKS__0__TAGS__0"
+          value: "keycloak"
+        - name: "HEALTHCHECKS__0__TAGS__1"
+          value: "portaldb"
     swaggerEnabled: true
 
   administration:
@@ -154,6 +161,15 @@ backend:
     daps:
       clientId: "<path:portal/data/administration#daps-client-id>"
       clientSecret: "<path:portal/data/dev/administration#daps-client-secret>"
+    healthChecks:
+      startup:
+        tags:
+        - name: "HEALTHCHECKS__0__TAGS__0"
+          value: "keycloak"
+        - name: "HEALTHCHECKS__0__TAGS__1"
+          value: "portaldb"
+        - name: "HEALTHCHECKS__0__TAGS__2"
+          value: "provisioningdb"
     swaggerEnabled: true
 
   provisioning:
@@ -168,6 +184,13 @@ backend:
     service:
       image:
         provisioningservicetag: f85b253a09b707c30efc89fd58db74a69c4c55a0
+      healthChecks:
+        startup:
+          tags:
+          - name: "HEALTHCHECKS__0__TAGS__0"
+            value: "keycloak"
+          - name: "HEALTHCHECKS__0__TAGS__1"
+            value: "portaldb"
       swaggerEnabled: true
 
   appmarketplace:
@@ -175,6 +198,13 @@ backend:
       appmarketplaceservicetag: f85b253a09b707c30efc89fd58db74a69c4c55a0
     logging:
       offersLibrary: "Debug"
+    healthChecks:
+      startup:
+        tags:
+        - name: "HEALTHCHECKS__0__TAGS__0"
+          value: "keycloak"
+        - name: "HEALTHCHECKS__0__TAGS__1"
+          value: "portaldb"
     swaggerEnabled: true
 
   portalmigrations:
@@ -190,6 +220,13 @@ backend:
   notification:
     image:
       notificationservicetag: f85b253a09b707c30efc89fd58db74a69c4c55a0
+    healthChecks:
+      startup:
+        tags:
+        - name: "HEALTHCHECKS__0__TAGS__0"
+          value: "keycloak"
+        - name: "HEALTHCHECKS__0__TAGS__1"
+          value: "portaldb"
     swaggerEnabled: true
 
   services:
@@ -197,6 +234,13 @@ backend:
       servicesservicetag: f85b253a09b707c30efc89fd58db74a69c4c55a0
     logging:
       offersLibrary: "Debug"
+    healthChecks:
+      startup:
+        tags:
+        - name: "HEALTHCHECKS__0__TAGS__0"
+          value: "keycloak"
+        - name: "HEALTHCHECKS__0__TAGS__1"
+          value: "portaldb"
     swaggerEnabled: true
 
   provisioningmigrations:

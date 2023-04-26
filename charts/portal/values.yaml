@@ -214,6 +214,13 @@ backend:
   interfaces:
     # -- Secret containing the client-secrets for the connection to daps, custodian, bpdm, sdFactory and clearinghouse.
     secret: "secret-backend-interfaces"
+  healthChecks:
+    startup:
+      path: "/health/startup"
+    liveness:
+      path: "/healthz"
+    readyness:
+      path: "/ready"
   registration:
     name: "registration-service"
     image:
@@ -221,6 +228,14 @@ backend:
       registrationservicetag: v1.4.0
     logging:
       registrationServiceBpn: "Information"
+    healthChecks:
+      startup:
+        tags: []
+# -- healthchecks to be enabled for startupProbe
+#       - name: "HEALTHCHECKS__0__TAGS__0"
+#         value: "keycloak"
+#       - name: "HEALTHCHECKS__0__TAGS__1"
+#         value: "portaldb"
     portalRegistrationPath: "/registration"
     keycloakClientId: "Cl1-CX-Registration"
     applicationStatusIds:
@@ -241,6 +256,16 @@ backend:
     logging:
       businessLogic: "Information"
       sdfactoryLibrary: "Information"
+    healthChecks:
+      startup:
+        tags: []
+# -- healthchecks to be enabled for startupProbe
+#       - name: "HEALTHCHECKS__0__TAGS__0"
+#         value: "keycloak"
+#       - name: "HEALTHCHECKS__0__TAGS__1"
+#         value: "portaldb"
+#       - name: "HEALTHCHECKS__0__TAGS__2"
+#         value: "provisioningdb"
     connectors:
       validCertificationContentTypes:
         type0: "application/x-pem-file"
@@ -318,6 +343,14 @@ backend:
       image:
         name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-service"
         provisioningservicetag: v1.4.0
+      healthChecks:
+        startup:
+          tags: []
+# -- healthchecks to be enabled for startupProbe
+#       - name: "HEALTHCHECKS__0__TAGS__0"
+#         value: "keycloak"
+#       - name: "HEALTHCHECKS__0__TAGS__1"
+#         value: "portaldb"
       swaggerEnabled: false
   appmarketplace:
     name: "marketplace-app-service"
@@ -326,6 +359,14 @@ backend:
       appmarketplaceservicetag: v1.4.0
     logging:
       offersLibrary: "Information"
+    healthChecks:
+      startup:
+        tags: []
+# -- healthchecks to be enabled for startupProbe
+#       - name: "HEALTHCHECKS__0__TAGS__0"
+#         value: "keycloak"
+#       - name: "HEALTHCHECKS__0__TAGS__1"
+#         value: "portaldb"
     appOverviewPath: "/appoverview"
     catenaAdminRoles:
       role0: "CX Admin"
@@ -395,6 +436,14 @@ backend:
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_notification-service"
       notificationservicetag: v1.4.0
+    healthChecks:
+      startup:
+        tags: []
+# -- healthchecks to be enabled for startupProbe
+#       - name: "HEALTHCHECKS__0__TAGS__0"
+#         value: "keycloak"
+#       - name: "HEALTHCHECKS__0__TAGS__1"
+#         value: "portaldb"
     swaggerEnabled: false
   services:
     name: "services-service"
@@ -403,6 +452,14 @@ backend:
       servicesservicetag: v1.4.0
     logging:
       offersLibrary: "Information"
+    healthChecks:
+      startup:
+        tags: []
+# -- healthchecks to be enabled for startupProbe
+#       - name: "HEALTHCHECKS__0__TAGS__0"
+#         value: "keycloak"
+#       - name: "HEALTHCHECKS__0__TAGS__1"
+#         value: "portaldb"
     serviceMarketplacePath: "/servicemarketplace"
     catenaAdminRoles:
       role0: "CX Admin"
@@ -623,14 +680,20 @@ updateStrategy:
     maxSurge: 1
     maxUnavailable: 0
 
-livenessProbe:
 # -- Following Catena-X Helm Best Practices,
 # [reference](https://github.com/helm/charts/blob/master/stable/nginx-ingress/values.yaml#L210).
-  failureThreshold: 3
+startupProbe:
+  failureThreshold: 30
   initialDelaySeconds: 10
   periodSeconds: 10
   successThreshold: 1
   timeoutSeconds: 1
+livenessProbe:
+  failureThreshold: 3
+  initialDelaySeconds: 10
+  periodSeconds: 10
+  successThreshold: 1
+  timeoutSeconds: 10
 readinessProbe:
   failureThreshold: 3
   initialDelaySeconds: 10
