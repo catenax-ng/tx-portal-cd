@@ -205,7 +205,7 @@ backend:
 
   processesworker:
     image:
-      processesworkertag: fc5a3437021e1926dbbb0985b48bc52516a196d4
+      processesworkertag: 1eaf45dd04d840a84286a62fdb5254e6feaaeb3a
     logging:
       processesLibrary: "Debug"
       bpdmLibrary: "Debug"
