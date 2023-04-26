@@ -2,6 +2,14 @@
 
 New features, fixed bugs, known defects and other noteworthy changes to each release of the Catena-X Portal helm chart.
 
+## 1.4.0-alpha
+
+### Change
+
+* renamed Checklist Worker to Processes Worker
+* changed to v1.4.0 images for frontend and backend (registration and assets not part of alpha version)
+* changed existing and enabled additional config for portal-backend
+
 ## 1.3.0-RC4
 
 ### Change
