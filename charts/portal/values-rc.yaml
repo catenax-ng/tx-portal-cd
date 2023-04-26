@@ -203,9 +203,9 @@ backend:
     image:
       provisioningmigrationstag: f85b253a09b707c30efc89fd58db74a69c4c55a0
 
-  checklistworker:
+  processesworker:
     image:
-      checklistworkertag: f85b253a09b707c30efc89fd58db74a69c4c55a0
+      processesworkertag: f85b253a09b707c30efc89fd58db74a69c4c55a0
     logging:
       checklistLibrary: "Debug"
       bpdmLibrary: "Debug"
@@ -213,18 +213,18 @@ backend:
       custodianLibrary: "Debug"
       sdfactoryLibrary: "Debug"
     bpdm:
-      clientId: "<path:portal/data/checklist-worker#bpdm-client-id>"
-      clientSecret: "<path:portal/data/dev/checklist-worker#bpdm-client-secret>"
+      clientId: "<path:portal/data/processes-worker#bpdm-client-id>"
+      clientSecret: "<path:portal/data/dev/processes-worker#bpdm-client-secret>"
     clearinghouse:
-      clientId: "<path:portal/data/checklist-worker#clearinghouse-client-id>"
-      clientSecret: "<path:portal/data/dev/checklist-worker#clearinghouse-client-secret>"
+      clientId: "<path:portal/data/processes-worker#clearinghouse-client-id>"
+      clientSecret: "<path:portal/data/dev/processes-worker#clearinghouse-client-secret>"
     custodian:
-      clientId: "<path:portal/data/checklist-worker#custodian-client-id>"
-      clientSecret: "<path:portal/data/dev/checklist-worker#custodian-client-secret>"
+      clientId: "<path:portal/data/processes-worker#custodian-client-id>"
+      clientSecret: "<path:portal/data/dev/processes-worker#custodian-client-secret>"
     sdfactory:
       issuerBpn: "BPNL00000003CRHK"
-      clientId: "<path:portal/data/checklist-worker#sdfactory-client-id>"
-      clientSecret: "<path:portal/data/dev/checklist-worker#sdfactory-client-secret>"
+      clientId: "<path:portal/data/processes-worker#sdfactory-client-id>"
+      clientSecret: "<path:portal/data/dev/processes-worker#sdfactory-client-secret>"
 
 postgresql:
   fullnameOverride: "portal-backend-rc-postgresql"
