@@ -201,7 +201,7 @@ backend:
 
   provisioningmigrations:
     image:
-      provisioningmigrationstag: e826eb8ca958c89d968e17bc3ea2755450a1a547
+      provisioningmigrationstag: 8f86f94d17d53aa69a6510b38f963758b22dc91b
 
   processesworker:
     image:
