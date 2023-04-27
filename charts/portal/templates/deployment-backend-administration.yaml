@@ -304,8 +304,6 @@ spec:
           value: "{{ .Values.backend.provisioning.sharedRealmClient.clientId }}"
         - name: "REGISTRATION__DOCUMENTTYPEIDS__0"
           value: "{{ .Values.backend.administration.registration.documentTypeIds.type0 }}"
-        - name: "REGISTRATION__PARTNERUSERINITIALROLES__Cl1-CX-Registration__0"
-          value: "{{ .Values.backend.administration.registration.partnerUserInitialRoles.role0 }}"
         - name: "SERVICEACCOUNT__CLIENTID"
           value: "{{ .Values.backend.administration.serviceAccount.clientId }}"
         - name: "SWAGGERENABLED"
