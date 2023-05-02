@@ -275,8 +275,6 @@ backend:
         role0: "Company Admin"
       initialLoginTheme: "catenax-shared"
     registration:
-      partnerUserInitialRoles:
-        role0: "Company Admin"
       documentTypeIds:
         type0: "COMMERCIAL_REGISTER_EXTRACT"
     userManagement:
