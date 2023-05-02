@@ -179,7 +179,7 @@ backend:
 
   portalmigrations:
     image:
-      portalmigrationstag: 9bde8718b46eebda0a80b816a6e59b6ad8da1dfd
+      portalmigrationstag: 84c321761f0b1f08c8101bf8727c93dd7ef39ec8
     seeding:
       testDataEnvironments: "consortia"
 
