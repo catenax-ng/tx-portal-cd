@@ -195,7 +195,7 @@ backend:
 
   appmarketplace:
     image:
-      appmarketplaceservicetag: 298f00d87591339fdda85e99fd8053fcc8ca577e
+      appmarketplaceservicetag: f54fd52b79d52b9a250a2984d15714f0c26c21cb
     logging:
       offersLibrary: "Debug"
     healthChecks:
