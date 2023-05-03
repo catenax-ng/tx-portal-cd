@@ -100,12 +100,12 @@ frontend:
     name: "registration"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-frontend-registration"
-      registrationtag: bc6ad08b7d68d2ebe01d638629a836054ff75524
+      registrationtag: 16bb727d44d4e90c840da517797e0ca543bd6868
   assets:
     name: "assets"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-assets"
-      assetstag: 16bb727d44d4e90c840da517797e0ca543bd6868
+      assetstag: bc6ad08b7d68d2ebe01d638629a836054ff75524
     path: "/assets"
   centralidpAuthPath: "/auth"
   bpdmPartnersPoolApiPath: "/api"
