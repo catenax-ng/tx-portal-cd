@@ -140,7 +140,7 @@ backend:
 
   registration:
     image:
-      registrationservicetag: d37d04846cf61ebbc40aa1f7a05b4ee25cedfe93
+      registrationservicetag: f54fd52b79d52b9a250a2984d15714f0c26c21cb
     logging:
       registrationServiceBpn: "Debug"
     healthChecks:
