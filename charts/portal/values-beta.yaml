@@ -129,6 +129,13 @@ backend:
   registration:
     logging:
       registrationServiceBpn: "Debug"
+    healthChecks:
+      startup:
+        tags:
+        - name: "HEALTHCHECKS__0__TAGS__0"
+          value: "keycloak"
+        - name: "HEALTHCHECKS__0__TAGS__1"
+          value: "portaldb"
     swaggerEnabled: true
 
   administration:
@@ -138,6 +145,15 @@ backend:
     daps:
       clientId: "<path:portal/data/administration#daps-client-id>"
       clientSecret: "<path:portal/data/beta/administration#daps-client-secret>"
+    healthChecks:
+      startup:
+        tags:
+        - name: "HEALTHCHECKS__0__TAGS__0"
+          value: "keycloak"
+        - name: "HEALTHCHECKS__0__TAGS__1"
+          value: "portaldb"
+        - name: "HEALTHCHECKS__0__TAGS__2"
+          value: "provisioningdb"
     swaggerEnabled: true
 
   provisioning:
@@ -150,11 +166,25 @@ backend:
         from: "<path:portal/data/mailing#from>"
         replyTo: "<path:portal/data/mailing#replyto>"
     service:
+      healthChecks:
+        startup:
+          tags:
+          - name: "HEALTHCHECKS__0__TAGS__0"
+            value: "keycloak"
+          - name: "HEALTHCHECKS__0__TAGS__1"
+            value: "portaldb"
       swaggerEnabled: true
 
   appmarketplace:
     logging:
       offersLibrary: "Debug"
+    healthChecks:
+      startup:
+        tags:
+        - name: "HEALTHCHECKS__0__TAGS__0"
+          value: "keycloak"
+        - name: "HEALTHCHECKS__0__TAGS__1"
+          value: "portaldb"
     swaggerEnabled: true
 
   portalmigrations:
@@ -162,11 +192,25 @@ backend:
       testDataEnvironments: "consortia"
 
   notification:
+    healthChecks:
+      startup:
+        tags:
+        - name: "HEALTHCHECKS__0__TAGS__0"
+          value: "keycloak"
+        - name: "HEALTHCHECKS__0__TAGS__1"
+          value: "portaldb"
     swaggerEnabled: true
 
   services:
     logging:
       offersLibrary: "Debug"
+    healthChecks:
+      startup:
+        tags:
+        - name: "HEALTHCHECKS__0__TAGS__0"
+          value: "keycloak"
+        - name: "HEALTHCHECKS__0__TAGS__1"
+          value: "portaldb"
     swaggerEnabled: true
 
   processesworker:
