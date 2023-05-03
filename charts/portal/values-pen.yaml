@@ -173,7 +173,7 @@ backend:
           - name: "HEALTHCHECKS__0__TAGS__0"
             value: "keycloak"
           - name: "HEALTHCHECKS__0__TAGS__1"
-            value: "portaldb"
+            value: "provisioningdb"
       swaggerEnabled: true
 
   appmarketplace:
