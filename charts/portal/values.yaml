@@ -225,7 +225,7 @@ backend:
     name: "registration-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_registration-service"
-      registrationservicetag: v1.4.0
+      registrationservicetag: e861151aa106922ea95b70bd6a1061adcb2ff1ae
     logging:
       registrationServiceBpn: "Information"
     healthChecks:
@@ -252,7 +252,7 @@ backend:
     name: "administration-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_administration-service"
-      administrationservicetag: 84c321761f0b1f08c8101bf8727c93dd7ef39ec8
+      administrationservicetag: e861151aa106922ea95b70bd6a1061adcb2ff1ae
     logging:
       businessLogic: "Information"
       sdfactoryLibrary: "Information"
@@ -342,7 +342,7 @@ backend:
       name: "provisioning-service"
       image:
         name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-service"
-        provisioningservicetag: v1.4.0
+        provisioningservicetag: e861151aa106922ea95b70bd6a1061adcb2ff1ae
       healthChecks:
         startup:
           tags: []
@@ -356,7 +356,7 @@ backend:
     name: "marketplace-app-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_marketplace-app-service"
-      appmarketplaceservicetag: v1.4.0
+      appmarketplaceservicetag: e861151aa106922ea95b70bd6a1061adcb2ff1ae
     logging:
       offersLibrary: "Information"
     healthChecks:
@@ -423,19 +423,19 @@ backend:
     name: "portal-migrations"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_portal-migrations"
-      portalmigrationstag: v1.4.0
+      portalmigrationstag: e861151aa106922ea95b70bd6a1061adcb2ff1ae
     seeding:
       testDataEnvironments: ""
   portalmaintenance:
     name: "portal-maintenance"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_maintenance-service"
-      portalmaintenancetag: v1.4.0
+      portalmaintenancetag: e861151aa106922ea95b70bd6a1061adcb2ff1ae
   notification:
     name: "notification-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_notification-service"
-      notificationservicetag: v1.4.0
+      notificationservicetag: e861151aa106922ea95b70bd6a1061adcb2ff1ae
     healthChecks:
       startup:
         tags: []
@@ -449,7 +449,7 @@ backend:
     name: "services-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_services-service"
-      servicesservicetag: v1.4.0
+      servicesservicetag: e861151aa106922ea95b70bd6a1061adcb2ff1ae
     logging:
       offersLibrary: "Information"
     healthChecks:
@@ -499,12 +499,12 @@ backend:
     name: "provisioning-migrations"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-migrations"
-      provisioningmigrationstag: v1.4.0
+      provisioningmigrationstag: e861151aa106922ea95b70bd6a1061adcb2ff1ae
   processesworker:
     name: "processes-worker"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_processes-worker"
-      processesworkertag: v1.4.0
+      processesworkertag: e861151aa106922ea95b70bd6a1061adcb2ff1ae
     logging:
       processesLibrary: "Information"
       bpdmLibrary: "Information"
