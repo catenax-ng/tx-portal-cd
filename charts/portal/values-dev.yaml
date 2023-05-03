@@ -231,7 +231,7 @@ backend:
 
   services:
     image:
-      servicesservicetag: ef5e4b022a4067ef79f194ae7be55b272b8d66f0
+      servicesservicetag: f54fd52b79d52b9a250a2984d15714f0c26c21cb
     logging:
       offersLibrary: "Debug"
     healthChecks:
