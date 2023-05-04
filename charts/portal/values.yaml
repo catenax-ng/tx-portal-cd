@@ -95,7 +95,7 @@ frontend:
     name: "portal"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-frontend"
-      portaltag: 99014443ae3cd5fdb263aae5878872cebb016e77
+      portaltag: 25f571ad965cceaf8946b401237a5304ca1df012
   registration:
     name: "registration"
     image:
@@ -225,7 +225,7 @@ backend:
     name: "registration-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_registration-service"
-      registrationservicetag: d37d04846cf61ebbc40aa1f7a05b4ee25cedfe93
+      registrationservicetag: f54fd52b79d52b9a250a2984d15714f0c26c21cb
     logging:
       registrationServiceBpn: "Information"
     healthChecks:
@@ -252,7 +252,7 @@ backend:
     name: "administration-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_administration-service"
-      administrationservicetag: d37d04846cf61ebbc40aa1f7a05b4ee25cedfe93
+      administrationservicetag: f54fd52b79d52b9a250a2984d15714f0c26c21cb
     logging:
       businessLogic: "Information"
       sdfactoryLibrary: "Information"
@@ -356,7 +356,7 @@ backend:
     name: "marketplace-app-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_marketplace-app-service"
-      appmarketplaceservicetag: d37d04846cf61ebbc40aa1f7a05b4ee25cedfe93
+      appmarketplaceservicetag: f54fd52b79d52b9a250a2984d15714f0c26c21cb
     logging:
       offersLibrary: "Information"
     healthChecks:
@@ -435,7 +435,7 @@ backend:
     name: "notification-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_notification-service"
-      notificationservicetag: d37d04846cf61ebbc40aa1f7a05b4ee25cedfe93
+      notificationservicetag: f54fd52b79d52b9a250a2984d15714f0c26c21cb
     healthChecks:
       startup:
         tags: []
@@ -449,7 +449,7 @@ backend:
     name: "services-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_services-service"
-      servicesservicetag: d37d04846cf61ebbc40aa1f7a05b4ee25cedfe93
+      servicesservicetag: f54fd52b79d52b9a250a2984d15714f0c26c21cb
     logging:
       offersLibrary: "Information"
     healthChecks:
