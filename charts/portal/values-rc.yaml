@@ -63,18 +63,6 @@ frontend:
               service: "assets"
               port: 8080
 
-  portal:
-    image:
-      portaltag: 71f0ce6c85aa17ed1926559120ffe5871666bfa7
-
-  assets:
-    image:
-      assetstag: c25e9a5a8ddae7d87ab1d9c4194efe93929d0d4c
-
-  registration:
-    image:
-      registrationtag: b9c409d1c44684e50f2517f868d71585fc661f91
-
 backend:
   ingress:
     enabled: true
@@ -139,8 +127,6 @@ backend:
     password: "<path:portal/data/mailing#password>"
 
   registration:
-    image:
-      registrationservicetag: f85b253a09b707c30efc89fd58db74a69c4c55a0
     logging:
       registrationServiceBpn: "Debug"
     healthChecks:
@@ -153,8 +139,6 @@ backend:
     swaggerEnabled: true
 
   administration:
-    image:
-      administrationservicetag: f85b253a09b707c30efc89fd58db74a69c4c55a0
     logging:
       businessLogic: "Debug"
       sdfactoryLibrary: "Debug"
@@ -182,8 +166,6 @@ backend:
         from: "<path:portal/data/mailing#from>"
         replyTo: "<path:portal/data/mailing#replyto>"
     service:
-      image:
-        provisioningservicetag: f85b253a09b707c30efc89fd58db74a69c4c55a0
       healthChecks:
         startup:
           tags:
@@ -194,8 +176,6 @@ backend:
       swaggerEnabled: true
 
   appmarketplace:
-    image:
-      appmarketplaceservicetag: f85b253a09b707c30efc89fd58db74a69c4c55a0
     logging:
       offersLibrary: "Debug"
     healthChecks:
@@ -208,18 +188,10 @@ backend:
     swaggerEnabled: true
 
   portalmigrations:
-    image:
-      portalmigrationstag: f85b253a09b707c30efc89fd58db74a69c4c55a0
     seeding:
       testDataEnvironments: "consortia"
 
-  portalmaintenance:
-    image:
-      portalmaintenancetag: f85b253a09b707c30efc89fd58db74a69c4c55a0
-
   notification:
-    image:
-      notificationservicetag: f85b253a09b707c30efc89fd58db74a69c4c55a0
     healthChecks:
       startup:
         tags:
@@ -230,8 +202,6 @@ backend:
     swaggerEnabled: true
 
   services:
-    image:
-      servicesservicetag: f85b253a09b707c30efc89fd58db74a69c4c55a0
     logging:
       offersLibrary: "Debug"
     healthChecks:
@@ -243,13 +213,7 @@ backend:
           value: "portaldb"
     swaggerEnabled: true
 
-  provisioningmigrations:
-    image:
-      provisioningmigrationstag: f85b253a09b707c30efc89fd58db74a69c4c55a0
-
   processesworker:
-    image:
-      processesworkertag: f85b253a09b707c30efc89fd58db74a69c4c55a0
     logging:
       processesLibrary: "Debug"
       bpdmLibrary: "Debug"
