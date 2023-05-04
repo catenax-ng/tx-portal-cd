@@ -65,15 +65,15 @@ frontend:
 
   portal:
     image:
-      portaltag: 71f0ce6c85aa17ed1926559120ffe5871666bfa7
+      portaltag: v1.3.0
 
   assets:
     image:
-      assetstag: 14cb41fecfb58082fac4791984d75ea14cb5aa6e
+      assetstag: v1.3.0
 
   registration:
     image:
-      registrationtag: 56e35d75dce06c3cecc4929e74e31d0e768d6c1f
+      registrationtag: v1.3.0
 
 backend:
   ingress:
@@ -140,14 +140,14 @@ backend:
 
   registration:
     image:
-      registrationservicetag: 48b468866545fbf8cf1f853ec543a41aa04ce816
+      registrationservicetag: v1.3.0
     logging:
       registrationServiceBpn: "Debug"
     swaggerEnabled: true
 
   administration:
     image:
-      administrationservicetag: 48b468866545fbf8cf1f853ec543a41aa04ce816
+      administrationservicetag: v1.3.0
     logging:
       businessLogic: "Debug"
       sdfactoryLibrary: "Debug"
@@ -167,45 +167,45 @@ backend:
         replyTo: "<path:portal/data/mailing#replyto>"
     service:
       image:
-        provisioningservicetag: 48b468866545fbf8cf1f853ec543a41aa04ce816
+        provisioningservicetag: v1.3.0
       swaggerEnabled: true
 
   appmarketplace:
     image:
-      appmarketplaceservicetag: 48b468866545fbf8cf1f853ec543a41aa04ce816
+      appmarketplaceservicetag: v1.3.0
     logging:
       offersLibrary: "Debug"
     swaggerEnabled: true
 
   portalmigrations:
     image:
-      portalmigrationstag: 48b468866545fbf8cf1f853ec543a41aa04ce816
+      portalmigrationstag: v1.3.0
     seeding:
       testDataEnvironments: "consortia"
 
   portalmaintenance:
     image:
-      portalmaintenancetag: 48b468866545fbf8cf1f853ec543a41aa04ce816
+      portalmaintenancetag: v1.3.0
 
   notification:
     image:
-      notificationservicetag: 48b468866545fbf8cf1f853ec543a41aa04ce816
+      notificationservicetag: v1.3.0
     swaggerEnabled: true
 
   services:
     image:
-      servicesservicetag: 48b468866545fbf8cf1f853ec543a41aa04ce816
+      servicesservicetag: v1.3.0
     logging:
       offersLibrary: "Debug"
     swaggerEnabled: true
 
   provisioningmigrations:
     image:
-      provisioningmigrationstag: 48b468866545fbf8cf1f853ec543a41aa04ce816
+      provisioningmigrationstag: v1.3.0
 
   checklistworker:
     image:
-      checklistworkertag: 48b468866545fbf8cf1f853ec543a41aa04ce816
+      checklistworkertag: v1.3.0
     logging:
       checklistLibrary: "Debug"
       bpdmLibrary: "Debug"
