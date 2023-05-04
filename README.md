@@ -1,6 +1,6 @@
 # Helm chart for Catena-X Portal
 
-![Version: 1.3.0](https://img.shields.io/badge/Version-1.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.3.0](https://img.shields.io/badge/AppVersion-1.3.0-informational?style=flat-square) ![Tag](https://img.shields.io/static/v1?label=&message=LeadingRepository&color=green&style=flat)
+![Version: 1.4.0-alpha](https://img.shields.io/badge/Version-1.4.0--alpha-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.4.0-alpha](https://img.shields.io/badge/AppVersion-1.4.0--alpha-informational?style=flat-square) ![Tag](https://img.shields.io/static/v1?label=&message=LeadingRepository&color=green&style=flat)
 
 This helm chart installs the Catena-X Portal application which consists of
 
@@ -14,9 +14,7 @@ This version is compatible with the 1.1.0 version of the IAM instances:
 * [Central Keycloak Instance](https://github.com/eclipse-tractusx/portal-iam/blob/centralidp-1.1.0/charts/centralidp/README.md)
 * [Shared Keycloak Instance](https://github.com/eclipse-tractusx/portal-iam/blob/sharedidp-1.1.0/charts/sharedidp/README.md)
 
-For information on how to upgrade from previous versions please refer to [Version Upgrade](https://github.com/eclipse-tractusx/portal-assets/tree/v1.3.0/developer/Technical%20Documentation/Version%20Upgrade/portal-upgrade-details.md).
-
-For further information please refer to [Technical Documentation](https://github.com/eclipse-tractusx/portal-assets/tree/v1.3.0/developer/Technical%20Documentation).
+For further information please refer to the [technical documentation](https://github.com/eclipse-tractusx/portal-assets/tree/v1.3.0-RC3/developer/Technical%20Documentation).
 
 The referenced container images are for demonstration purposes only.
 
@@ -41,7 +39,7 @@ To use the helm chart as a dependency:
 dependencies:
   - name: portal
     repository: https://eclipse-tractusx.github.io/charts/dev
-    version: 1.3.0
+    version: 1.4.0-alpha
 ```
 
 ## Requirements
@@ -78,7 +76,7 @@ dependencies:
 | frontend.ingress.hosts[0] | object | `{"host":"portal.example.org","paths":[{"backend":{"port":8080,"service":"portal"},"path":"/(.*)","pathType":"Prefix"},{"backend":{"port":8080,"service":"registration"},"path":"/registration/(.*)","pathType":"Prefix"},{"backend":{"port":8080,"service":"assets"},"path":"/((assetsORdocumentation)/.*)","pathType":"Prefix"}]}` | Provide default path for the ingress record. |
 | frontend.portal.name | string | `"portal"` |  |
 | frontend.portal.image.name | string | `"ghcr.io/catenax-ng/tx-portal-frontend"` |  |
-| frontend.portal.image.portaltag | string | `"v1.3.0"` |  |
+| frontend.portal.image.portaltag | string | `"v1.4.0"` |  |
 | frontend.registration.name | string | `"registration"` |  |
 | frontend.registration.image.name | string | `"ghcr.io/catenax-ng/tx-portal-frontend-registration"` |  |
 | frontend.registration.image.registrationtag | string | `"v1.3.0"` |  |
@@ -130,7 +128,7 @@ dependencies:
 | backend.interfaces.secret | string | `"secret-backend-interfaces"` | Secret containing the client-secrets for the connection to daps, custodian, bpdm, sdFactory and clearinghouse. |
 | backend.registration.name | string | `"registration-service"` |  |
 | backend.registration.image.name | string | `"ghcr.io/catenax-ng/tx-portal-backend_registration-service"` |  |
-| backend.registration.image.registrationservicetag | string | `"v1.3.0"` |  |
+| backend.registration.image.registrationservicetag | string | `"v1.4.0"` |  |
 | backend.registration.logging.registrationServiceBpn | string | `"Information"` |  |
 | backend.registration.portalRegistrationPath | string | `"/registration"` |  |
 | backend.registration.keycloakClientId | string | `"Cl1-CX-Registration"` |  |
@@ -143,7 +141,7 @@ dependencies:
 | backend.registration.registrationDocumentTypeIds.type0 | string | `"CX_FRAME_CONTRACT"` |  |
 | backend.administration.name | string | `"administration-service"` |  |
 | backend.administration.image.name | string | `"ghcr.io/catenax-ng/tx-portal-backend_administration-service"` |  |
-| backend.administration.image.administrationservicetag | string | `"v1.3.0"` |  |
+| backend.administration.image.administrationservicetag | string | `"v1.4.0"` |  |
 | backend.administration.logging.businessLogic | string | `"Information"` |  |
 | backend.administration.logging.sdfactoryLibrary | string | `"Information"` |  |
 | backend.administration.connectors.validCertificationContentTypes.type0 | string | `"application/x-pem-file"` |  |
@@ -194,11 +192,11 @@ dependencies:
 | backend.provisioning.sharedRealm.smtpServer.replyTo | string | `"smtp@example.org"` | Provide replyTo. |
 | backend.provisioning.service.name | string | `"provisioning-service"` |  |
 | backend.provisioning.service.image.name | string | `"ghcr.io/catenax-ng/tx-portal-backend_provisioning-service"` |  |
-| backend.provisioning.service.image.provisioningservicetag | string | `"v1.3.0"` |  |
+| backend.provisioning.service.image.provisioningservicetag | string | `"v1.4.0"` |  |
 | backend.provisioning.service.swaggerEnabled | bool | `false` |  |
 | backend.appmarketplace.name | string | `"marketplace-app-service"` |  |
 | backend.appmarketplace.image.name | string | `"ghcr.io/catenax-ng/tx-portal-backend_marketplace-app-service"` |  |
-| backend.appmarketplace.image.appmarketplaceservicetag | string | `"v1.3.0"` |  |
+| backend.appmarketplace.image.appmarketplaceservicetag | string | `"v1.4.0"` |  |
 | backend.appmarketplace.logging.offersLibrary | string | `"Information"` |  |
 | backend.appmarketplace.appOverviewPath | string | `"/appoverview"` |  |
 | backend.appmarketplace.catenaAdminRoles.role0 | string | `"CX Admin"` |  |
@@ -210,13 +208,10 @@ dependencies:
 | backend.appmarketplace.approveAppUserRoles.role0 | string | `"Sales Manager"` |  |
 | backend.appmarketplace.approveAppUserRoles.role1 | string | `"Service Manager"` |  |
 | backend.appmarketplace.ITAdminRoles.role0 | string | `"IT Admin"` |  |
-| backend.appmarketplace.documentTypeIds.type0 | string | `"APP_CONTRACT"` |  |
-| backend.appmarketplace.documentTypeIds.type1 | string | `"APP_DATA_DETAILS"` |  |
-| backend.appmarketplace.documentTypeIds.type2 | string | `"ADDITIONAL_DETAILS"` |  |
-| backend.appmarketplace.documentTypeIds.type3 | string | `"APP_TECHNICAL_INFORMATION"` |  |
-| backend.appmarketplace.documentTypeIds.type4 | string | `"APP_LEADIMAGE"` |  |
-| backend.appmarketplace.documentTypeIds.type5 | string | `"APP_IMAGE"` |  |
-| backend.appmarketplace.documentTypeIds.type6 | string | `"CONFORMITY_APPROVAL_BUSINESS_APPS"` |  |
+| backend.appmarketplace.uploadAppDocumentTypeIds.setting0 | string | `"application/pdf"` |  |
+| backend.appmarketplace.uploadAppDocumentTypeIds.setting1 | string | `"image/jpeg"` |  |
+| backend.appmarketplace.uploadAppDocumentTypeIds.setting2 | string | `"image/png"` |  |
+| backend.appmarketplace.uploadAppDocumentTypeIds.setting3 | string | `"image/svg+xml"` |  |
 | backend.appmarketplace.deleteDocumentTypeIds.type0 | string | `"APP_CONTRACT"` |  |
 | backend.appmarketplace.deleteDocumentTypeIds.type1 | string | `"ADDITIONAL_DETAILS"` |  |
 | backend.appmarketplace.deleteDocumentTypeIds.type2 | string | `"APP_TECHNICAL_INFORMATION"` |  |
@@ -226,9 +221,6 @@ dependencies:
 | backend.appmarketplace.submitAppDocumentTypeIds.type0 | string | `"APP_LEADIMAGE"` |  |
 | backend.appmarketplace.submitAppDocumentTypeIds.type1 | string | `"APP_IMAGE"` |  |
 | backend.appmarketplace.submitAppDocumentTypeIds.type2 | string | `"CONFORMITY_APPROVAL_BUSINESS_APPS"` |  |
-| backend.appmarketplace.contentTypeSettings.setting0 | string | `"application/pdf"` |  |
-| backend.appmarketplace.contentTypeSettings.setting1 | string | `"image/jpeg"` |  |
-| backend.appmarketplace.contentTypeSettings.setting2 | string | `"image/png"` |  |
 | backend.appmarketplace.notificationTypeIds.type0 | string | `"APP_RELEASE_REQUEST"` |  |
 | backend.appmarketplace.activeAppNotificationTypeIds.type0 | string | `"APP_ROLE_ADDED"` |  |
 | backend.appmarketplace.submitAppNotificationTypeIds.type0 | string | `"APP_RELEASE_REQUEST"` |  |
@@ -244,18 +236,18 @@ dependencies:
 | backend.appmarketplace.swaggerEnabled | bool | `false` |  |
 | backend.portalmigrations.name | string | `"portal-migrations"` |  |
 | backend.portalmigrations.image.name | string | `"ghcr.io/catenax-ng/tx-portal-backend_portal-migrations"` |  |
-| backend.portalmigrations.image.portalmigrationstag | string | `"v1.3.0"` |  |
+| backend.portalmigrations.image.portalmigrationstag | string | `"v1.4.0"` |  |
 | backend.portalmigrations.seeding.testDataEnvironments | string | `""` |  |
 | backend.portalmaintenance.name | string | `"portal-maintenance"` |  |
 | backend.portalmaintenance.image.name | string | `"ghcr.io/catenax-ng/tx-portal-backend_maintenance-service"` |  |
-| backend.portalmaintenance.image.portalmaintenancetag | string | `"v1.3.0"` |  |
+| backend.portalmaintenance.image.portalmaintenancetag | string | `"v1.4.0"` |  |
 | backend.notification.name | string | `"notification-service"` |  |
 | backend.notification.image.name | string | `"ghcr.io/catenax-ng/tx-portal-backend_notification-service"` |  |
-| backend.notification.image.notificationservicetag | string | `"v1.3.0"` |  |
+| backend.notification.image.notificationservicetag | string | `"v1.4.0"` |  |
 | backend.notification.swaggerEnabled | bool | `false` |  |
 | backend.services.name | string | `"services-service"` |  |
 | backend.services.image.name | string | `"ghcr.io/catenax-ng/tx-portal-backend_services-service"` |  |
-| backend.services.image.servicesservicetag | string | `"v1.3.0"` |  |
+| backend.services.image.servicesservicetag | string | `"v1.4.0"` |  |
 | backend.services.logging.offersLibrary | string | `"Information"` |  |
 | backend.services.serviceMarketplacePath | string | `"/servicemarketplace"` |  |
 | backend.services.catenaAdminRoles.role0 | string | `"CX Admin"` |  |
@@ -265,8 +257,10 @@ dependencies:
 | backend.services.approveServiceUserRoles.role0 | string | `"Sales Manager"` |  |
 | backend.services.approveServiceUserRoles.role1 | string | `"Service Manager"` |  |
 | backend.services.ITAdminRoles.role0 | string | `"IT Admin"` |  |
-| backend.services.documentTypeIds.type0 | string | `"ADDITIONAL_DETAILS"` |  |
-| backend.services.contentTypeSettings.setting0 | string | `"application/pdf"` |  |
+| backend.services.uploadServiceDocumentTypeIds.setting0 | string | `"application/pdf"` |  |
+| backend.services.uploadServiceDocumentTypeIds.setting1 | string | `"image/jpeg"` |  |
+| backend.services.uploadServiceDocumentTypeIds.setting2 | string | `"image/png"` |  |
+| backend.services.uploadServiceDocumentTypeIds.setting3 | string | `"image/svg+xml"` |  |
 | backend.services.submitServiceNotificationTypeIds.type0 | string | `"SERVICE_RELEASE_REQUEST"` |  |
 | backend.services.approveServiceNotificationTypeIds.type0 | string | `"SERVICE_RELEASE_APPROVAL"` |  |
 | backend.services.swaggerEnabled | bool | `false` |  |
@@ -277,46 +271,47 @@ dependencies:
 | backend.services.offerStatusIds.status1 | string | `"ACTIVE"` |  |
 | backend.services.deleteDocumentTypeIds.type0 | string | `"SERVICE_LEADIMAGE"` |  |
 | backend.services.deleteDocumentTypeIds.type1 | string | `"ADDITIONAL_DETAILS"` |  |
+| backend.services.technicalUserProfileClient | string | `"technical_roles_management"` |  |
 | backend.provisioningmigrations.name | string | `"provisioning-migrations"` |  |
 | backend.provisioningmigrations.image.name | string | `"ghcr.io/catenax-ng/tx-portal-backend_provisioning-migrations"` |  |
-| backend.provisioningmigrations.image.provisioningmigrationstag | string | `"v1.3.0"` |  |
-| backend.checklistworker.name | string | `"checklist-worker"` |  |
-| backend.checklistworker.image.name | string | `"ghcr.io/catenax-ng/tx-portal-backend_checklist-worker"` |  |
-| backend.checklistworker.image.checklistworkertag | string | `"v1.3.0"` |  |
-| backend.checklistworker.logging.checklistLibrary | string | `"Information"` |  |
-| backend.checklistworker.logging.bpdmLibrary | string | `"Information"` |  |
-| backend.checklistworker.logging.clearinghouseLibrary | string | `"Information"` |  |
-| backend.checklistworker.logging.custodianLibrary | string | `"Information"` |  |
-| backend.checklistworker.logging.sdfactoryLibrary | string | `"Information"` |  |
-| backend.checklistworker.applicationActivation.applicationApprovalInitialRoles.portal.role0 | string | `"Company Admin"` |  |
-| backend.checklistworker.applicationActivation.applicationApprovalInitialRoles.registration.role0 | string | `"Company Admin"` |  |
-| backend.checklistworker.applicationActivation.clientToRemoveRolesOnActivation.client0 | string | `"Cl1-CX-Registration"` |  |
-| backend.checklistworker.applicationActivation.welcomeNotificationTypeIds.type0 | string | `"WELCOME"` |  |
-| backend.checklistworker.applicationActivation.welcomeNotificationTypeIds.type1 | string | `"WELCOME_USE_CASES"` |  |
-| backend.checklistworker.applicationActivation.welcomeNotificationTypeIds.type2 | string | `"WELCOME_SERVICE_PROVIDER"` |  |
-| backend.checklistworker.applicationActivation.welcomeNotificationTypeIds.type3 | string | `"WELCOME_CONNECTOR_REGISTRATION"` |  |
-| backend.checklistworker.applicationActivation.welcomeNotificationTypeIds.type4 | string | `"WELCOME_APP_MARKETPLACE"` |  |
-| backend.checklistworker.applicationActivation.loginTheme | string | `"catenax-shared-portal"` |  |
-| backend.checklistworker.bpdm.scope | string | `"openid"` |  |
-| backend.checklistworker.bpdm.grantType | string | `"client_credentials"` |  |
-| backend.checklistworker.bpdm.clientId | string | `"bpdm-client-id"` | Provide bpdm client-id from CX IAM centralidp. |
-| backend.checklistworker.bpdm.clientSecret | string | `""` | Client-secret for bpdm client-id. Secret-key 'bpdm-client-secret'. |
-| backend.checklistworker.custodian.scope | string | `"openid"` |  |
-| backend.checklistworker.custodian.grantType | string | `"client_credentials"` |  |
-| backend.checklistworker.custodian.clientId | string | `"custodian-client-id"` | Provide custodian client-id from CX IAM centralidp. |
-| backend.checklistworker.custodian.clientSecret | string | `""` | Client-secret for custodian client-id. Secret-key 'custodian-client-secret'. |
-| backend.checklistworker.sdfactory.selfdescriptionPath | string | `"/api/rel3/selfdescription"` |  |
-| backend.checklistworker.sdfactory.scope | string | `"openid"` |  |
-| backend.checklistworker.sdfactory.grantType | string | `"client_credentials"` |  |
-| backend.checklistworker.sdfactory.issuerBpn | string | `"BPNDUMMY000DUMMY"` | Provide BPN for sdfactory. |
-| backend.checklistworker.sdfactory.clientId | string | `"sdfactory-client-id"` | Provide sdfactory client-id from CX IAM centralidp. |
-| backend.checklistworker.sdfactory.clientSecret | string | `""` | Client-secret for sdfactory client-id. Secret-key 'sdfactory-client-secret'. |
-| backend.checklistworker.clearinghouse.scope | string | `"openid"` |  |
-| backend.checklistworker.clearinghouse.grantType | string | `"client_credentials"` |  |
-| backend.checklistworker.clearinghouse.clientId | string | `"clearinghouse-client-id"` | Provide clearinghouse client-id from clearinghouse IAM. |
-| backend.checklistworker.clearinghouse.clientSecret | string | `""` | Client-secret for clearinghouse client-id. Secret-key 'clearinghouse-client-secret'. |
-| backend.checklistworker.clearinghouse.callbackPath | string | `"/api/administration/registration/clearinghouse"` |  |
-| backend.checklistworker.processes.lockExpirySeconds | string | `"300"` |  |
+| backend.provisioningmigrations.image.provisioningmigrationstag | string | `"v1.4.0"` |  |
+| backend.processesworker.name | string | `"processes-worker"` |  |
+| backend.processesworker.image.name | string | `"ghcr.io/catenax-ng/tx-portal-backend_processes-worker"` |  |
+| backend.processesworker.image.processesworkertag | string | `"v1.4.0"` |  |
+| backend.processesworker.logging.processesLibrary | string | `"Information"` |  |
+| backend.processesworker.logging.bpdmLibrary | string | `"Information"` |  |
+| backend.processesworker.logging.clearinghouseLibrary | string | `"Information"` |  |
+| backend.processesworker.logging.custodianLibrary | string | `"Information"` |  |
+| backend.processesworker.logging.sdfactoryLibrary | string | `"Information"` |  |
+| backend.processesworker.applicationActivation.applicationApprovalInitialRoles.portal.role0 | string | `"Company Admin"` |  |
+| backend.processesworker.applicationActivation.applicationApprovalInitialRoles.registration.role0 | string | `"Company Admin"` |  |
+| backend.processesworker.applicationActivation.clientToRemoveRolesOnActivation.client0 | string | `"Cl1-CX-Registration"` |  |
+| backend.processesworker.applicationActivation.welcomeNotificationTypeIds.type0 | string | `"WELCOME"` |  |
+| backend.processesworker.applicationActivation.welcomeNotificationTypeIds.type1 | string | `"WELCOME_USE_CASES"` |  |
+| backend.processesworker.applicationActivation.welcomeNotificationTypeIds.type2 | string | `"WELCOME_SERVICE_PROVIDER"` |  |
+| backend.processesworker.applicationActivation.welcomeNotificationTypeIds.type3 | string | `"WELCOME_CONNECTOR_REGISTRATION"` |  |
+| backend.processesworker.applicationActivation.welcomeNotificationTypeIds.type4 | string | `"WELCOME_APP_MARKETPLACE"` |  |
+| backend.processesworker.applicationActivation.loginTheme | string | `"catenax-shared-portal"` |  |
+| backend.processesworker.bpdm.scope | string | `"openid"` |  |
+| backend.processesworker.bpdm.grantType | string | `"client_credentials"` |  |
+| backend.processesworker.bpdm.clientId | string | `"bpdm-client-id"` | Provide bpdm client-id from CX IAM centralidp. |
+| backend.processesworker.bpdm.clientSecret | string | `""` | Client-secret for bpdm client-id. Secret-key 'bpdm-client-secret'. |
+| backend.processesworker.custodian.scope | string | `"openid"` |  |
+| backend.processesworker.custodian.grantType | string | `"client_credentials"` |  |
+| backend.processesworker.custodian.clientId | string | `"custodian-client-id"` | Provide custodian client-id from CX IAM centralidp. |
+| backend.processesworker.custodian.clientSecret | string | `""` | Client-secret for custodian client-id. Secret-key 'custodian-client-secret'. |
+| backend.processesworker.sdfactory.selfdescriptionPath | string | `"/api/rel3/selfdescription"` |  |
+| backend.processesworker.sdfactory.scope | string | `"openid"` |  |
+| backend.processesworker.sdfactory.grantType | string | `"client_credentials"` |  |
+| backend.processesworker.sdfactory.issuerBpn | string | `"BPNDUMMY000DUMMY"` | Provide BPN for sdfactory. |
+| backend.processesworker.sdfactory.clientId | string | `"sdfactory-client-id"` | Provide sdfactory client-id from CX IAM centralidp. |
+| backend.processesworker.sdfactory.clientSecret | string | `""` | Client-secret for sdfactory client-id. Secret-key 'sdfactory-client-secret'. |
+| backend.processesworker.clearinghouse.scope | string | `"openid"` |  |
+| backend.processesworker.clearinghouse.grantType | string | `"client_credentials"` |  |
+| backend.processesworker.clearinghouse.clientId | string | `"clearinghouse-client-id"` | Provide clearinghouse client-id from clearinghouse IAM. |
+| backend.processesworker.clearinghouse.clientSecret | string | `""` | Client-secret for clearinghouse client-id. Secret-key 'clearinghouse-client-secret'. |
+| backend.processesworker.clearinghouse.callbackPath | string | `"/api/administration/registration/clearinghouse"` |  |
+| backend.processesworker.processes.lockExpirySeconds | string | `"300"` |  |
 | backend.placeholder | string | `"empty"` |  |
 | postgresql.enabled | bool | `true` | PostgreSQL chart configuration Switch to enable or disable the PostgreSQL helm chart |
 | postgresql.fullnameOverride | string | `"portal-backend-postgresql"` | FullnameOverride to 'portal-backend-postgresql'. |
