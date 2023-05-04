@@ -342,7 +342,7 @@ backend:
       name: "provisioning-service"
       image:
         name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-service"
-        provisioningservicetag: d37d04846cf61ebbc40aa1f7a05b4ee25cedfe93
+        provisioningservicetag: f947c1391a7de3d54902f357976dbb8b825dc1de
       healthChecks:
         startup:
           tags: []
