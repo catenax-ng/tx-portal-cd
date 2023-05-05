@@ -178,6 +178,8 @@ spec:
           value: "{{ .Values.backend.services.deleteDocumentTypeIds.type1 }}"
         - name: "SERVICES__TECHNICALUSERPROFILECLIENT"
           value: "{{ .Values.backend.services.technicalUserProfileClient }}"
+        - name: "SERVICES__COMPANYADMINROLES__Cl2-CX-Portal__0"
+          value: "{{ .Values.backend.services.companyAdminRoles.role0 }}"
         ports:
         - name: http
           containerPort: {{ .Values.portContainer }}

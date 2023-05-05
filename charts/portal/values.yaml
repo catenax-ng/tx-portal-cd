@@ -407,6 +407,8 @@ backend:
       status1: "ACTIVE"
     swaggerEnabled: false
     technicalUserProfileClient: "technical_roles_management"
+    companyAdminRoles:
+      role1: "Company Admin"
   portalmigrations:
     name: "portal-migrations"
     image:
@@ -483,6 +485,8 @@ backend:
       type0: "SERVICE_LEADIMAGE"
       type1: "ADDITIONAL_DETAILS"
     technicalUserProfileClient: "technical_roles_management"
+    companyAdminRoles:
+      role1: "Company Admin"
   provisioningmigrations:
     name: "provisioning-migrations"
     image:
