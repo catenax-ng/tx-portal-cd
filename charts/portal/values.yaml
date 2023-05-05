@@ -486,7 +486,7 @@ backend:
       type1: "ADDITIONAL_DETAILS"
     technicalUserProfileClient: "technical_roles_management"
     companyAdminRoles:
-      role1: "Company Admin"
+      role0: "Company Admin"
   provisioningmigrations:
     name: "provisioning-migrations"
     image:
