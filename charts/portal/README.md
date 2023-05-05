@@ -14,7 +14,9 @@ This version is compatible with the 1.1.0 version of the IAM instances:
 * [Central Keycloak Instance](https://github.com/eclipse-tractusx/portal-iam/blob/centralidp-1.1.0/charts/centralidp/README.md)
 * [Shared Keycloak Instance](https://github.com/eclipse-tractusx/portal-iam/blob/sharedidp-1.1.0/charts/sharedidp/README.md)
 
-For further information please refer to the [technical documentation](https://github.com/eclipse-tractusx/portal-assets/tree/v1.3.0-RC3/developer/Technical%20Documentation).
+For information on how to upgrade from previous versions please refer to [Version Upgrade](https://github.com/eclipse-tractusx/portal-assets/tree/v1.3.0/developer/Technical%20Documentation/Version%20Upgrade/portal-upgrade-details.md).
+
+For further information please refer to [Technical Documentation](https://github.com/eclipse-tractusx/portal-assets/tree/v1.3.0/developer/Technical%20Documentation).
 
 The referenced container images are for demonstration purposes only.
 
@@ -79,10 +81,10 @@ dependencies:
 | frontend.portal.image.portaltag | string | `"v1.4.0"` |  |
 | frontend.registration.name | string | `"registration"` |  |
 | frontend.registration.image.name | string | `"ghcr.io/catenax-ng/tx-portal-frontend-registration"` |  |
-| frontend.registration.image.registrationtag | string | `"v1.3.0-RC2"` |  |
+| frontend.registration.image.registrationtag | string | `"v1.3.0"` |  |
 | frontend.assets.name | string | `"assets"` |  |
 | frontend.assets.image.name | string | `"ghcr.io/catenax-ng/tx-portal-assets"` |  |
-| frontend.assets.image.assetstag | string | `"v1.3.0-RC3"` |  |
+| frontend.assets.image.assetstag | string | `"v1.3.0"` |  |
 | frontend.assets.path | string | `"/assets"` |  |
 | frontend.centralidpAuthPath | string | `"/auth"` |  |
 | frontend.bpdmPartnersPoolApiPath | string | `"/api"` |  |
