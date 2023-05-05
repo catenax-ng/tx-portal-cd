@@ -419,6 +419,7 @@ backend:
       status0: "IN_REVIEW"
       status1: "ACTIVE"
     swaggerEnabled: false
+    technicalUserProfileClient: "technical_roles_management"
   portalmigrations:
     name: "portal-migrations"
     image:
