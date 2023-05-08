@@ -28,11 +28,11 @@ spec:
   source:
     path: charts/portal
     repoURL: 'https://github.com/catenax-ng/tx-portal-cd.git'
-    targetRevision: portal-1.4.0-alpha
+    targetRevision: portal-1.5.0
     plugin:
       env:
         - name: AVP_SECRET
           value: vault-secret
         - name: helm_args
-          value: '-f values.yaml -f values-pen.yaml'
+          value: '-f values.yaml -f ../../consortia-envs/values-pen.yaml'
   project: project-portal
