@@ -27,8 +27,8 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: charts/portal
-    repoURL: 'https://github.com/catenax-ng/tx-portal-cd.git'
-    targetRevision: helm-environments
+    repoURL: 'https://github.com/eclipse-tractusx/portal-cd.git'
+    targetRevision: dev
     plugin:
       env:
         - name: AVP_SECRET
