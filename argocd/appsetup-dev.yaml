@@ -20,20 +20,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: portal-pgadmin4
+  name: portal
 spec:
   destination:
     namespace: product-portal
     server: 'https://kubernetes.default.svc'
   source:
-    path: charts/pgadmin4
-    repoURL: 'https://github.com/catenax-ng/tx-portal-cd.git'
-    targetRevision: helm-environments
+    path: charts/portal
+    repoURL: 'https://github.com/eclipse-tractusx/portal-cd.git'
+    targetRevision: dev
     plugin:
-      name: argocd-vault-plugin-helm-args
       env:
         - name: AVP_SECRET
           value: vault-secret
         - name: helm_args
-          value: '-f values.yaml -f values-dev.yaml'
+          value: '-f values.yaml -f ../../consortia-envs/values-dev.yaml'
   project: project-portal
+  syncPolicy:
+    automated:
+      prune: true
