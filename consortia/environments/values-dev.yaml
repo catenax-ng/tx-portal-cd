@@ -158,29 +158,29 @@ backend:
       offersLibrary: "Debug"
     swaggerEnabled: true
 
-  checklistworker:
+  processesworker:
     logging:
-      checklistLibrary: "Debug"
+      processLibrary: "Debug"
       bpdmLibrary: "Debug"
       clearinghouseLibrary: "Debug"
       custodianLibrary: "Debug"
       sdfactoryLibrary: "Debug"
     bpdm:
-      clientId: "<path:portal/data/checklist-worker#bpdm-client-id>"
-      clientSecret: "<path:portal/data/dev/checklist-worker#bpdm-client-secret>"
+      clientId: "<path:portal/data/process-worker#bpdm-client-id>"
+      clientSecret: "<path:portal/data/dev/process-worker#bpdm-client-secret>"
     clearinghouse:
-      clientId: "<path:portal/data/checklist-worker#clearinghouse-client-id>"
-      clientSecret: "<path:portal/data/dev/checklist-worker#clearinghouse-client-secret>"
+      clientId: "<path:portal/data/process-worker#clearinghouse-client-id>"
+      clientSecret: "<path:portal/data/dev/process-worker#clearinghouse-client-secret>"
     custodian:
-      clientId: "<path:portal/data/checklist-worker#custodian-client-id>"
-      clientSecret: "<path:portal/data/dev/checklist-worker#custodian-client-secret>"
+      clientId: "<path:portal/data/process-worker#custodian-client-id>"
+      clientSecret: "<path:portal/data/dev/process-worker#custodian-client-secret>"
     sdfactory:
       issuerBpn: "BPNL00000003CRHK"
-      clientId: "<path:portal/data/checklist-worker#sdfactory-client-id>"
-      clientSecret: "<path:portal/data/dev/checklist-worker#sdfactory-client-secret>"
+      clientId: "<path:portal/data/process-worker#sdfactory-client-id>"
+      clientSecret: "<path:portal/data/dev/process-worker#sdfactory-client-secret>"
     offerProvider:
-      clientId: "<path:portal/data/checklist-worker#offerprovider-client-id>"
-      clientSecret: "<path:portal/data/beta/checklist-worker#offerprovider-client-secret>"
+      clientId: "<path:portal/data/process-worker#offerprovider-client-id>"
+      clientSecret: "<path:portal/data/beta/process-worker#offerprovider-client-secret>"
 
 postgresql:
   auth:

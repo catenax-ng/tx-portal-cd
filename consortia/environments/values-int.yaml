@@ -220,8 +220,8 @@ backend:
       clientId: "<path:portal/data/processes-worker#sdfactory-client-id>"
       clientSecret: "<path:portal/data/int/processes-worker#sdfactory-client-secret>"
     offerProvider:
-      clientId: "<path:portal/data/checklist-worker#offerprovider-client-id>"
-      clientSecret: "<path:portal/data/beta/checklist-worker#offerprovider-client-secret>"
+      clientId: "<path:portal/data/process-worker#offerprovider-client-id>"
+      clientSecret: "<path:portal/data/beta/process-worker#offerprovider-client-secret>"
 
 postgresql:
   auth:
