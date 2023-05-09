@@ -450,7 +450,7 @@ backend:
     name: "services-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_services-service"
-      servicesservicetag: c673aa82523a03564c86e564a6d0a9a1bbe861dc
+      servicesservicetag: a714edb4dc5cd3bea6e2430fdf2221e8001e470a
     logging:
       offersLibrary: "Information"
     healthChecks:
