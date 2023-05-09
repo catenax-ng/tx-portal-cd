@@ -436,7 +436,7 @@ backend:
     name: "notification-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_notification-service"
-      notificationservicetag: c673aa82523a03564c86e564a6d0a9a1bbe861dc
+      notificationservicetag: a714edb4dc5cd3bea6e2430fdf2221e8001e470a
     healthChecks:
       startup:
         tags: []
