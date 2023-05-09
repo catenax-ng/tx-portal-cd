@@ -20,10 +20,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: portal
+  name: portal-pen
 spec:
   destination:
-    namespace: product-portal
+    namespace: product-portal-pen
     server: 'https://kubernetes.default.svc'
   source:
     path: charts/portal
@@ -34,5 +34,5 @@ spec:
         - name: AVP_SECRET
           value: vault-secret
         - name: helm_args
-          value: '-f values.yaml -f ../../consortia-envs/values-int.yaml'
+          value: '-f values.yaml -f ../../consortia/environments/values-pen.yaml'
   project: project-portal
