@@ -338,20 +338,7 @@ backend:
         from: "smtp@example.org"
         # -- Provide replyTo.
         replyTo: "smtp@example.org"
-    service:
-      name: "provisioning-service"
-      image:
-        name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-service"
-        provisioningservicetag: 1076ea1680b4562c00e809ade5368c5c08596732
-      healthChecks:
-        startup:
-          tags: []
-# -- healthchecks to be enabled for startupProbe
-#       - name: "HEALTHCHECKS__0__TAGS__0"
-#         value: "keycloak"
-#       - name: "HEALTHCHECKS__0__TAGS__1"
-#         value: "portaldb"
-      swaggerEnabled: false
+
   appmarketplace:
     name: "marketplace-app-service"
     image:

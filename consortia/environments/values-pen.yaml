@@ -94,11 +94,6 @@ backend:
             backend:
               service: "notification-service"
               port: 8080
-          - path: "/api/provisioning"
-            pathType: "Prefix"
-            backend:
-              service: "provisioning-service"
-              port: 8080
           - path: "/api/apps"
             pathType: "Prefix"
             backend:
@@ -166,15 +161,6 @@ backend:
         password: "<path:portal/data/mailing#password>"
         from: "<path:portal/data/mailing#from>"
         replyTo: "<path:portal/data/mailing#replyto>"
-    service:
-      healthChecks:
-        startup:
-          tags:
-          - name: "HEALTHCHECKS__0__TAGS__0"
-            value: "keycloak"
-          - name: "HEALTHCHECKS__0__TAGS__1"
-            value: "provisioningdb"
-      swaggerEnabled: true
 
   appmarketplace:
     logging:
