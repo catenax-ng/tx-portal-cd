@@ -496,7 +496,7 @@ backend:
     name: "processes-worker"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_processes-worker"
-      processesworkertag: d37d04846cf61ebbc40aa1f7a05b4ee25cedfe93
+      processesworkertag: f56edcb4a6afb51f3d33a650433cda7ab2fdf7f0
     logging:
       processesLibrary: "Information"
       bpdmLibrary: "Information"
