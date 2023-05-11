@@ -160,6 +160,8 @@ spec:
           value: "{{ .Values.backend.appmarketplace.submitAppNotificationTypeIds.type0 }}"
         - name: "APPMARKETPLACE__TECHNICALUSERPROFILECLIENT"
           value: "{{ .Values.backend.appmarketplace.technicalUserProfileClient }}"
+        - name: "APPMARKETPLACE__COMPANYADMINROLES__Cl2-CX-Portal__0"
+          value: "{{ .Values.backend.appmarketplace.companyAdminRoles.role0 }}"
         - name: "HEALTHCHECKS__0__PATH"
           value: "{{ .Values.backend.healthChecks.startup.path}}"
         {{- if .Values.backend.appmarketplace.healthChecks.startup.tags }}
