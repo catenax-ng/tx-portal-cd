@@ -408,7 +408,7 @@ backend:
     swaggerEnabled: false
     technicalUserProfileClient: "technical_roles_management"
     companyAdminRoles:
-      role1: "Company Admin"
+      role0: "Company Admin"
   portalmigrations:
     name: "portal-migrations"
     image:
