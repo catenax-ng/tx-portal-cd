@@ -343,7 +343,7 @@ backend:
     name: "marketplace-app-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_marketplace-app-service"
-      appmarketplaceservicetag: f56edcb4a6afb51f3d33a650433cda7ab2fdf7f0
+      appmarketplaceservicetag: f4737efee0612cbc4b9a3e359d686100dfd4f35f
     logging:
       offersLibrary: "Information"
     healthChecks:
