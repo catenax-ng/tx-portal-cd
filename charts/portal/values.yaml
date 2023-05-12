@@ -225,7 +225,7 @@ backend:
     name: "registration-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_registration-service"
-      registrationservicetag: f56edcb4a6afb51f3d33a650433cda7ab2fdf7f0
+      registrationservicetag: f4737efee0612cbc4b9a3e359d686100dfd4f35f
     logging:
       registrationServiceBpn: "Information"
     healthChecks:
