@@ -252,7 +252,7 @@ backend:
     name: "administration-service"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_administration-service"
-      administrationservicetag: f56edcb4a6afb51f3d33a650433cda7ab2fdf7f0
+      administrationservicetag: f4737efee0612cbc4b9a3e359d686100dfd4f35f
     logging:
       businessLogic: "Information"
       sdfactoryLibrary: "Information"
