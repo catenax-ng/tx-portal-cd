@@ -306,6 +306,9 @@ backend:
       companyUserStatusIds:
         status0: "ACTIVE"
         status1: "INACTIVE"
+      userAdminRoles:
+        role0: "Company Admin"
+        role1: "IT Admin"
     serviceAccount:
       clientId: "technical_roles_management"
     swaggerEnabled: false
