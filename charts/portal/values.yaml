@@ -494,7 +494,7 @@ backend:
     name: "provisioning-migrations"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-backend_provisioning-migrations"
-      provisioningmigrationstag: d37d04846cf61ebbc40aa1f7a05b4ee25cedfe93
+      provisioningmigrationstag: 9d402dbc7eb1efc9f0e6a99eec8f16eb21debabe
   processesworker:
     name: "processes-worker"
     image:
