@@ -105,7 +105,7 @@ frontend:
     name: "assets"
     image:
       name: "ghcr.io/catenax-ng/tx-portal-assets"
-      assetstag: 4c1f61e9553af80917fc016008c26866f7abfedc
+      assetstag: 2878f8904bc513e91366f37e74b7d27f527f238a
     path: "/assets"
   centralidpAuthPath: "/auth"
   bpdmPartnersPoolApiPath: "/api"
