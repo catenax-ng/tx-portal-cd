@@ -18,7 +18,7 @@
 ###############################################################
 
 portal:
-  enabled: true
+  enabled: false
   # -- Set your local frontend to integrate into local development.
   portalAddress: "https://portal.example.org"
   # -- Set your local backend service to integrate into local development.
@@ -192,7 +192,7 @@ centralidp:
         mountPath: "/realms"
     initContainers:
       - name: init-certs
-        image: docker.io/bitnami/keycloak:16.1.1-debian-10-r103
+        image: docker.io/bitnami/keycloak:22.0.1-debian-11-r20
         imagePullPolicy: Always
         command: ["/bin/bash"]
         args:
@@ -262,9 +262,8 @@ centralidp:
         truststore: ""
     postgresql:
       auth:
-        existingSecret:
-          # -- Password for the user 'kccentral'
-          password: ""
+        # -- Secret containing the passwords for root usernames postgres and non-root username kccentral.
+        existingSecret: "centralidp-postgres"
 
 sharedidp:
   enabled: true
@@ -323,7 +322,7 @@ sharedidp:
         mountPath: "/secrets"
     initContainers:
       - name: init-certs
-        image: docker.io/bitnami/keycloak:16.1.1-debian-10-r103
+        image: docker.io/bitnami/keycloak:22.0.1-debian-11-r20
         imagePullPolicy: Always
         command: ["/bin/bash"]
         args:

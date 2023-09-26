@@ -35,13 +35,15 @@ dependencies:
     repository: https://eclipse-tractusx.github.io/charts/dev
     version: 1.6.0
   - condition: centralidp.enabled
-    name: centralidp
-    repository: https://eclipse-tractusx.github.io/charts/dev
-    version: 1.2.0
+    name: keycloak
+    alias: centralidp
+    repository: https://raw.githubusercontent.com/bitnami/charts/archive-full-index/bitnami
+    version: 16.1.0
   - condition: sharedidp.enabled
-    name: sharedidp
-    repository: https://eclipse-tractusx.github.io/charts/dev
-    version: 1.2.0
+    name: keycloak
+    alias: sharedidp
+    repository: https://raw.githubusercontent.com/bitnami/charts/archive-full-index/bitnami
+    version: 16.1.0
   - condition: pgadmin4.enabled
     name: pgadmin4
     repository: https://helm.runix.net
